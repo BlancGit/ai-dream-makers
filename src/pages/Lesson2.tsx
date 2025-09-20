@@ -20,9 +20,9 @@ const lesson2Quiz = [
   {
     question: "What are the 7 main areas where neural networks are used?",
     options: [
-      "Only for games and fun", 
+      "Only for games and fun",
       "Text, images, video, code, voice, marketing, and design",
-      "Only for school homework", 
+      "Only for school homework",
       "Just for drawing pictures"
     ],
     correctAnswer: 1,
@@ -31,13 +31,200 @@ const lesson2Quiz = [
   {
     question: "What do neural networks need to learn properly?",
     options: [
-      "Magic and wishes", 
-      "High-quality data and good examples", 
-      "Expensive computers only", 
+      "Magic and wishes",
+      "High-quality data and good examples",
+      "Expensive computers only",
       "Nothing special"
     ],
     correctAnswer: 1,
     explanation: "Neural networks are like children - they need high-quality data and good examples to learn correctly. Bad data leads to bad results!"
+  },
+  {
+    question: "What is the first stage in building a neural network?",
+    options: [
+      "Data collection",
+      "Problem statement",
+      "Training",
+      "Monitoring"
+    ],
+    correctAnswer: 1,
+    explanation: "The first stage is defining the problem statement - what exactly do we want the AI to solve, like recognizing cats in photos!"
+  },
+  {
+    question: "Which AI area helps create pictures and artwork?",
+    options: [
+      "Voice creation",
+      "Image generation",
+      "Code writing",
+      "Text writing"
+    ],
+    correctAnswer: 1,
+    explanation: "Image generation AI can create amazing pictures and artwork just by describing what you want!"
+  },
+  {
+    question: "What happens during the training stage?",
+    options: [
+      "We delete all the data",
+      "We show the AI examples so it learns patterns",
+      "We turn off the computer",
+      "We write new code"
+    ],
+    correctAnswer: 1,
+    explanation: "During training, we show the AI thousands of examples so it can learn the patterns and make predictions!"
+  },
+  {
+    question: "Which area of AI can help write stories and poems?",
+    options: [
+      "Video creation",
+      "Text & writing",
+      "Image generation",
+      "Voice creation"
+    ],
+    correctAnswer: 1,
+    explanation: "Text & writing AI can create stories, poems, essays, and even help with homework assignments!"
+  },
+  {
+    question: "What is the purpose of the monitoring stage?",
+    options: [
+      "To watch TV shows",
+      "To check how well the AI performs on new data",
+      "To play games",
+      "To sleep"
+    ],
+    correctAnswer: 1,
+    explanation: "Monitoring means watching how well the AI performs on new, unseen data to make sure it's working correctly!"
+  },
+  {
+    question: "Which AI area helps doctors and teachers do their jobs better?",
+    options: [
+      "Human assistance",
+      "Video creation",
+      "Marketing & design",
+      "Code writing"
+    ],
+    correctAnswer: 0,
+    explanation: "Human assistance AI helps professionals like doctors, teachers, and many others do their jobs more effectively!"
+  },
+  {
+    question: "What can voice creation AI generate?",
+    options: [
+      "Only robot voices",
+      "Speech, music, and sound effects",
+      "Only whispers",
+      "Silent movies"
+    ],
+    correctAnswer: 1,
+    explanation: "Voice creation AI can generate realistic speech, music, and amazing sound effects!"
+  },
+  {
+    question: "When do we use retraining in neural networks?",
+    options: [
+      "Every day at noon",
+      "When the AI makes mistakes and needs improvement",
+      "Never",
+      "Only on weekends"
+    ],
+    correctAnswer: 1,
+    explanation: "We retrain neural networks when they make mistakes - we show them more examples to help them get better!"
+  },
+  {
+    question: "What can code writing AI help programmers do?",
+    options: [
+      "Only write shopping lists",
+      "Build apps and websites",
+      "Cook dinner",
+      "Plant gardens"
+    ],
+    correctAnswer: 1,
+    explanation: "Code writing AI helps programmers write code and build amazing apps and websites more efficiently!"
+  },
+  {
+    question: "During data analysis, what do we check?",
+    options: [
+      "If the examples are good quality and not corrupted",
+      "The weather forecast",
+      "Our favorite movies",
+      "What to eat for lunch"
+    ],
+    correctAnswer: 0,
+    explanation: "Data analysis involves checking if our examples are good quality and not corrupted before training the AI!"
+  },
+  {
+    question: "What can marketing & design AI create?",
+    options: [
+      "Only black and white pictures",
+      "Logos, advertisements, and beautiful designs",
+      "Only text documents",
+      "Mathematical equations"
+    ],
+    correctAnswer: 1,
+    explanation: "Marketing & design AI can automatically create logos, advertisements, and beautiful designs!"
+  },
+  {
+    question: "What makes video creation AI special?",
+    options: [
+      "It only works in the dark",
+      "It can make cool videos and animations",
+      "It requires special glasses",
+      "It only creates still images"
+    ],
+    correctAnswer: 1,
+    explanation: "Video creation AI can make cool videos and animations with the help of artificial intelligence!"
+  },
+  {
+    question: "Why is data collection important?",
+    options: [
+      "To fill up computer storage",
+      "To gather lots of examples for the AI to learn from",
+      "To make the computer slower",
+      "To confuse the AI"
+    ],
+    correctAnswer: 1,
+    explanation: "Data collection is crucial because we need to gather lots of examples (like thousands of photos) for the AI to learn from!"
+  },
+  {
+    question: "What happens if we give bad data to a neural network?",
+    options: [
+      "It learns perfectly anyway",
+      "It creates bad results",
+      "Nothing changes",
+      "It becomes super smart"
+    ],
+    correctAnswer: 1,
+    explanation: "Just like children, if we give neural networks bad examples or corrupted data, they will learn incorrectly and produce bad results!"
+  },
+  {
+    question: "Which stage comes after data collection?",
+    options: [
+      "Retraining",
+      "Data analysis",
+      "Problem statement",
+      "Monitoring"
+    ],
+    correctAnswer: 1,
+    explanation: "After collecting data, we do data analysis to check if our examples are good quality before training!"
+  },
+  {
+    question: "What is the main goal of all these AI areas?",
+    options: [
+      "To replace humans completely",
+      "To help humans create amazing things and solve problems",
+      "To make computers more expensive",
+      "To make life more complicated"
+    ],
+    correctAnswer: 1,
+    explanation: "The main goal of AI is to help humans create amazing things, solve problems, and make life better and more creative!"
+  },
+  {
+    question: "How are neural networks similar to children learning?",
+    options: [
+      "They both need toys",
+      "They both need good examples and quality teaching",
+      "They both need candy",
+      "They both sleep all day"
+    ],
+    correctAnswer: 1,
+    explanation: "Neural networks are like children because they both learn best when given good examples and quality teaching materials!"
   }
 ];
 
@@ -375,9 +562,46 @@ const Lesson2 = () => {
               <p className="text-xl mb-6">
                 You've mastered the types and applications of neural networks!
               </p>
+
+              {/* Score Display */}
+              <div className="bg-white/20 backdrop-blur rounded-lg p-6 max-w-md mx-auto mb-6">
+                <h3 className="text-2xl font-bold mb-3">Your Quiz Score</h3>
+                <div className="text-5xl font-bold mb-2">
+                  {completedQuizzes}/{lesson2Quiz.length}
+                </div>
+                <div className="text-3xl font-bold mb-3">
+                  {Math.round((completedQuizzes / lesson2Quiz.length) * 100)}%
+                </div>
+
+                {/* Performance Badge */}
+                <div className="mt-4">
+                  {completedQuizzes === lesson2Quiz.length && (
+                    <div className="text-2xl font-bold">
+                      🏆 Perfect Score! You're an AI Expert!
+                    </div>
+                  )}
+                  {completedQuizzes >= lesson2Quiz.length * 0.8 && completedQuizzes < lesson2Quiz.length && (
+                    <div className="text-2xl font-bold">
+                      ⭐ Great Job! You're an AI Star!
+                    </div>
+                  )}
+                  {completedQuizzes >= lesson2Quiz.length * 0.6 && completedQuizzes < lesson2Quiz.length * 0.8 && (
+                    <div className="text-xl font-bold">
+                      👍 Good Work! Keep Learning!
+                    </div>
+                  )}
+                  {completedQuizzes < lesson2Quiz.length * 0.6 && (
+                    <div className="text-xl font-bold">
+                      💪 Nice Try! Practice Makes Perfect!
+                    </div>
+                  )}
+                </div>
+              </div>
+
               <p className="text-lg opacity-90">
-                You got {completedQuizzes} out of {lesson2Quiz.length} quiz questions correct!
+                You answered {completedQuizzes} out of {lesson2Quiz.length} questions correctly!
               </p>
+
               <div className="mt-6 p-4 bg-primary-foreground/20 rounded-lg">
                 <p className="text-lg font-semibold">🏆 Neural Networks Expert!</p>
                 <p>You now understand how AI works and can use AI tools to create amazing things!</p>
