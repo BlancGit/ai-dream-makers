@@ -403,10 +403,10 @@ const Lesson1 = () => {
               </Link>
             </Button>
             
-            <Button variant="outline" size="xl" asChild>
+            <Button variant="outline" size="lg" asChild>
               <Link to="/games">
                 <GamepadIcon className="w-5 h-5" />
-                Play Games
+                Class Activities
               </Link>
             </Button>
           </div>

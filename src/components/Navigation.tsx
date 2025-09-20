@@ -9,7 +9,7 @@ export const Navigation = () => {
     { icon: Home, label: "Home", path: "/" },
     { icon: BookOpen, label: "Lesson 1", path: "/lesson1" },
     { icon: Brain, label: "Lesson 2", path: "/lesson2" },
-    { icon: GamepadIcon, label: "Games", path: "/games" },
+    { icon: GamepadIcon, label: "Class Activities", path: "/games" },
     { icon: Users, label: "About", path: "/about" },
   ];
 
@@ -18,7 +18,7 @@ export const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center animate-pulse-glow">
+            <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
               <Brain className="w-6 h-6 text-primary-foreground" />
             </div>
             <h1 className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">
@@ -34,11 +34,9 @@ export const Navigation = () => {
               return (
                 <Button
                   key={item.path}
-                  variant={isActive ? "fun" : "ghost"}
+                  variant={isActive ? "default" : "ghost"}
                   size="sm"
-                  className={`flex items-center gap-2 ${
-                    isActive ? "animate-bounce-in" : ""
-                  }`}
+                  className="flex items-center gap-2"
                   asChild
                 >
                   <Link to={item.path}>

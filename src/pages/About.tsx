@@ -221,17 +221,17 @@ const About = () => {
         </p>
         
         <div className="flex flex-wrap justify-center gap-4">
-          <Button variant="hero" size="xl" asChild>
+          <Button variant="default" size="lg" asChild>
             <Link to="/lesson1">
               <BookOpen className="w-5 h-5" />
               Start Learning Now!
             </Link>
           </Button>
           
-          <Button variant="playful" size="xl" asChild>
+          <Button variant="secondary" size="lg" asChild>
             <Link to="/games">
               <Star className="w-5 h-5" />
-              Play Games First!
+              Try Class Activities!
             </Link>
           </Button>
         </div>

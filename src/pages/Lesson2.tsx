@@ -384,14 +384,14 @@ const Lesson2 = () => {
           </Card>
 
           <div className="flex flex-wrap justify-center gap-4">
-            <Button variant="secondary" size="xl" asChild>
+            <Button variant="secondary" size="lg" asChild>
               <Link to="/games">
                 <ArrowRight className="w-5 h-5" />
-                Play AI Games
+                Practice with AI Tools
               </Link>
             </Button>
             
-            <Button variant="outline" size="xl" asChild>
+            <Button variant="outline" size="lg" asChild>
               <Link to="/">
                 🏠 Back to Home
               </Link>

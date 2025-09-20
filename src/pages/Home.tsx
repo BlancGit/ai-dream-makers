@@ -23,17 +23,17 @@ const Home = () => {
         </p>
         
         <div className="flex flex-wrap justify-center gap-4">
-          <Button variant="hero" size="xl" asChild className="text-lg">
+          <Button variant="default" size="lg" asChild className="text-lg">
             <Link to="/lesson1">
               <BookOpen className="w-5 h-5" />
               Start Learning!
             </Link>
           </Button>
           
-          <Button variant="playful" size="xl" asChild className="text-lg">
+          <Button variant="secondary" size="lg" asChild className="text-lg">
             <Link to="/games">
               <GamepadIcon className="w-5 h-5" />
-              Play Games!
+              Practice Activities!
             </Link>
           </Button>
         </div>
@@ -60,11 +60,11 @@ const Home = () => {
             <div className="w-16 h-16 bg-gradient-fun rounded-full flex items-center justify-center mx-auto mb-4 animate-bounce-in">
               <GamepadIcon className="w-8 h-8 text-primary-foreground" />
             </div>
-            <CardTitle className="text-primary">Fun Games</CardTitle>
+            <CardTitle className="text-primary">Class Activities</CardTitle>
           </CardHeader>
           <CardContent className="text-center">
             <p className="text-muted-foreground">
-              Play educational games and quizzes to test your knowledge while having fun!
+              Practice with real AI tools and activities to test your knowledge while having fun!
             </p>
           </CardContent>
         </Card>
@@ -150,7 +150,7 @@ const Home = () => {
           Join thousands of kids who are already learning about the future of technology!
         </p>
         
-        <Button variant="secondary" size="xl" asChild className="text-lg">
+        <Button variant="secondary" size="lg" asChild className="text-lg">
           <Link to="/lesson1">
             Start Your AI Journey Now!
           </Link>

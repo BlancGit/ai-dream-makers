@@ -62,10 +62,10 @@ const Games = () => {
       {/* Header */}
       <div className="text-center">
         <h1 className="text-4xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
-          Real AI Tools to Explore!
+          Real AI Class Activities!
         </h1>
         <p className="text-xl text-muted-foreground mb-6">
-          Try these amazing AI tools that were mentioned in your lessons!
+          Practice with these amazing AI tools that were mentioned in your lessons!
         </p>
         <div className="bg-warning/10 border border-warning/20 rounded-lg p-4 max-w-2xl mx-auto">
           <h3 className="font-bold text-warning mb-2">👨‍👩‍👧‍👦 For Parents & Teachers</h3>
@@ -81,8 +81,7 @@ const Games = () => {
         {aiTools.map((tool, index) => (
           <Card 
             key={tool.id}
-            className="shadow-card hover:shadow-fun transition-all duration-300 hover:scale-105 cursor-pointer animate-bounce-in"
-            style={{ animationDelay: `${index * 100}ms` }}
+            className="shadow-card hover:shadow-fun transition-all duration-300 hover:scale-105 cursor-pointer"
             onClick={() => handleToolClick(tool.url)}
           >
             <CardHeader className="text-center">
@@ -109,12 +108,12 @@ const Games = () => {
                 </ul>
               </div>
               
-              <Button variant="fun" className="w-full" onClick={(e) => {
+              <Button variant="default" className="w-full" onClick={(e) => {
                 e.stopPropagation();
                 handleToolClick(tool.url);
               }}>
                 <ExternalLink className="w-4 h-4 mr-2" />
-                Try It Now!
+                Practice Now!
               </Button>
             </CardContent>
           </Card>
