@@ -11,9 +11,9 @@ const lesson1Quiz = [
   {
     question: "Who created the first neural network called the Perceptron?",
     options: [
-      "Albert Einstein", 
-      "Frank Rosenblatt", 
-      "Steve Jobs", 
+      "Albert Einstein",
+      "Frank Rosenblatt",
+      "Steve Jobs",
       "Marie Curie"
     ],
     correctAnswer: 1,
@@ -22,9 +22,9 @@ const lesson1Quiz = [
   {
     question: "What is a prompt in neural networks?",
     options: [
-      "A type of computer", 
-      "Instructions to tell the AI what to do", 
-      "A video game", 
+      "A type of computer",
+      "Instructions to tell the AI what to do",
+      "A video game",
       "A math problem"
     ],
     correctAnswer: 1,
@@ -33,13 +33,200 @@ const lesson1Quiz = [
   {
     question: "When was ELIZA, the first chatbot, created?",
     options: [
-      "1950", 
-      "1966", 
-      "1980", 
+      "1950",
+      "1966",
+      "1980",
       "2000"
     ],
     correctAnswer: 1,
     explanation: "ELIZA was created in 1966 by Joseph Weizenbaum. It was one of the first programs that could have conversations with humans!"
+  },
+  {
+    question: "What year was the Perceptron invented?",
+    options: [
+      "1945",
+      "1958",
+      "1969",
+      "1975"
+    ],
+    correctAnswer: 1,
+    explanation: "The Perceptron was invented in 1958 by Frank Rosenblatt. It was a groundbreaking moment in AI history!"
+  },
+  {
+    question: "What does a neural network use to learn?",
+    options: [
+      "Magic spells",
+      "Examples and patterns",
+      "Random guesses",
+      "Internet searches"
+    ],
+    correctAnswer: 1,
+    explanation: "Neural networks learn by looking at lots of examples and finding patterns in them, just like how you learn to recognize things!"
+  },
+  {
+    question: "Which of these is like a neural network?",
+    options: [
+      "A calculator following exact steps",
+      "A brain learning from experience",
+      "A clock telling time",
+      "A ruler measuring length"
+    ],
+    correctAnswer: 1,
+    explanation: "A neural network is like a brain that learns from experience, not like a calculator that just follows exact steps!"
+  },
+  {
+    question: "What could ELIZA NOT do?",
+    options: [
+      "Ask questions",
+      "Have simple conversations",
+      "Truly understand meaning",
+      "Respond to keywords"
+    ],
+    correctAnswer: 2,
+    explanation: "ELIZA could chat and ask questions, but it couldn't truly understand what people meant - it just used clever tricks with keywords!"
+  },
+  {
+    question: "What's the first step in how neural networks learn?",
+    options: [
+      "Make predictions",
+      "Show examples",
+      "Find patterns",
+      "Give rewards"
+    ],
+    correctAnswer: 1,
+    explanation: "First, we show the neural network lots of examples with labels, like showing it pictures of cats and dogs!"
+  },
+  {
+    question: "Which is an example of a GOOD prompt?",
+    options: [
+      "Do something",
+      "Make it nice",
+      "Draw a happy robot in space",
+      "Whatever"
+    ],
+    correctAnswer: 2,
+    explanation: "Good prompts are specific and clear! 'Draw a happy robot in space' tells the AI exactly what you want!"
+  },
+  {
+    question: "Who created ELIZA?",
+    options: [
+      "Alan Turing",
+      "Joseph Weizenbaum",
+      "Frank Rosenblatt",
+      "Bill Gates"
+    ],
+    correctAnswer: 1,
+    explanation: "Joseph Weizenbaum created ELIZA in 1966 at MIT. It was revolutionary for its time!"
+  },
+  {
+    question: "What makes neural networks special compared to regular computers?",
+    options: [
+      "They are faster",
+      "They use less electricity",
+      "They can learn from examples",
+      "They are smaller"
+    ],
+    correctAnswer: 2,
+    explanation: "Neural networks are special because they can learn from examples and solve new problems they've never seen before!"
+  },
+  {
+    question: "What happens when a neural network makes a mistake?",
+    options: [
+      "It breaks forever",
+      "It adjusts and learns from it",
+      "It starts over from zero",
+      "It gives up"
+    ],
+    correctAnswer: 1,
+    explanation: "When neural networks make mistakes, they adjust their connections and learn from them to get better next time!"
+  },
+  {
+    question: "What are artificial neurons connected like?",
+    options: [
+      "A straight line",
+      "A spider web",
+      "A square box",
+      "A single dot"
+    ],
+    correctAnswer: 1,
+    explanation: "Artificial neurons are connected like a spider web, with many connections between different neurons working together!"
+  },
+  {
+    question: "What did the Perceptron learn to do?",
+    options: [
+      "Play chess",
+      "Recognize images",
+      "Compose music",
+      "Drive cars"
+    ],
+    correctAnswer: 1,
+    explanation: "The Perceptron was the first neural network that could learn to recognize and classify images!"
+  },
+  {
+    question: "Why are specific prompts better than vague ones?",
+    options: [
+      "They sound fancier",
+      "They give clear directions to the AI",
+      "They are longer",
+      "They use big words"
+    ],
+    correctAnswer: 1,
+    explanation: "Specific prompts give the AI clear directions about what you want, leading to better results!"
+  },
+  {
+    question: "What pattern-finding example was mentioned for cats?",
+    options: [
+      "Cats are big",
+      "Cats have whiskers and pointy ears",
+      "Cats are colorful",
+      "Cats can fly"
+    ],
+    correctAnswer: 1,
+    explanation: "Neural networks learn to recognize cats by finding patterns like whiskers, pointy ears, and other cat features!"
+  },
+  {
+    question: "ELIZA was important because it showed computers could:",
+    options: [
+      "Think like humans",
+      "Feel emotions",
+      "Pretend to understand humans",
+      "Replace doctors"
+    ],
+    correctAnswer: 2,
+    explanation: "ELIZA was important because it showed computers could pretend to understand humans, even without real understanding!"
+  },
+  {
+    question: "What's the final step in how neural networks learn?",
+    options: [
+      "Show examples",
+      "Find patterns",
+      "Sleep on it",
+      "Make predictions"
+    ],
+    correctAnswer: 3,
+    explanation: "After seeing examples and finding patterns, neural networks can make predictions on new things they haven't seen before!"
+  },
+  {
+    question: "How do you 'teach' a neural network?",
+    options: [
+      "Tell it the rules",
+      "Show it many examples",
+      "Program every answer",
+      "Hope for the best"
+    ],
+    correctAnswer: 1,
+    explanation: "You teach neural networks by showing them many examples, and they learn the patterns on their own!"
+  },
+  {
+    question: "What decade marked the birth of modern AI with the Perceptron?",
+    options: [
+      "1940s",
+      "1950s",
+      "1960s",
+      "1970s"
+    ],
+    correctAnswer: 1,
+    explanation: "The 1950s marked the birth of modern AI, with the Perceptron being invented in 1958!"
   }
 ];
 
@@ -391,8 +578,44 @@ const Lesson1 = () => {
               <p className="text-xl mb-6">
                 You've completed Lesson 1 and learned about the history of neural networks!
               </p>
+
+              {/* Score Display */}
+              <div className="bg-white/20 backdrop-blur rounded-lg p-6 max-w-md mx-auto mb-6">
+                <h3 className="text-2xl font-bold mb-3">Your Quiz Score</h3>
+                <div className="text-5xl font-bold mb-2">
+                  {completedQuizzes}/{lesson1Quiz.length}
+                </div>
+                <div className="text-3xl font-bold mb-3">
+                  {Math.round((completedQuizzes / lesson1Quiz.length) * 100)}%
+                </div>
+
+                {/* Performance Badge */}
+                <div className="mt-4">
+                  {completedQuizzes === lesson1Quiz.length && (
+                    <div className="text-2xl font-bold">
+                      🏆 Perfect Score! You're an AI Expert!
+                    </div>
+                  )}
+                  {completedQuizzes >= lesson1Quiz.length * 0.8 && completedQuizzes < lesson1Quiz.length && (
+                    <div className="text-2xl font-bold">
+                      ⭐ Great Job! You're an AI Star!
+                    </div>
+                  )}
+                  {completedQuizzes >= lesson1Quiz.length * 0.6 && completedQuizzes < lesson1Quiz.length * 0.8 && (
+                    <div className="text-xl font-bold">
+                      👍 Good Work! Keep Learning!
+                    </div>
+                  )}
+                  {completedQuizzes < lesson1Quiz.length * 0.6 && (
+                    <div className="text-xl font-bold">
+                      💪 Nice Try! Practice Makes Perfect!
+                    </div>
+                  )}
+                </div>
+              </div>
+
               <p className="text-lg opacity-90">
-                You got {completedQuizzes} out of {lesson1Quiz.length} quiz questions correct!
+                You answered {completedQuizzes} out of {lesson1Quiz.length} questions correctly!
               </p>
             </CardContent>
           </Card>
