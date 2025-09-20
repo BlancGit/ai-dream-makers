@@ -62,11 +62,11 @@ const Lesson1 = () => {
     if (correct) {
       setCompletedQuizzes(prev => prev + 1);
     }
-    
+
     if (quizIndex < lesson1Quiz.length - 1) {
-      setTimeout(() => setQuizIndex(prev => prev + 1), 2000);
+      setQuizIndex(prev => prev + 1);
     } else {
-      setTimeout(() => setLessonComplete(true), 2000);
+      setLessonComplete(true);
     }
   };
 
@@ -372,9 +372,11 @@ const Lesson1 = () => {
             <Progress value={((quizIndex + 1) / lesson1Quiz.length) * 100} className="w-full max-w-md mx-auto" />
           </div>
           
-          <QuizCard 
-            quiz={lesson1Quiz[quizIndex]} 
+          <QuizCard
+            quiz={lesson1Quiz[quizIndex]}
             onComplete={handleQuizComplete}
+            currentIndex={quizIndex}
+            totalQuestions={lesson1Quiz.length}
           />
         </div>
       )}

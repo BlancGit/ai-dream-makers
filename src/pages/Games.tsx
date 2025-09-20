@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { 
-  ExternalLink, Brain, Image, MessageCircle, Sparkles, Globe, Palette 
+import {
+  ExternalLink, Brain, Image, MessageCircle, Sparkles, Globe, Palette, Bot
 } from "lucide-react";
 
 const Games = () => {
@@ -50,6 +50,15 @@ const Games = () => {
       color: "text-orange-500",
       url: "https://fusionbrain.ai/editor/",
       features: ["AI Art Generation", "Style Selection", "Negative Prompts", "High Quality Images"]
+    },
+    {
+      id: "google-ai-studio",
+      title: "Google AI Studio",
+      description: "Experiment with Google's powerful Gemini AI model for creative writing and problem-solving!",
+      icon: <Bot className="w-8 h-8" />,
+      color: "text-indigo-500",
+      url: "https://aistudio.google.com/",
+      features: ["Gemini AI Model", "Creative Writing", "Code Generation", "Problem Solving", "Multi-turn Conversations"]
     }
   ];
 
@@ -206,6 +215,16 @@ const Games = () => {
             </ul>
           </div>
           
+          <div className="space-y-3">
+            <h3 className="font-bold text-lg">🤖 For Google AI Studio:</h3>
+            <ul className="space-y-2 opacity-90">
+              <li>• Try creative prompts like "Write a story about a robot learning to paint"</li>
+              <li>• Ask it to explain complex topics in simple terms</li>
+              <li>• Experiment with different conversation styles</li>
+              <li>• Challenge it with fun riddles and puzzles!</li>
+            </ul>
+          </div>
+
           <div className="space-y-3">
             <h3 className="font-bold text-lg">🛡️ Stay Safe Online:</h3>
             <ul className="space-y-2 opacity-90">
