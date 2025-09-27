@@ -222,7 +222,7 @@ const About = () => {
         
         <div className="flex flex-wrap justify-center gap-4">
           <Button variant="default" size="lg" asChild>
-            <Link to="/lesson1">
+            <Link to="/lessons/1">
               <BookOpen className="w-5 h-5" />
               Start Learning Now!
             </Link>

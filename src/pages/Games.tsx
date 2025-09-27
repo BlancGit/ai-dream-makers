@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Link } from "react-router-dom";
 import {
   ExternalLink, Brain, Image, MessageCircle, Sparkles, Globe, Palette, Bot
 } from "lucide-react";
@@ -248,10 +249,10 @@ const Games = () => {
             </p>
             <div className="flex gap-2 justify-center">
               <Button variant="secondary" asChild>
-                <a href="/lesson1">Lesson 1</a>
+                <Link to="/lessons/1">Lesson 1</Link>
               </Button>
               <Button variant="secondary" asChild>
-                <a href="/lesson2">Lesson 2</a>
+                <Link to="/lessons/2">Lesson 2</Link>
               </Button>
             </div>
           </CardContent>

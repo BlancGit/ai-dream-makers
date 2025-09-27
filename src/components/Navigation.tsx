@@ -12,7 +12,7 @@ export const Navigation = () => {
     { icon: Wand2, label: "Lesson 3", path: "/lessons/3" },
     { icon: GitBranch, label: "Lesson 4", path: "/lessons/4" },
     { icon: Presentation, label: "Lesson 5", path: "/lessons/5" },
-    { icon: GamepadIcon, label: "Games", path: "/games" },
+    { icon: GamepadIcon, label: "Class Activity", path: "/games" },
     { icon: Users, label: "About", path: "/about" },
   ];
 

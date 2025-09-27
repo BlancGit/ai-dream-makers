@@ -622,7 +622,7 @@ const Lesson1 = () => {
 
           <div className="flex flex-wrap justify-center gap-4">
             <Button variant="secondary" size="xl" asChild>
-              <Link to="/lesson2">
+              <Link to="/lessons/2">
                 <ArrowRight className="w-5 h-5" />
                 Continue to Lesson 2
               </Link>
