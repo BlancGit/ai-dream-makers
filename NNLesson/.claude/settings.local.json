@@ -16,7 +16,8 @@
       "Bash(powershell:*)",
       "Bash(where python)",
       "Bash(python:*)",
-      "Bash(rm:*)"
+      "Bash(rm:*)",
+      "Bash(git pull:*)"
     ],
     "deny": [],
     "ask": []
