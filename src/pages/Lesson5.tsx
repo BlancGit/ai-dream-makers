@@ -117,6 +117,9 @@ const powerPointHistory = [
 export default function Lesson5() {
   const [currentSection, setCurrentSection] = useState(0);
   const [showQuiz, setShowQuiz] = useState(false);
+  const [quizIndex, setQuizIndex] = useState(0);
+  const [completedQuizzes, setCompletedQuizzes] = useState(0);
+  const [lessonComplete, setLessonComplete] = useState(false);
   const [selectedStep, setSelectedStep] = useState(0);
   const [gameProgress, setGameProgress] = useState(0);
   const [completedSections, setCompletedSections] = useState<number[]>([]);
@@ -134,6 +137,18 @@ export default function Lesson5() {
   const markSectionComplete = (section: number) => {
     if (!completedSections.includes(section)) {
       setCompletedSections([...completedSections, section]);
+    }
+  };
+
+  const handleQuizComplete = (correct: boolean) => {
+    if (correct) {
+      setCompletedQuizzes(prev => prev + 1);
+    }
+
+    if (quizIndex < lesson5Quiz.length - 1) {
+      setQuizIndex(prev => prev + 1);
+    } else {
+      setLessonComplete(true);
     }
   };
 
@@ -564,7 +579,7 @@ export default function Lesson5() {
         </TabsContent>
 
         <TabsContent value="quiz" className="space-y-6">
-          {!showQuiz ? (
+          {!showQuiz && !lessonComplete && (
             <Card>
               <CardContent className="pt-6 text-center">
                 <h2 className="text-2xl font-bold mb-4">Ready for the Final Quiz?</h2>
@@ -576,13 +591,42 @@ export default function Lesson5() {
                 </Button>
               </CardContent>
             </Card>
-          ) : (
-            <QuizCard
-              questions={lesson5Quiz}
-              onComplete={(score) => {
-                alert(`Outstanding! You scored ${score}/${lesson5Quiz.length}! You're now ready to create amazing AI-powered games!`);
-              }}
-            />
+          )}
+
+          {showQuiz && !lessonComplete && (
+            <div className="space-y-6 animate-bounce-in">
+              <div className="text-center">
+                <h2 className="text-2xl font-bold mb-4">
+                  Quiz {quizIndex + 1} of {lesson5Quiz.length}
+                </h2>
+                <Progress value={((quizIndex + 1) / lesson5Quiz.length) * 100} className="w-full max-w-md mx-auto" />
+              </div>
+
+              <QuizCard
+                quiz={lesson5Quiz[quizIndex]}
+                onComplete={handleQuizComplete}
+                currentIndex={quizIndex}
+                totalQuestions={lesson5Quiz.length}
+              />
+            </div>
+          )}
+
+          {lessonComplete && (
+            <div className="text-center space-y-6 animate-bounce-in">
+              <Card className="shadow-glow bg-gradient-primary text-primary-foreground">
+                <CardContent className="py-12">
+                  <CheckCircle className="w-20 h-20 mx-auto mb-6 animate-bounce" />
+                  <h2 className="text-3xl font-bold mb-4">Congratulations! 🎉</h2>
+                  <p className="text-xl mb-4">You've completed Lesson 5!</p>
+                  <p className="text-lg opacity-90">
+                    Quiz Score: {completedQuizzes}/{lesson5Quiz.length} correct answers
+                  </p>
+                  <p className="text-md opacity-80 mt-4">
+                    You're now ready to create amazing AI-powered games!
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
           )}
         </TabsContent>
       </Tabs>

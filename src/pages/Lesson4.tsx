@@ -139,6 +139,9 @@ const gameScenario = {
 export default function Lesson4() {
   const [currentSection, setCurrentSection] = useState(0);
   const [showQuiz, setShowQuiz] = useState(false);
+  const [quizIndex, setQuizIndex] = useState(0);
+  const [completedQuizzes, setCompletedQuizzes] = useState(0);
+  const [lessonComplete, setLessonComplete] = useState(false);
   const [selectedBlock, setSelectedBlock] = useState(0);
   const [selectedChoice, setSelectedChoice] = useState<number | null>(null);
   const [gameStep, setGameStep] = useState<'start' | 'choice' | 'result'>('start');
@@ -157,6 +160,18 @@ export default function Lesson4() {
   const markSectionComplete = (section: number) => {
     if (!completedSections.includes(section)) {
       setCompletedSections([...completedSections, section]);
+    }
+  };
+
+  const handleQuizComplete = (correct: boolean) => {
+    if (correct) {
+      setCompletedQuizzes(prev => prev + 1);
+    }
+
+    if (quizIndex < lesson4Quiz.length - 1) {
+      setQuizIndex(prev => prev + 1);
+    } else {
+      setLessonComplete(true);
     }
   };
 
@@ -581,7 +596,7 @@ export default function Lesson4() {
         </TabsContent>
 
         <TabsContent value="quiz" className="space-y-6">
-          {!showQuiz ? (
+          {!showQuiz && !lessonComplete && (
             <Card>
               <CardContent className="pt-6 text-center">
                 <h2 className="text-2xl font-bold mb-4">Ready for the Quiz?</h2>
@@ -593,13 +608,39 @@ export default function Lesson4() {
                 </Button>
               </CardContent>
             </Card>
-          ) : (
-            <QuizCard
-              questions={lesson4Quiz}
-              onComplete={(score) => {
-                alert(`Excellent work! You scored ${score}/${lesson4Quiz.length}!`);
-              }}
-            />
+          )}
+
+          {showQuiz && !lessonComplete && (
+            <div className="space-y-6 animate-bounce-in">
+              <div className="text-center">
+                <h2 className="text-2xl font-bold mb-4">
+                  Quiz {quizIndex + 1} of {lesson4Quiz.length}
+                </h2>
+                <Progress value={((quizIndex + 1) / lesson4Quiz.length) * 100} className="w-full max-w-md mx-auto" />
+              </div>
+
+              <QuizCard
+                quiz={lesson4Quiz[quizIndex]}
+                onComplete={handleQuizComplete}
+                currentIndex={quizIndex}
+                totalQuestions={lesson4Quiz.length}
+              />
+            </div>
+          )}
+
+          {lessonComplete && (
+            <div className="text-center space-y-6 animate-bounce-in">
+              <Card className="shadow-glow bg-gradient-primary text-primary-foreground">
+                <CardContent className="py-12">
+                  <CheckCircle className="w-20 h-20 mx-auto mb-6 animate-bounce" />
+                  <h2 className="text-3xl font-bold mb-4">Congratulations! 🎉</h2>
+                  <p className="text-xl mb-4">You've completed Lesson 4!</p>
+                  <p className="text-lg opacity-90">
+                    Quiz Score: {completedQuizzes}/{lesson4Quiz.length} correct answers
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
           )}
         </TabsContent>
       </Tabs>

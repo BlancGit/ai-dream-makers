@@ -221,7 +221,7 @@ const Home = () => {
         </p>
         
         <Button variant="secondary" size="lg" asChild className="text-lg">
-          <Link to="/lesson/1">
+          <Link to="/lessons/1">
             Start Your AI Journey Now!
           </Link>
         </Button>
