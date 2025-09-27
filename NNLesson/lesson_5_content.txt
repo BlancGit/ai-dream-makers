@@ -1,0 +1,188 @@
+NEURAL NETWORKS LESSON 5 - EXTRACTED CONTENT
+============================================================
+
+WORD DOCUMENT CONTENT:
+------------------------------
+Additional Content:
+Lesson 5
+
+Neural Networks, 1 lesson
+
+Neural Networks, 2 lesson
+
+Neural Networks, 3 lesson
+
+Neural Networks, 4 lesson
+
+Neural Networks, 5 lesson
+
+Methodological lesson plan
+
+Organizational moment - 5 min.
+
+Theoretical part - 5 min.
+
+Hello, guys! Today we're wrapping up our course on working with neural networks!
+
+Did you know that you already have enough knowledge to create your own game? For this, we will be using a program called Microsoft PowerPoint!
+
+History of creation
+
+When PowerPoint burst onto the presentation scene back in 1987, it wasn’t the only software available on the market. But it was the best. Its emergence coincided with a surge in personal computer purchasing and the use of computers in business environments. With business owners hungry for the best presentation software available, PowerPoint came out on top of its predecessors.
+
+But its domination wasn’t immediate. Although widely believed to be Bill Gates’s brainchild, PowerPoint was actually developed by Robert Gaskins, was originally called ‘Presenter’ and released under a company called ‘Forethought’. In a market where consumers had a host of other established programs to choose from, PowerPoint initially struggled to set itself apart from its competitors. The graphics, bulleted lists and slideshows that are so characteristic of PowerPoint nowadays, were not actually PowerPoint’s own, original ideas.
+
+Microsoft sensed PowerPoint’s potential regardless. Seeing the explosion in business software and office automation, Microsoft seized the opportunity and bought the application for $14 million.  They developed the software further, taking it to new heights with the release of PowerPoint 97. By eliminating the need for programming knowledge or specialist skills, PowerPoint 97 granted personal computer users access to filmesque features like transitions and animations.
+
+From version 97 onwards, PowerPoint went through major upgrades with every release. A version was released on average every two years, spreading through offices like wildfire. The 2000 version introduced a clipboard feature that could hold multiple objects at once. In 2002, PowerPoint transformed its animation engine, allowing users to take advantage of advanced, custom animations. In 2011, they took the upgrade to another level with new background features and special effects. By 2012, after all the advancements, Microsoft announced their achievement of 95% of the presentation software market share.
+
+From the beginning, PowerPoint has put users first, taking away the complexities, and saving them time and effort. PowerPoint’s prioritisation of ease of use means that even those who aren’t very tech-savvy can still create their own presentations. It has encouraged those who aren’t naturally inclined to do presentations, to at least have a go. It’s made high-quality presenting easier and readily available. Today, users can take advantage of pre-designed templates and animations that give their presentations a slick, professional look.
+
+The software has transformed the world of presenting. It’s used in schools, universities, start-ups, global businesses, people’s homes and governments. After all the years of technological innovation, PowerPoint has stayed at the top of the game. If Presidents and world leaders are using it, it’s probably here to stay.
+
+Familiarity with Microsoft Office PowerPoint
+
+In the folder of your choice (or on your desktop), right-click and select "Create - Microsoft PowerPoint Presentation":
+
+Set a title for the file. The title should contain the theme of the presentation - today it is Game.
+
+The file name is necessary so that you can find your work among the others. So always try to name your work in an informative way. You can add your full name to the file name:
+
+Open the file by double-clicking on it with the left mouse button. A blank presentation will open in front of you. To get started, click on the gray rectangle labeled "First slide":
+
+In front of you is the title page of the presentation.
+
+In the title of the slide you should indicate the topic of the presentation, in the subheading - the executor of the work (your First Name and Surname):
+
+Choose a theme for the presentation. You can use the design from the previous lesson or you can come up with one as you go along.
+
+Let's agree that in this lesson we will all use the same design. Since the arrangement of elements may vary from design to design, we will learn from the same template. When the presentation is ready, you can try to change the design to your own preference.
+
+In the top menu, go to the "Designer" tab. Select the "Basis" color theme:
+
+You can choose your own color options:
+
+Let's create a second slide. Find the "Home" tab and click on the phrase "Create Slide". It opens a window where different types of slides are presented. We need the "Two Objects" option:
+
+Click on the "Slide Title" field, where we will write the story of our character.
+
+After that, the "Font" field will become available to us. In it, we will set the font size to 14, so that our whole story will fit in this field:
+
+Now let's get 3 objects (to your taste) from the Insert tab. These will be the answer choice buttons. I would prefer to put Rectangles with rounded edges:
+
+Let's put them one by one:
+
+Great! This will be our reference box that we will copy so we don't have to create one every time. I suggest that you make a copy of the slide right now, and set it aside. To do this, right-click on the slide and select Duplicate Slide:
+
+Now, we have 3 slides on the left side in the column! Let's swap slide 2 and slide 1 so we can use it later. You can do this by just pulling it:
+
+Next, you will copy slide 1 so that you don't have to create a workspace from scratch each time.
+
+Let's go to slide 3. All right! Let's assume that this is the beginning of our game! Let's start by labeling the text in the "Title" field:
+
+You can change the font size by adjusting it to the length of the text. For example, there is very little text here, so we can increase the font size:
+
+All right. Now let's customize the buttons. Right-click on one of the rectangles and select the "Change text" field:
+
+Let's put one answer choice in each button:
+
+Now I suggest adding an image to the slide. To do this, let's go to a neural network that you already know called Kandinsky.
+
+Let's create an image that will show us what is happening on this slide. Let's type the whole story into the prompt and save the result:
+
+Great! Now let's get acquainted with the most important system, namely the hyperlink.
+
+The purpose of a hyperlink is to link documents or web pages into a single system where elements have the ability to interact with each other. Simply put, when you click on a particular button, it will take you to the right page in the presentation.
+
+To use a hyperlink, we first need to create a page with a location where the hyperlink will take us. Duplicate the first slide that we put above the title page and move the duplicate to the bottom:
+
+Now in the "Slide Title" section, we will write the text we need, for example, the answer to the button "Ask his mom to drive him to the class", and complete it with a picture from Kandinsky:
+
+Now let's go back to the third slide. Right-click on the button and select "Hyperlink":
+
+In the menu that opens, select the "Place in document" option:
+
+Next, select the slide we need in the list, namely the one to which the button will send us:
+
+In the upper left corner, click on the screen icon with a triangle (Play button):
+
+The view mode has opened. You can control it by pressing the arrows on your keyboard or by clicking the mouse button:
+
+Scroll to the required slide and the slide with the choice, try to click on the answer button. Did you get it?
+
+Listen to the children's answers, help those who did not succeed
+
+Independent work
+
+Help the children who have questions.
+
+Try to add two more endings on your own:
+
+Summing up - 5 min.
+
+Well, that's it, our game is ready! If you want, you can continue it, that's why we don't remove the buttons next to the picture. For example, let's add a storyline where John improves his grade. Don't forget to remove the first slide so that our game starts from the title page. Our lesson has come to an end for today.
+
+Additional task
+
+Make a button on each slide that takes us back to the previous slide and the title slide.
+
+Tables:
+Table 1:
+Course | Neural Networks. Lesson 5
+Lesson topic | ●      introduction to neural networks;
+●      creating your own game
+Lesson objective | Creating your own game.
+Motivation | Familiarization with new material, learning new skills
+Tools | Automated training places (computer class), projector, Kandinsky neural network, Animated Drawings, EasyPeasy.AI, programforyou
+Goals | ●      in-depth study of neural networks;
+●      working with neural networks
+Expected result | Acquiring new knowledge, motivating students
+
+
+
+POWERPOINT CONTENT:
+------------------------------
+Slide 1: 
+
+Slide 2: How to create a presentation?
+  2
+
+Slide 3: How to customize a slide?
+  3
+
+Slide 4: How to create and customize a second slide?
+  4
+
+Slide 5: Inserting Shapes
+  5
+
+Slide 6: How to duplicate and arrange slides
+  6
+
+Slide 7: Third slide
+  7
+
+Slide 8: Insert text inside the shapes
+  8
+
+Slide 9: Create an image
+  9
+
+Slide 10: Design the slide
+  10
+
+Slide 11: Hyperlinks
+  11
+
+Slide 12: Hyperlinks
+  12
+
+Slide 13: See how it all works
+  13
+
+Slide 14: Add two more endings
+  14
+
+Slide 15: Result
+  15
+
