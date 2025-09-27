@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import {
-  ExternalLink, Brain, Image, MessageCircle, Sparkles, Globe, Palette, Bot
+  ExternalLink, Brain, Image, MessageCircle, Sparkles, Globe, Palette, Bot, GitBranch, Presentation
 } from "lucide-react";
 
 const Games = () => {
@@ -60,6 +60,15 @@ const Games = () => {
       color: "text-indigo-500",
       url: "https://aistudio.google.com/",
       features: ["Gemini AI Model", "Creative Writing", "Code Generation", "Problem Solving", "Multi-turn Conversations"]
+    },
+    {
+      id: "smartdraw",
+      title: "SmartDraw",
+      description: "Create professional flowcharts and diagrams for your game logic and decision trees!",
+      icon: <GitBranch className="w-8 h-8" />,
+      color: "text-cyan-500",
+      url: "https://www.smartdraw.com/",
+      features: ["Flowchart Creation", "Game Logic Design", "Decision Trees", "Professional Diagrams", "Easy Templates"]
     }
   ];
 
@@ -223,6 +232,16 @@ const Games = () => {
               <li>• Ask it to explain complex topics in simple terms</li>
               <li>• Experiment with different conversation styles</li>
               <li>• Challenge it with fun riddles and puzzles!</li>
+            </ul>
+          </div>
+
+          <div className="space-y-3">
+            <h3 className="font-bold text-lg">📊 For SmartDraw Flowcharts:</h3>
+            <ul className="space-y-2 opacity-90">
+              <li>• Start with the flowchart template</li>
+              <li>• Use ovals for start/end, rectangles for actions</li>
+              <li>• Use diamonds for decisions (yes/no questions)</li>
+              <li>• Connect shapes with arrows to show flow</li>
             </ul>
           </div>
 
