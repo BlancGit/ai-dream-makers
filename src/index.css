@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Fun, vibrant colors for children's learning */
+    --background: 220 20% 98%;
+    --foreground: 240 15% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 15% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 15% 15%;
+
+    /* Bright, engaging primary colors */
+    --primary: 260 100% 60%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 260 100% 80%;
+    
+    /* Fun secondary colors */
+    --secondary: 45 100% 85%;
+    --secondary-foreground: 30 25% 25%;
+    
+    /* Educational accent colors */
+    --accent: 160 100% 70%;
+    --accent-foreground: 160 50% 15%;
+    
+    /* Success and warning colors */
+    --success: 120 100% 40%;
+    --success-foreground: 0 0% 100%;
+    --warning: 30 100% 55%;
+    --warning-foreground: 0 0% 100%;
+
+    --muted: 220 20% 95%;
+    --muted-foreground: 240 8% 50%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 260 100% 60%;
+
+    --radius: 1rem;
+    
+    /* Beautiful gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-learning: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--secondary)));
+    --gradient-fun: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    --gradient-background: linear-gradient(135deg, hsl(var(--background)), hsl(var(--muted)));
+    
+    /* Engaging shadows and animations */
+    --shadow-fun: 0 10px 30px -5px hsl(var(--primary) / 0.3);
+    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.4);
+    --shadow-card: 0 8px 25px -5px hsl(var(--primary) / 0.1);
+    
+    /* Smooth transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode with fun, less intense colors for children */
+    --background: 240 15% 8%;
+    --foreground: 220 20% 95%;
+
+    --card: 240 15% 12%;
+    --card-foreground: 220 20% 95%;
+
+    --popover: 240 15% 12%;
+    --popover-foreground: 220 20% 95%;
+
+    --primary: 260 100% 70%;
+    --primary-foreground: 240 15% 8%;
+    --primary-glow: 260 100% 85%;
+
+    --secondary: 45 80% 70%;
+    --secondary-foreground: 240 15% 8%;
+
+    --accent: 160 80% 60%;
+    --accent-foreground: 240 15% 8%;
+
+    --success: 120 80% 50%;
+    --success-foreground: 240 15% 8%;
+    --warning: 30 90% 65%;
+    --warning-foreground: 240 15% 8%;
+
+    --muted: 240 15% 15%;
+    --muted-foreground: 220 8% 60%;
+
+    --destructive: 0 62.8% 60%;
+    --destructive-foreground: 240 15% 8%;
+
+    --border: 240 15% 20%;
+    --input: 240 15% 20%;
+    --ring: 260 100% 70%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
