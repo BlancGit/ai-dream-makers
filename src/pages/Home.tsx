@@ -24,12 +24,12 @@ const Home = () => {
         
         <div className="flex flex-wrap justify-center gap-4">
           <Button variant="default" size="lg" asChild className="text-lg">
-            <Link to="/lesson1">
+            <Link to="/lessons/1">
               <BookOpen className="w-5 h-5" />
               Start Learning!
             </Link>
           </Button>
-          
+
           <Button variant="secondary" size="lg" asChild className="text-lg">
             <Link to="/games">
               <GamepadIcon className="w-5 h-5" />
@@ -90,13 +90,13 @@ const Home = () => {
           What You'll Learn
         </h2>
         
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           <div className="space-y-4">
             <h3 className="text-xl font-bold flex items-center gap-2">
               <Star className="w-5 h-5 text-warning" />
               Lesson 1: History & Basics
             </h3>
-            <ul className="space-y-2 text-muted-foreground">
+            <ul className="space-y-2 text-muted-foreground text-sm">
               <li className="flex items-center gap-2">
                 <Sparkles className="w-4 h-4 text-primary" />
                 Meet the first neural network - the Perceptron!
@@ -107,21 +107,20 @@ const Home = () => {
               </li>
               <li className="flex items-center gap-2">
                 <Sparkles className="w-4 h-4 text-primary" />
-                Discover how neural networks learn
-              </li>
-              <li className="flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-primary" />
-                Understand what prompts are and how to use them
+                Understand what prompts are
               </li>
             </ul>
+            <Button variant="outline" asChild className="w-full">
+              <Link to="/lessons/1">Start Lesson 1</Link>
+            </Button>
           </div>
-          
+
           <div className="space-y-4">
             <h3 className="text-xl font-bold flex items-center gap-2">
               <Star className="w-5 h-5 text-warning" />
               Lesson 2: Types & Applications
             </h3>
-            <ul className="space-y-2 text-muted-foreground">
+            <ul className="space-y-2 text-muted-foreground text-sm">
               <li className="flex items-center gap-2">
                 <Sparkles className="w-4 h-4 text-primary" />
                 Explore 7 amazing areas of AI
@@ -132,13 +131,84 @@ const Home = () => {
               </li>
               <li className="flex items-center gap-2">
                 <Sparkles className="w-4 h-4 text-primary" />
-                Generate images with neural networks
-              </li>
-              <li className="flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-primary" />
                 Chat with AI characters
               </li>
             </ul>
+            <Button variant="outline" asChild className="w-full">
+              <Link to="/lessons/2">Start Lesson 2</Link>
+            </Button>
+          </div>
+
+          <div className="space-y-4">
+            <h3 className="text-xl font-bold flex items-center gap-2">
+              <Star className="w-5 h-5 text-warning" />
+              Lesson 3: AI Art Generation
+            </h3>
+            <ul className="space-y-2 text-muted-foreground text-sm">
+              <li className="flex items-center gap-2">
+                <Sparkles className="w-4 h-4 text-primary" />
+                Master Kandinsky image generation
+              </li>
+              <li className="flex items-center gap-2">
+                <Sparkles className="w-4 h-4 text-primary" />
+                Write effective prompts
+              </li>
+              <li className="flex items-center gap-2">
+                <Sparkles className="w-4 h-4 text-primary" />
+                Explore 18 artistic styles
+              </li>
+            </ul>
+            <Button variant="outline" asChild className="w-full">
+              <Link to="/lessons/3">Start Lesson 3</Link>
+            </Button>
+          </div>
+
+          <div className="space-y-4">
+            <h3 className="text-xl font-bold flex items-center gap-2">
+              <Star className="w-5 h-5 text-warning" />
+              Lesson 4: Game Design
+            </h3>
+            <ul className="space-y-2 text-muted-foreground text-sm">
+              <li className="flex items-center gap-2">
+                <Sparkles className="w-4 h-4 text-primary" />
+                Create flowcharts for games
+              </li>
+              <li className="flex items-center gap-2">
+                <Sparkles className="w-4 h-4 text-primary" />
+                Design branching storylines
+              </li>
+              <li className="flex items-center gap-2">
+                <Sparkles className="w-4 h-4 text-primary" />
+                Plan multiple endings
+              </li>
+            </ul>
+            <Button variant="outline" asChild className="w-full">
+              <Link to="/lessons/4">Start Lesson 4</Link>
+            </Button>
+          </div>
+
+          <div className="space-y-4">
+            <h3 className="text-xl font-bold flex items-center gap-2">
+              <Star className="w-5 h-5 text-warning" />
+              Lesson 5: Build Your Game!
+            </h3>
+            <ul className="space-y-2 text-muted-foreground text-sm">
+              <li className="flex items-center gap-2">
+                <Sparkles className="w-4 h-4 text-primary" />
+                Create interactive PowerPoint games
+              </li>
+              <li className="flex items-center gap-2">
+                <Sparkles className="w-4 h-4 text-primary" />
+                Add hyperlinks and navigation
+              </li>
+              <li className="flex items-center gap-2">
+                <Sparkles className="w-4 h-4 text-primary" />
+                Combine AI images with your story
+              </li>
+            </ul>
+            <Button variant="outline" asChild className="w-full">
+              <Link to="/lessons/5">Start Lesson 5</Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -151,7 +221,7 @@ const Home = () => {
         </p>
         
         <Button variant="secondary" size="lg" asChild className="text-lg">
-          <Link to="/lesson1">
+          <Link to="/lesson/1">
             Start Your AI Journey Now!
           </Link>
         </Button>

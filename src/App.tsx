@@ -7,6 +7,9 @@ import { Layout } from "./components/Layout";
 import Home from "./pages/Home";
 import Lesson1 from "./pages/Lesson1";
 import Lesson2 from "./pages/Lesson2";
+import Lesson3 from "./pages/Lesson3";
+import Lesson4 from "./pages/Lesson4";
+import Lesson5 from "./pages/Lesson5";
 import Games from "./pages/Games";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
@@ -22,8 +25,11 @@ const App = () => (
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/lesson1" element={<Lesson1 />} />
-            <Route path="/lesson2" element={<Lesson2 />} />
+            <Route path="/lessons/1" element={<Lesson1 />} />
+            <Route path="/lessons/2" element={<Lesson2 />} />
+            <Route path="/lessons/3" element={<Lesson3 />} />
+            <Route path="/lessons/4" element={<Lesson4 />} />
+            <Route path="/lessons/5" element={<Lesson5 />} />
             <Route path="/games" element={<Games />} />
             <Route path="/about" element={<About />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
