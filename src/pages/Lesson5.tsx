@@ -63,6 +63,182 @@ const lesson5Quiz = [
     ],
     correctAnswer: 1,
     explanation: "Always test your game in Play mode, clicking through every possible path to make sure all hyperlinks work!"
+  },
+  {
+    question: "What is PowerPoint's original name before Microsoft acquired it?",
+    options: [
+      "SlideShow",
+      "Presenter",
+      "Speaker",
+      "Display"
+    ],
+    correctAnswer: 1,
+    explanation: "PowerPoint was originally called 'Presenter' when it was created by Robert Gaskins in 1987!"
+  },
+  {
+    question: "Which feature makes PowerPoint ideal for creating interactive games?",
+    options: [
+      "Animation effects",
+      "Hyperlinks for navigation",
+      "Sound effects",
+      "Video embedding"
+    ],
+    correctAnswer: 1,
+    explanation: "Hyperlinks allow you to create branching narratives and interactive choices in PowerPoint games!"
+  },
+  {
+    question: "What should be your first step when creating a PowerPoint game?",
+    options: [
+      "Add animations",
+      "Plan your story and map out choices",
+      "Choose background colors",
+      "Record voice narration"
+    ],
+    correctAnswer: 1,
+    explanation: "Always plan your story and map out the choices first - this creates the foundation for your entire game!"
+  },
+  {
+    question: "How can you make your PowerPoint game slides more engaging?",
+    options: [
+      "Use only text",
+      "Add AI-generated images and visual elements",
+      "Keep everything black and white",
+      "Use the smallest font possible"
+    ],
+    correctAnswer: 1,
+    explanation: "AI-generated images from tools like Kandinsky can make your slides much more visually engaging and immersive!"
+  },
+  {
+    question: "What happens when you click a hyperlink in Play mode?",
+    options: [
+      "Nothing happens",
+      "It edits the slide",
+      "It navigates to the linked slide",
+      "It deletes the slide"
+    ],
+    correctAnswer: 2,
+    explanation: "Hyperlinks in Play mode navigate to whatever slide or location you've linked them to!"
+  },
+  {
+    question: "Which game genre works best for PowerPoint games?",
+    options: [
+      "Fast-paced action games",
+      "Choose-your-own-adventure stories",
+      "Racing games",
+      "Real-time strategy games"
+    ],
+    correctAnswer: 1,
+    explanation: "Choose-your-own-adventure stories work perfectly with PowerPoint's slide-based navigation system!"
+  },
+  {
+    question: "How should you organize your slides when creating a game?",
+    options: [
+      "Randomly",
+      "In logical story order with clear navigation paths",
+      "All on one slide",
+      "Alphabetically"
+    ],
+    correctAnswer: 1,
+    explanation: "Organize slides in logical story order so players can follow clear paths through your game narrative!"
+  },
+  {
+    question: "What should you include on your game's ending slides?",
+    options: [
+      "Just the word 'End'",
+      "Congratulatory message and option to restart",
+      "Nothing",
+      "Only a back button"
+    ],
+    correctAnswer: 1,
+    explanation: "Ending slides should congratulate the player and provide an option to restart or try different paths!"
+  },
+  {
+    question: "How can you add variety to your PowerPoint game?",
+    options: [
+      "Use the same choices everywhere",
+      "Create multiple endings and branching paths",
+      "Keep all slides identical",
+      "Only use one type of image"
+    ],
+    correctAnswer: 1,
+    explanation: "Multiple endings and branching paths give players different experiences and encourage replay!"
+  },
+  {
+    question: "What is the advantage of using AI-generated images in your game?",
+    options: [
+      "They're always free",
+      "You can create custom images that perfectly match your story",
+      "They automatically add sound",
+      "They make games load faster"
+    ],
+    correctAnswer: 1,
+    explanation: "AI-generated images let you create exactly what you envision for your story, rather than using generic stock photos!"
+  },
+  {
+    question: "How should you handle dead ends in your PowerPoint game?",
+    options: [
+      "Leave players stuck",
+      "Always provide a way back or to restart",
+      "Delete those slides",
+      "Hide them from players"
+    ],
+    correctAnswer: 1,
+    explanation: "Always give players a way to continue - either go back to make different choices or restart the game!"
+  },
+  {
+    question: "What makes PowerPoint better than other tools for beginner game creators?",
+    options: [
+      "It's the most expensive",
+      "It's familiar, visual, and doesn't require coding",
+      "It has the best graphics",
+      "It only works on Windows"
+    ],
+    correctAnswer: 1,
+    explanation: "PowerPoint is perfect for beginners because it's familiar, visual, and lets you create games without any programming!"
+  },
+  {
+    question: "How should you test different story paths in your game?",
+    options: [
+      "Assume they all work",
+      "Test each possible path from start to finish",
+      "Only test your favorite path",
+      "Test randomly"
+    ],
+    correctAnswer: 1,
+    explanation: "Test every possible path to ensure all hyperlinks work and every story branch leads to a satisfying conclusion!"
+  },
+  {
+    question: "What should you consider when sharing your PowerPoint game?",
+    options: [
+      "Only share with developers",
+      "Make sure it works in Play mode for others",
+      "Keep it secret forever",
+      "Only share the first slide"
+    ],
+    correctAnswer: 1,
+    explanation: "Ensure your game works perfectly in Play mode so others can enjoy the full interactive experience you created!"
+  },
+  {
+    question: "What's the best approach to improve your PowerPoint games over time?",
+    options: [
+      "Never change anything",
+      "Get feedback from players and iterate",
+      "Make them more complicated",
+      "Remove all interactivity"
+    ],
+    correctAnswer: 1,
+    explanation: "Getting feedback from players helps you understand what works well and what could be improved in your games!"
+  },
+  {
+    question: "Why is PowerPoint a great starting point for game development?",
+    options: [
+      "It teaches coding immediately",
+      "It teaches story structure, logic flow, and user experience design",
+      "It's only for presentations",
+      "It replaces all other game engines"
+    ],
+    correctAnswer: 1,
+    explanation: "PowerPoint teaches fundamental game design concepts like story structure, logic flow, and user experience - great preparation for advanced game development!"
   }
 ];
 

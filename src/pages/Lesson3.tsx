@@ -63,6 +63,171 @@ const lesson3Quiz = [
     ],
     correctAnswer: 2,
     explanation: "Kandinsky offers 18 different artistic styles, from photorealism to illustrations!"
+  },
+  {
+    question: "What is the best structure for a Kandinsky prompt?",
+    options: [
+      "Style + Object + Location",
+      "Object + Characteristics + Action + Location + Style",
+      "Color + Size + Object",
+      "Artist + Style + Color"
+    ],
+    correctAnswer: 1,
+    explanation: "The best prompt structure is: Object + Characteristics + Action + Location + Style for comprehensive results!"
+  },
+  {
+    question: "When was Kandinsky neural network released?",
+    options: [
+      "2021",
+      "2022",
+      "2023",
+      "2020"
+    ],
+    correctAnswer: 1,
+    explanation: "Kandinsky was released in 2022 by Sber AI and other Russian organizations."
+  },
+  {
+    question: "How many text-image pairs was Kandinsky trained on?",
+    options: [
+      "50 million",
+      "100 million",
+      "170 million",
+      "200 million"
+    ],
+    correctAnswer: 2,
+    explanation: "Kandinsky was trained on a massive dataset of 170 million text-image pairs!"
+  },
+  {
+    question: "What should you use the eraser tool for in Kandinsky?",
+    options: [
+      "Deleting the entire image",
+      "Editing specific areas of generated images",
+      "Changing image colors",
+      "Resizing images"
+    ],
+    correctAnswer: 1,
+    explanation: "The eraser tool allows you to edit and modify specific areas of your generated images."
+  },
+  {
+    question: "Which prompt element should you avoid in the main prompt field?",
+    options: [
+      "Color descriptions",
+      "Artist names",
+      "Negations (what you don't want)",
+      "Style references"
+    ],
+    correctAnswer: 2,
+    explanation: "Avoid negations in the main prompt - use the separate negative prompt field for things you don't want!"
+  },
+  {
+    question: "What is the default aspect ratio for Kandinsky images?",
+    options: [
+      "16:9",
+      "4:3",
+      "1:1 (square)",
+      "3:2"
+    ],
+    correctAnswer: 2,
+    explanation: "Kandinsky generates images in 1:1 (square) ratio by default in the central image area."
+  },
+  {
+    question: "Which famous Russian artist inspired the name 'Kandinsky'?",
+    options: [
+      "Ivan Shishkin",
+      "Wassily Kandinsky",
+      "Ilya Repin",
+      "Marc Chagall"
+    ],
+    correctAnswer: 1,
+    explanation: "The AI is named after Wassily Kandinsky, the famous Russian abstract artist and art theorist."
+  },
+  {
+    question: "What type of image generation does Kandinsky specialize in?",
+    options: [
+      "Text-to-image generation",
+      "Image-to-video conversion",
+      "Audio-to-image synthesis",
+      "3D model creation"
+    ],
+    correctAnswer: 0,
+    explanation: "Kandinsky specializes in text-to-image generation, creating images from text descriptions."
+  },
+  {
+    question: "Which of these is a good example of adding characteristics to a prompt?",
+    options: [
+      "Cat",
+      "Fluffy orange cat with green eyes",
+      "Cat sitting",
+      "Cat photorealism"
+    ],
+    correctAnswer: 1,
+    explanation: "Adding specific characteristics like 'fluffy orange cat with green eyes' gives the AI clear details to work with."
+  },
+  {
+    question: "What happens when you reference a specific artist in your prompt?",
+    options: [
+      "The image becomes copyrighted",
+      "The AI applies that artist's style to your image",
+      "The prompt becomes invalid",
+      "The image quality decreases"
+    ],
+    correctAnswer: 1,
+    explanation: "Referencing artists like 'Van Gogh style' or 'Picasso-inspired' applies their artistic techniques to your generated image."
+  },
+  {
+    question: "How should you handle complex scenes in Kandinsky prompts?",
+    options: [
+      "Use one very long sentence",
+      "Break down into clear, simple elements",
+      "Only describe the background",
+      "Focus only on colors"
+    ],
+    correctAnswer: 1,
+    explanation: "Break complex scenes into clear, simple elements - object, action, location, style - for better results."
+  },
+  {
+    question: "What is the purpose of the style selection feature?",
+    options: [
+      "To change image size",
+      "To choose from 18 different artistic styles",
+      "To adjust image brightness",
+      "To select languages"
+    ],
+    correctAnswer: 1,
+    explanation: "The style selection lets you choose from 18 different artistic styles like photorealism, watercolor, oil painting, etc."
+  },
+  {
+    question: "Which prompt would likely produce the best results?",
+    options: [
+      "Make me a picture",
+      "Dog",
+      "Golden retriever puppy playing with a red ball in a sunny garden, watercolor style",
+      "Not a cat, not indoors, not dark"
+    ],
+    correctAnswer: 2,
+    explanation: "Specific, descriptive prompts with clear objects, actions, locations, and styles produce the best results!"
+  },
+  {
+    question: "What should you do if your first generated image isn't perfect?",
+    options: [
+      "Give up and try a different AI",
+      "Use the same prompt repeatedly",
+      "Refine your prompt and try again",
+      "Only use negative prompts"
+    ],
+    correctAnswer: 2,
+    explanation: "Refining your prompt by adjusting details, style, or using negative prompts can greatly improve your results!"
+  },
+  {
+    question: "Which of these is the best use of a negative prompt?",
+    options: [
+      "No blurry, no dark, no ugly",
+      "Blurry, dark lighting, distorted",
+      "Beautiful, clear, bright",
+      "Red, blue, green"
+    ],
+    correctAnswer: 1,
+    explanation: "Negative prompts should list specific things to avoid, like 'blurry, dark lighting, distorted' - not positive descriptions."
   }
 ];
 

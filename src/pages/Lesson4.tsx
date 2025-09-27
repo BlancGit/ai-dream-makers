@@ -63,6 +63,171 @@ const lesson4Quiz = [
     ],
     correctAnswer: 1,
     explanation: "Flowcharts help visualize decision trees, branching narratives, and game logic before coding!"
+  },
+  {
+    question: "Which symbol represents a loop in flowcharts?",
+    options: [
+      "Diamond",
+      "Circle",
+      "Hexagon or special loop symbol",
+      "Square"
+    ],
+    correctAnswer: 2,
+    explanation: "Loops are typically represented by hexagons or special loop symbols that show repeated actions!"
+  },
+  {
+    question: "What should you do before creating a flowchart?",
+    options: [
+      "Start drawing immediately",
+      "Define the problem and understand the process",
+      "Choose random symbols",
+      "Copy another flowchart"
+    ],
+    correctAnswer: 1,
+    explanation: "Always define the problem and understand what process you're mapping before creating a flowchart!"
+  },
+  {
+    question: "In game development, what might a decision diamond contain?",
+    options: [
+      "Graphics specifications",
+      "Player choice or game condition",
+      "Sound effects",
+      "Character names"
+    ],
+    correctAnswer: 1,
+    explanation: "Decision diamonds contain player choices like 'Fight or Run?' or game conditions like 'Health > 0?'"
+  },
+  {
+    question: "What is the purpose of connecting arrows in flowcharts?",
+    options: [
+      "To make it look pretty",
+      "To show the flow and direction of the process",
+      "To connect unrelated elements",
+      "To replace text descriptions"
+    ],
+    correctAnswer: 1,
+    explanation: "Arrows show the flow and direction, guiding you through the logical sequence of steps!"
+  },
+  {
+    question: "Which flowchart element would represent 'Player wins the game'?",
+    options: [
+      "Diamond (decision)",
+      "Rectangle (process)",
+      "Oval (start/end)",
+      "Hexagon (loop)"
+    ],
+    correctAnswer: 2,
+    explanation: "Game endings like 'Player wins' are represented by oval shapes as they mark end points!"
+  },
+  {
+    question: "What makes a good flowchart?",
+    options: [
+      "Lots of colors and decorations",
+      "Clear, simple, and easy to follow",
+      "As many symbols as possible",
+      "Complex interconnected paths"
+    ],
+    correctAnswer: 1,
+    explanation: "Good flowcharts are clear, simple, and easy to follow - they communicate the process effectively!"
+  },
+  {
+    question: "In a game flowchart, what would 'Check if player has key' be?",
+    options: [
+      "Start/End oval",
+      "Process rectangle",
+      "Decision diamond",
+      "Loop hexagon"
+    ],
+    correctAnswer: 2,
+    explanation: "'Check if player has key' is a condition that leads to different outcomes, so it's a decision diamond!"
+  },
+  {
+    question: "How should you handle complex game logic in flowcharts?",
+    options: [
+      "Put everything in one huge flowchart",
+      "Break it down into smaller, manageable flowcharts",
+      "Avoid using flowcharts for complex logic",
+      "Use only text descriptions"
+    ],
+    correctAnswer: 1,
+    explanation: "Break complex game logic into smaller, focused flowcharts that are easier to understand and debug!"
+  },
+  {
+    question: "What does a flowchart help you do before programming?",
+    options: [
+      "Write perfect code immediately",
+      "Plan and visualize the logic flow",
+      "Choose programming languages",
+      "Design graphics"
+    ],
+    correctAnswer: 1,
+    explanation: "Flowcharts help you plan and visualize the logic flow, making programming much easier and less error-prone!"
+  },
+  {
+    question: "Which scenario best fits a loop in a game flowchart?",
+    options: [
+      "Player chooses a character",
+      "Game ends",
+      "Enemy keeps attacking until defeated",
+      "Player enters name"
+    ],
+    correctAnswer: 2,
+    explanation: "Repeated actions like 'Enemy keeps attacking until defeated' are perfect examples of loops in game logic!"
+  },
+  {
+    question: "What should each symbol in your flowchart have?",
+    options: [
+      "Bright colors",
+      "Clear, descriptive text",
+      "Complex mathematical formulas",
+      "Multiple arrows pointing everywhere"
+    ],
+    correctAnswer: 1,
+    explanation: "Every symbol should have clear, descriptive text that explains exactly what happens at that step!"
+  },
+  {
+    question: "How do flowcharts help with debugging games?",
+    options: [
+      "They automatically fix bugs",
+      "They help trace through logic step by step",
+      "They prevent all bugs from happening",
+      "They make code run faster"
+    ],
+    correctAnswer: 1,
+    explanation: "Flowcharts help you trace through the logic step by step to find where problems occur!"
+  },
+  {
+    question: "What is the best way to start creating a game flowchart?",
+    options: [
+      "Begin with the most complex part",
+      "Start with the main game flow from beginning to end",
+      "Draw random symbols first",
+      "Copy someone else's flowchart"
+    ],
+    correctAnswer: 1,
+    explanation: "Start with the main game flow from beginning to end, then add details and sub-processes later!"
+  },
+  {
+    question: "In flowcharts, what happens when you reach a decision diamond?",
+    options: [
+      "The process always continues straight",
+      "The process splits into different paths based on the condition",
+      "The flowchart ends",
+      "A loop automatically starts"
+    ],
+    correctAnswer: 1,
+    explanation: "Decision diamonds split the process into different paths - like 'if yes, go left; if no, go right!'"
+  },
+  {
+    question: "Why is it important to test your flowchart logic?",
+    options: [
+      "To make it look professional",
+      "To ensure all paths work and make sense",
+      "To add more symbols",
+      "To make it more colorful"
+    ],
+    correctAnswer: 1,
+    explanation: "Testing ensures all logical paths work correctly and players can't get stuck in impossible situations!"
   }
 ];
 
