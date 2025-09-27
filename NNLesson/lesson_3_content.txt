@@ -1,0 +1,194 @@
+NEURAL NETWORKS LESSON 3 - EXTRACTED CONTENT
+============================================================
+
+WORD DOCUMENT CONTENT:
+------------------------------
+Additional Content:
+Lesson 3
+
+Neural Networks, 1 lesson
+
+Neural Networks, 2 lesson
+
+Neural Networks, 3 lesson
+
+Neural Networks, 4 lesson
+
+Neural Networks, 5 lesson
+
+Methodological lesson plan
+
+Organizational moment - 5 min.
+
+Theoretical part - 5 min
+
+Registering via Temp-mail, go to Kandinsky.
+
+The topic of today's lesson will be in-depth work with the prompts:
+
+What "Kandinsky" can do
+
+The first version for generating pictures was released back in 2021 - it was called ruDALL-E. It was trained on a billion text-to-image combinations.
+
+"Kandinsky" inherited all this baggage of knowledge and got additional training - on a new dataset of 170 million pairs of "text - image". The neural network was released in the summer of 2022, since then there have already been two updates - in November 2022 and in April 2023.
+
+Now Kandinsky can:
+
+generate an image from scratch by text request in 101 languages and create pictures in different styles - from photorealism to drawn illustrations;
+
+edit pictures: on the uploaded or generated image you can mark unsuitable areas and write what to replace them with - "Kandinsky" will redraw the fragments in the marked field;
+
+combine two images into one;
+
+complete the image. When "Kandinsky" has generated an image, it can add something to the top, bottom, right and left sides of the image:
+
+Interface and features
+
+The interface of the editor's official website looks like this:
+
+The area for the future image is located in the center. By default, its size is 1-to-1, but it can be reduced using the green frame.
+
+In the center under this frame is the area for the prompt, and there is also the "Create" button. In addition, there is a negative prompt - the place where you write something that should not be there.
+
+Next to it there is a button for selecting a style.
+
+You can download the resulting image using the button in the upper left corner:
+
+The neural network only saves the images you have created for the duration of your session, and you can scroll through them with your mouse and the spacebar button pressed. If you leave the site, the images cannot be found anywhere else.
+
+If you need an image of a different size or format, the neural network can complete its generated image. To do this, you have to first create a 1-to-1 picture and then move the frame. "Kandinsky" will fill all the empty space in the frame, taking into account the original plot:
+
+There is also an Eraser tool to the right of the Generate tool. You can use it to erase all unnecessary elements in the uploaded or generated image. Then you need to write a query to replace the inappropriate fragments, and the neural network will give you the result:
+
+For a good result, it is important to set the query correctly:
+
+first, identify the main objects in the picture;
+
+if necessary, indicate the characteristics of these objects (color, size, texture);
+
+if necessary, add the action they should perform;
+
+specify the place of action (room, street, forest, spaceship);
+
+you can specify the drawing style, if the desired option is not found in the service menu. Names of famous artists or photographers are also suitable for specifying the style;
+
+do not mention too many objects with specific details - this may confuse the neural network, and the result will not be as desired;
+
+avoid the particle "not" and other negations in your queries.
+
+Let's try to generate some prompts for which "Kandinsky" can give us quality images.
+
+Prompt: Dodge Durango in the mountains, style painting by artist Ivan Shishkin.
+
+This is a short query. It has everything you need: we specify the car brand, location and style of the works of a particular artist.
+
+While the image is being generated, tell the children about the famous personalities we mention in the queries.
+
+Ivan Ivanovich Shishkin (1832-1898) - famous Russian painter, master of landscape genre and engraving, academician, teacher, professor of the Imperial Academy of Arts. He is the author of the painting "Morning in a Pine Forest", one of the most famous Russian landscapes.
+
+The result is as follows:
+
+Prompt: Cat in water, realistic and detailed render, Avatar movie style, green and amber, custom illustration, realistic lighting.
+
+It's a long but very detailed query, which is what will give us a relatively similar result.
+
+James Cameron is best known as an Oscar-winning film director with massive box-office hits such as “Aliens” (1986), “Titanic” (1997), and “Avatar” (2009). Cameron’s most celebrated film, “Titanic,” was the first movie to earn more than one billion dollars and he took home Academy Awards for Best Director, Best Film Editing, and Best Picture. Although best known as a filmmaker, Cameron is also a deep-sea explorer, and inventor of cutting-edge film technology. Starting with "Titanic" (1997), Cameron directed exceptionally high-budget, large-scale and box-office blockbusters, each of which took many years to create.
+
+The result is as follows:
+
+Prompt: Edith Piaf on stage, watercolor style
+
+The neural network produced an illustration that resembles a watercolor sketch. The picture even has the texture of watercolor paper.
+
+Édith Piaf (born Édith Giovanna Gassion; 19 December 1915 – 10 October 1963) was a French singer best known for performing songs in the cabaret and modern chanson genres. She is widely regarded as France's greatest popular singer and one of the most celebrated performers of the 20th century.
+
+The result is as follows:
+
+Negative Prompts are keywords or phrases that specify to avoid certain elements, styles or objects in created images.
+
+As an example, let's try a negative prompt for Edith Piaf. Let's say we want the microphone to be missing from the image. So, we need to erase it. In the Prompt tab, we'll need to write "Hand" and in the Negative Prompt tab, we'll write "Microphone".
+
+The result is as follows:
+
+Don't forget that neural networks can sometimes hallucinate or simply not understand you. For example, you might get something like this!
+
+Nothing wrong with that, you can always go back one step by using the "Step Back" buttons and one step forward by using the "Step Forward" button respectively:
+
+After a few corrective queries, we managed to get this image:
+
+To fully understand how neural networks work, we need to familiarize ourselves with different image styles.
+
+You can find them in the "Style" tab:
+
+We click on the "Style" tab and see that there are 18 styles available at the moment.
+
+Let's try to choose 1 style, for example, a pencil drawing.
+
+Invite the kids to enter their prompt and see how it would look in different styles.
+
+Summing up - 5 min.
+
+I suggest you get acquainted with the rest of the tools on your own. There are many more interesting things you can learn on this site. For today, the lesson has come to an end.
+
+Additional task
+
+In the "Video" tab below the pictures, kids can generate a video:
+
+To do this, we need to fill in the prompt and select "Camera Direction". After that we press "Generate", then the video sequence generation will start, which will last about 3 minutes:
+
+You can also select the window size and model of the video or animation:
+
+Tables:
+Table 1:
+Course | Neural Networks. Lesson 3
+Lesson topic | ●      familiarization with neural networks;
+●      in-depth work with prompt
+Lesson objective | In-depth work with prompt
+Motivation | Learning new material, acquiring new skills
+Tools | Automated training places (computer class), projector, Kandinsky neural network, YandexGPT
+Goals | ●      in-depth study of neural networks;
+●      working with neural networks
+Expected result | Acquisition of new knowledge, motivation of students
+
+
+
+POWERPOINT CONTENT:
+------------------------------
+Slide 1: 
+
+Slide 2: Kandinsky
+  2
+
+Slide 3: What Kandinsky can do
+  3
+
+Slide 4: Interface and Features
+  4
+
+Slide 5: Sample Prompts
+  5
+  PROMPT: Dodge Durango in the mountains, style of Ivan Shishkin's painting
+
+Slide 6: Sample Prompts
+  6
+  PROMPT: cat in water, realistic and detailed rendering, Avatar movie style, green and amber, custom illustration, realistic lighting
+
+Slide 7: Sample Prompts
+  7
+  PROMPT: Edith Piaf on stage, watercolor style
+
+Slide 8: Result
+  8
+
+Slide 9: Style
+  9
+
+Slide 10: Stylish solutions for common requests
+  10
+
+Slide 11: Video Generation
+  11
+
+Slide 12: Animation
+  12
+

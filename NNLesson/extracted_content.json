@@ -1,0 +1,689 @@
+{
+  "3": {
+    "word_document": {
+      "title": "",
+      "paragraphs": [
+        "Lesson 3",
+        "Neural Networks, 1 lesson",
+        "Neural Networks, 2 lesson",
+        "Neural Networks, 3 lesson",
+        "Neural Networks, 4 lesson",
+        "Neural Networks, 5 lesson",
+        "Methodological lesson plan",
+        "Organizational moment - 5 min.",
+        "Theoretical part - 5 min",
+        "Registering via Temp-mail, go to Kandinsky.",
+        "The topic of today's lesson will be in-depth work with the prompts:",
+        "What \"Kandinsky\" can do",
+        "The first version for generating pictures was released back in 2021 - it was called ruDALL-E. It was trained on a billion text-to-image combinations.",
+        "\"Kandinsky\" inherited all this baggage of knowledge and got additional training - on a new dataset of 170 million pairs of \"text - image\". The neural network was released in the summer of 2022, since then there have already been two updates - in November 2022 and in April 2023.",
+        "Now Kandinsky can:",
+        "generate an image from scratch by text request in 101 languages and create pictures in different styles - from photorealism to drawn illustrations;",
+        "edit pictures: on the uploaded or generated image you can mark unsuitable areas and write what to replace them with - \"Kandinsky\" will redraw the fragments in the marked field;",
+        "combine two images into one;",
+        "complete the image. When \"Kandinsky\" has generated an image, it can add something to the top, bottom, right and left sides of the image:",
+        "Interface and features",
+        "The interface of the editor's official website looks like this:",
+        "The area for the future image is located in the center. By default, its size is 1-to-1, but it can be reduced using the green frame.",
+        "In the center under this frame is the area for the prompt, and there is also the \"Create\" button. In addition, there is a negative prompt - the place where you write something that should not be there.",
+        "Next to it there is a button for selecting a style.",
+        "You can download the resulting image using the button in the upper left corner:",
+        "The neural network only saves the images you have created for the duration of your session, and you can scroll through them with your mouse and the spacebar button pressed. If you leave the site, the images cannot be found anywhere else.",
+        "If you need an image of a different size or format, the neural network can complete its generated image. To do this, you have to first create a 1-to-1 picture and then move the frame. \"Kandinsky\" will fill all the empty space in the frame, taking into account the original plot:",
+        "There is also an Eraser tool to the right of the Generate tool. You can use it to erase all unnecessary elements in the uploaded or generated image. Then you need to write a query to replace the inappropriate fragments, and the neural network will give you the result:",
+        "For a good result, it is important to set the query correctly:",
+        "first, identify the main objects in the picture;",
+        "if necessary, indicate the characteristics of these objects (color, size, texture);",
+        "if necessary, add the action they should perform;",
+        "specify the place of action (room, street, forest, spaceship);",
+        "you can specify the drawing style, if the desired option is not found in the service menu. Names of famous artists or photographers are also suitable for specifying the style;",
+        "do not mention too many objects with specific details - this may confuse the neural network, and the result will not be as desired;",
+        "avoid the particle \"not\" and other negations in your queries.",
+        "Let's try to generate some prompts for which \"Kandinsky\" can give us quality images.",
+        "Prompt: Dodge Durango in the mountains, style painting by artist Ivan Shishkin.",
+        "This is a short query. It has everything you need: we specify the car brand, location and style of the works of a particular artist.",
+        "While the image is being generated, tell the children about the famous personalities we mention in the queries.",
+        "Ivan Ivanovich Shishkin (1832-1898) - famous Russian painter, master of landscape genre and engraving, academician, teacher, professor of the Imperial Academy of Arts. He is the author of the painting \"Morning in a Pine Forest\", one of the most famous Russian landscapes.",
+        "The result is as follows:",
+        "Prompt: Cat in water, realistic and detailed render, Avatar movie style, green and amber, custom illustration, realistic lighting.",
+        "It's a long but very detailed query, which is what will give us a relatively similar result.",
+        "James Cameron is best known as an Oscar-winning film director with massive box-office hits such as “Aliens” (1986), “Titanic” (1997), and “Avatar” (2009). Cameron’s most celebrated film, “Titanic,” was the first movie to earn more than one billion dollars and he took home Academy Awards for Best Director, Best Film Editing, and Best Picture. Although best known as a filmmaker, Cameron is also a deep-sea explorer, and inventor of cutting-edge film technology. Starting with \"Titanic\" (1997), Cameron directed exceptionally high-budget, large-scale and box-office blockbusters, each of which took many years to create.",
+        "The result is as follows:",
+        "Prompt: Edith Piaf on stage, watercolor style",
+        "The neural network produced an illustration that resembles a watercolor sketch. The picture even has the texture of watercolor paper.",
+        "Édith Piaf (born Édith Giovanna Gassion; 19 December 1915 – 10 October 1963) was a French singer best known for performing songs in the cabaret and modern chanson genres. She is widely regarded as France's greatest popular singer and one of the most celebrated performers of the 20th century.",
+        "The result is as follows:",
+        "Negative Prompts are keywords or phrases that specify to avoid certain elements, styles or objects in created images.",
+        "As an example, let's try a negative prompt for Edith Piaf. Let's say we want the microphone to be missing from the image. So, we need to erase it. In the Prompt tab, we'll need to write \"Hand\" and in the Negative Prompt tab, we'll write \"Microphone\".",
+        "The result is as follows:",
+        "Don't forget that neural networks can sometimes hallucinate or simply not understand you. For example, you might get something like this!",
+        "Nothing wrong with that, you can always go back one step by using the \"Step Back\" buttons and one step forward by using the \"Step Forward\" button respectively:",
+        "After a few corrective queries, we managed to get this image:",
+        "To fully understand how neural networks work, we need to familiarize ourselves with different image styles.",
+        "You can find them in the \"Style\" tab:",
+        "We click on the \"Style\" tab and see that there are 18 styles available at the moment.",
+        "Let's try to choose 1 style, for example, a pencil drawing.",
+        "Invite the kids to enter their prompt and see how it would look in different styles.",
+        "Summing up - 5 min.",
+        "I suggest you get acquainted with the rest of the tools on your own. There are many more interesting things you can learn on this site. For today, the lesson has come to an end.",
+        "Additional task",
+        "In the \"Video\" tab below the pictures, kids can generate a video:",
+        "To do this, we need to fill in the prompt and select \"Camera Direction\". After that we press \"Generate\", then the video sequence generation will start, which will last about 3 minutes:",
+        "You can also select the window size and model of the video or animation:"
+      ],
+      "tables": [
+        [
+          [
+            "Course",
+            "Neural Networks. Lesson 3"
+          ],
+          [
+            "Lesson topic",
+            "●      familiarization with neural networks;\n●      in-depth work with prompt"
+          ],
+          [
+            "Lesson objective",
+            "In-depth work with prompt"
+          ],
+          [
+            "Motivation",
+            "Learning new material, acquiring new skills"
+          ],
+          [
+            "Tools",
+            "Automated training places (computer class), projector, Kandinsky neural network, YandexGPT"
+          ],
+          [
+            "Goals",
+            "●      in-depth study of neural networks;\n●      working with neural networks"
+          ],
+          [
+            "Expected result",
+            "Acquisition of new knowledge, motivation of students"
+          ]
+        ]
+      ],
+      "sections": []
+    },
+    "powerpoint": {
+      "title": "",
+      "slides": [
+        {
+          "slide_number": 1,
+          "title": "",
+          "content": [],
+          "notes": ""
+        },
+        {
+          "slide_number": 2,
+          "title": "Kandinsky",
+          "content": [
+            "2"
+          ],
+          "notes": ""
+        },
+        {
+          "slide_number": 3,
+          "title": "What Kandinsky can do",
+          "content": [
+            "3"
+          ],
+          "notes": ""
+        },
+        {
+          "slide_number": 4,
+          "title": "Interface and Features",
+          "content": [
+            "4"
+          ],
+          "notes": ""
+        },
+        {
+          "slide_number": 5,
+          "title": "Sample Prompts",
+          "content": [
+            "5",
+            "PROMPT: Dodge Durango in the mountains, style of Ivan Shishkin's painting"
+          ],
+          "notes": ""
+        },
+        {
+          "slide_number": 6,
+          "title": "Sample Prompts",
+          "content": [
+            "6",
+            "PROMPT: cat in water, realistic and detailed rendering, Avatar movie style, green and amber, custom illustration, realistic lighting"
+          ],
+          "notes": ""
+        },
+        {
+          "slide_number": 7,
+          "title": "Sample Prompts",
+          "content": [
+            "7",
+            "PROMPT: Edith Piaf on stage, watercolor style"
+          ],
+          "notes": ""
+        },
+        {
+          "slide_number": 8,
+          "title": "Result",
+          "content": [
+            "8"
+          ],
+          "notes": ""
+        },
+        {
+          "slide_number": 9,
+          "title": "Style",
+          "content": [
+            "9"
+          ],
+          "notes": ""
+        },
+        {
+          "slide_number": 10,
+          "title": "Stylish solutions for common requests",
+          "content": [
+            "10"
+          ],
+          "notes": ""
+        },
+        {
+          "slide_number": 11,
+          "title": "Video Generation",
+          "content": [
+            "11"
+          ],
+          "notes": ""
+        },
+        {
+          "slide_number": 12,
+          "title": "Animation",
+          "content": [
+            "12"
+          ],
+          "notes": ""
+        }
+      ]
+    }
+  },
+  "4": {
+    "word_document": {
+      "title": "",
+      "paragraphs": [
+        "Lesson 4",
+        "Neural Networks, 1 lesson",
+        "Neural Networks, 2 lesson",
+        "Neural Networks, 3 lesson",
+        "Neural Networks, 4 lesson",
+        "Neural Networks, 5 lesson",
+        "Hello, guys! Today we are going to learn how to work with flowcharts.",
+        "A flowchart is a graphical way of representing an algorithm or program. It helps to visualize the process of performing a task and make it more understandable.",
+        "You will ask me: \"Why do we need to learn to work with flowcharts?\"",
+        "And I will answer you - to be able to develop and plan your own project! After all, in the next lesson we'll create our own game, and we will need this skill. We will use neural networks to design the game.",
+        "To get started, we start a browser and open this website: smartdraw.com.",
+        "Select the \"Flowcharts\" block:",
+        "Select the \"Flowchart\" block again:",
+        "Before we begin, I would like to ask you a few questions. What kind of tasks would you like to solve using flowcharts? What ideas do you already have for creating your own flowchart?",
+        "Give the children time to think and discuss.",
+        "Great! Now that we have some ideas, we can move on to creating our first flowchart.",
+        "Let's start by developing a game plan. We will use a flowchart to do this. The game plan should have many twists and ends to make the game more interesting:",
+        "Our game will be an adventure game in which the player must go through several challenges to reach the goal. The goal of the game can be anything. It could be finding a treasure, rescuing a princess, or accomplishing another task.",
+        "To create such a game, we can use several types of flowchart blocks.",
+        "The first type of flowcharts are blocks that help define the order in which actions are performed. For example, the block \"start\" (an oval) - shows where the game starts, and the block \"end\" (also an oval) - shows where the game ends:",
+        "Another type of flowcharts are conditional blocks, which allow you to determine which actions should be performed depending on certain conditions. For example, conditional block \"if-then\" (rhombus) - shows that a certain action should be performed only if a certain condition is true:",
+        "The third type of flowcharts are blocks that allow repeating actions several times. For example, the block \"loop\" (parallelogram) - shows that it is necessary to perform certain actions several times until a certain condition is met:",
+        "For loop",
+        "We can use all of these types of flowchart blocks to create our game. For example, we can use a \"start\" block to show where the game starts, then add a conditional \"if-then\" block to show that the player should only perform a certain action if a certain condition is true. We can then add a \"loop\" block to show that the player must repeat certain actions multiple times until a certain condition is met.",
+        "In order to create an interesting game, we can also use branching and endings. For example, we can add several different paths that the player can choose, and each path can have a different ending.",
+        "Thus, flowcharts are a powerful tool to help you create a complex and interesting game. They help visualize the process of creating a game and allow us to better understand how each action affects the game as a whole. In addition, flowcharts help us to anticipate possible errors and look for ways to fix them.",
+        "In order to create a game, we must start by planning its scenario. We need to determine what challenges the player has to go through, what problems he has to solve, and what obstacles he has to overcome. We can use flowcharts to describe all the actions the player has to perform and identify the possible paths he can choose.",
+        "Let's come up with a game genre together, and write out the game's story",
+        "(Writing a story about John who is late for class)",
+        "Okay. Now that we know what kind of game we want to create, let's start working with the flowchart.",
+        "We'll start with the main block - this will be the start of the game. Then we'll add branches that will include player actions and conditions that will lead to different endings.",
+        "Game start",
+        "A student named John is late for his programming class. He stands at a public transportation stop and notices that the bus he usually takes to class has already left. What should John do?",
+        "To connect these items, point to the \"Start\" block, click on the dot and connect it to the text block:",
+        "Now let's write the script next!",
+        "A little hint - if you don't know what exactly you can come up with next, you can use the neural network, it will always help you!",
+        "Here are the options the neural network suggested to me:",
+        "1) ask his mom to drive him to the class;",
+        "2) walk to the class;",
+        "3) wait for the next bus.",
+        "Option 1 - The player chooses \"Ask his mom to drive him to the class.\"",
+        "John calls his mom and asks her to take him to the class. Mom agrees and picks John up at the bus stop. John makes it to the class on time and gets a high mark for his work.",
+        "Option 2 - The player chooses \"Walk to the class\".",
+        "John walks to the class, but on the way he notices that his path is blocked by construction. John has to go around the construction site and is late for class. The teacher points out that John has not enough time to complete the task and receives a failing grade for his work.",
+        "Option 3 - The player chooses \"Wait for the next bus\".",
+        "John decides to wait for the next bus, but when the bus arrives, it is full. John cannot get on the bus and is late for the class. The teacher tells John that there is not enough time for him to complete the assignment, and he receives a failing grade for his work.",
+        "Game Ending",
+        "The player has completed the game and seen all three possible endings depending on his choices. He may decide to play the game again and try to choose a different path to get a better ending.",
+        "Let's try to complicate the scheme.",
+        "After choosing the \"Wait for the next bus\" path, the main character leaves the house and walks to the bus stop. On the way, he notices that there is a heavy fog outside and the cars are moving very slowly. Finally, the bus arrives, but it turns out that it is already full and does not stop.",
+        "Now the player has to make a choice:",
+        "1) go home and try to ride a bicycle to get there;",
+        "2) walk to the school.",
+        "If the player chooses the first option, he must quickly return home, find his bike and try to ride to the school, avoiding cars and passing buses. Eventually, he arrives at the school, but he is already very late and does not make it to the first lesson.",
+        "If the player chooses the second option, he walks to the school. On the way, he notices that cars are still driving very slowly, but he goes around them and speeds up his pace to avoid being late. Eventually, he arrives at school, makes it to his first class on time and gets good grades.",
+        "In this way, the player is given choices that affect the story and ending of the game. It is important to remember that every decision has consequences, and the player must carefully evaluate his actions to achieve the best possible result.",
+        "Let's try to complicate the game even more by adding an \"if-then\" condition.",
+        "If a player chooses the option \"walk to the school\" and on the way notices that the fog is getting thicker, he will have another choice:",
+        "continue walking;",
+        "return home and try to get to the school later:",
+        "If the player chooses the first option, he continues walking, but the fog is getting thicker and thicker, and he finds it increasingly difficult to navigate. He starts to worry that he might get lost, but suddenly he finds an abandoned house with a light on.",
+        "Now the player must choose what to do next:",
+        "go into the house and ask for help;",
+        "continue walking to the school without risk of wasting time:",
+        "If the player chooses the first option, he enters the house and meets a strange old man who offers to help him. However, the old man turns out to be unusual and mysterious, and his offers seem strange to the player. Eventually, the player realizes that he is wasting his time and leaves the house, continuing his journey to the school.",
+        "If the player chooses the second option, he keeps walking without risking wasting time. He reaches the school and does not miss the first lesson:",
+        "Thus, the player is given even more choices that affect the story and outcome of the game. Every decision has consequences, and the player must carefully evaluate their actions to achieve the best possible outcome.",
+        "Let's finish the last twists and turns!",
+        "Now we are ready for the next step - writing a program based on our flowchart. To do this, we will use a programming language. But we will get to that in the next lessons.",
+        "Give the children time to discuss.",
+        "Great! We learned today how to create flowcharts and use them to write programs. I hope you have learned a lot and can use this knowledge in the future!",
+        "Summing up - 5 min.",
+        "Don't forget to save your projects, because we will need them in the next lesson. (It is better to save your projects in JSON format so that we can open them in the next lesson).",
+        "Thank you for your attention! If you have any questions, feel free to ask me.",
+        "Overall, I think the lesson went well because you were attentive and worked hard.",
+        "Summarize the results of the entire training module.",
+        "Additional task",
+        "Invite the children to write a story for their own game!"
+      ],
+      "tables": [
+        [
+          [
+            "Course",
+            "Neural Networks. Lesson 4"
+          ],
+          [
+            "Lesson topic",
+            "●      familiarization with flowcharts;\n●      studying forms and types of models;\n●      mastering algorithms of models."
+          ],
+          [
+            "Lesson objective",
+            "●      familiarization with the program and basic concepts;\n●      training to use the program blocks"
+          ],
+          [
+            "Motivation",
+            "Creating your own scripted content is exciting and challenging."
+          ],
+          [
+            "Tools",
+            "Automated training places (computer class), projector, Kandinsky neural network"
+          ],
+          [
+            "Goals",
+            "1.     create conditions for practicing the skills and abilities acquired during the lesson;\n2.     promote the formation of independent cognitive activity;\n3.     create conditions for the development of such analytical abilities of students as the ability to analyze, compare, generalize cognitive objects, draw conclusions"
+          ],
+          [
+            "Expected result",
+            "●      gaining skills in working with blocks;\n●      improving students' analytical skills"
+          ],
+          [
+            "Recommendations for a tutor",
+            "●      study the material in advance;\n●      be able to easily explain the meaning of each block"
+          ]
+        ]
+      ],
+      "sections": []
+    },
+    "powerpoint": {
+      "title": "",
+      "slides": [
+        {
+          "slide_number": 1,
+          "title": "",
+          "content": [],
+          "notes": ""
+        },
+        {
+          "slide_number": 2,
+          "title": "What are flowcharts?",
+          "content": [
+            "A flowchart is a graphical way of representing an algorithm or program. It helps to visualize the process of performing a task and make it more understandable.",
+            "2"
+          ],
+          "notes": ""
+        },
+        {
+          "slide_number": 3,
+          "title": "Where do we work with flowcharts?",
+          "content": [
+            "2"
+          ],
+          "notes": ""
+        },
+        {
+          "slide_number": 4,
+          "title": "Example of a ready-made flowchart",
+          "content": [
+            "3"
+          ],
+          "notes": ""
+        },
+        {
+          "slide_number": 5,
+          "title": "Types of Blocks",
+          "content": [
+            "4"
+          ],
+          "notes": ""
+        },
+        {
+          "slide_number": 6,
+          "title": "First Steps",
+          "content": [
+            "5"
+          ],
+          "notes": ""
+        },
+        {
+          "slide_number": 7,
+          "title": "Chaining",
+          "content": [
+            "6"
+          ],
+          "notes": ""
+        },
+        {
+          "slide_number": 8,
+          "title": "First Plot Twist",
+          "content": [
+            "7"
+          ],
+          "notes": ""
+        },
+        {
+          "slide_number": 9,
+          "title": "Plot Options",
+          "content": [
+            "8"
+          ],
+          "notes": ""
+        },
+        {
+          "slide_number": 10,
+          "title": "\"Difficulties\" are not a hindrance, but another step towards excellence!",
+          "content": [
+            "9"
+          ],
+          "notes": ""
+        },
+        {
+          "slide_number": 11,
+          "title": "Consequences of “Difficulties\"",
+          "content": [
+            "10"
+          ],
+          "notes": ""
+        },
+        {
+          "slide_number": 12,
+          "title": "Expanding Our Horizons!",
+          "content": [
+            "11"
+          ],
+          "notes": ""
+        },
+        {
+          "slide_number": 13,
+          "title": "A Little Bit of Intrigue",
+          "content": [
+            "12"
+          ],
+          "notes": ""
+        },
+        {
+          "slide_number": 14,
+          "title": "A Happy Ending?",
+          "content": [
+            "13"
+          ],
+          "notes": ""
+        },
+        {
+          "slide_number": 15,
+          "title": "The Beginning \"Horror\" Story",
+          "content": [
+            "14"
+          ],
+          "notes": ""
+        },
+        {
+          "slide_number": 16,
+          "title": "Result",
+          "content": [
+            "19"
+          ],
+          "notes": ""
+        }
+      ]
+    }
+  },
+  "5": {
+    "word_document": {
+      "title": "",
+      "paragraphs": [
+        "Lesson 5",
+        "Neural Networks, 1 lesson",
+        "Neural Networks, 2 lesson",
+        "Neural Networks, 3 lesson",
+        "Neural Networks, 4 lesson",
+        "Neural Networks, 5 lesson",
+        "Methodological lesson plan",
+        "Organizational moment - 5 min.",
+        "Theoretical part - 5 min.",
+        "Hello, guys! Today we're wrapping up our course on working with neural networks!",
+        "Did you know that you already have enough knowledge to create your own game? For this, we will be using a program called Microsoft PowerPoint!",
+        "History of creation",
+        "When PowerPoint burst onto the presentation scene back in 1987, it wasn’t the only software available on the market. But it was the best. Its emergence coincided with a surge in personal computer purchasing and the use of computers in business environments. With business owners hungry for the best presentation software available, PowerPoint came out on top of its predecessors.",
+        "But its domination wasn’t immediate. Although widely believed to be Bill Gates’s brainchild, PowerPoint was actually developed by Robert Gaskins, was originally called ‘Presenter’ and released under a company called ‘Forethought’. In a market where consumers had a host of other established programs to choose from, PowerPoint initially struggled to set itself apart from its competitors. The graphics, bulleted lists and slideshows that are so characteristic of PowerPoint nowadays, were not actually PowerPoint’s own, original ideas.",
+        "Microsoft sensed PowerPoint’s potential regardless. Seeing the explosion in business software and office automation, Microsoft seized the opportunity and bought the application for $14 million.  They developed the software further, taking it to new heights with the release of PowerPoint 97. By eliminating the need for programming knowledge or specialist skills, PowerPoint 97 granted personal computer users access to filmesque features like transitions and animations.",
+        "From version 97 onwards, PowerPoint went through major upgrades with every release. A version was released on average every two years, spreading through offices like wildfire. The 2000 version introduced a clipboard feature that could hold multiple objects at once. In 2002, PowerPoint transformed its animation engine, allowing users to take advantage of advanced, custom animations. In 2011, they took the upgrade to another level with new background features and special effects. By 2012, after all the advancements, Microsoft announced their achievement of 95% of the presentation software market share.",
+        "From the beginning, PowerPoint has put users first, taking away the complexities, and saving them time and effort. PowerPoint’s prioritisation of ease of use means that even those who aren’t very tech-savvy can still create their own presentations. It has encouraged those who aren’t naturally inclined to do presentations, to at least have a go. It’s made high-quality presenting easier and readily available. Today, users can take advantage of pre-designed templates and animations that give their presentations a slick, professional look.",
+        "The software has transformed the world of presenting. It’s used in schools, universities, start-ups, global businesses, people’s homes and governments. After all the years of technological innovation, PowerPoint has stayed at the top of the game. If Presidents and world leaders are using it, it’s probably here to stay.",
+        "Familiarity with Microsoft Office PowerPoint",
+        "In the folder of your choice (or on your desktop), right-click and select \"Create - Microsoft PowerPoint Presentation\":",
+        "Set a title for the file. The title should contain the theme of the presentation - today it is Game.",
+        "The file name is necessary so that you can find your work among the others. So always try to name your work in an informative way. You can add your full name to the file name:",
+        "Open the file by double-clicking on it with the left mouse button. A blank presentation will open in front of you. To get started, click on the gray rectangle labeled \"First slide\":",
+        "In front of you is the title page of the presentation.",
+        "In the title of the slide you should indicate the topic of the presentation, in the subheading - the executor of the work (your First Name and Surname):",
+        "Choose a theme for the presentation. You can use the design from the previous lesson or you can come up with one as you go along.",
+        "Let's agree that in this lesson we will all use the same design. Since the arrangement of elements may vary from design to design, we will learn from the same template. When the presentation is ready, you can try to change the design to your own preference.",
+        "In the top menu, go to the \"Designer\" tab. Select the \"Basis\" color theme:",
+        "You can choose your own color options:",
+        "Let's create a second slide. Find the \"Home\" tab and click on the phrase \"Create Slide\". It opens a window where different types of slides are presented. We need the \"Two Objects\" option:",
+        "Click on the \"Slide Title\" field, where we will write the story of our character.",
+        "After that, the \"Font\" field will become available to us. In it, we will set the font size to 14, so that our whole story will fit in this field:",
+        "Now let's get 3 objects (to your taste) from the Insert tab. These will be the answer choice buttons. I would prefer to put Rectangles with rounded edges:",
+        "Let's put them one by one:",
+        "Great! This will be our reference box that we will copy so we don't have to create one every time. I suggest that you make a copy of the slide right now, and set it aside. To do this, right-click on the slide and select Duplicate Slide:",
+        "Now, we have 3 slides on the left side in the column! Let's swap slide 2 and slide 1 so we can use it later. You can do this by just pulling it:",
+        "Next, you will copy slide 1 so that you don't have to create a workspace from scratch each time.",
+        "Let's go to slide 3. All right! Let's assume that this is the beginning of our game! Let's start by labeling the text in the \"Title\" field:",
+        "You can change the font size by adjusting it to the length of the text. For example, there is very little text here, so we can increase the font size:",
+        "All right. Now let's customize the buttons. Right-click on one of the rectangles and select the \"Change text\" field:",
+        "Let's put one answer choice in each button:",
+        "Now I suggest adding an image to the slide. To do this, let's go to a neural network that you already know called Kandinsky.",
+        "Let's create an image that will show us what is happening on this slide. Let's type the whole story into the prompt and save the result:",
+        "Great! Now let's get acquainted with the most important system, namely the hyperlink.",
+        "The purpose of a hyperlink is to link documents or web pages into a single system where elements have the ability to interact with each other. Simply put, when you click on a particular button, it will take you to the right page in the presentation.",
+        "To use a hyperlink, we first need to create a page with a location where the hyperlink will take us. Duplicate the first slide that we put above the title page and move the duplicate to the bottom:",
+        "Now in the \"Slide Title\" section, we will write the text we need, for example, the answer to the button \"Ask his mom to drive him to the class\", and complete it with a picture from Kandinsky:",
+        "Now let's go back to the third slide. Right-click on the button and select \"Hyperlink\":",
+        "In the menu that opens, select the \"Place in document\" option:",
+        "Next, select the slide we need in the list, namely the one to which the button will send us:",
+        "In the upper left corner, click on the screen icon with a triangle (Play button):",
+        "The view mode has opened. You can control it by pressing the arrows on your keyboard or by clicking the mouse button:",
+        "Scroll to the required slide and the slide with the choice, try to click on the answer button. Did you get it?",
+        "Listen to the children's answers, help those who did not succeed",
+        "Independent work",
+        "Help the children who have questions.",
+        "Try to add two more endings on your own:",
+        "Summing up - 5 min.",
+        "Well, that's it, our game is ready! If you want, you can continue it, that's why we don't remove the buttons next to the picture. For example, let's add a storyline where John improves his grade. Don't forget to remove the first slide so that our game starts from the title page. Our lesson has come to an end for today.",
+        "Additional task",
+        "Make a button on each slide that takes us back to the previous slide and the title slide."
+      ],
+      "tables": [
+        [
+          [
+            "Course",
+            "Neural Networks. Lesson 5"
+          ],
+          [
+            "Lesson topic",
+            "●      introduction to neural networks;\n●      creating your own game"
+          ],
+          [
+            "Lesson objective",
+            "Creating your own game."
+          ],
+          [
+            "Motivation",
+            "Familiarization with new material, learning new skills"
+          ],
+          [
+            "Tools",
+            "Automated training places (computer class), projector, Kandinsky neural network, Animated Drawings, EasyPeasy.AI, programforyou"
+          ],
+          [
+            "Goals",
+            "●      in-depth study of neural networks;\n●      working with neural networks"
+          ],
+          [
+            "Expected result",
+            "Acquiring new knowledge, motivating students"
+          ]
+        ]
+      ],
+      "sections": []
+    },
+    "powerpoint": {
+      "title": "",
+      "slides": [
+        {
+          "slide_number": 1,
+          "title": "",
+          "content": [],
+          "notes": ""
+        },
+        {
+          "slide_number": 2,
+          "title": "How to create a presentation?",
+          "content": [
+            "2"
+          ],
+          "notes": ""
+        },
+        {
+          "slide_number": 3,
+          "title": "How to customize a slide?",
+          "content": [
+            "3"
+          ],
+          "notes": ""
+        },
+        {
+          "slide_number": 4,
+          "title": "How to create and customize a second slide?",
+          "content": [
+            "4"
+          ],
+          "notes": ""
+        },
+        {
+          "slide_number": 5,
+          "title": "Inserting Shapes",
+          "content": [
+            "5"
+          ],
+          "notes": ""
+        },
+        {
+          "slide_number": 6,
+          "title": "How to duplicate and arrange slides",
+          "content": [
+            "6"
+          ],
+          "notes": ""
+        },
+        {
+          "slide_number": 7,
+          "title": "Third slide",
+          "content": [
+            "7"
+          ],
+          "notes": ""
+        },
+        {
+          "slide_number": 8,
+          "title": "Insert text inside the shapes",
+          "content": [
+            "8"
+          ],
+          "notes": ""
+        },
+        {
+          "slide_number": 9,
+          "title": "Create an image",
+          "content": [
+            "9"
+          ],
+          "notes": ""
+        },
+        {
+          "slide_number": 10,
+          "title": "Design the slide",
+          "content": [
+            "10"
+          ],
+          "notes": ""
+        },
+        {
+          "slide_number": 11,
+          "title": "Hyperlinks",
+          "content": [
+            "11"
+          ],
+          "notes": ""
+        },
+        {
+          "slide_number": 12,
+          "title": "Hyperlinks",
+          "content": [
+            "12"
+          ],
+          "notes": ""
+        },
+        {
+          "slide_number": 13,
+          "title": "See how it all works",
+          "content": [
+            "13"
+          ],
+          "notes": ""
+        },
+        {
+          "slide_number": 14,
+          "title": "Add two more endings",
+          "content": [
+            "14"
+          ],
+          "notes": ""
+        },
+        {
+          "slide_number": 15,
+          "title": "Result",
+          "content": [
+            "15"
+          ],
+          "notes": ""
+        }
+      ]
+    }
+  }
+}
