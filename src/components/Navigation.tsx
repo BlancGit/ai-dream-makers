@@ -7,11 +7,11 @@ export const Navigation = () => {
 
   const navItems = [
     { icon: Home, label: "Home", path: "/" },
-    { icon: BookOpen, label: "Lesson 1", path: "/lesson/1" },
-    { icon: Brain, label: "Lesson 2", path: "/lesson/2" },
-    { icon: Wand2, label: "Lesson 3", path: "/lesson/3" },
-    { icon: GitBranch, label: "Lesson 4", path: "/lesson/4" },
-    { icon: Presentation, label: "Lesson 5", path: "/lesson/5" },
+    { icon: BookOpen, label: "Lesson 1", path: "/lessons/1" },
+    { icon: Brain, label: "Lesson 2", path: "/lessons/2" },
+    { icon: Wand2, label: "Lesson 3", path: "/lessons/3" },
+    { icon: GitBranch, label: "Lesson 4", path: "/lessons/4" },
+    { icon: Presentation, label: "Lesson 5", path: "/lessons/5" },
     { icon: GamepadIcon, label: "Games", path: "/games" },
     { icon: Users, label: "About", path: "/about" },
   ];
