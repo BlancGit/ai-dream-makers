@@ -135,6 +135,8 @@ const CSharpLesson = () => {
   const [currentModule, setCurrentModule] = useState(0);
   const [moduleProgress, setModuleProgress] = useState<number[]>([0, 0, 0, 0, 0, 0]);
   const [showQuiz, setShowQuiz] = useState(false);
+  const [quizIndex, setQuizIndex] = useState(0);
+  const [correctAnswers, setCorrectAnswers] = useState(0);
 
   const modules = [
     {
@@ -179,6 +181,29 @@ const CSharpLesson = () => {
     const newProgress = [...moduleProgress];
     newProgress[module] = Math.min(100, progress);
     setModuleProgress(newProgress);
+  };
+
+  const handleQuizComplete = (correct: boolean) => {
+    if (correct) {
+      setCorrectAnswers(prev => prev + 1);
+    }
+
+    if (quizIndex < csharpQuiz.length - 1) {
+      setQuizIndex(prev => prev + 1);
+    } else {
+      // Quiz finished
+      const score = Math.round(((correctAnswers + (correct ? 1 : 0)) / csharpQuiz.length) * 100);
+      setShowQuiz(false);
+      updateModuleProgress(5, 100);
+
+      setTimeout(() => {
+        alert(`🎉 Quiz Complete!\n\nYour Score: ${score}%\n${score >= 70 ? 'Excellent work! You\'ve mastered C# programming!' : 'Good effort! Review the lessons and try again to improve your score.'}`);
+      }, 500);
+
+      // Reset for next time
+      setQuizIndex(0);
+      setCorrectAnswers(0);
+    }
   };
 
   const totalProgress = moduleProgress.reduce((a, b) => a + b, 0) / modules.length;
@@ -1566,13 +1591,35 @@ class RPGGame
 
       {/* Quiz Section */}
       {showQuiz && (
-        <QuizCard
-          questions={csharpQuiz}
-          onComplete={() => {
-            setShowQuiz(false);
-            updateModuleProgress(5, 100);
-          }}
-        />
+        <div className="space-y-6 animate-bounce-in">
+          <div className="text-center space-y-4">
+            <h2 className="text-3xl font-bold text-primary">🎯 Final Quiz: Test Your C# Knowledge!</h2>
+            <p className="text-muted-foreground">
+              Question {quizIndex + 1} of {csharpQuiz.length}
+            </p>
+            <Progress value={((quizIndex + 1) / csharpQuiz.length) * 100} className="w-full max-w-md mx-auto" />
+          </div>
+
+          <QuizCard
+            quiz={csharpQuiz[quizIndex]}
+            onComplete={handleQuizComplete}
+            currentIndex={quizIndex}
+            totalQuestions={csharpQuiz.length}
+          />
+
+          <div className="text-center">
+            <Button
+              variant="outline"
+              onClick={() => {
+                setShowQuiz(false);
+                setQuizIndex(0);
+                setCorrectAnswers(0);
+              }}
+            >
+              Exit Quiz
+            </Button>
+          </div>
+        </div>
       )}
     </div>
   );
