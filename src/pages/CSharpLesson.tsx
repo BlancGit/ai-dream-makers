@@ -53,6 +53,17 @@ const csharpQuiz = [
     explanation: "Console.WriteLine() prints text to the console (the black window) and moves to a new line after!"
   },
   {
+    question: "What's the difference between Console.WriteLine() and Console.Write()?",
+    options: [
+      "WriteLine prints in color, Write doesn't",
+      "WriteLine moves to a new line after printing, Write stays on the same line",
+      "WriteLine is faster than Write",
+      "There is no difference"
+    ],
+    correctAnswer: 1,
+    explanation: "Console.WriteLine() automatically moves to a new line after printing, while Console.Write() stays on the same line."
+  },
+  {
     question: "Which operator checks if two values are equal?",
     options: [
       "=",
@@ -64,6 +75,17 @@ const csharpQuiz = [
     explanation: "The == operator checks if two values are equal. Single = is for assigning values, not comparing!"
   },
   {
+    question: "What does the modulo operator (%) do?",
+    options: [
+      "Divides two numbers",
+      "Multiplies two numbers",
+      "Returns the remainder after division",
+      "Converts to percentage"
+    ],
+    correctAnswer: 2,
+    explanation: "The modulo operator (%) returns the remainder after division. For example, 10 % 3 = 1 because 10 ÷ 3 = 3 remainder 1."
+  },
+  {
     question: "What keyword do we use to create a method in C#?",
     options: [
       "function",
@@ -73,6 +95,17 @@ const csharpQuiz = [
     ],
     correctAnswer: 2,
     explanation: "In C#, we use 'void' for methods that don't return anything, or a data type (like int, string) for methods that return values!"
+  },
+  {
+    question: "What does the 'static' keyword mean in a method declaration?",
+    options: [
+      "The method never changes",
+      "The method can be called without creating an object",
+      "The method runs faster",
+      "The method is private"
+    ],
+    correctAnswer: 1,
+    explanation: "The 'static' keyword means the method belongs to the class itself, not to instances of the class, so you can call it without creating an object."
   },
   {
     question: "What is a class in C#?",
@@ -128,6 +161,138 @@ const csharpQuiz = [
     ],
     correctAnswer: 1,
     explanation: "The semicolon (;) marks the end of most C# statements. Think of it like a period at the end of a sentence!"
+  },
+  {
+    question: "Which of these is a valid C# variable name?",
+    options: [
+      "2player",
+      "player-name",
+      "playerName",
+      "player name"
+    ],
+    correctAnswer: 2,
+    explanation: "C# variables use camelCase naming, can't start with numbers, and can't contain spaces or hyphens."
+  },
+  {
+    question: "What does Console.ReadLine() return?",
+    options: [
+      "An integer",
+      "A string",
+      "A boolean",
+      "Nothing"
+    ],
+    correctAnswer: 1,
+    explanation: "Console.ReadLine() always returns a string, even if the user types numbers. Use int.Parse() to convert to numbers."
+  },
+  {
+    question: "What does the 'if' statement require at the end of the condition line?",
+    options: [
+      "A semicolon ;",
+      "A colon :",
+      "Curly braces { }",
+      "Nothing special"
+    ],
+    correctAnswer: 2,
+    explanation: "C# if statements require curly braces { } to define the code block that runs when the condition is true."
+  },
+  {
+    question: "What's the difference between '&&' and '||' operators?",
+    options: [
+      "No difference, they're the same",
+      "&& means AND (both must be true), || means OR (at least one must be true)",
+      "&& is for numbers, || is for text",
+      "&& is faster than ||"
+    ],
+    correctAnswer: 1,
+    explanation: "&& is the logical AND operator (both conditions must be true), || is the logical OR operator (at least one condition must be true)."
+  },
+  {
+    question: "In a for loop 'for(int i = 0; i < 5; i++)', how many times does the loop run?",
+    options: [
+      "4 times",
+      "5 times",
+      "6 times",
+      "Infinite times"
+    ],
+    correctAnswer: 1,
+    explanation: "The loop runs 5 times with i values: 0, 1, 2, 3, 4. When i becomes 5, the condition i < 5 is false, so it stops."
+  },
+  {
+    question: "What does 'void' mean in a method declaration?",
+    options: [
+      "The method is empty",
+      "The method doesn't return any value",
+      "The method is broken",
+      "The method runs forever"
+    ],
+    correctAnswer: 1,
+    explanation: "'void' means the method doesn't return any value. Methods with void just perform actions but don't send data back."
+  },
+  {
+    question: "What is inheritance in C# object-oriented programming?",
+    options: [
+      "Money passed down in families",
+      "A child class getting properties and methods from a parent class",
+      "Copying code from one file to another",
+      "A way to delete objects"
+    ],
+    correctAnswer: 1,
+    explanation: "Inheritance allows a child class to inherit (get) properties and methods from a parent class, promoting code reuse."
+  },
+  {
+    question: "What does the 'public' keyword mean in front of a class member?",
+    options: [
+      "Everyone can access it",
+      "Only the class itself can access it",
+      "It's displayed on the screen",
+      "It's shared between all objects"
+    ],
+    correctAnswer: 0,
+    explanation: "'public' means the class member (property or method) can be accessed from anywhere in the program - it's publicly available."
+  },
+  {
+    question: "In the RPG game project, what does the Player class constructor do?",
+    options: [
+      "Destroys the player object",
+      "Sets up initial values when creating a new player",
+      "Saves the game",
+      "Starts the battle system"
+    ],
+    correctAnswer: 1,
+    explanation: "The constructor runs automatically when creating a new Player object and sets up initial values like health, level, and name."
+  },
+  {
+    question: "What's the purpose of the 'return' statement in a method?",
+    options: [
+      "To go back to the beginning of the method",
+      "To send a value back to whoever called the method",
+      "To print something to the console",
+      "To create a new variable"
+    ],
+    correctAnswer: 1,
+    explanation: "The 'return' statement sends a value back to the code that called the method, allowing methods to provide results."
+  },
+  {
+    question: "Which data type would you use to store a player's health points that can have decimal values?",
+    options: [
+      "int",
+      "string",
+      "bool",
+      "double"
+    ],
+    correctAnswer: 3,
+    explanation: "'double' can store decimal numbers like 98.5, while 'int' only stores whole numbers. For health with decimals, use double."
+  },
+  {
+    question: "What happens if you try to access an array element that doesn't exist?",
+    options: [
+      "It returns 0",
+      "It returns null",
+      "It throws an IndexOutOfRangeException",
+      "It creates a new element"
+    ],
+    correctAnswer: 2,
+    explanation: "Accessing an array index that doesn't exist throws an IndexOutOfRangeException, which crashes the program if not handled."
   }
 ];
 

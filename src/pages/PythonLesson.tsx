@@ -131,6 +131,226 @@ const pythonQuiz = [
     ],
     correctAnswer: 1,
     explanation: "len() returns the number of items in a list, string, or other collection. Example: len([1,2,3]) returns 3"
+  },
+  {
+    question: "What is Python's philosophy about indentation?",
+    options: [
+      "Indentation is optional for style",
+      "Indentation is syntax - it's part of the language",
+      "Only use indentation in classes",
+      "Indentation slows down the program"
+    ],
+    correctAnswer: 1,
+    explanation: "In Python, indentation IS syntax! It's not just for style - Python uses indentation to determine which lines belong to which code blocks."
+  },
+  {
+    question: "What does the range() function generate?",
+    options: [
+      "Random numbers",
+      "A sequence of numbers",
+      "Letters of the alphabet",
+      "Nothing useful"
+    ],
+    correctAnswer: 1,
+    explanation: "range() generates a sequence of numbers. For example, range(5) gives you 0, 1, 2, 3, 4."
+  },
+  {
+    question: "How do you convert a string to an integer in Python?",
+    options: [
+      "string.toInt()",
+      "int(string)",
+      "convert(string, int)",
+      "string.integer()"
+    ],
+    correctAnswer: 1,
+    explanation: "Use int() to convert a string to an integer. Example: int('42') returns the number 42."
+  },
+  {
+    question: "What does 'elif' mean in Python?",
+    options: [
+      "End if",
+      "Else if",
+      "Error if",
+      "Exit if"
+    ],
+    correctAnswer: 1,
+    explanation: "'elif' is short for 'else if'. It's used to check additional conditions in an if statement chain."
+  },
+  {
+    question: "Which loop is best for iterating through a list in Python?",
+    options: [
+      "while loop",
+      "for loop with range()",
+      "for loop with direct iteration",
+      "do-while loop"
+    ],
+    correctAnswer: 2,
+    explanation: "For iterating through a list, use 'for item in list:' - this is the most Pythonic way!"
+  },
+  {
+    question: "What symbol is used to mark the end of an if statement condition in Python?",
+    options: [
+      "Semicolon ;",
+      "Colon :",
+      "Curly brace {",
+      "Nothing special"
+    ],
+    correctAnswer: 1,
+    explanation: "Python uses a colon : at the end of if statement conditions, then indented code below."
+  },
+  {
+    question: "What does f'Hello {name}' demonstrate?",
+    options: [
+      "A function call",
+      "A formatting error",
+      "An f-string (formatted string literal)",
+      "A comment"
+    ],
+    correctAnswer: 2,
+    explanation: "f'Hello {name}' is an f-string - a modern way to format strings in Python by embedding variables directly."
+  },
+  {
+    question: "What does the append() method do to a list?",
+    options: [
+      "Removes the last item",
+      "Adds an item to the end",
+      "Sorts the list",
+      "Clears the list"
+    ],
+    correctAnswer: 1,
+    explanation: "The append() method adds an item to the end of a list. Example: fruits.append('banana')"
+  },
+  {
+    question: "What's the difference between a list and a dictionary in Python?",
+    options: [
+      "No difference",
+      "Lists use [], dictionaries use {}",
+      "Lists store ordered items, dictionaries store key-value pairs",
+      "Both B and C are correct"
+    ],
+    correctAnswer: 3,
+    explanation: "Lists use [] and store ordered items accessed by index. Dictionaries use {} and store key-value pairs accessed by key."
+  },
+  {
+    question: "What does the __init__ method do in a Python class?",
+    options: [
+      "Destroys the object",
+      "Initializes/sets up a new object when it's created",
+      "Prints the object",
+      "Copies the object"
+    ],
+    correctAnswer: 1,
+    explanation: "__init__ is the constructor method that runs automatically when you create a new object, setting up initial values."
+  },
+  {
+    question: "How do you access the first item in a Python list?",
+    options: [
+      "list[1]",
+      "list[0]",
+      "list.first()",
+      "list.get(1)"
+    ],
+    correctAnswer: 1,
+    explanation: "Python lists are zero-indexed, so the first item is at index 0: list[0]"
+  },
+  {
+    question: "What does the 'not' operator do?",
+    options: [
+      "Deletes a variable",
+      "Reverses the True/False value",
+      "Creates a comment",
+      "Stops the program"
+    ],
+    correctAnswer: 1,
+    explanation: "The 'not' operator reverses boolean values: 'not True' becomes False, 'not False' becomes True."
+  },
+  {
+    question: "In Python, what does 'and' require to return True?",
+    options: [
+      "Only the first condition to be True",
+      "Only the second condition to be True",
+      "Both conditions to be True",
+      "Neither condition to be True"
+    ],
+    correctAnswer: 2,
+    explanation: "The 'and' operator requires BOTH conditions to be True to return True. If either is False, the result is False."
+  },
+  {
+    question: "What happens if you don't include 'self' as the first parameter in a class method?",
+    options: [
+      "The method works fine",
+      "Python gives an error",
+      "The method runs slower",
+      "The method becomes static"
+    ],
+    correctAnswer: 1,
+    explanation: "Python requires 'self' as the first parameter in instance methods. Without it, you'll get a TypeError when calling the method."
+  },
+  {
+    question: "What does list slicing list[1:3] return?",
+    options: [
+      "Items at index 1, 2, and 3",
+      "Items at index 1 and 2 only",
+      "Items at index 0, 1, and 2",
+      "Just the item at index 1"
+    ],
+    correctAnswer: 1,
+    explanation: "List slicing [1:3] returns items from index 1 up to (but not including) index 3, so indices 1 and 2."
+  },
+  {
+    question: "In the text adventure game, what Python feature allows us to store player data like name, health, and inventory together?",
+    options: [
+      "Variables",
+      "Functions",
+      "Classes and objects",
+      "Comments"
+    ],
+    correctAnswer: 2,
+    explanation: "Classes allow us to bundle related data (properties) and actions (methods) together in objects, like a Player class with health, name, and inventory."
+  },
+  {
+    question: "What does the 'in' keyword do when used with lists?",
+    options: [
+      "Adds items to the list",
+      "Checks if an item exists in the list",
+      "Removes items from the list",
+      "Counts items in the list"
+    ],
+    correctAnswer: 1,
+    explanation: "The 'in' keyword checks if an item exists in a list. Example: 'apple' in fruits returns True if 'apple' is in the fruits list."
+  },
+  {
+    question: "What does it mean that Python is 'dynamically typed'?",
+    options: [
+      "You must declare variable types",
+      "Variables can change types during runtime",
+      "Python only works with one data type",
+      "Types are written in comments"
+    ],
+    correctAnswer: 1,
+    explanation: "Dynamically typed means variables can change types during runtime. A variable can start as an integer and later become a string."
+  },
+  {
+    question: "What's the main advantage of using functions in Python?",
+    options: [
+      "They make programs run faster",
+      "They allow code reuse and organization",
+      "They use less memory",
+      "They prevent errors"
+    ],
+    correctAnswer: 1,
+    explanation: "Functions promote code reuse - write once, use many times. They also help organize code into logical chunks and make debugging easier."
+  },
+  {
+    question: "In Python, what does break do in a loop?",
+    options: [
+      "Pauses the loop temporarily",
+      "Skips to the next iteration",
+      "Exits the loop completely",
+      "Restarts the loop from the beginning"
+    ],
+    correctAnswer: 2,
+    explanation: "'break' immediately exits the loop completely. The program continues with the code after the loop."
   }
 ];
 
