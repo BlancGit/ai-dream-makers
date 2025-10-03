@@ -61,34 +61,89 @@ export const CodeEditor = ({
     const lines = codeStr.split('\n');
     let output = [];
 
-    for (const line of lines) {
-      const trimmed = line.trim();
+    if (language === "python") {
+      // Python code simulation
+      for (const line of lines) {
+        const trimmed = line.trim();
 
-      if (trimmed.startsWith('Console.WriteLine(')) {
-        const match = trimmed.match(/Console\.WriteLine\((.*?)\)/);
-        if (match) {
-          let content = match[1];
-          content = content.replace(/^["']|["']$/g, '');
-          content = content.replace(/\\n/g, '\n');
-          content = content.replace(/\\t/g, '\t');
+        // Handle print() statements
+        if (trimmed.startsWith('print(')) {
+          const match = trimmed.match(/print\((.*?)\)/);
+          if (match) {
+            let content = match[1];
 
-          if (content.includes('+')) {
-            const parts = content.split('+').map(p => p.trim());
-            const evaluated = parts.map(p => {
-              if (p.match(/^["'].*["']$/)) {
-                return p.replace(/^["']|["']$/g, '');
-              }
-              return p;
-            }).join('');
-            output.push(evaluated);
-          } else {
-            output.push(content);
+            // Handle f-strings
+            if (content.startsWith('f"') || content.startsWith("f'")) {
+              content = content.substring(2, content.length - 1);
+              content = content.replace(/\{.*?\}/g, '[variable]');
+              output.push(content);
+            }
+            // Handle regular strings
+            else if (content.match(/^["'].*["']$/)) {
+              content = content.replace(/^["']|["']$/g, '');
+              output.push(content);
+            }
+            // Handle variables or expressions
+            else {
+              output.push(`[Output of: ${content}]`);
+            }
+          }
+        }
+
+        // Handle input() statements
+        if (trimmed.includes('input(')) {
+          const match = trimmed.match(/input\((.*?)\)/);
+          if (match) {
+            let prompt = match[1].replace(/^["']|["']$/g, '');
+            output.push(`${prompt}[User would enter input here]`);
+          }
+        }
+
+        // Handle simple assignments for demonstration
+        if (trimmed.includes(' = ') && !trimmed.includes('input(')) {
+          const parts = trimmed.split(' = ');
+          if (parts.length === 2) {
+            const varName = parts[0].trim();
+            const value = parts[1].trim();
+            if (value.match(/^["'].*["']$/)) {
+              output.push(`${varName} is now: ${value.replace(/^["']|["']$/g, '')}`);
+            } else if (!isNaN(Number(value))) {
+              output.push(`${varName} is now: ${value}`);
+            }
           }
         }
       }
+    } else {
+      // C# code simulation (existing logic)
+      for (const line of lines) {
+        const trimmed = line.trim();
 
-      if (trimmed.startsWith('Console.ReadLine()')) {
-        output.push('[User would enter input here]');
+        if (trimmed.startsWith('Console.WriteLine(')) {
+          const match = trimmed.match(/Console\.WriteLine\((.*?)\)/);
+          if (match) {
+            let content = match[1];
+            content = content.replace(/^["']|["']$/g, '');
+            content = content.replace(/\\n/g, '\n');
+            content = content.replace(/\\t/g, '\t');
+
+            if (content.includes('+')) {
+              const parts = content.split('+').map(p => p.trim());
+              const evaluated = parts.map(p => {
+                if (p.match(/^["'].*["']$/)) {
+                  return p.replace(/^["']|["']$/g, '');
+                }
+                return p;
+              }).join('');
+              output.push(evaluated);
+            } else {
+              output.push(content);
+            }
+          }
+        }
+
+        if (trimmed.startsWith('Console.ReadLine()')) {
+          output.push('[User would enter input here]');
+        }
       }
     }
 
@@ -149,9 +204,14 @@ export const CodeEditor = ({
             value={code}
             onChange={(e) => setCode(e.target.value)}
             readOnly={readOnly}
-            className="w-full h-64 p-4 font-mono text-sm bg-slate-900 text-green-400 rounded-lg border border-border resize-none"
-            style={{ tabSize: 4 }}
+            className={`w-full h-64 p-4 font-mono text-sm rounded-lg border border-border resize-none ${
+              language === "python"
+                ? "bg-slate-900 text-blue-300"
+                : "bg-slate-900 text-green-400"
+            }`}
+            style={{ tabSize: language === "python" ? 4 : 4 }}
             spellCheck={false}
+            placeholder={language === "python" ? "# Write your Python code here..." : "// Write your C# code here..."}
           />
         </div>
 

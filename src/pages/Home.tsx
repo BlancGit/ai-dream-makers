@@ -234,6 +234,30 @@ const Home = () => {
               <Link to="/lessons/csharp">Start C# Programming</Link>
             </Button>
           </div>
+
+          <div className="space-y-4">
+            <h3 className="text-xl font-bold flex items-center gap-2">
+              <Star className="w-5 h-5 text-warning" />
+              Python Programming
+            </h3>
+            <ul className="space-y-2 text-muted-foreground text-sm">
+              <li className="flex items-center gap-2">
+                <Sparkles className="w-4 h-4 text-primary" />
+                Learn Python - the beginner-friendly language
+              </li>
+              <li className="flex items-center gap-2">
+                <Sparkles className="w-4 h-4 text-primary" />
+                Master indentation, functions, and data structures
+              </li>
+              <li className="flex items-center gap-2">
+                <Sparkles className="w-4 h-4 text-primary" />
+                Create an epic text adventure game
+              </li>
+            </ul>
+            <Button variant="outline" asChild className="w-full">
+              <Link to="/lessons/python">Start Python Programming</Link>
+            </Button>
+          </div>
         </div>
       </section>
 
