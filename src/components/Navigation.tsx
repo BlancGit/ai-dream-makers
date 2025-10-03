@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Brain, Home, BookOpen, GamepadIcon, Users, Wand2, GitBranch, Presentation } from "lucide-react";
+import { Brain, Home, BookOpen, GamepadIcon, Users, Wand2, GitBranch, Presentation, Code2 } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
 export const Navigation = () => {
@@ -12,6 +12,7 @@ export const Navigation = () => {
     { icon: Wand2, label: "Lesson 3", path: "/lessons/3" },
     { icon: GitBranch, label: "Lesson 4", path: "/lessons/4" },
     { icon: Presentation, label: "Lesson 5", path: "/lessons/5" },
+    { icon: Code2, label: "C# Programming", path: "/lessons/csharp" },
     { icon: GamepadIcon, label: "Class Activity", path: "/games" },
     { icon: Users, label: "About", path: "/about" },
   ];
