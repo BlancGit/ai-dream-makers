@@ -10,6 +10,8 @@ import Lesson2 from "./pages/Lesson2";
 import Lesson3 from "./pages/Lesson3";
 import Lesson4 from "./pages/Lesson4";
 import Lesson5 from "./pages/Lesson5";
+import CSharpLesson from "./pages/CSharpLesson";
+import PythonLesson from "./pages/PythonLesson";
 import Games from "./pages/Games";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
@@ -30,6 +32,8 @@ const App = () => (
             <Route path="/lessons/3" element={<Lesson3 />} />
             <Route path="/lessons/4" element={<Lesson4 />} />
             <Route path="/lessons/5" element={<Lesson5 />} />
+            <Route path="/lessons/csharp" element={<CSharpLesson />} />
+            <Route path="/lessons/python" element={<PythonLesson />} />
             <Route path="/games" element={<Games />} />
             <Route path="/about" element={<About />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
