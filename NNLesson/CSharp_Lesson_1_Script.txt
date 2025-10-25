@@ -1,0 +1,248 @@
+C# LESSON 1: Introduction to Programming & C# Basics
+====================================================
+
+LESSON DURATION: 60 minutes
+
+-----------------------------------------------------------
+PART 1: INTRODUCTION (10 minutes)
+-----------------------------------------------------------
+
+Welcome to C# programming! Today we'll learn the fundamentals of coding with C#.
+
+What is C#?
+- A powerful, modern programming language created by Microsoft
+- Used for games (Unity), desktop apps, web development, and more
+- Statically typed (you declare variable types)
+- Part of the .NET ecosystem
+
+Setting Up:
+- Open Visual Studio, Visual Studio Code, or an online C# compiler
+- Create a new Console Application project
+- We'll write code in Program.cs
+
+-----------------------------------------------------------
+PART 2: YOUR FIRST PROGRAM (5 minutes)
+-----------------------------------------------------------
+
+Basic C# program structure:
+
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Hello, World!");
+    }
+}
+
+Breakdown:
+- using System; - imports the System library
+- class Program - defines a class (container for code)
+- static void Main - the entry point where program starts
+- Console.WriteLine() - displays text to console
+- Semicolons ; end each statement
+- Curly braces { } group code blocks
+
+ACTIVITY: Have students modify the message and run it
+
+-----------------------------------------------------------
+PART 3: VARIABLES & DATA TYPES (15 minutes)
+-----------------------------------------------------------
+
+In C#, you must declare the type of each variable:
+
+type variableName = value;
+
+Common Data Types:
+
+string name = "Alice";           // Text
+int age = 15;                    // Whole numbers
+double height = 5.5;             // Decimal numbers
+bool isStudent = true;           // True or False
+char grade = 'A';                // Single character
+
+Examples:
+
+string city = "New York";
+int score = 100;
+double price = 19.99;
+bool isRaining = false;
+
+Using variables:
+
+string name = "Bob";
+int age = 16;
+
+Console.WriteLine(name);
+Console.WriteLine("I am " + age + " years old");
+Console.WriteLine($"My name is {name}");  // String interpolation
+
+Key differences from Python:
+- Must specify data type
+- Semicolons required at end of statements
+- Use double for decimals (not float for beginners)
+
+ACTIVITY: Create variables for student's name, favorite number, and hobby
+
+-----------------------------------------------------------
+PART 4: BASIC INPUT (10 minutes)
+-----------------------------------------------------------
+
+Getting user input:
+
+Console.Write("What is your name? ");
+string name = Console.ReadLine();
+Console.WriteLine("Hello, " + name + "!");
+
+Important: Console.ReadLine() returns a string!
+
+Converting input to numbers:
+
+Console.Write("Enter your age: ");
+int age = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Enter your height: ");
+double height = Convert.ToDouble(Console.ReadLine());
+
+Alternative conversion methods:
+
+int age = int.Parse(Console.ReadLine());
+double price = double.Parse(Console.ReadLine());
+
+Complete example:
+
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.Write("Enter your name: ");
+        string name = Console.ReadLine();
+
+        Console.Write("Enter your age: ");
+        int age = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine($"Hello {name}, you are {age} years old!");
+    }
+}
+
+ACTIVITY: Create a program that asks for name, age, and favorite color, then displays them
+
+-----------------------------------------------------------
+PART 5: BASIC OPERATIONS (15 minutes)
+-----------------------------------------------------------
+
+Math operations:
+
+int a = 10;
+int b = 3;
+
+// Addition
+int sum = a + b;              // 13
+
+// Subtraction
+int difference = a - b;       // 7
+
+// Multiplication
+int product = a * b;          // 30
+
+// Division (integer)
+int quotient = a / b;         // 3
+
+// Modulo (remainder)
+int remainder = a % b;        // 1
+
+// Exponent (requires Math.Pow)
+double power = Math.Pow(2, 3); // 8.0
+
+Decimal division:
+
+double result = 10.0 / 3.0;   // 3.333...
+
+Increment/Decrement:
+
+int counter = 5;
+counter++;                    // counter is now 6
+counter--;                    // counter is now 5
+
+String operations:
+
+// Concatenation
+string greeting = "Hello" + " " + "World";
+
+// String interpolation (preferred)
+string name = "Alice";
+int age = 15;
+string message = $"{name} is {age} years old";
+
+// Other string methods
+string text = "hello";
+Console.WriteLine(text.ToUpper());     // HELLO
+Console.WriteLine(text.Length);        // 5
+
+ACTIVITY: Build a simple calculator that adds two numbers from user input
+
+-----------------------------------------------------------
+PART 6: PRACTICE PROJECT (5 minutes)
+-----------------------------------------------------------
+
+Mini Project: Personal Info Card
+
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.Write("Enter your name: ");
+        string name = Console.ReadLine();
+
+        Console.Write("Enter your age: ");
+        int age = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Enter your city: ");
+        string city = Console.ReadLine();
+
+        Console.Write("Enter your favorite hobby: ");
+        string hobby = Console.ReadLine();
+
+        Console.WriteLine("\n===== PERSONAL INFO CARD =====");
+        Console.WriteLine($"Name: {name}");
+        Console.WriteLine($"Age: {age}");
+        Console.WriteLine($"City: {city}");
+        Console.WriteLine($"Hobby: {hobby}");
+        Console.WriteLine("==============================");
+    }
+}
+
+-----------------------------------------------------------
+WRAP UP & HOMEWORK (5 minutes)
+-----------------------------------------------------------
+
+Key Takeaways:
+✓ Console.WriteLine() displays output
+✓ Variables must have declared types
+✓ Console.ReadLine() gets user input
+✓ Convert.ToInt32() and Convert.ToDouble() convert strings to numbers
+✓ Semicolons end statements
+✓ String interpolation: $"{variable}"
+
+Homework:
+1. Create a program that calculates the area of a rectangle (length × width)
+2. Make a program that asks for birth year and calculates age
+3. Create a "Mad Libs" style program using string variables
+
+Next Lesson Preview:
+We'll learn about conditions (if/else) and making decisions in code!
+
+-----------------------------------------------------------
+COMMON ERRORS & TROUBLESHOOTING
+-----------------------------------------------------------
+
+1. Syntax Error: Check for missing semicolons or curly braces
+2. Type mismatch: Make sure variable types match (can't assign string to int)
+3. FormatException: When converting input, make sure user enters valid number
+4. Case sensitivity: C# is case-sensitive (WriteLine vs writeline)
+5. Missing using System; at the top of your program

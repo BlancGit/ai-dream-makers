@@ -1,0 +1,2024 @@
+================================================================================
+                    WEEK 2 TEACHING PLAN - PYTHON & C#
+                       Detailed Lesson Plans with Examples
+================================================================================
+
+TABLE OF CONTENTS:
+==================
+1. Last Week Recap (Python & C#)
+2. PYTHON - Week 2 Sessions
+   - Session 1: File Handling & Exceptions (45-60 min)
+   - Session 2: Advanced Data Structures (45-60 min)
+   - Session 3: Modules & Libraries (45-60 min)
+3. C# - Week 2 Sessions
+   - Session 1: Arrays & Collections (45-60 min)
+   - Session 2: File I/O & Exception Handling (45-60 min)
+   - Session 3: Advanced OOP & LINQ (45-60 min)
+4. Summary of Learning Objectives
+
+================================================================================
+                          LAST WEEK RECAP
+================================================================================
+
+PYTHON - WEEK 1 COVERED:
+------------------------
+✓ Module 0: Environment Setup (VS Code, Python installation)
+✓ Module 1: Python Fundamentals (variables, data types, input/output, f-strings)
+✓ Module 2: Control Flow & Logic (if/elif/else, for/while loops, indentation)
+✓ Module 3: Functions & Modules (def keyword, parameters, return values, lambda)
+✓ Module 4: Data Structures & OOP (lists, dictionaries, classes, inheritance)
+✓ Module 5: Text Adventure Game Project (combining all concepts)
+
+C# - WEEK 1 COVERED:
+--------------------
+✓ Module 0: Visual Studio setup
+✓ Module 1: Variables, data types, Console.WriteLine/ReadLine
+✓ Module 2: If/else, for/while loops
+✓ Module 3: Methods (static, return types, parameters)
+✓ Module 4: Classes, objects, constructors, inheritance
+✓ Module 5: Console RPG game
+
+================================================================================
+                    PYTHON - WEEK 2 SESSION 1
+              FILE HANDLING & EXCEPTIONS (45-60 min)
+================================================================================
+
+PART 1: READING & WRITING FILES (20 min)
+=========================================
+
+TEACHER EXPLANATION:
+-------------------
+"Just like you save your game progress, Python can save data to files so it
+remembers things even after the program closes!"
+
+EXAMPLE 1: WRITING TO A FILE
+-----------------------------
+```python
+# Writing to a file - Creating a diary entry
+diary_entry = """
+Today I learned Python!
+It was super fun.
+Tomorrow I'll learn more!
+"""
+
+# Open file in write mode ('w')
+file = open("my_diary.txt", "w")
+file.write(diary_entry)
+file.close()  # Always close files!
+
+print("✅ Diary entry saved!")
+```
+
+TEACHING NOTES:
+- Show them the created my_diary.txt file in File Explorer
+- Explain 'w' means "write mode" (creates new or overwrites)
+- Emphasize: ALWAYS close files!
+
+EXAMPLE 2: READING FROM A FILE
+-------------------------------
+```python
+# Reading our diary
+file = open("my_diary.txt", "r")  # 'r' = read mode
+contents = file.read()  # Read everything
+file.close()
+
+print("📖 Your diary says:")
+print(contents)
+```
+
+STUDENT ACTIVITY:
+Have students write their name and favorite color to a file, then read it back.
+
+---
+
+PART 2: THE BETTER WAY - USING 'with' STATEMENT (15 min)
+=========================================================
+
+TEACHER EXPLANATION:
+-------------------
+"The 'with' statement is like a smart helper that automatically closes files
+for you!"
+
+```python
+# Better way - file closes automatically!
+with open("my_diary.txt", "w") as file:
+    file.write("This is much better!\n")
+    file.write("The file closes by itself!")
+# File is automatically closed here
+
+# Reading with 'with'
+with open("my_diary.txt", "r") as file:
+    content = file.read()
+    print(content)
+```
+
+---
+
+PART 3: EXCEPTION HANDLING - CATCHING ERRORS (20 min)
+======================================================
+
+TEACHER EXPLANATION:
+-------------------
+"Sometimes things go wrong - a file doesn't exist, user types text instead of
+a number. We need to catch these errors!"
+
+```python
+# Without error handling - CRASHES!
+age = int(input("Enter your age: "))  # What if they type "hello"?
+
+# With error handling - SAFE!
+try:
+    age = int(input("Enter your age: "))
+    print(f"In 10 years you'll be {age + 10}")
+except ValueError:
+    print("❌ That's not a number! Try again.")
+```
+
+FULL EXAMPLE - SAFE FILE READING
+---------------------------------
+```python
+filename = input("What file do you want to read? ")
+
+try:
+    with open(filename, "r") as file:
+        contents = file.read()
+        print("📄 File contents:")
+        print(contents)
+except FileNotFoundError:
+    print(f"❌ Sorry, {filename} doesn't exist!")
+except Exception as e:
+    print(f"❌ Something went wrong: {e}")
+```
+
+COMMON EXCEPTIONS TO TEACH:
+---------------------------
+- ValueError - Wrong type (text instead of number)
+- FileNotFoundError - File doesn't exist
+- ZeroDivisionError - Dividing by zero
+- IndexError - List index doesn't exist
+
+---
+
+PROJECT 1: GRADE TRACKER WITH FILE SAVING
+==========================================
+
+```python
+# Simple Grade Tracker with File Saving
+
+def save_grades():
+    """Save student grades to a file"""
+    print("\n📝 GRADE TRACKER")
+    print("=" * 30)
+
+    # Get student name
+    name = input("Student name: ")
+
+    # Get grades
+    grades = []
+    while True:
+        grade_input = input("Enter grade (or 'done' to finish): ")
+
+        if grade_input.lower() == 'done':
+            break
+
+        try:
+            grade = float(grade_input)
+            if 0 <= grade <= 100:
+                grades.append(grade)
+            else:
+                print("❌ Grade must be between 0 and 100!")
+        except ValueError:
+            print("❌ Please enter a valid number!")
+
+    # Calculate average
+    if grades:
+        average = sum(grades) / len(grades)
+
+        # Save to file
+        try:
+            with open("grades.txt", "a") as file:  # 'a' = append mode
+                file.write(f"\n{name}: {grades} - Average: {average:.2f}")
+            print(f"✅ Saved! {name}'s average: {average:.2f}")
+        except Exception as e:
+            print(f"❌ Error saving: {e}")
+    else:
+        print("No grades entered!")
+
+def view_all_grades():
+    """View all saved grades"""
+    try:
+        with open("grades.txt", "r") as file:
+            print("\n📊 ALL GRADES:")
+            print("=" * 30)
+            print(file.read())
+    except FileNotFoundError:
+        print("❌ No grades saved yet!")
+
+# Main menu
+while True:
+    print("\n1. Add new grades")
+    print("2. View all grades")
+    print("3. Quit")
+
+    choice = input("Choice: ")
+
+    if choice == "1":
+        save_grades()
+    elif choice == "2":
+        view_all_grades()
+    elif choice == "3":
+        print("👋 Goodbye!")
+        break
+    else:
+        print("Invalid choice!")
+```
+
+TEACHING STEPS:
+--------------
+1. Code together line-by-line
+2. Run the program and add some sample grades
+3. Show them the grades.txt file that was created
+4. Have them modify it to track something else (game scores, book ratings)
+
+================================================================================
+                    PYTHON - WEEK 2 SESSION 2
+              ADVANCED DATA STRUCTURES (45-60 min)
+================================================================================
+
+PART 1: TUPLES - UNCHANGEABLE LISTS (15 min)
+=============================================
+
+TEACHER EXPLANATION:
+-------------------
+"Tuples are like lists, but once you create them, you can't change them.
+Perfect for data that shouldn't change!"
+
+```python
+# Lists - can change
+my_list = [1, 2, 3]
+my_list[0] = 99  # ✅ Works fine
+print(my_list)  # [99, 2, 3]
+
+# Tuples - cannot change
+my_tuple = (1, 2, 3)
+# my_tuple[0] = 99  # ❌ ERROR! Cannot change tuples
+
+# When to use tuples
+days_of_week = ("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun")
+coordinates = (10, 20)  # x, y position
+rgb_color = (255, 0, 128)  # Red, Green, Blue
+
+# Unpacking tuples
+x, y = coordinates
+print(f"X is {x}, Y is {y}")
+
+# Returning multiple values from functions
+def get_min_max(numbers):
+    return min(numbers), max(numbers)  # Returns a tuple
+
+minimum, maximum = get_min_max([5, 2, 9, 1, 7])
+print(f"Min: {minimum}, Max: {maximum}")
+```
+
+---
+
+PART 2: SETS - UNIQUE COLLECTIONS (15 min)
+===========================================
+
+TEACHER EXPLANATION:
+-------------------
+"Sets are like bags where each item can only appear once. They automatically
+remove duplicates!"
+
+```python
+# Creating sets
+fruits = {"apple", "banana", "orange"}
+numbers = {1, 2, 3, 4, 5}
+
+# Sets remove duplicates automatically!
+duplicate_list = [1, 2, 2, 3, 3, 3, 4]
+unique_numbers = set(duplicate_list)
+print(unique_numbers)  # {1, 2, 3, 4}
+
+# Set operations
+set_a = {1, 2, 3, 4}
+set_b = {3, 4, 5, 6}
+
+print("Union (all items):", set_a | set_b)  # {1, 2, 3, 4, 5, 6}
+print("Intersection (common):", set_a & set_b)  # {3, 4}
+print("Difference:", set_a - set_b)  # {1, 2}
+
+# Adding/removing from sets
+animals = {"dog", "cat"}
+animals.add("bird")
+animals.remove("dog")
+print(animals)
+
+# Checking membership (super fast!)
+if "cat" in animals:
+    print("Found a cat!")
+```
+
+REAL-WORLD EXAMPLE:
+-------------------
+```python
+# Track unique visitors to a website
+visitors = set()
+
+while True:
+    name = input("Enter visitor name (or 'done'): ")
+    if name == 'done':
+        break
+    visitors.add(name)  # Automatically handles duplicates
+
+print(f"\nTotal unique visitors: {len(visitors)}")
+print("Visitors:", visitors)
+```
+
+---
+
+PART 3: LIST & DICTIONARY COMPREHENSIONS (25 min)
+==================================================
+
+TEACHER EXPLANATION:
+-------------------
+"Comprehensions are shortcuts for creating lists and dictionaries in one line!"
+
+```python
+# Traditional way to create a list
+squares = []
+for x in range(1, 6):
+    squares.append(x ** 2)
+print(squares)  # [1, 4, 9, 16, 25]
+
+# List comprehension - ONE LINE!
+squares = [x ** 2 for x in range(1, 6)]
+print(squares)  # [1, 4, 9, 16, 25]
+
+# More examples
+evens = [x for x in range(20) if x % 2 == 0]
+print("Evens:", evens)
+
+# String operations
+words = ["hello", "world", "python"]
+uppercase = [word.upper() for word in words]
+print(uppercase)  # ['HELLO', 'WORLD', 'PYTHON']
+
+# Filter with conditions
+scores = [45, 78, 92, 34, 88, 56]
+passing_scores = [score for score in scores if score >= 60]
+print("Passing:", passing_scores)
+
+# Dictionary comprehension
+numbers = [1, 2, 3, 4, 5]
+squared_dict = {x: x**2 for x in numbers}
+print(squared_dict)  # {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+
+# Practical example - Create grade letters
+scores = {"Alice": 92, "Bob": 78, "Charlie": 85}
+letter_grades = {name: "A" if score >= 90 else "B" if score >= 80 else "C"
+                 for name, score in scores.items()}
+print(letter_grades)
+```
+
+---
+
+PROJECT 2: STUDENT GRADE ANALYZER
+==================================
+
+```python
+# Advanced Grade Analyzer
+
+def analyze_grades():
+    """Analyze student grades with advanced features"""
+
+    # Sample data
+    students = {
+        "Alice": [92, 88, 95, 90],
+        "Bob": [78, 82, 75, 80],
+        "Charlie": [65, 70, 68, 72],
+        "Diana": [95, 98, 92, 97]
+    }
+
+    # Calculate averages using dictionary comprehension
+    averages = {name: sum(grades)/len(grades)
+                for name, grades in students.items()}
+
+    # Get letter grades
+    def get_letter(avg):
+        if avg >= 90: return "A"
+        elif avg >= 80: return "B"
+        elif avg >= 70: return "C"
+        elif avg >= 60: return "D"
+        else: return "F"
+
+    letter_grades = {name: get_letter(avg)
+                    for name, avg in averages.items()}
+
+    # Find honor roll students (average >= 90)
+    honor_roll = [name for name, avg in averages.items() if avg >= 90]
+
+    # Get unique all grades (using set)
+    all_grades = []
+    for grades in students.values():
+        all_grades.extend(grades)
+    unique_grades = sorted(set(all_grades), reverse=True)
+
+    # Display results
+    print("\n📊 GRADE ANALYSIS REPORT")
+    print("=" * 50)
+
+    for name in students:
+        print(f"\n{name}:")
+        print(f"  Grades: {students[name]}")
+        print(f"  Average: {averages[name]:.2f}")
+        print(f"  Letter Grade: {letter_grades[name]}")
+
+    print(f"\n🏆 Honor Roll: {', '.join(honor_roll)}")
+    print(f"\n🎯 All Unique Grades: {unique_grades}")
+    print(f"\n📈 Class Average: {sum(averages.values())/len(averages):.2f}")
+
+    # Sort students by average (using sorted with lambda)
+    sorted_students = sorted(averages.items(), key=lambda x: x[1], reverse=True)
+    print("\n🥇 Rankings:")
+    for rank, (name, avg) in enumerate(sorted_students, 1):
+        print(f"  {rank}. {name} - {avg:.2f}")
+
+# Run the analyzer
+analyze_grades()
+```
+
+TEACHING STEPS:
+--------------
+1. Break down each section and explain
+2. Focus on the comprehensions
+3. Show how sets remove duplicates
+4. Explain the sorted() function with lambda
+5. Have students add new features (add students, calculate median, etc.)
+
+================================================================================
+                    PYTHON - WEEK 2 SESSION 3
+                  MODULES & LIBRARIES (45-60 min)
+================================================================================
+
+PART 1: IMPORTING BUILT-IN MODULES (20 min)
+============================================
+
+TEACHER EXPLANATION:
+-------------------
+"Modules are like toolboxes full of useful functions that other programmers
+made for us!"
+
+RANDOM MODULE - FOR RANDOMNESS
+-------------------------------
+```python
+import random
+
+# Random integer
+dice_roll = random.randint(1, 6)  # Random number from 1 to 6
+print(f"You rolled a {dice_roll}")
+
+# Random choice from a list
+colors = ["red", "blue", "green", "yellow"]
+random_color = random.choice(colors)
+print(f"Random color: {random_color}")
+
+# Shuffle a list
+deck = ["A", "K", "Q", "J", "10"]
+random.shuffle(deck)
+print(f"Shuffled deck: {deck}")
+
+# Random float between 0 and 1
+random_decimal = random.random()
+print(f"Random decimal: {random_decimal}")
+
+# Random float in a range
+temperature = random.uniform(20.0, 30.0)
+print(f"Temperature: {temperature:.1f}°C")
+```
+
+DATETIME MODULE - WORKING WITH DATES/TIMES
+-------------------------------------------
+```python
+import datetime
+
+# Get current date and time
+now = datetime.datetime.now()
+print(f"Current time: {now}")
+
+# Get just the date
+today = datetime.date.today()
+print(f"Today's date: {today}")
+
+# Format dates nicely
+formatted = now.strftime("%B %d, %Y at %I:%M %p")
+print(f"Formatted: {formatted}")
+
+# Calculate age
+birthdate = datetime.date(2010, 5, 15)
+age = (today - birthdate).days // 365
+print(f"Age: {age} years old")
+
+# Future dates
+future = today + datetime.timedelta(days=30)
+print(f"30 days from now: {future}")
+```
+
+MATH MODULE - ADVANCED MATH
+----------------------------
+```python
+import math
+
+# Constants
+print(f"Pi: {math.pi}")
+print(f"E: {math.e}")
+
+# Rounding
+number = 4.7
+print(f"Floor: {math.floor(number)}")  # 4
+print(f"Ceil: {math.ceil(number)}")    # 5
+
+# Power and square root
+print(f"2^3 = {math.pow(2, 3)}")
+print(f"√16 = {math.sqrt(16)}")
+
+# Trigonometry
+angle = 45
+radians = math.radians(angle)
+print(f"sin(45°) = {math.sin(radians):.2f}")
+```
+
+---
+
+PART 2: CREATING YOUR OWN MODULES (20 min)
+===========================================
+
+TEACHER EXPLANATION:
+-------------------
+"You can create your own modules to organize your code!"
+
+CREATE FILE: game_utils.py
+---------------------------
+```python
+# game_utils.py - Our custom module
+
+import random
+
+def roll_dice(sides=6):
+    """Roll a dice with given number of sides"""
+    return random.randint(1, sides)
+
+def generate_character():
+    """Generate a random game character"""
+    names = ["Warrior", "Mage", "Archer", "Thief"]
+    name = random.choice(names)
+    health = random.randint(80, 120)
+    power = random.randint(10, 20)
+
+    return {
+        "name": name,
+        "health": health,
+        "power": power
+    }
+
+def calculate_damage(attacker_power, defender_armor=0):
+    """Calculate damage after armor"""
+    base_damage = attacker_power + roll_dice(10)
+    final_damage = max(base_damage - defender_armor, 0)
+    return final_damage
+
+# Constants
+MAX_INVENTORY = 10
+STARTING_GOLD = 100
+```
+
+CREATE FILE: main.py - USING OUR MODULE
+----------------------------------------
+```python
+# main.py - Using our custom module
+
+# Different ways to import
+import game_utils  # Import everything with prefix
+
+# Or import specific functions
+from game_utils import roll_dice, generate_character
+
+# Or import everything directly (not recommended)
+# from game_utils import *
+
+# Use the module
+print("Rolling dice:", game_utils.roll_dice())
+print("Roll 20-sided dice:", roll_dice(20))
+
+# Generate characters
+hero = generate_character()
+print(f"\nYour character: {hero}")
+
+enemy = generate_character()
+print(f"Enemy: {enemy}")
+
+# Calculate damage
+damage = game_utils.calculate_damage(hero["power"])
+print(f"\nDamage dealt: {damage}")
+
+# Use constants
+print(f"Starting gold: {game_utils.STARTING_GOLD}")
+```
+
+TEACHING STEPS:
+--------------
+1. Create game_utils.py together
+2. Create main.py and import the module
+3. Show different import methods
+4. Run the program
+5. Have students add more functions to the module
+
+---
+
+PROJECT 3: RANDOM QUOTE GENERATOR WITH LOGGING
+===============================================
+
+```python
+# quote_generator.py - Daily Quote with Time Logging
+
+import random
+import datetime
+
+# Quote database
+quotes = [
+    {"text": "Be yourself; everyone else is already taken.", "author": "Oscar Wilde"},
+    {"text": "The only way to do great work is to love what you do.", "author": "Steve Jobs"},
+    {"text": "Life is what happens when you're busy making other plans.", "author": "John Lennon"},
+    {"text": "The future belongs to those who believe in the beauty of their dreams.", "author": "Eleanor Roosevelt"},
+    {"text": "It is never too late to be what you might have been.", "author": "George Eliot"},
+]
+
+def get_random_quote():
+    """Get a random quote"""
+    return random.choice(quotes)
+
+def add_quote(text, author):
+    """Add a new quote to the collection"""
+    new_quote = {"text": text, "author": author}
+    quotes.append(new_quote)
+    print(f"✅ Added quote by {author}")
+
+def save_quote_to_log(quote):
+    """Save the quote with timestamp to a file"""
+    now = datetime.datetime.now()
+    timestamp = now.strftime("%Y-%m-%d %H:%M:%S")
+
+    try:
+        with open("quote_log.txt", "a") as file:
+            file.write(f"\n[{timestamp}]\n")
+            file.write(f'"{quote["text"]}"\n')
+            file.write(f"- {quote['author']}\n")
+            file.write("-" * 50 + "\n")
+        print("💾 Quote saved to log!")
+    except Exception as e:
+        print(f"❌ Error saving: {e}")
+
+def view_log():
+    """View all previously shown quotes"""
+    try:
+        with open("quote_log.txt", "r") as file:
+            print("\n📜 QUOTE HISTORY:")
+            print("=" * 50)
+            print(file.read())
+    except FileNotFoundError:
+        print("❌ No quote history yet!")
+
+def main():
+    """Main program"""
+    print("=" * 50)
+    print("   ✨ DAILY INSPIRATION QUOTE GENERATOR ✨")
+    print("=" * 50)
+
+    while True:
+        print("\n1. Get random quote")
+        print("2. Add new quote")
+        print("3. View quote history")
+        print("4. Exit")
+
+        choice = input("\nChoice: ")
+
+        if choice == "1":
+            quote = get_random_quote()
+            print(f'\n"{quote["text"]}"')
+            print(f"   - {quote['author']}")
+
+            save = input("\n💾 Save this quote to log? (y/n): ")
+            if save.lower() == 'y':
+                save_quote_to_log(quote)
+
+        elif choice == "2":
+            text = input("Enter quote text: ")
+            author = input("Enter author name: ")
+            add_quote(text, author)
+
+        elif choice == "3":
+            view_log()
+
+        elif choice == "4":
+            print("\n👋 Keep being inspired!")
+            break
+
+        else:
+            print("❌ Invalid choice!")
+
+if __name__ == "__main__":
+    main()
+```
+
+TEACHING STEPS:
+--------------
+1. Build the program together step-by-step
+2. Run it and generate some quotes
+3. Show the quote_log.txt file created
+4. Explain the timestamp formatting
+5. Have students customize: add categories, search quotes, daily reminders
+
+================================================================================
+                     C# - WEEK 2 SESSION 1
+              ARRAYS & COLLECTIONS (45-60 min)
+================================================================================
+
+PART 1: ARRAYS - FIXED SIZE COLLECTIONS (20 min)
+=================================================
+
+TEACHER EXPLANATION:
+-------------------
+"Arrays are like lockers in a row - fixed number of spots, each numbered
+starting from 0!"
+
+```csharp
+using System;
+
+class ArrayLesson
+{
+    static void Main()
+    {
+        // Create an array of 5 integers
+        int[] scores = new int[5];
+
+        // Assign values
+        scores[0] = 95;
+        scores[1] = 87;
+        scores[2] = 92;
+        scores[3] = 78;
+        scores[4] = 88;
+
+        // Access values
+        Console.WriteLine("First score: " + scores[0]);
+        Console.WriteLine("Last score: " + scores[4]);
+
+        // Create and initialize in one line
+        string[] names = { "Alice", "Bob", "Charlie", "Diana" };
+
+        // Array length
+        Console.WriteLine("Number of names: " + names.Length);
+
+        // Loop through array
+        Console.WriteLine("\nAll names:");
+        for (int i = 0; i < names.Length; i++)
+        {
+            Console.WriteLine($"{i + 1}. {names[i]}");
+        }
+
+        // Foreach loop (easier!)
+        Console.WriteLine("\nAll scores:");
+        foreach (int score in scores)
+        {
+            Console.WriteLine(score);
+        }
+
+        // Multi-dimensional array (like a grid)
+        int[,] grid = new int[3, 3];  // 3x3 grid
+        grid[0, 0] = 1;
+        grid[0, 1] = 2;
+        grid[0, 2] = 3;
+
+        // Jagged array (array of arrays)
+        int[][] jaggedArray = new int[3][];
+        jaggedArray[0] = new int[] { 1, 2 };
+        jaggedArray[1] = new int[] { 3, 4, 5 };
+        jaggedArray[2] = new int[] { 6 };
+    }
+}
+```
+
+---
+
+PART 2: LISTS - DYNAMIC ARRAYS (20 min)
+========================================
+
+TEACHER EXPLANATION:
+-------------------
+"Lists are like arrays but can grow and shrink! Much more flexible!"
+
+```csharp
+using System;
+using System.Collections.Generic;  // Need this for List
+
+class ListLesson
+{
+    static void Main()
+    {
+        // Create a List (starts empty)
+        List<string> fruits = new List<string>();
+
+        // Add items
+        fruits.Add("Apple");
+        fruits.Add("Banana");
+        fruits.Add("Orange");
+
+        Console.WriteLine("Fruits: " + fruits.Count);
+
+        // Access like an array
+        Console.WriteLine("First fruit: " + fruits[0]);
+
+        // Insert at specific position
+        fruits.Insert(1, "Mango");  // Add at index 1
+
+        // Remove items
+        fruits.Remove("Banana");  // Remove by value
+        fruits.RemoveAt(0);       // Remove by index
+
+        // Check if contains
+        if (fruits.Contains("Orange"))
+        {
+            Console.WriteLine("We have oranges!");
+        }
+
+        // Loop through
+        foreach (string fruit in fruits)
+        {
+            Console.WriteLine("- " + fruit);
+        }
+
+        // Create List with initial values
+        List<int> numbers = new List<int> { 5, 10, 15, 20, 25 };
+
+        // Find and Sort
+        int max = numbers.Max();
+        int min = numbers.Min();
+        numbers.Sort();  // Sorts in place
+        numbers.Reverse();  // Reverses order
+
+        Console.WriteLine($"Max: {max}, Min: {min}");
+    }
+}
+```
+
+---
+
+PART 3: DICTIONARIES - KEY-VALUE PAIRS (15 min)
+================================================
+
+```csharp
+using System;
+using System.Collections.Generic;
+
+class DictionaryLesson
+{
+    static void Main()
+    {
+        // Create a Dictionary (like Python's dict)
+        Dictionary<string, int> ages = new Dictionary<string, int>();
+
+        // Add key-value pairs
+        ages["Alice"] = 25;
+        ages["Bob"] = 30;
+        ages["Charlie"] = 28;
+
+        // Or use Add method
+        ages.Add("Diana", 22);
+
+        // Access values
+        Console.WriteLine("Alice's age: " + ages["Alice"]);
+
+        // Check if key exists (important!)
+        if (ages.ContainsKey("Bob"))
+        {
+            Console.WriteLine("Bob is " + ages["Bob"] + " years old");
+        }
+
+        // Safe way to get value
+        int age;
+        if (ages.TryGetValue("Eve", out age))
+        {
+            Console.WriteLine("Eve's age: " + age);
+        }
+        else
+        {
+            Console.WriteLine("Eve not found!");
+        }
+
+        // Loop through dictionary
+        foreach (KeyValuePair<string, int> person in ages)
+        {
+            Console.WriteLine($"{person.Key} is {person.Value} years old");
+        }
+
+        // Or use var keyword
+        foreach (var person in ages)
+        {
+            Console.WriteLine($"{person.Key}: {person.Value}");
+        }
+
+        // Get all keys or values
+        foreach (string name in ages.Keys)
+        {
+            Console.WriteLine("Name: " + name);
+        }
+    }
+}
+```
+
+---
+
+C# PROJECT 1: STUDENT GRADE MANAGER
+====================================
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;  // For Min, Max, Average
+
+class GradeManager
+{
+    // Dictionary: student name -> list of grades
+    static Dictionary<string, List<int>> studentGrades = new Dictionary<string, List<int>>();
+
+    static void Main()
+    {
+        Console.WriteLine("╔═══════════════════════════════╗");
+        Console.WriteLine("║   STUDENT GRADE MANAGER       ║");
+        Console.WriteLine("╚═══════════════════════════════╝\n");
+
+        bool running = true;
+
+        while (running)
+        {
+            Console.WriteLine("\n1. Add student");
+            Console.WriteLine("2. Add grade for student");
+            Console.WriteLine("3. View student grades");
+            Console.WriteLine("4. View class summary");
+            Console.WriteLine("5. Exit");
+            Console.Write("Choice: ");
+
+            string choice = Console.ReadLine();
+
+            switch (choice)
+            {
+                case "1":
+                    AddStudent();
+                    break;
+                case "2":
+                    AddGrade();
+                    break;
+                case "3":
+                    ViewStudentGrades();
+                    break;
+                case "4":
+                    ViewClassSummary();
+                    break;
+                case "5":
+                    running = false;
+                    Console.WriteLine("👋 Goodbye!");
+                    break;
+                default:
+                    Console.WriteLine("❌ Invalid choice!");
+                    break;
+            }
+        }
+    }
+
+    static void AddStudent()
+    {
+        Console.Write("Enter student name: ");
+        string name = Console.ReadLine();
+
+        if (studentGrades.ContainsKey(name))
+        {
+            Console.WriteLine("❌ Student already exists!");
+        }
+        else
+        {
+            studentGrades[name] = new List<int>();
+            Console.WriteLine($"✅ Added {name}");
+        }
+    }
+
+    static void AddGrade()
+    {
+        Console.Write("Student name: ");
+        string name = Console.ReadLine();
+
+        if (!studentGrades.ContainsKey(name))
+        {
+            Console.WriteLine("❌ Student not found!");
+            return;
+        }
+
+        Console.Write("Enter grade (0-100): ");
+        if (int.TryParse(Console.ReadLine(), out int grade))
+        {
+            if (grade >= 0 && grade <= 100)
+            {
+                studentGrades[name].Add(grade);
+                Console.WriteLine($"✅ Added grade {grade} for {name}");
+            }
+            else
+            {
+                Console.WriteLine("❌ Grade must be 0-100!");
+            }
+        }
+        else
+        {
+            Console.WriteLine("❌ Invalid number!");
+        }
+    }
+
+    static void ViewStudentGrades()
+    {
+        Console.Write("Student name: ");
+        string name = Console.ReadLine();
+
+        if (!studentGrades.ContainsKey(name))
+        {
+            Console.WriteLine("❌ Student not found!");
+            return;
+        }
+
+        List<int> grades = studentGrades[name];
+
+        if (grades.Count == 0)
+        {
+            Console.WriteLine($"{name} has no grades yet.");
+            return;
+        }
+
+        Console.WriteLine($"\n📊 {name}'s Grades:");
+        foreach (int grade in grades)
+        {
+            Console.WriteLine($"  • {grade}");
+        }
+
+        double average = grades.Average();
+        int highest = grades.Max();
+        int lowest = grades.Min();
+
+        Console.WriteLine($"\nAverage: {average:F2}");
+        Console.WriteLine($"Highest: {highest}");
+        Console.WriteLine($"Lowest: {lowest}");
+        Console.WriteLine($"Letter Grade: {GetLetterGrade(average)}");
+    }
+
+    static void ViewClassSummary()
+    {
+        if (studentGrades.Count == 0)
+        {
+            Console.WriteLine("❌ No students yet!");
+            return;
+        }
+
+        Console.WriteLine("\n📈 CLASS SUMMARY");
+        Console.WriteLine("═══════════════════════════════");
+
+        foreach (var student in studentGrades)
+        {
+            string name = student.Key;
+            List<int> grades = student.Value;
+
+            if (grades.Count > 0)
+            {
+                double avg = grades.Average();
+                Console.WriteLine($"{name}: {avg:F2} ({GetLetterGrade(avg)})");
+            }
+            else
+            {
+                Console.WriteLine($"{name}: No grades");
+            }
+        }
+
+        // Overall class average
+        List<double> allAverages = new List<double>();
+        foreach (var student in studentGrades)
+        {
+            if (student.Value.Count > 0)
+            {
+                allAverages.Add(student.Value.Average());
+            }
+        }
+
+        if (allAverages.Count > 0)
+        {
+            double classAverage = allAverages.Average();
+            Console.WriteLine($"\n🎯 Class Average: {classAverage:F2}");
+        }
+    }
+
+    static string GetLetterGrade(double average)
+    {
+        if (average >= 90) return "A";
+        if (average >= 80) return "B";
+        if (average >= 70) return "C";
+        if (average >= 60) return "D";
+        return "F";
+    }
+}
+```
+
+TEACHING STEPS:
+--------------
+1. Build together section by section
+2. Test each feature as you add it
+3. Explain the Dictionary<string, List<int>> structure
+4. Show how LINQ methods (Average, Max, Min) work
+5. Challenge students to add: remove student, edit grades, save to file
+
+================================================================================
+                     C# - WEEK 2 SESSION 2
+           FILE I/O & EXCEPTION HANDLING (45-60 min)
+================================================================================
+
+PART 1: WRITING TO FILES (15 min)
+==================================
+
+```csharp
+using System;
+using System.IO;  // Need this for File operations
+
+class FileWriting
+{
+    static void Main()
+    {
+        // Write text to a file
+        string message = "Hello from C#!\nThis is line 2.\nThis is line 3.";
+
+        File.WriteAllText("message.txt", message);
+        Console.WriteLine("✅ File written!");
+
+        // Append to file
+        File.AppendAllText("message.txt", "\nThis line was added later!");
+
+        // Write array of lines
+        string[] lines = {
+            "Line 1",
+            "Line 2",
+            "Line 3"
+        };
+        File.WriteAllLines("lines.txt", lines);
+
+        // Write using StreamWriter (for more control)
+        using (StreamWriter writer = new StreamWriter("output.txt"))
+        {
+            writer.WriteLine("First line");
+            writer.WriteLine("Second line");
+            writer.WriteLine("Third line");
+        }  // File automatically closed here
+
+        Console.WriteLine("All files written!");
+    }
+}
+```
+
+---
+
+PART 2: READING FROM FILES (15 min)
+====================================
+
+```csharp
+using System;
+using System.IO;
+
+class FileReading
+{
+    static void Main()
+    {
+        // Read entire file as string
+        string content = File.ReadAllText("message.txt");
+        Console.WriteLine("File contents:");
+        Console.WriteLine(content);
+
+        // Read all lines as array
+        string[] lines = File.ReadAllLines("message.txt");
+        Console.WriteLine("\nLine by line:");
+        foreach (string line in lines)
+        {
+            Console.WriteLine("- " + line);
+        }
+
+        // Read with StreamReader
+        using (StreamReader reader = new StreamReader("message.txt"))
+        {
+            string line;
+            int lineNumber = 1;
+
+            while ((line = reader.ReadLine()) != null)
+            {
+                Console.WriteLine($"{lineNumber}: {line}");
+                lineNumber++;
+            }
+        }
+
+        // Check if file exists
+        if (File.Exists("message.txt"))
+        {
+            Console.WriteLine("✅ File exists!");
+        }
+
+        // Get file info
+        FileInfo info = new FileInfo("message.txt");
+        Console.WriteLine($"Size: {info.Length} bytes");
+        Console.WriteLine($"Created: {info.CreationTime}");
+    }
+}
+```
+
+---
+
+PART 3: EXCEPTION HANDLING (20 min)
+====================================
+
+TEACHER EXPLANATION:
+-------------------
+"Exceptions are errors that happen while the program runs. We need to catch
+them so the program doesn't crash!"
+
+```csharp
+using System;
+using System.IO;
+
+class ExceptionHandling
+{
+    static void Main()
+    {
+        // Example 1: Division by zero
+        try
+        {
+            int a = 10;
+            int b = 0;
+            int result = a / b;  // This will throw an exception!
+        }
+        catch (DivideByZeroException ex)
+        {
+            Console.WriteLine("❌ Cannot divide by zero!");
+            Console.WriteLine("Error: " + ex.Message);
+        }
+
+        // Example 2: File not found
+        try
+        {
+            string content = File.ReadAllText("nonexistent.txt");
+        }
+        catch (FileNotFoundException ex)
+        {
+            Console.WriteLine("❌ File not found!");
+            Console.WriteLine(ex.Message);
+        }
+
+        // Example 3: Invalid conversion
+        try
+        {
+            Console.Write("Enter a number: ");
+            string input = Console.ReadLine();
+            int number = int.Parse(input);  // Might fail!
+            Console.WriteLine("You entered: " + number);
+        }
+        catch (FormatException)
+        {
+            Console.WriteLine("❌ That's not a valid number!");
+        }
+
+        // Example 4: Multiple catch blocks
+        try
+        {
+            Console.Write("Enter array index: ");
+            int index = int.Parse(Console.ReadLine());
+
+            int[] numbers = { 10, 20, 30 };
+            Console.WriteLine("Value: " + numbers[index]);
+        }
+        catch (FormatException)
+        {
+            Console.WriteLine("❌ Please enter a number!");
+        }
+        catch (IndexOutOfRangeException)
+        {
+            Console.WriteLine("❌ Index out of range!");
+        }
+        catch (Exception ex)  // Catch all other exceptions
+        {
+            Console.WriteLine("❌ Something went wrong: " + ex.Message);
+        }
+        finally
+        {
+            // This ALWAYS runs, even if there's an exception
+            Console.WriteLine("✅ Done!");
+        }
+
+        // Example 5: Using TryParse (safer!)
+        Console.Write("Enter your age: ");
+        string ageInput = Console.ReadLine();
+
+        if (int.TryParse(ageInput, out int age))
+        {
+            Console.WriteLine($"In 10 years you'll be {age + 10}");
+        }
+        else
+        {
+            Console.WriteLine("❌ Invalid age!");
+        }
+    }
+}
+```
+
+COMMON EXCEPTIONS:
+-----------------
+- DivideByZeroException - Dividing by zero
+- FileNotFoundException - File doesn't exist
+- FormatException - Wrong format (text instead of number)
+- IndexOutOfRangeException - Array index doesn't exist
+- NullReferenceException - Using null object
+- ArgumentException - Invalid argument
+
+---
+
+C# PROJECT 2: TODO LIST WITH FILE SAVING
+=========================================
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.IO;
+
+class TodoList
+{
+    static List<string> tasks = new List<string>();
+    static string filename = "tasks.txt";
+
+    static void Main()
+    {
+        Console.WriteLine("╔═══════════════════════════════╗");
+        Console.WriteLine("║      TODO LIST MANAGER        ║");
+        Console.WriteLine("╚═══════════════════════════════╝\n");
+
+        LoadTasks();  // Load saved tasks on startup
+
+        bool running = true;
+
+        while (running)
+        {
+            Console.WriteLine($"\n📝 Current Tasks: {tasks.Count}");
+            Console.WriteLine("═══════════════════════════════");
+            Console.WriteLine("1. Add task");
+            Console.WriteLine("2. View all tasks");
+            Console.WriteLine("3. Complete task");
+            Console.WriteLine("4. Delete task");
+            Console.WriteLine("5. Save and exit");
+            Console.Write("\nChoice: ");
+
+            string choice = Console.ReadLine();
+
+            try
+            {
+                switch (choice)
+                {
+                    case "1":
+                        AddTask();
+                        break;
+                    case "2":
+                        ViewTasks();
+                        break;
+                    case "3":
+                        CompleteTask();
+                        break;
+                    case "4":
+                        DeleteTask();
+                        break;
+                    case "5":
+                        SaveTasks();
+                        running = false;
+                        Console.WriteLine("👋 Goodbye!");
+                        break;
+                    default:
+                        Console.WriteLine("❌ Invalid choice!");
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"❌ Error: {ex.Message}");
+            }
+        }
+    }
+
+    static void AddTask()
+    {
+        Console.Write("Enter task: ");
+        string task = Console.ReadLine();
+
+        if (!string.IsNullOrWhiteSpace(task))
+        {
+            tasks.Add("[ ] " + task);  // [ ] = not done
+            Console.WriteLine("✅ Task added!");
+        }
+        else
+        {
+            Console.WriteLine("❌ Task cannot be empty!");
+        }
+    }
+
+    static void ViewTasks()
+    {
+        if (tasks.Count == 0)
+        {
+            Console.WriteLine("\n📋 No tasks yet! Add some tasks to get started.");
+            return;
+        }
+
+        Console.WriteLine("\n📋 YOUR TASKS:");
+        Console.WriteLine("═══════════════════════════════");
+
+        for (int i = 0; i < tasks.Count; i++)
+        {
+            Console.WriteLine($"{i + 1}. {tasks[i]}");
+        }
+    }
+
+    static void CompleteTask()
+    {
+        ViewTasks();
+
+        if (tasks.Count == 0) return;
+
+        Console.Write("\nEnter task number to complete: ");
+
+        if (int.TryParse(Console.ReadLine(), out int taskNum))
+        {
+            if (taskNum >= 1 && taskNum <= tasks.Count)
+            {
+                // Change [ ] to [✓]
+                string task = tasks[taskNum - 1];
+                task = task.Replace("[ ]", "[✓]");
+                tasks[taskNum - 1] = task;
+
+                Console.WriteLine("✅ Task completed!");
+            }
+            else
+            {
+                Console.WriteLine("❌ Invalid task number!");
+            }
+        }
+        else
+        {
+            Console.WriteLine("❌ Please enter a number!");
+        }
+    }
+
+    static void DeleteTask()
+    {
+        ViewTasks();
+
+        if (tasks.Count == 0) return;
+
+        Console.Write("\nEnter task number to delete: ");
+
+        if (int.TryParse(Console.ReadLine(), out int taskNum))
+        {
+            if (taskNum >= 1 && taskNum <= tasks.Count)
+            {
+                string removed = tasks[taskNum - 1];
+                tasks.RemoveAt(taskNum - 1);
+                Console.WriteLine($"🗑️ Deleted: {removed}");
+            }
+            else
+            {
+                Console.WriteLine("❌ Invalid task number!");
+            }
+        }
+        else
+        {
+            Console.WriteLine("❌ Please enter a number!");
+        }
+    }
+
+    static void SaveTasks()
+    {
+        try
+        {
+            File.WriteAllLines(filename, tasks);
+            Console.WriteLine($"💾 Saved {tasks.Count} tasks to {filename}");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"❌ Error saving: {ex.Message}");
+        }
+    }
+
+    static void LoadTasks()
+    {
+        try
+        {
+            if (File.Exists(filename))
+            {
+                string[] lines = File.ReadAllLines(filename);
+                tasks.AddRange(lines);
+                Console.WriteLine($"📂 Loaded {tasks.Count} tasks from {filename}\n");
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"❌ Error loading: {ex.Message}");
+        }
+    }
+}
+```
+
+TEACHING STEPS:
+--------------
+1. Build step-by-step, testing each feature
+2. Run the program, add tasks, close it
+3. Run again to show tasks were saved
+4. Show the tasks.txt file
+5. Challenge: Add categories, priorities, due dates, search
+
+================================================================================
+                     C# - WEEK 2 SESSION 3
+              ADVANCED OOP & LINQ (45-60 min)
+================================================================================
+
+PART 1: PROPERTIES & ENCAPSULATION (20 min)
+============================================
+
+TEACHER EXPLANATION:
+-------------------
+"Properties are a better way to access class data - they let us control how
+data is set and retrieved!"
+
+```csharp
+using System;
+
+// OLD WAY - Direct fields (not recommended)
+class PlayerOld
+{
+    public int Health;  // Anyone can change this to anything!
+    public string Name;
+}
+
+// BETTER WAY - Using properties
+class Player
+{
+    // Private fields (hidden from outside)
+    private int health;
+    private string name;
+    private int level;
+
+    // Public properties (controlled access)
+    public string Name
+    {
+        get { return name; }
+        set
+        {
+            if (!string.IsNullOrWhiteSpace(value))
+                name = value;
+            else
+                Console.WriteLine("❌ Name cannot be empty!");
+        }
+    }
+
+    public int Health
+    {
+        get { return health; }
+        set
+        {
+            // Validation!
+            if (value >= 0 && value <= 100)
+                health = value;
+            else
+                Console.WriteLine("❌ Health must be 0-100!");
+        }
+    }
+
+    public int Level
+    {
+        get { return level; }
+        set
+        {
+            if (value >= 1)
+            {
+                level = value;
+                Console.WriteLine($"🎉 Level up! Now level {level}");
+            }
+        }
+    }
+
+    // Read-only property (only get, no set)
+    public bool IsAlive
+    {
+        get { return health > 0; }
+    }
+
+    // Auto-properties (shorthand when no validation needed)
+    public int Gold { get; set; }
+    public int Experience { get; set; }
+
+    // Constructor
+    public Player(string playerName)
+    {
+        Name = playerName;
+        Health = 100;
+        Level = 1;
+        Gold = 0;
+        Experience = 0;
+    }
+
+    public void DisplayStats()
+    {
+        Console.WriteLine($"\n🎮 {Name}'s Stats:");
+        Console.WriteLine($"   Level: {Level}");
+        Console.WriteLine($"   Health: {Health}/100");
+        Console.WriteLine($"   Gold: {Gold}");
+        Console.WriteLine($"   XP: {Experience}");
+        Console.WriteLine($"   Status: {(IsAlive ? "Alive" : "Dead")}");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Player hero = new Player("Knight");
+
+        // Using properties
+        hero.Health = 85;      // Calls the set accessor
+        hero.Gold = 50;
+        hero.Level = 5;
+
+        int currentHealth = hero.Health;  // Calls the get accessor
+
+        // Try invalid values
+        hero.Health = 150;  // Will show error message
+        hero.Health = -10;  // Will show error message
+        hero.Name = "";     // Will show error message
+
+        hero.DisplayStats();
+
+        // Read-only property
+        if (hero.IsAlive)
+        {
+            Console.WriteLine("\n✅ Hero is alive!");
+        }
+
+        // Can't set read-only property
+        // hero.IsAlive = false;  // ERROR! No setter
+    }
+}
+```
+
+---
+
+PART 2: STATIC MEMBERS & METHODS (15 min)
+==========================================
+
+```csharp
+using System;
+
+class Game
+{
+    // Static field - shared by ALL instances
+    public static int TotalPlayers = 0;
+    public static int HighScore = 0;
+
+    // Instance fields - each object has its own
+    public string PlayerName;
+    public int Score;
+
+    public Game(string name)
+    {
+        PlayerName = name;
+        Score = 0;
+        TotalPlayers++;  // Increment shared counter
+
+        Console.WriteLine($"✅ {name} joined! Total players: {TotalPlayers}");
+    }
+
+    public void AddPoints(int points)
+    {
+        Score += points;
+
+        // Update high score if needed
+        if (Score > HighScore)
+        {
+            HighScore = Score;
+            Console.WriteLine($"🏆 NEW HIGH SCORE: {HighScore} by {PlayerName}!");
+        }
+    }
+
+    // Static method - belongs to the class, not objects
+    public static void ShowGameInfo()
+    {
+        Console.WriteLine("\n📊 GAME STATS:");
+        Console.WriteLine($"   Total Players: {TotalPlayers}");
+        Console.WriteLine($"   High Score: {HighScore}");
+    }
+}
+
+class MathHelper
+{
+    // Utility class with all static methods
+    public static int Add(int a, int b)
+    {
+        return a + b;
+    }
+
+    public static double CalculateAverage(int[] numbers)
+    {
+        int sum = 0;
+        foreach (int num in numbers)
+        {
+            sum += num;
+        }
+        return (double)sum / numbers.Length;
+    }
+
+    public static bool IsPrime(int number)
+    {
+        if (number < 2) return false;
+
+        for (int i = 2; i <= Math.Sqrt(number); i++)
+        {
+            if (number % i == 0) return false;
+        }
+        return true;
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        // Create game instances
+        Game player1 = new Game("Alice");
+        Game player2 = new Game("Bob");
+        Game player3 = new Game("Charlie");
+
+        // Each has their own score
+        player1.AddPoints(100);
+        player2.AddPoints(250);
+        player3.AddPoints(180);
+
+        // Call static method
+        Game.ShowGameInfo();
+
+        // Access static fields
+        Console.WriteLine($"\nTotal players: {Game.TotalPlayers}");
+
+        // Use static utility methods
+        int result = MathHelper.Add(5, 3);
+        Console.WriteLine($"\n5 + 3 = {result}");
+
+        int[] scores = { 85, 92, 78, 95, 88 };
+        double avg = MathHelper.CalculateAverage(scores);
+        Console.WriteLine($"Average score: {avg:F2}");
+
+        Console.WriteLine($"\nIs 17 prime? {MathHelper.IsPrime(17)}");
+    }
+}
+```
+
+---
+
+PART 3: LINQ BASICS (20 min)
+=============================
+
+TEACHER EXPLANATION:
+-------------------
+"LINQ (Language Integrated Query) lets us search and filter collections easily!"
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;  // Need this for LINQ!
+
+class LINQExamples
+{
+    static void Main()
+    {
+        // Sample data
+        List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+        // Find even numbers
+        var evens = numbers.Where(n => n % 2 == 0);
+
+        Console.WriteLine("Even numbers:");
+        foreach (int num in evens)
+        {
+            Console.Write(num + " ");
+        }
+        Console.WriteLine();
+
+        // Numbers greater than 5
+        var greaterThanFive = numbers.Where(n => n > 5);
+
+        // Square all numbers
+        var squared = numbers.Select(n => n * n);
+
+        Console.WriteLine("\nSquared:");
+        foreach (int num in squared)
+        {
+            Console.Write(num + " ");
+        }
+        Console.WriteLine();
+
+        // First, Last, Single
+        int first = numbers.First();  // 1
+        int last = numbers.Last();    // 10
+        int firstEven = numbers.First(n => n % 2 == 0);  // 2
+
+        // Any, All, Count
+        bool hasEven = numbers.Any(n => n % 2 == 0);  // true
+        bool allPositive = numbers.All(n => n > 0);   // true
+        int evenCount = numbers.Count(n => n % 2 == 0);  // 5
+
+        Console.WriteLine($"\nHas even? {hasEven}");
+        Console.WriteLine($"All positive? {allPositive}");
+        Console.WriteLine($"Even count: {evenCount}");
+
+        // Min, Max, Average, Sum
+        int min = numbers.Min();
+        int max = numbers.Max();
+        double avg = numbers.Average();
+        int sum = numbers.Sum();
+
+        Console.WriteLine($"\nMin: {min}, Max: {max}");
+        Console.WriteLine($"Average: {avg:F2}, Sum: {sum}");
+
+        // Order / Sort
+        List<int> random = new List<int> { 5, 2, 8, 1, 9, 3 };
+        var sorted = random.OrderBy(n => n);  // Ascending
+        var descending = random.OrderByDescending(n => n);  // Descending
+
+        Console.WriteLine("\nSorted:");
+        foreach (int num in sorted)
+        {
+            Console.Write(num + " ");
+        }
+        Console.WriteLine();
+
+        // Working with objects
+        List<Student> students = new List<Student>
+        {
+            new Student { Name = "Alice", Grade = 92 },
+            new Student { Name = "Bob", Grade = 78 },
+            new Student { Name = "Charlie", Grade = 85 },
+            new Student { Name = "Diana", Grade = 95 }
+        };
+
+        // Find students with grade >= 90
+        var topStudents = students.Where(s => s.Grade >= 90);
+
+        Console.WriteLine("\n🏆 Top students:");
+        foreach (var student in topStudents)
+        {
+            Console.WriteLine($"  {student.Name}: {student.Grade}");
+        }
+
+        // Sort by name
+        var sortedByName = students.OrderBy(s => s.Name);
+
+        // Sort by grade (descending)
+        var sortedByGrade = students.OrderByDescending(s => s.Grade);
+
+        // Get just the names
+        var names = students.Select(s => s.Name);
+
+        Console.WriteLine("\nAll names:");
+        foreach (string name in names)
+        {
+            Console.WriteLine($"  - {name}");
+        }
+
+        // Chaining LINQ methods
+        var topStudentNames = students
+            .Where(s => s.Grade >= 85)
+            .OrderByDescending(s => s.Grade)
+            .Select(s => s.Name);
+
+        Console.WriteLine("\nTop student names:");
+        foreach (string name in topStudentNames)
+        {
+            Console.WriteLine($"  - {name}");
+        }
+
+        // Find first student with grade > 90
+        var firstTop = students.FirstOrDefault(s => s.Grade > 90);
+        if (firstTop != null)
+        {
+            Console.WriteLine($"\nFirst top student: {firstTop.Name}");
+        }
+    }
+}
+
+class Student
+{
+    public string Name { get; set; }
+    public int Grade { get; set; }
+}
+```
+
+================================================================================
+                    SUMMARY OF LEARNING OBJECTIVES
+================================================================================
+
+PYTHON WEEK 2 - STUDENTS WILL LEARN:
+====================================
+✅ File reading/writing (open, with statement)
+✅ Exception handling (try/except/finally)
+✅ Common exceptions (ValueError, FileNotFoundError, etc.)
+✅ Tuples - immutable sequences
+✅ Sets - unique collections
+✅ List comprehensions
+✅ Dictionary comprehensions
+✅ Importing built-in modules (random, datetime, math)
+✅ Creating custom modules
+✅ Module organization and code reuse
+
+COMPLETED PROJECTS:
+------------------
+1. Grade Tracker with File Saving
+2. Student Grade Analyzer with Advanced Data Structures
+3. Random Quote Generator with Logging
+
+C# WEEK 2 - STUDENTS WILL LEARN:
+=================================
+✅ Arrays (fixed-size collections)
+✅ Lists (dynamic collections)
+✅ Dictionaries (key-value pairs)
+✅ File I/O (File class, StreamWriter/Reader)
+✅ Exception handling (try/catch/finally)
+✅ Common exceptions (DivideByZeroException, FileNotFoundException, etc.)
+✅ Properties and encapsulation
+✅ Public/private access modifiers
+✅ Static members and methods
+✅ LINQ basics (Where, Select, OrderBy, etc.)
+✅ Working with LINQ on collections
+
+COMPLETED PROJECTS:
+------------------
+1. Student Grade Manager (Dictionary + Lists + LINQ)
+2. Todo List with File Saving (File I/O + Exception Handling)
+3. Advanced RPG with Inventory System (Properties + LINQ + File Saving)
+
+================================================================================
+                           TEACHING TIPS
+================================================================================
+
+GENERAL TIPS:
+------------
+1. Code together - don't just show slides
+2. Run every example and let students see the output
+3. Encourage students to modify examples
+4. When errors occur, explain them rather than fixing quickly
+5. Have students type code themselves (muscle memory!)
+6. Use real-world examples students can relate to
+7. Compare Python and C# concepts when relevant
+8. Review previous week's concepts at the start
+
+PACING:
+-------
+- Start with easier concepts, build complexity
+- Take breaks every 20-25 minutes
+- Mix lecture, coding, and activities
+- Don't rush through exception handling - it's crucial!
+- Allow time for questions after each section
+
+DIFFERENTIATION:
+----------------
+- Fast learners: Give challenge extensions to projects
+- Struggling students: Pair programming, extra examples
+- Visual learners: Draw diagrams for data structures
+- Have extra mini-exercises ready
+
+ASSESSMENT:
+----------
+- Watch students code during exercises
+- Check their project outputs
+- Ask questions during coding
+- Have them explain concepts back to you
+- Review their modifications to projects
+
+================================================================================
+                              END OF PLAN
+================================================================================
+
+For questions or modifications to this plan, consider:
+- Adding more examples if students struggle
+- Reducing content if running out of time
+- Creating quick quizzes between sessions
+- Recording sessions for review
+- Creating a shared code repository
+
+Good luck teaching! 🎓

@@ -1,0 +1,167 @@
+PYTHON LESSON 1: Introduction to Programming & Python Basics
+==============================================================
+
+LESSON DURATION: 60 minutes
+
+-----------------------------------------------------------
+PART 1: INTRODUCTION (10 minutes)
+-----------------------------------------------------------
+
+Welcome to Python programming! Today we'll learn the fundamental building blocks of coding.
+
+What is Python?
+- A beginner-friendly programming language
+- Used for web development, data science, AI, automation, and more
+- Known for its readable, clean syntax
+
+Setting Up:
+- Open your Python IDE or online editor (repl.it, Python IDLE, VS Code)
+- We'll write code in a .py file or interactive console
+
+-----------------------------------------------------------
+PART 2: YOUR FIRST PROGRAM (5 minutes)
+-----------------------------------------------------------
+
+Let's write the classic "Hello, World!" program:
+
+print("Hello, World!")
+
+Explanation:
+- print() is a function that displays text
+- Text goes inside quotes (single ' or double ")
+- This is your first line of code!
+
+ACTIVITY: Have students modify the message and run it
+
+-----------------------------------------------------------
+PART 3: VARIABLES (15 minutes)
+-----------------------------------------------------------
+
+Variables store information that we can use later.
+
+Basic syntax:
+variable_name = value
+
+Examples:
+
+name = "Alice"
+age = 15
+height = 5.5
+is_student = True
+
+Data Types:
+- String (text): "Hello", 'Python'
+- Integer (whole numbers): 42, -5, 0
+- Float (decimals): 3.14, -0.5
+- Boolean (True/False): True, False
+
+Using variables:
+
+print(name)
+print("I am " + str(age) + " years old")
+print(f"My name is {name}")  # f-string (modern way)
+
+ACTIVITY: Create variables for student's name, favorite number, and hobby
+
+-----------------------------------------------------------
+PART 4: BASIC INPUT (10 minutes)
+-----------------------------------------------------------
+
+Get information from users:
+
+name = input("What is your name? ")
+print("Hello, " + name + "!")
+
+age = input("How old are you? ")
+print(f"You are {age} years old")
+
+Important: input() always returns a string!
+
+Converting input:
+
+age = int(input("Enter your age: "))
+height = float(input("Enter your height: "))
+
+ACTIVITY: Create a program that asks for name, age, and favorite color, then displays them
+
+-----------------------------------------------------------
+PART 5: BASIC OPERATIONS (15 minutes)
+-----------------------------------------------------------
+
+Math operations:
+
+# Addition
+result = 5 + 3        # 8
+
+# Subtraction
+result = 10 - 4       # 6
+
+# Multiplication
+result = 6 * 7        # 42
+
+# Division
+result = 20 / 4       # 5.0 (always returns float)
+
+# Integer division
+result = 20 // 3      # 6
+
+# Remainder (modulo)
+result = 20 % 3       # 2
+
+# Exponent
+result = 2 ** 3       # 8
+
+String operations:
+
+# Concatenation
+greeting = "Hello" + " " + "World"
+
+# Repetition
+laugh = "ha" * 3      # "hahaha"
+
+ACTIVITY: Build a simple calculator that adds two numbers from user input
+
+-----------------------------------------------------------
+PART 6: PRACTICE PROJECT (5 minutes)
+-----------------------------------------------------------
+
+Mini Project: Personal Info Card
+
+name = input("Enter your name: ")
+age = int(input("Enter your age: "))
+city = input("Enter your city: ")
+hobby = input("Enter your favorite hobby: ")
+
+print("\n===== PERSONAL INFO CARD =====")
+print(f"Name: {name}")
+print(f"Age: {age}")
+print(f"City: {city}")
+print(f"Hobby: {hobby}")
+print("==============================")
+
+-----------------------------------------------------------
+WRAP UP & HOMEWORK (5 minutes)
+-----------------------------------------------------------
+
+Key Takeaways:
+✓ print() displays output
+✓ Variables store data
+✓ input() gets user information
+✓ Python has different data types
+✓ You can do math and string operations
+
+Homework:
+1. Create a program that calculates the area of a rectangle (length × width)
+2. Make a program that asks for your birth year and calculates your age
+3. Create a "Mad Libs" style program using string variables
+
+Next Lesson Preview:
+We'll learn about conditions (if/else) and making decisions in code!
+
+-----------------------------------------------------------
+COMMON ERRORS & TROUBLESHOOTING
+-----------------------------------------------------------
+
+1. Syntax Error: Check for missing quotes or parentheses
+2. Name Error: Make sure variable is defined before using it
+3. Type Error: Remember to convert input() to int or float for math

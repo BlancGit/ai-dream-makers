@@ -1,0 +1,251 @@
+PYTHON LESSON 2: Conditions and Decision Making
+===============================================
+
+LESSON DURATION: 60 minutes
+
+-----------------------------------------------------------
+PART 1: REVIEW & INTRODUCTION (5 minutes)
+-----------------------------------------------------------
+
+Quick Review:
+- Variables store data
+- input() gets user input
+- print() displays output
+- Basic operations (+, -, *, /)
+
+Today's Focus:
+Making programs that make decisions based on conditions!
+
+Real-world example: "If it's raining, bring an umbrella"
+
+-----------------------------------------------------------
+PART 2: COMPARISON OPERATORS (10 minutes)
+-----------------------------------------------------------
+
+We compare values to get True or False:
+
+==    Equal to
+!=    Not equal to
+>     Greater than
+<     Less than
+>=    Greater than or equal to
+<=    Less than or equal to
+
+Examples:
+
+age = 16
+print(age == 16)      # True
+print(age > 18)       # False
+print(age >= 16)      # True
+print(age != 20)      # True
+
+name = "Alice"
+print(name == "Alice")     # True
+print(name == "Bob")       # False
+
+ACTIVITY: Test different comparisons with numbers and strings
+
+-----------------------------------------------------------
+PART 3: IF STATEMENTS (15 minutes)
+-----------------------------------------------------------
+
+Basic IF syntax:
+
+if condition:
+    # code runs if condition is True
+    print("This runs!")
+
+Example:
+
+age = 18
+if age >= 18:
+    print("You are an adult!")
+
+Important: Indentation matters in Python! Use 4 spaces or Tab.
+
+More examples:
+
+temperature = 75
+if temperature > 80:
+    print("It's hot outside!")
+
+grade = 95
+if grade >= 90:
+    print("You got an A!")
+
+ACTIVITY: Write a program that checks if a number is positive
+
+-----------------------------------------------------------
+PART 4: IF-ELSE STATEMENTS (10 minutes)
+-----------------------------------------------------------
+
+Do one thing if True, another if False:
+
+if condition:
+    # runs if True
+else:
+    # runs if False
+
+Examples:
+
+age = 15
+if age >= 18:
+    print("You can vote!")
+else:
+    print("You cannot vote yet.")
+
+password = input("Enter password: ")
+if password == "secret123":
+    print("Access granted!")
+else:
+    print("Access denied!")
+
+ACTIVITY: Create a program that checks if a number is even or odd
+(Hint: use modulo %)
+
+-----------------------------------------------------------
+PART 5: IF-ELIF-ELSE STATEMENTS (15 minutes)
+-----------------------------------------------------------
+
+Check multiple conditions:
+
+if condition1:
+    # runs if condition1 is True
+elif condition2:
+    # runs if condition2 is True
+elif condition3:
+    # runs if condition3 is True
+else:
+    # runs if all conditions are False
+
+Grade example:
+
+score = 85
+
+if score >= 90:
+    print("Grade: A")
+elif score >= 80:
+    print("Grade: B")
+elif score >= 70:
+    print("Grade: C")
+elif score >= 60:
+    print("Grade: D")
+else:
+    print("Grade: F")
+
+Temperature example:
+
+temp = 65
+
+if temp > 80:
+    print("It's hot! Wear shorts.")
+elif temp > 60:
+    print("It's nice! Wear a light jacket.")
+elif temp > 40:
+    print("It's cold! Wear a coat.")
+else:
+    print("It's freezing! Stay inside!")
+
+ACTIVITY: Create a program that categorizes age groups (child, teen, adult, senior)
+
+-----------------------------------------------------------
+PART 6: LOGICAL OPERATORS (10 minutes)
+-----------------------------------------------------------
+
+Combine multiple conditions:
+
+and    Both conditions must be True
+or     At least one condition must be True
+not    Reverses the condition
+
+AND examples:
+
+age = 20
+has_license = True
+
+if age >= 16 and has_license == True:
+    print("You can drive!")
+
+grade = 85
+attendance = 95
+
+if grade >= 80 and attendance >= 90:
+    print("Honor roll!")
+
+OR examples:
+
+day = "Saturday"
+
+if day == "Saturday" or day == "Sunday":
+    print("It's the weekend!")
+
+weather = "rainy"
+
+if weather == "rainy" or weather == "snowy":
+    print("Bring an umbrella!")
+
+NOT examples:
+
+is_raining = False
+
+if not is_raining:
+    print("You don't need an umbrella!")
+
+ACTIVITY: Create a login system that checks username AND password
+
+-----------------------------------------------------------
+PART 7: PRACTICE PROJECT (10 minutes)
+-----------------------------------------------------------
+
+Mini Project: Simple Adventure Game
+
+print("You are in a dark forest.")
+direction = input("Go left or right? ").lower()
+
+if direction == "left":
+    print("You found a treasure chest!")
+    action = input("Open it or leave it? ").lower()
+
+    if action == "open":
+        print("You found 100 gold coins!")
+    else:
+        print("You walked away safely.")
+
+elif direction == "right":
+    print("You encountered a dragon!")
+    action = input("Fight or run? ").lower()
+
+    if action == "fight":
+        print("You bravely defeated the dragon!")
+    else:
+        print("You ran away to safety.")
+else:
+    print("Invalid choice. Game over.")
+
+-----------------------------------------------------------
+PART 8: WRAP UP & HOMEWORK (5 minutes)
+-----------------------------------------------------------
+
+Key Takeaways:
+✓ if statements make decisions
+✓ elif allows multiple conditions
+✓ else is the fallback option
+✓ Comparison operators: ==, !=, >, <, >=, <=
+✓ Logical operators: and, or, not
+
+Homework:
+1. Create a calculator that asks for two numbers and an operation (+, -, *, /)
+2. Build a simple quiz with 3 questions and score tracking
+3. Make a "Choose Your Own Adventure" story with at least 3 decisions
+
+Next Lesson Preview:
+We'll learn about loops (for and while) to repeat code!
+
+-----------------------------------------------------------
+COMMON ERRORS & TROUBLESHOOTING
+-----------------------------------------------------------
+
+1. IndentationError: Make sure code inside if/elif/else is indented
+2. Using = instead of ==: Remember = assigns, == compares
+3. Forgetting the colon : at the end of if/elif/else
+4. Case sensitivity: "Yes" != "yes" (use .lower() to fix)

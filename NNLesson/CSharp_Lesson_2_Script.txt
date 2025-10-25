@@ -1,0 +1,372 @@
+C# LESSON 2: Conditions and Decision Making
+===========================================
+
+LESSON DURATION: 60 minutes
+
+-----------------------------------------------------------
+PART 1: REVIEW & INTRODUCTION (5 minutes)
+-----------------------------------------------------------
+
+Quick Review:
+- Variables must have types (int, string, double, bool)
+- Console.ReadLine() gets input
+- Console.WriteLine() displays output
+- Semicolons end statements
+
+Today's Focus:
+Making programs that make decisions based on conditions!
+
+Real-world example: "If it's raining, bring an umbrella"
+
+-----------------------------------------------------------
+PART 2: COMPARISON OPERATORS (10 minutes)
+-----------------------------------------------------------
+
+We compare values to get true or false (boolean):
+
+==    Equal to
+!=    Not equal to
+>     Greater than
+<     Less than
+>=    Greater than or equal to
+<=    Less than or equal to
+
+Examples:
+
+int age = 16;
+Console.WriteLine(age == 16);      // True
+Console.WriteLine(age > 18);       // False
+Console.WriteLine(age >= 16);      // True
+Console.WriteLine(age != 20);      // True
+
+string name = "Alice";
+Console.WriteLine(name == "Alice");     // True
+Console.WriteLine(name == "Bob");       // False
+
+Important notes:
+- Use == for comparison (not =)
+- Comparison returns bool (true or false)
+- C# is case-sensitive for strings
+
+ACTIVITY: Test different comparisons with numbers and strings
+
+-----------------------------------------------------------
+PART 3: IF STATEMENTS (15 minutes)
+-----------------------------------------------------------
+
+Basic IF syntax:
+
+if (condition)
+{
+    // code runs if condition is true
+    Console.WriteLine("This runs!");
+}
+
+Example:
+
+int age = 18;
+if (age >= 18)
+{
+    Console.WriteLine("You are an adult!");
+}
+
+More examples:
+
+int temperature = 75;
+if (temperature > 80)
+{
+    Console.WriteLine("It's hot outside!");
+}
+
+int grade = 95;
+if (grade >= 90)
+{
+    Console.WriteLine("You got an A!");
+}
+
+Single-line if (optional braces):
+
+int score = 100;
+if (score == 100)
+    Console.WriteLine("Perfect score!");
+
+// But using braces { } is recommended for clarity
+
+ACTIVITY: Write a program that checks if a number is positive
+
+-----------------------------------------------------------
+PART 4: IF-ELSE STATEMENTS (10 minutes)
+-----------------------------------------------------------
+
+Do one thing if true, another if false:
+
+if (condition)
+{
+    // runs if true
+}
+else
+{
+    // runs if false
+}
+
+Examples:
+
+int age = 15;
+if (age >= 18)
+{
+    Console.WriteLine("You can vote!");
+}
+else
+{
+    Console.WriteLine("You cannot vote yet.");
+}
+
+Console.Write("Enter password: ");
+string password = Console.ReadLine();
+
+if (password == "secret123")
+{
+    Console.WriteLine("Access granted!");
+}
+else
+{
+    Console.WriteLine("Access denied!");
+}
+
+ACTIVITY: Create a program that checks if a number is even or odd
+(Hint: use modulo %)
+
+Example solution:
+
+int number = Convert.ToInt32(Console.ReadLine());
+
+if (number % 2 == 0)
+{
+    Console.WriteLine("Even");
+}
+else
+{
+    Console.WriteLine("Odd");
+}
+
+-----------------------------------------------------------
+PART 5: IF-ELSE IF-ELSE STATEMENTS (15 minutes)
+-----------------------------------------------------------
+
+Check multiple conditions:
+
+if (condition1)
+{
+    // runs if condition1 is true
+}
+else if (condition2)
+{
+    // runs if condition2 is true
+}
+else if (condition3)
+{
+    // runs if condition3 is true
+}
+else
+{
+    // runs if all conditions are false
+}
+
+Grade example:
+
+int score = 85;
+
+if (score >= 90)
+{
+    Console.WriteLine("Grade: A");
+}
+else if (score >= 80)
+{
+    Console.WriteLine("Grade: B");
+}
+else if (score >= 70)
+{
+    Console.WriteLine("Grade: C");
+}
+else if (score >= 60)
+{
+    Console.WriteLine("Grade: D");
+}
+else
+{
+    Console.WriteLine("Grade: F");
+}
+
+Temperature example:
+
+int temp = 65;
+
+if (temp > 80)
+{
+    Console.WriteLine("It's hot! Wear shorts.");
+}
+else if (temp > 60)
+{
+    Console.WriteLine("It's nice! Wear a light jacket.");
+}
+else if (temp > 40)
+{
+    Console.WriteLine("It's cold! Wear a coat.");
+}
+else
+{
+    Console.WriteLine("It's freezing! Stay inside!");
+}
+
+ACTIVITY: Create a program that categorizes age groups (child, teen, adult, senior)
+
+-----------------------------------------------------------
+PART 6: LOGICAL OPERATORS (10 minutes)
+-----------------------------------------------------------
+
+Combine multiple conditions:
+
+&&    AND - Both conditions must be true
+||    OR  - At least one condition must be true
+!     NOT - Reverses the condition
+
+AND examples:
+
+int age = 20;
+bool hasLicense = true;
+
+if (age >= 16 && hasLicense == true)
+{
+    Console.WriteLine("You can drive!");
+}
+
+int grade = 85;
+int attendance = 95;
+
+if (grade >= 80 && attendance >= 90)
+{
+    Console.WriteLine("Honor roll!");
+}
+
+OR examples:
+
+string day = "Saturday";
+
+if (day == "Saturday" || day == "Sunday")
+{
+    Console.WriteLine("It's the weekend!");
+}
+
+string weather = "rainy";
+
+if (weather == "rainy" || weather == "snowy")
+{
+    Console.WriteLine("Bring an umbrella!");
+}
+
+NOT examples:
+
+bool isRaining = false;
+
+if (!isRaining)
+{
+    Console.WriteLine("You don't need an umbrella!");
+}
+
+Combining operators:
+
+int age = 25;
+bool hasTicket = true;
+bool hasID = true;
+
+if ((age >= 18 && hasID) || hasTicket)
+{
+    Console.WriteLine("You can enter the concert!");
+}
+
+ACTIVITY: Create a login system that checks username AND password
+
+-----------------------------------------------------------
+PART 7: PRACTICE PROJECT (10 minutes)
+-----------------------------------------------------------
+
+Mini Project: Simple Adventure Game
+
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("You are in a dark forest.");
+        Console.Write("Go left or right? ");
+        string direction = Console.ReadLine().ToLower();
+
+        if (direction == "left")
+        {
+            Console.WriteLine("You found a treasure chest!");
+            Console.Write("Open it or leave it? ");
+            string action = Console.ReadLine().ToLower();
+
+            if (action == "open")
+            {
+                Console.WriteLine("You found 100 gold coins!");
+            }
+            else
+            {
+                Console.WriteLine("You walked away safely.");
+            }
+        }
+        else if (direction == "right")
+        {
+            Console.WriteLine("You encountered a dragon!");
+            Console.Write("Fight or run? ");
+            string action = Console.ReadLine().ToLower();
+
+            if (action == "fight")
+            {
+                Console.WriteLine("You bravely defeated the dragon!");
+            }
+            else
+            {
+                Console.WriteLine("You ran away to safety.");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Invalid choice. Game over.");
+        }
+    }
+}
+
+-----------------------------------------------------------
+PART 8: WRAP UP & HOMEWORK (5 minutes)
+-----------------------------------------------------------
+
+Key Takeaways:
+✓ if statements make decisions
+✓ else if allows multiple conditions
+✓ else is the fallback option
+✓ Comparison operators: ==, !=, >, <, >=, <=
+✓ Logical operators: && (AND), || (OR), ! (NOT)
+✓ Conditions must be in parentheses ( )
+✓ Code blocks use curly braces { }
+
+Homework:
+1. Create a calculator that asks for two numbers and an operation (+, -, *, /)
+2. Build a simple quiz with 3 questions and score tracking
+3. Make a "Choose Your Own Adventure" story with at least 3 decisions
+
+Next Lesson Preview:
+We'll learn about loops (for and while) to repeat code!
+
+-----------------------------------------------------------
+COMMON ERRORS & TROUBLESHOOTING
+-----------------------------------------------------------
+
+1. Using = instead of ==: Remember = assigns, == compares
+2. Forgetting parentheses around condition: if (age > 18) not if age > 18
+3. Forgetting curly braces { } for code blocks
+4. Using AND/OR instead of &&/||
+5. Case sensitivity: "Yes" != "yes" (use .ToLower() to fix)
+6. Missing semicolons at end of statements

@@ -1,0 +1,827 @@
+REVISED WEEK 2 LESSON PLAN - INTERMEDIATE LEVEL
+================================================
+
+PROBLEM IDENTIFIED:
+-------------------
+The current Lesson 2 progression is TOO STEEP for kids:
+- Lesson 1 covers: Basic syntax, variables, if/else, loops, simple functions, basic lists/dictionaries, intro to classes
+- Lesson 2 JUMPS TO: File I/O, Exception handling, Advanced data structures (tuples, sets, comprehensions), Libraries, LINQ
+
+This is like going from addition to calculus! We need intermediate steps.
+
+SOLUTION:
+---------
+Redesign Lesson 2 to REINFORCE and EXPAND on Lesson 1 concepts before introducing new topics.
+
+═══════════════════════════════════════════════════════════
+PYTHON - REVISED LESSON 2
+═══════════════════════════════════════════════════════════
+
+MODULE 6: MORE PRACTICE WITH FUNCTIONS
+---------------------------------------
+Duration: 30 minutes
+Difficulty: Intermediate (builds on Lesson 1 Module 3)
+
+LEARNING OBJECTIVES:
+• Understand function parameters better (positional vs keyword)
+• Learn about default parameter values
+• Practice with multiple return values
+• Introduction to lambda functions (simple cases only)
+• Understand variable scope (local vs global)
+
+TOPICS TO COVER:
+
+1. **Review & Expand on Parameters**
+   ```python
+   # Positional parameters
+   def greet(name, age):
+       print(f"Hi {name}, you are {age} years old!")
+
+   greet("Alex", 12)  # Must be in order
+
+   # Keyword parameters
+   greet(age=12, name="Alex")  # Can be any order!
+
+   # Default parameters
+   def greet_with_default(name, age=10):
+       print(f"Hi {name}, you are {age} years old!")
+
+   greet_with_default("Sam")  # Uses default age of 10
+   greet_with_default("Sam", 12)  # Overrides default
+   ```
+
+2. **Multiple Return Values**
+   ```python
+   def get_min_max(numbers):
+       return min(numbers), max(numbers)
+
+   smallest, largest = get_min_max([5, 2, 9, 1, 7])
+   print(f"Min: {smallest}, Max: {largest}")
+   ```
+
+3. **Variable Scope - Understanding Where Variables Live**
+   ```python
+   score = 100  # Global variable
+
+   def increase_score():
+       score = score + 10  # ERROR! Can't modify global like this
+       print(score)
+
+   # Better way:
+   def increase_score(current_score):
+       return current_score + 10
+
+   score = increase_score(score)  # Now it works!
+   ```
+
+4. **Simple Lambda Functions (One-liners)**
+   ```python
+   # Regular function
+   def double(x):
+       return x * 2
+
+   # Lambda version (for simple cases)
+   double = lambda x: x * 2
+
+   print(double(5))  # 10
+
+   # Useful with sorting
+   students = [("Alice", 85), ("Bob", 92), ("Charlie", 78)]
+   students.sort(key=lambda student: student[1])  # Sort by grade
+   ```
+
+PRACTICE PROJECTS:
+1. **Calculator with Memory**: Create functions for add, subtract, multiply, divide with default values
+2. **Grade Statistics**: Function that returns min, max, and average of grades
+3. **Custom Greeting Generator**: Function with default parameters for different greetings
+
+INTERACTIVE EXAMPLES:
+- Password validator function (length check with default min length)
+- Temperature converter with default units
+- Shopping cart calculator with optional discount parameter
+
+
+MODULE 7: WORKING WITH STRINGS & LISTS
+---------------------------------------
+Duration: 30 minutes
+Difficulty: Intermediate (builds on Lesson 1 Module 1 & 4)
+
+LEARNING OBJECTIVES:
+• Master common string methods
+• Learn string formatting techniques
+• Practice advanced list operations
+• Introduction to simple list comprehensions
+• Understand slicing in depth
+
+TOPICS TO COVER:
+
+1. **String Methods You'll Use ALL the Time**
+   ```python
+   message = "  Hello World!  "
+
+   # Cleaning strings
+   print(message.strip())      # "Hello World!" (removes spaces)
+   print(message.lower())      # "  hello world!  "
+   print(message.upper())      # "  HELLO WORLD!  "
+
+   # Checking content
+   email = "student@school.com"
+   print(email.endswith(".com"))  # True
+   print(email.startswith("student"))  # True
+
+   # Finding and replacing
+   text = "I love cats! Cats are awesome!"
+   print(text.count("cats"))  # How many times? (case sensitive!)
+   print(text.replace("cats", "dogs"))
+
+   # Splitting strings into lists
+   sentence = "Python is really fun"
+   words = sentence.split()  # ['Python', 'is', 'really', 'fun']
+   ```
+
+2. **String Formatting - Making Nice Output**
+   ```python
+   name = "Emma"
+   age = 12
+   score = 95.5
+
+   # Old way (still works)
+   print("Hi " + name + ", you scored " + str(score))
+
+   # Better way - f-strings!
+   print(f"Hi {name}, you scored {score}!")
+
+   # Formatting numbers
+   price = 19.5
+   print(f"Cost: ${price:.2f}")  # $19.50 (2 decimal places)
+
+   # Aligning text
+   print(f"{'Name':10} {'Score':5}")  # Column headers
+   print(f"{name:10} {score:5.1f}")   # Aligned data
+   ```
+
+3. **Advanced List Operations**
+   ```python
+   # Combining lists
+   list1 = [1, 2, 3]
+   list2 = [4, 5, 6]
+   combined = list1 + list2  # [1, 2, 3, 4, 5, 6]
+
+   # Repeating lists
+   zeros = [0] * 5  # [0, 0, 0, 0, 0]
+
+   # List slicing (super useful!)
+   numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+   print(numbers[2:5])    # [2, 3, 4] (from index 2 to 5, not including 5)
+   print(numbers[:3])     # [0, 1, 2] (first 3)
+   print(numbers[7:])     # [7, 8, 9] (from 7 to end)
+   print(numbers[-3:])    # [7, 8, 9] (last 3)
+   print(numbers[::2])    # [0, 2, 4, 6, 8] (every other one)
+   print(numbers[::-1])   # [9, 8, 7, ...] (reversed!)
+
+   # Copying lists (important!)
+   original = [1, 2, 3]
+   copy = original[:]  # Makes a real copy
+   copy.append(4)
+   print(original)  # Still [1, 2, 3]
+   ```
+
+4. **Simple List Comprehensions - A Shortcut for Making Lists**
+   ```python
+   # Without comprehension
+   squares = []
+   for x in range(5):
+       squares.append(x ** 2)
+
+   # With comprehension (one line!)
+   squares = [x ** 2 for x in range(5)]  # [0, 1, 4, 9, 16]
+
+   # With a condition
+   even_numbers = [x for x in range(10) if x % 2 == 0]  # [0, 2, 4, 6, 8]
+
+   # Making it readable
+   words = ["hello", "world", "python"]
+   uppercase_words = [word.upper() for word in words]
+   # ["HELLO", "WORLD", "PYTHON"]
+   ```
+
+PRACTICE PROJECTS:
+1. **Text Analyzer**: Count words, find longest word, count specific letters
+2. **Name Formatter**: Clean up and format a list of names (remove spaces, capitalize properly)
+3. **Grade Report Generator**: Format student grades in aligned columns
+4. **Playlist Manager**: Use slicing to get top 5 songs, reverse playlist, etc.
+
+INTERACTIVE EXAMPLES:
+- Email validator (check if it has @ and ., proper format)
+- Username generator (take name, make it lowercase, remove spaces)
+- Quiz score formatter (display scores with proper alignment)
+
+
+MODULE 8: INTRODUCTION TO FILE I/O
+-----------------------------------
+Duration: 30 minutes
+Difficulty: Intermediate (new concept, but taught gently)
+
+LEARNING OBJECTIVES:
+• Understand what file I/O means
+• Learn to read text files
+• Learn to write text files
+• Introduction to basic error handling (what if file doesn't exist?)
+• Practice with real-world file operations
+
+TOPICS TO COVER:
+
+1. **What is File I/O?**
+   - I/O = Input/Output
+   - Reading = Getting data FROM a file
+   - Writing = Putting data INTO a file
+   - Why files? Data persists even after program ends!
+
+2. **Writing to Files (Creating Data)**
+   ```python
+   # Simple write
+   file = open("my_data.txt", "w")  # "w" = write mode
+   file.write("Hello from Python!\n")
+   file.write("This is line 2!\n")
+   file.close()  # IMPORTANT! Always close!
+
+   # Better way - automatic closing
+   with open("my_data.txt", "w") as file:
+       file.write("Hello from Python!\n")
+       file.write("This is line 2!\n")
+   # File automatically closes here!
+
+   # Writing multiple lines at once
+   lines = ["Line 1\n", "Line 2\n", "Line 3\n"]
+   with open("my_data.txt", "w") as file:
+       file.writelines(lines)
+   ```
+
+3. **Reading from Files (Getting Data)**
+   ```python
+   # Read entire file at once
+   with open("my_data.txt", "r") as file:  # "r" = read mode
+       content = file.read()
+       print(content)
+
+   # Read line by line
+   with open("my_data.txt", "r") as file:
+       for line in file:
+           print(line.strip())  # .strip() removes \n
+
+   # Read all lines into a list
+   with open("my_data.txt", "r") as file:
+       lines = file.readlines()  # Each line is a list item
+       print(f"File has {len(lines)} lines")
+   ```
+
+4. **Appending to Files (Adding More Data)**
+   ```python
+   # "a" = append mode (adds to end, doesn't erase)
+   with open("my_data.txt", "a") as file:
+       file.write("This is a new line!\n")
+   ```
+
+5. **Basic Error Handling - What if File Doesn't Exist?**
+   ```python
+   # Without error handling - program crashes!
+   file = open("doesnt_exist.txt", "r")  # ERROR!
+
+   # With error handling - program continues
+   try:
+       with open("doesnt_exist.txt", "r") as file:
+           content = file.read()
+           print(content)
+   except FileNotFoundError:
+       print("Oops! That file doesn't exist.")
+       print("Creating it now...")
+       with open("doesnt_exist.txt", "w") as file:
+           file.write("New file created!\n")
+   ```
+
+6. **Practical Example: High Score Saver**
+   ```python
+   def save_high_score(name, score):
+       with open("high_scores.txt", "a") as file:
+           file.write(f"{name}: {score}\n")
+
+   def read_high_scores():
+       try:
+           with open("high_scores.txt", "r") as file:
+               scores = file.readlines()
+               print("=== HIGH SCORES ===")
+               for score in scores:
+                   print(score.strip())
+       except FileNotFoundError:
+           print("No high scores yet!")
+
+   # Use it
+   save_high_score("Alex", 1250)
+   save_high_score("Sam", 980)
+   read_high_scores()
+   ```
+
+PRACTICE PROJECTS:
+1. **Journal App**: Write and read daily journal entries
+2. **Todo List Manager**: Save and load todo items from a file
+3. **Contact Book**: Store names and phone numbers, read them back
+4. **Game Save System**: Save player name, level, and score
+
+INTERACTIVE EXAMPLES:
+- Simple note-taking app
+- Favorite movies list (add, view all)
+- Class attendance tracker (save which students were present)
+
+
+═══════════════════════════════════════════════════════════
+C# - REVISED LESSON 2
+═══════════════════════════════════════════════════════════
+
+MODULE 6: MORE PRACTICE WITH METHODS
+-------------------------------------
+Duration: 30 minutes
+Difficulty: Intermediate (builds on Lesson 1 Module 3)
+
+LEARNING OBJECTIVES:
+• Understand method overloading
+• Learn about ref and out parameters
+• Practice with optional parameters
+• Understand return types better
+• Learn method scope and static methods
+
+TOPICS TO COVER:
+
+1. **Method Overloading - Same Name, Different Parameters**
+   ```csharp
+   class Calculator
+   {
+       // Add two numbers
+       public int Add(int a, int b)
+       {
+           return a + b;
+       }
+
+       // Add three numbers (same name, different parameters!)
+       public int Add(int a, int b, int c)
+       {
+           return a + b + c;
+       }
+
+       // Add doubles
+       public double Add(double a, double b)
+       {
+           return a + b;
+       }
+   }
+
+   Calculator calc = new Calculator();
+   Console.WriteLine(calc.Add(5, 3));        // Uses first version: 8
+   Console.WriteLine(calc.Add(5, 3, 2));     // Uses second version: 10
+   Console.WriteLine(calc.Add(5.5, 3.2));    // Uses third version: 8.7
+   ```
+
+2. **Optional Parameters - Provide Defaults**
+   ```csharp
+   public void Greet(string name, string greeting = "Hello")
+   {
+       Console.WriteLine($"{greeting}, {name}!");
+   }
+
+   Greet("Alex");              // "Hello, Alex!" (uses default)
+   Greet("Alex", "Hi");        // "Hi, Alex!" (overrides default)
+   Greet("Alex", "Welcome");   // "Welcome, Alex!"
+   ```
+
+3. **Ref Parameters - Modifying Variables**
+   ```csharp
+   public void Double(ref int number)
+   {
+       number = number * 2;  // Changes the original variable!
+   }
+
+   int score = 10;
+   Double(ref score);
+   Console.WriteLine(score);  // 20 (it changed!)
+   ```
+
+4. **Out Parameters - Getting Multiple Results**
+   ```csharp
+   public void GetMinMax(int[] numbers, out int min, out int max)
+   {
+       min = numbers.Min();
+       max = numbers.Max();
+   }
+
+   int[] scores = { 45, 78, 92, 34, 88 };
+   int smallest, largest;
+   GetMinMax(scores, out smallest, out largest);
+   Console.WriteLine($"Min: {smallest}, Max: {largest}");
+   ```
+
+5. **Static Methods - Don't Need an Object**
+   ```csharp
+   class MathHelper
+   {
+       // Static - call without creating object
+       public static int Square(int x)
+       {
+           return x * x;
+       }
+
+       // Non-static - need object
+       public int Cube(int x)
+       {
+           return x * x * x;
+       }
+   }
+
+   // Static: Call directly on class
+   int result1 = MathHelper.Square(5);  // 25
+
+   // Non-static: Need to create object first
+   MathHelper helper = new MathHelper();
+   int result2 = helper.Cube(3);  // 27
+   ```
+
+PRACTICE PROJECTS:
+1. **Flexible Calculator**: Create overloaded methods for different operations
+2. **Temperature Converter**: Methods with optional units
+3. **Grade Analyzer**: Use out parameters to return min, max, average
+4. **String Toolkit**: Static methods for common string operations
+
+INTERACTIVE EXAMPLES:
+- Password validator with optional strength levels
+- Discount calculator with optional member discounts
+- Swap two numbers using ref parameters
+
+
+MODULE 7: WORKING WITH ARRAYS & STRINGS
+----------------------------------------
+Duration: 30 minutes
+Difficulty: Intermediate (builds on Lesson 1 Module 1 & 4)
+
+LEARNING OBJECTIVES:
+• Master array operations
+• Learn array methods (Sort, Reverse, etc.)
+• Practice string manipulation
+• Understand StringBuilder for efficient string building
+• Learn array vs string similarities
+
+TOPICS TO COVER:
+
+1. **Array Basics Review and Expansion**
+   ```csharp
+   // Creating arrays
+   int[] numbers = new int[5];  // 5 empty slots
+   int[] scores = { 85, 92, 78, 95, 88 };  // With values
+
+   // Length property
+   Console.WriteLine($"Array has {scores.Length} elements");
+
+   // Accessing elements
+   Console.WriteLine(scores[0]);  // First: 85
+   Console.WriteLine(scores[scores.Length - 1]);  // Last: 88
+
+   // Looping through
+   foreach (int score in scores)
+   {
+       Console.WriteLine(score);
+   }
+   ```
+
+2. **Array Methods - Making Arrays Useful**
+   ```csharp
+   int[] numbers = { 5, 2, 8, 1, 9, 3 };
+
+   // Sorting
+   Array.Sort(numbers);  // { 1, 2, 3, 5, 8, 9 }
+
+   // Reversing
+   Array.Reverse(numbers);  // { 9, 8, 5, 3, 2, 1 }
+
+   // Finding
+   int index = Array.IndexOf(numbers, 5);  // Where is 5?
+
+   // Checking if exists
+   bool has8 = Array.Exists(numbers, x => x == 8);
+
+   // Copying
+   int[] copy = new int[numbers.Length];
+   Array.Copy(numbers, copy, numbers.Length);
+
+   // Finding min/max
+   int max = numbers.Max();
+   int min = numbers.Min();
+   ```
+
+3. **String Manipulation - Strings are Arrays of Characters!**
+   ```csharp
+   string message = "Hello World";
+
+   // Access like array
+   Console.WriteLine(message[0]);  // 'H'
+   Console.WriteLine(message.Length);  // 11
+
+   // Common string methods
+   Console.WriteLine(message.ToUpper());  // "HELLO WORLD"
+   Console.WriteLine(message.ToLower());  // "hello world"
+   Console.WriteLine(message.Contains("World"));  // True
+   Console.WriteLine(message.StartsWith("Hello"));  // True
+   Console.WriteLine(message.EndsWith("!"));  // False
+
+   // Substring
+   string part = message.Substring(0, 5);  // "Hello"
+
+   // Replace
+   string newMsg = message.Replace("World", "C#");  // "Hello C#"
+
+   // Split into array
+   string sentence = "C# is really fun";
+   string[] words = sentence.Split(' ');  // ["C#", "is", "really", "fun"]
+
+   // Join array into string
+   string joined = string.Join("-", words);  // "C#-is-really-fun"
+   ```
+
+4. **String Formatting**
+   ```csharp
+   string name = "Emma";
+   int age = 12;
+   double score = 95.5;
+
+   // String interpolation (easiest!)
+   Console.WriteLine($"Hi {name}, you scored {score}!");
+
+   // Formatting numbers
+   decimal price = 19.50m;
+   Console.WriteLine($"Cost: {price:C}");  // $19.50 (currency)
+   Console.WriteLine($"Score: {score:F1}");  // 95.5 (1 decimal)
+
+   // Padding for alignment
+   Console.WriteLine($"{"Name",-10} {"Score",5}");
+   Console.WriteLine($"{name,-10} {score,5:F1}");
+   ```
+
+5. **StringBuilder - For Building Big Strings Efficiently**
+   ```csharp
+   using System.Text;
+
+   // Regular string concatenation (slow for many operations)
+   string result = "";
+   for (int i = 0; i < 1000; i++)
+   {
+       result += i + " ";  // Creates new string each time!
+   }
+
+   // StringBuilder (much faster!)
+   StringBuilder sb = new StringBuilder();
+   for (int i = 0; i < 1000; i++)
+   {
+       sb.Append(i);
+       sb.Append(" ");
+   }
+   string result = sb.ToString();
+
+   // StringBuilder methods
+   StringBuilder builder = new StringBuilder();
+   builder.Append("Hello ");
+   builder.Append("World");
+   builder.AppendLine("!");  // Adds newline
+   builder.Insert(6, "Beautiful ");  // "Hello Beautiful World!"
+   builder.Replace("Beautiful", "Amazing");
+   string final = builder.ToString();
+   ```
+
+PRACTICE PROJECTS:
+1. **Gradebook**: Store and sort student grades
+2. **Text Analyzer**: Count words, find longest word
+3. **Name Formatter**: Clean and format names from input
+4. **Quiz Score Display**: Format scores in aligned columns
+
+INTERACTIVE EXAMPLES:
+- Top 5 scores finder
+- Reverse a sentence word by word
+- Email validator (check format)
+
+
+MODULE 8: INTRODUCTION TO LISTS
+--------------------------------
+Duration: 30 minutes
+Difficulty: Intermediate (new concept - dynamic arrays!)
+
+LEARNING OBJECTIVES:
+• Understand difference between arrays and Lists
+• Learn List methods (Add, Remove, Insert, etc.)
+• Practice with List operations
+• Understand when to use List vs Array
+• Introduction to List<T> generic type
+
+TOPICS TO COVER:
+
+1. **Why Lists? - Arrays with Superpowers**
+   ```csharp
+   // Array - fixed size (problem!)
+   int[] arrayScores = new int[3];  // Can only hold 3 items
+   arrayScores[0] = 85;
+   arrayScores[1] = 92;
+   arrayScores[2] = 78;
+   // arrayScores[3] = 95;  // ERROR! Can't add more!
+
+   // List - dynamic size (solution!)
+   using System.Collections.Generic;
+
+   List<int> listScores = new List<int>();  // Starts empty
+   listScores.Add(85);   // Add items
+   listScores.Add(92);
+   listScores.Add(78);
+   listScores.Add(95);   // No problem! Grows automatically
+   ```
+
+2. **Creating Lists**
+   ```csharp
+   // Empty list
+   List<string> names = new List<string>();
+
+   // List with initial values
+   List<int> numbers = new List<int> { 1, 2, 3, 4, 5 };
+
+   // List with capacity hint (for better performance)
+   List<double> scores = new List<double>(100);  // Expects ~100 items
+   ```
+
+3. **Essential List Methods**
+   ```csharp
+   List<string> fruits = new List<string>();
+
+   // Adding items
+   fruits.Add("Apple");           // Add to end
+   fruits.Add("Banana");
+   fruits.Insert(1, "Orange");    // Insert at position 1
+
+   // Accessing items
+   Console.WriteLine(fruits[0]);  // "Apple" (like arrays!)
+   Console.WriteLine(fruits.Count);  // 3 (not Length!)
+
+   // Removing items
+   fruits.Remove("Orange");       // Remove by value
+   fruits.RemoveAt(0);           // Remove by index
+
+   // Checking if exists
+   if (fruits.Contains("Banana"))
+   {
+       Console.WriteLine("We have bananas!");
+   }
+
+   // Finding index
+   int index = fruits.IndexOf("Apple");
+
+   // Clearing all
+   fruits.Clear();  // Now empty
+   ```
+
+4. **Looping Through Lists**
+   ```csharp
+   List<int> scores = new List<int> { 85, 92, 78, 95, 88 };
+
+   // Method 1: foreach (easiest)
+   foreach (int score in scores)
+   {
+       Console.WriteLine(score);
+   }
+
+   // Method 2: for loop
+   for (int i = 0; i < scores.Count; i++)
+   {
+       Console.WriteLine($"Score {i + 1}: {scores[i]}");
+   }
+   ```
+
+5. **Useful List Operations**
+   ```csharp
+   List<int> numbers = new List<int> { 5, 2, 8, 1, 9, 3 };
+
+   // Sorting
+   numbers.Sort();  // { 1, 2, 3, 5, 8, 9 }
+
+   // Reversing
+   numbers.Reverse();  // { 9, 8, 5, 3, 2, 1 }
+
+   // Converting to array
+   int[] array = numbers.ToArray();
+
+   // Converting from array
+   int[] arr = { 1, 2, 3 };
+   List<int> list = new List<int>(arr);
+
+   // Finding min/max (need LINQ)
+   using System.Linq;
+   int max = numbers.Max();
+   int min = numbers.Min();
+   ```
+
+6. **Practical Example: Shopping List**
+   ```csharp
+   class ShoppingList
+   {
+       static void Main()
+       {
+           List<string> items = new List<string>();
+
+           while (true)
+           {
+               Console.WriteLine("\n=== SHOPPING LIST ===");
+               Console.WriteLine("1. Add item");
+               Console.WriteLine("2. Remove item");
+               Console.WriteLine("3. View list");
+               Console.WriteLine("4. Exit");
+               Console.Write("Choose: ");
+
+               string choice = Console.ReadLine();
+
+               if (choice == "1")
+               {
+                   Console.Write("Item to add: ");
+                   string item = Console.ReadLine();
+                   items.Add(item);
+                   Console.WriteLine($"Added: {item}");
+               }
+               else if (choice == "2")
+               {
+                   Console.Write("Item to remove: ");
+                   string item = Console.ReadLine();
+                   if (items.Remove(item))
+                       Console.WriteLine($"Removed: {item}");
+                   else
+                       Console.WriteLine("Item not found!");
+               }
+               else if (choice == "3")
+               {
+                   Console.WriteLine($"\nYou have {items.Count} items:");
+                   for (int i = 0; i < items.Count; i++)
+                   {
+                       Console.WriteLine($"{i + 1}. {items[i]}");
+                   }
+               }
+               else if (choice == "4")
+               {
+                   break;
+               }
+           }
+       }
+   }
+   ```
+
+PRACTICE PROJECTS:
+1. **Todo List App**: Add, remove, mark tasks complete
+2. **High Score Tracker**: Keep top 10 scores sorted
+3. **Contact Manager**: Store and search names/phone numbers
+4. **Inventory System**: Track items and quantities
+
+INTERACTIVE EXAMPLES:
+- Favorite movies list manager
+- Class roster with add/remove students
+- Simple playlist creator
+
+
+═══════════════════════════════════════════════════════════
+QUIZ UPDATES NEEDED
+═══════════════════════════════════════════════════════════
+
+Both Python and C# Lesson 2 quizzes need to be completely rewritten to match the new content:
+
+PYTHON QUIZ (20 questions):
+- 6-7 questions on Functions (parameters, defaults, lambda, scope)
+- 6-7 questions on Strings & Lists (methods, formatting, slicing, comprehensions)
+- 6-7 questions on File I/O (reading, writing, error handling)
+
+C# QUIZ (20 questions):
+- 6-7 questions on Methods (overloading, ref/out, optional params, static)
+- 6-7 questions on Arrays & Strings (array methods, string methods, StringBuilder)
+- 6-7 questions on Lists (Add, Remove, Contains, List vs Array)
+
+
+═══════════════════════════════════════════════════════════
+SUMMARY OF CHANGES
+═══════════════════════════════════════════════════════════
+
+PROGRESSION NOW:
+
+LESSON 1 (Fundamentals):
+- Setup
+- Basic syntax & variables
+- If/else & loops
+- Simple functions
+- Lists, dictionaries, basic OOP
+
+LESSON 2 (Intermediate - Reinforcement & Expansion):
+- More function practice (parameters, scope)
+- String/list mastery (methods, operations)
+- Introduction to file handling (gentle introduction)
+
+FUTURE LESSON 3 (Would be Advanced):
+- Exception handling in depth
+- Advanced data structures (tuples, sets)
+- Modules & libraries
+- LINQ and advanced features
+
+This creates a much smoother learning curve!
