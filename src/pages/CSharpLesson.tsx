@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { QuizCard } from "@/components/QuizCard";
 import { CodeEditor } from "@/components/CodeEditor";
 import { Progress } from "@/components/ui/progress";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Code2,
   Terminal,
@@ -15,8 +16,241 @@ import {
   PlayCircle,
   Sparkles,
   Trophy,
-  Youtube
+  Youtube,
+  FileText,
+  Database,
+  Zap,
+  List
 } from "lucide-react";
+
+// Week 2 Quiz Questions
+const csharpLesson2Quiz = [
+  // Module 6: Methods (7 questions)
+  {
+    question: "What is method overloading?",
+    options: [
+      "Making a method run faster",
+      "Having multiple methods with the same name but different parameters",
+      "Adding too many methods to a class",
+      "Calling a method multiple times"
+    ],
+    correctAnswer: 1,
+    explanation: "Method overloading allows you to have multiple methods with the same name as long as they have different parameter types or counts."
+  },
+  {
+    question: "Which of these is a valid method overload for: public int Add(int a, int b)?",
+    options: [
+      "public int Add(int x, int y)",
+      "public double Add(int a, int b)",
+      "public int Add(double a, double b)",
+      "public void Add(int a, int b)"
+    ],
+    correctAnswer: 2,
+    explanation: "A valid overload must have different parameter types or count. Add(double, double) has different parameter types than Add(int, int)."
+  },
+  {
+    question: "What does the 'ref' keyword do in a method parameter?",
+    options: [
+      "Makes the parameter optional",
+      "Allows the method to modify the original variable",
+      "Makes the method run faster",
+      "Creates a reference to a file"
+    ],
+    correctAnswer: 1,
+    explanation: "The 'ref' keyword allows a method to modify the original variable passed to it, not just a copy."
+  },
+  {
+    question: "What is the difference between 'ref' and 'out' parameters?",
+    options: [
+      "No difference",
+      "'out' parameters don't need to be initialized before being passed",
+      "'ref' is faster than 'out'",
+      "'out' can only be used with integers"
+    ],
+    correctAnswer: 1,
+    explanation: "'out' parameters don't need to be initialized before passing, but must be assigned a value inside the method. 'ref' parameters must be initialized before passing."
+  },
+  {
+    question: "How do you define an optional parameter with a default value?",
+    options: [
+      "public void Greet(string name = \"Guest\")",
+      "public void Greet(optional string name = \"Guest\")",
+      "public void Greet(string name := \"Guest\")",
+      "public void Greet(string? name = \"Guest\")"
+    ],
+    correctAnswer: 0,
+    explanation: "Optional parameters are defined by assigning a default value using the = operator in the parameter list."
+  },
+  {
+    question: "What is a static method?",
+    options: [
+      "A method that never changes",
+      "A method that can be called without creating an instance of the class",
+      "A method that runs slowly",
+      "A method that only works with static variables"
+    ],
+    correctAnswer: 1,
+    explanation: "Static methods belong to the class itself, not to instances. You can call them using ClassName.MethodName() without creating an object."
+  },
+  {
+    question: "Which of these correctly calls a static method?",
+    options: [
+      "Calculator calc = new Calculator(); calc.Square(5);",
+      "Calculator.Square(5);",
+      "static.Calculator.Square(5);",
+      "new Calculator.Square(5);"
+    ],
+    correctAnswer: 1,
+    explanation: "Static methods are called directly on the class name: ClassName.MethodName(). No object instance is needed."
+  },
+
+  // Module 7: Arrays & Strings (6 questions)
+  {
+    question: "What does Array.Sort(numbers) do?",
+    options: [
+      "Returns a sorted copy of the array",
+      "Sorts the array in descending order",
+      "Sorts the original array in ascending order",
+      "Counts the numbers in the array"
+    ],
+    correctAnswer: 2,
+    explanation: "Array.Sort() modifies the original array, sorting it in ascending order."
+  },
+  {
+    question: "How do you find the index of an element in an array?",
+    options: [
+      "array.Find(element)",
+      "Array.IndexOf(array, element)",
+      "array.GetIndex(element)",
+      "Array.Search(array, element)"
+    ],
+    correctAnswer: 1,
+    explanation: "Array.IndexOf(array, element) returns the index of the first occurrence of the element, or -1 if not found."
+  },
+  {
+    question: "What does the string method .ToUpper() do?",
+    options: [
+      "Converts a string to lowercase",
+      "Converts a string to uppercase",
+      "Capitalizes the first letter only",
+      "Removes uppercase letters"
+    ],
+    correctAnswer: 1,
+    explanation: ".ToUpper() converts all characters in a string to uppercase."
+  },
+  {
+    question: "What does \"Hello World\".Split(' ') return?",
+    options: [
+      "\"Hello\" and \"World\" as separate strings",
+      "An array: [\"Hello\", \"World\"]",
+      "\"HelloWorld\"",
+      "2 (the number of words)"
+    ],
+    correctAnswer: 1,
+    explanation: ".Split() returns an array of strings, split by the specified character (space in this case)."
+  },
+  {
+    question: "Why use StringBuilder instead of regular string concatenation?",
+    options: [
+      "StringBuilder is easier to use",
+      "StringBuilder is much more efficient for building large strings",
+      "StringBuilder uses less memory for small strings",
+      "StringBuilder is required by C#"
+    ],
+    correctAnswer: 1,
+    explanation: "StringBuilder is much more efficient when building strings in loops because strings are immutable in C# - each concatenation creates a new string object."
+  },
+  {
+    question: "What does string.Join(\"-\", words) do?",
+    options: [
+      "Splits a string by dashes",
+      "Joins an array of strings with dashes between them",
+      "Removes dashes from a string",
+      "Counts the words in a string"
+    ],
+    correctAnswer: 1,
+    explanation: "string.Join() combines an array of strings into one string, with the specified separator between each element."
+  },
+
+  // Module 8: Lists (7 questions)
+  {
+    question: "What is the main difference between arrays and Lists in C#?",
+    options: [
+      "Arrays can grow in size, Lists cannot",
+      "Arrays are fixed-size, Lists can grow dynamically",
+      "Lists are faster than arrays",
+      "There is no difference"
+    ],
+    correctAnswer: 1,
+    explanation: "Arrays have a fixed size set at creation, while Lists can grow and shrink dynamically using Add() and Remove()."
+  },
+  {
+    question: "How do you add an item to the end of a List?",
+    options: [
+      "list.Insert(item)",
+      "list.Add(item)",
+      "list.Push(item)",
+      "list.Append(item)"
+    ],
+    correctAnswer: 1,
+    explanation: "The Add() method adds an item to the end of a List."
+  },
+  {
+    question: "How do you remove an item from a List by value?",
+    options: [
+      "list.Delete(item)",
+      "list.Remove(item)",
+      "list.RemoveAt(item)",
+      "list.Erase(item)"
+    ],
+    correctAnswer: 1,
+    explanation: "Remove(item) removes the first occurrence of the specified value. RemoveAt(index) removes by index position."
+  },
+  {
+    question: "What does list.Contains(\"Apple\") return?",
+    options: [
+      "The index of \"Apple\"",
+      "True if \"Apple\" is in the list, false otherwise",
+      "The number of times \"Apple\" appears",
+      "The value \"Apple\""
+    ],
+    correctAnswer: 1,
+    explanation: "Contains() returns a boolean - true if the item exists in the list, false if it doesn't."
+  },
+  {
+    question: "How do you get the number of items in a List?",
+    options: [
+      "list.Length",
+      "list.Size",
+      "list.Count",
+      "list.Total"
+    ],
+    correctAnswer: 2,
+    explanation: "Lists use the Count property to get the number of items. Arrays use Length, but Lists use Count."
+  },
+  {
+    question: "What does list.Clear() do?",
+    options: [
+      "Sorts the list",
+      "Removes the first item",
+      "Removes all items from the list",
+      "Creates a new empty list"
+    ],
+    correctAnswer: 2,
+    explanation: "Clear() removes all elements from the list, making it empty (Count becomes 0)."
+  },
+  {
+    question: "How do you convert a List to an array?",
+    options: [
+      "list.ToArray()",
+      "Array.FromList(list)",
+      "new Array(list)",
+      "list.ConvertToArray()"
+    ],
+    correctAnswer: 0,
+    explanation: "The ToArray() method creates and returns an array containing all elements from the List."
+  }
+];
 
 const csharpQuiz = [
   {
@@ -297,8 +531,10 @@ const csharpQuiz = [
 ];
 
 const CSharpLesson = () => {
+  const [currentLesson, setCurrentLesson] = useState("lesson1");
   const [currentModule, setCurrentModule] = useState(0);
   const [moduleProgress, setModuleProgress] = useState<number[]>([0, 0, 0, 0, 0, 0]);
+  const [lesson2ModuleProgress, setLesson2ModuleProgress] = useState<number[]>([0, 0, 0]);
   const [showQuiz, setShowQuiz] = useState(false);
   const [quizIndex, setQuizIndex] = useState(0);
   const [correctAnswers, setCorrectAnswers] = useState(0);
@@ -339,6 +575,27 @@ const CSharpLesson = () => {
       icon: Gamepad2,
       duration: "25 mins",
       color: "text-pink-500"
+    }
+  ];
+
+  const lesson2Modules = [
+    {
+      title: "Module 6: More Practice with Methods",
+      icon: Code2,
+      duration: "30 mins",
+      color: "text-blue-500"
+    },
+    {
+      title: "Module 7: Working with Arrays & Strings",
+      icon: List,
+      duration: "30 mins",
+      color: "text-purple-500"
+    },
+    {
+      title: "Module 8: Introduction to Lists",
+      icon: Database,
+      duration: "30 mins",
+      color: "text-green-500"
     }
   ];
 
@@ -391,6 +648,19 @@ const CSharpLesson = () => {
         </div>
       </div>
 
+      {/* Lesson Tabs */}
+      <Tabs value={currentLesson} onValueChange={setCurrentLesson} className="w-full">
+        <TabsList className="grid w-full max-w-md mx-auto grid-cols-2">
+          <TabsTrigger value="lesson1" className="text-lg">
+            📚 Lesson 1: Fundamentals
+          </TabsTrigger>
+          <TabsTrigger value="lesson2" className="text-lg">
+            🚀 Lesson 2: Advanced
+          </TabsTrigger>
+        </TabsList>
+
+        {/* Lesson 1 Content - Week 1 */}
+        <TabsContent value="lesson1" className="space-y-8">
       {/* Module Navigation */}
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
         {modules.map((module, index) => {
@@ -1753,6 +2023,1096 @@ class RPGGame
           </Card>
         </div>
       )}
+        </TabsContent>
+
+        {/* Lesson 2 Content - Week 2 */}
+        <TabsContent value="lesson2" className="space-y-8">
+          {/* Module Navigation for Lesson 2 */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
+            {lesson2Modules.map((module, index) => {
+              const Icon = module.icon;
+              const isActive = currentModule === index;
+              const isCompleted = lesson2ModuleProgress[index] === 100;
+
+              return (
+                <Button
+                  key={index}
+                  variant={isActive ? "default" : isCompleted ? "secondary" : "outline"}
+                  className="h-auto py-4 px-3 flex flex-col gap-2 relative"
+                  onClick={() => setCurrentModule(index)}
+                >
+                  {isCompleted && (
+                    <CheckCircle className="absolute top-1 right-1 w-4 h-4 text-green-500" />
+                  )}
+                  <Icon className={`w-8 h-8 ${module.color}`} />
+                  <span className="text-xs font-medium text-center">{module.title}</span>
+                  <span className="text-xs text-muted-foreground">{module.duration}</span>
+                  <Progress value={lesson2ModuleProgress[index]} className="w-full h-1" />
+                </Button>
+              );
+            })}
+          </div>
+
+          {/* Module 6: More Practice with Methods */}
+          {currentModule === 0 && (
+            <div className="space-y-6 animate-bounce-in">
+              <Card className="shadow-fun">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <Code2 className="w-6 h-6 text-blue-500" />
+                    Module 6: More Practice with Methods
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  <div className="bg-gradient-to-r from-blue-100 to-purple-100 p-4 rounded-lg">
+                    <p className="text-lg font-semibold">
+                      🎯 Level up your methods skills - overloading, optional params, ref/out, and static methods!
+                    </p>
+                  </div>
+
+                  {/* Part 1: Method Overloading */}
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-bold flex items-center gap-2">
+                      <Sparkles className="w-5 h-5 text-yellow-500" />
+                      Part 1: Method Overloading - Same Name, Different Powers
+                    </h3>
+
+                    <div className="bg-muted p-4 rounded-lg">
+                      <p><strong>Method Overloading</strong> lets you have multiple methods with the same name, as long as they have different parameters! It's like having different versions of the same superpower.</p>
+                    </div>
+
+                    <CodeEditor
+                      title="Method Overloading in C#"
+                      initialCode={`using System;
+
+class Calculator
+{
+    // Add two integers
+    public int Add(int a, int b)
+    {
+        Console.WriteLine("Using int version");
+        return a + b;
+    }
+
+    // Add three integers (overload!)
+    public int Add(int a, int b, int c)
+    {
+        Console.WriteLine("Using 3-parameter version");
+        return a + b + c;
+    }
+
+    // Add doubles (overload with different type!)
+    public double Add(double a, double b)
+    {
+        Console.WriteLine("Using double version");
+        return a + b;
+    }
+
+    static void Main()
+    {
+        Calculator calc = new Calculator();
+
+        // C# automatically picks the right version!
+        int result1 = calc.Add(5, 3);              // Uses first: 8
+        int result2 = calc.Add(5, 3, 2);           // Uses second: 10
+        double result3 = calc.Add(5.5, 3.2);       // Uses third: 8.7
+
+        Console.WriteLine($"\\nResults: {result1}, {result2}, {result3}");
+
+        // Real example: Greet method
+        Greeter greeter = new Greeter();
+        greeter.Greet("Alex");                     // Just name
+        greeter.Greet("Alex", 12);                 // Name and age
+        greeter.Greet("Alex", 12, "Student");      // Name, age, title
+    }
+}
+
+class Greeter
+{
+    public void Greet(string name)
+    {
+        Console.WriteLine($"Hello, {name}!");
+    }
+
+    public void Greet(string name, int age)
+    {
+        Console.WriteLine($"Hello, {name}! You're {age} years old.");
+    }
+
+    public void Greet(string name, int age, string title)
+    {
+        Console.WriteLine($"Hello, {title} {name}! You're {age} years old.");
+    }
+}`}
+                      language="csharp"
+                    />
+                  </div>
+
+                  {/* Part 2: Optional Parameters & Ref/Out */}
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-bold flex items-center gap-2">
+                      <Zap className="w-5 h-5 text-purple-500" />
+                      Part 2: Optional Parameters, Ref & Out
+                    </h3>
+
+                    <div className="bg-muted p-4 rounded-lg">
+                      <p><strong>Optional parameters</strong> have default values. <strong>ref</strong> lets you modify the original variable. <strong>out</strong> returns multiple values!</p>
+                    </div>
+
+                    <CodeEditor
+                      title="Optional Parameters and Ref/Out"
+                      initialCode={`using System;
+
+class ParameterExamples
+{
+    // Optional parameters (have defaults)
+    public void PrintMessage(string msg, int times = 1, string prefix = ">>>")
+    {
+        for (int i = 0; i < times; i++)
+        {
+            Console.WriteLine($"{prefix} {msg}");
+        }
+    }
+
+    // ref - modifies the original variable
+    public void Double(ref int number)
+    {
+        number = number * 2;  // Changes the original!
+    }
+
+    // out - returns multiple values
+    public void GetMinMax(int[] numbers, out int min, out int max)
+    {
+        min = numbers[0];
+        max = numbers[0];
+
+        foreach (int num in numbers)
+        {
+            if (num < min) min = num;
+            if (num > max) max = num;
+        }
+    }
+
+    // Practical: Swap two values using ref
+    public void Swap(ref int a, ref int b)
+    {
+        int temp = a;
+        a = b;
+        b = temp;
+    }
+
+    static void Main()
+    {
+        ParameterExamples ex = new ParameterExamples();
+
+        // Optional parameters
+        ex.PrintMessage("Hello");                    // Uses defaults
+        ex.PrintMessage("Hello", 3);                 // Override times
+        ex.PrintMessage("Hello", 2, "***");          // Override both
+
+        // ref example
+        int score = 10;
+        Console.WriteLine($"\\nBefore: {score}");
+        ex.Double(ref score);  // Must use 'ref' keyword!
+        Console.WriteLine($"After: {score}");  // Changed to 20!
+
+        // out example - getting multiple values back
+        int[] data = { 45, 12, 78, 34, 92, 23 };
+        int smallest, largest;
+        ex.GetMinMax(data, out smallest, out largest);
+        Console.WriteLine($"\\nMin: {smallest}, Max: {largest}");
+
+        // Swap example
+        int x = 5, y = 10;
+        Console.WriteLine($"\\nBefore swap: x={x}, y={y}");
+        ex.Swap(ref x, ref y);
+        Console.WriteLine($"After swap: x={x}, y={y}");
+    }
+}`}
+                      language="csharp"
+                    />
+                  </div>
+
+                  {/* Part 3: Static Methods */}
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-bold flex items-center gap-2">
+                      <BookOpen className="w-5 h-5 text-green-500" />
+                      Part 3: Static Methods - No Object Needed!
+                    </h3>
+
+                    <div className="bg-muted p-4 rounded-lg">
+                      <p><strong>Static methods</strong> belong to the class itself, not to objects. Call them using ClassName.MethodName() - no new keyword needed!</p>
+                    </div>
+
+                    <CodeEditor
+                      title="Static Methods in C#"
+                      initialCode={`using System;
+
+class MathHelper
+{
+    // Static method - call without creating object
+    public static int Square(int x)
+    {
+        return x * x;
+    }
+
+    public static int Cube(int x)
+    {
+        return x * x * x;
+    }
+
+    public static double Average(int a, int b, int c)
+    {
+        return (a + b + c) / 3.0;
+    }
+
+    // Non-static method (needs object)
+    public int AddTen(int x)
+    {
+        return x + 10;
+    }
+}
+
+class StringHelper
+{
+    public static string Reverse(string text)
+    {
+        char[] chars = text.ToCharArray();
+        Array.Reverse(chars);
+        return new string(chars);
+    }
+
+    public static int CountVowels(string text)
+    {
+        int count = 0;
+        string vowels = "aeiouAEIOU";
+
+        foreach (char c in text)
+        {
+            if (vowels.Contains(c.ToString()))
+                count++;
+        }
+        return count;
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        // Static methods - call directly on class!
+        int squared = MathHelper.Square(5);        // No 'new' needed!
+        int cubed = MathHelper.Cube(3);
+        double avg = MathHelper.Average(10, 20, 30);
+
+        Console.WriteLine($"Square of 5: {squared}");
+        Console.WriteLine($"Cube of 3: {cubed}");
+        Console.WriteLine($"Average: {avg}");
+
+        // Non-static - need to create object
+        MathHelper helper = new MathHelper();
+        int result = helper.AddTen(5);
+        Console.WriteLine($"\\nAdd ten to 5: {result}");
+
+        // String helpers
+        string reversed = StringHelper.Reverse("Hello");
+        int vowels = StringHelper.CountVowels("Programming");
+
+        Console.WriteLine($"\\nReversed: {reversed}");
+        Console.WriteLine($"Vowels in 'Programming': {vowels}");
+
+        // You already use static methods!
+        Console.WriteLine("\\nExamples you've seen:");
+        Console.WriteLine("- Console.WriteLine() is static!");
+        Console.WriteLine("- Array.Sort() is static!");
+        Console.WriteLine("- int.Parse() is static!");
+    }
+}`}
+                      language="csharp"
+                    />
+
+                    <div className="grid md:grid-cols-2 gap-4 mt-4">
+                      <Card className="border-blue-200 bg-blue-50">
+                        <CardHeader>
+                          <CardTitle className="text-lg">Static vs Non-Static</CardTitle>
+                        </CardHeader>
+                        <CardContent className="text-sm space-y-1">
+                          <div><strong>Static:</strong></div>
+                          <div>• Call on class name</div>
+                          <div>• Don't need object</div>
+                          <div>• Utility/helper methods</div>
+                          <div className="mt-2"><strong>Non-Static:</strong></div>
+                          <div>• Need to create object</div>
+                          <div>• Work with object data</div>
+                        </CardContent>
+                      </Card>
+
+                      <Card className="border-green-200 bg-green-50">
+                        <CardHeader>
+                          <CardTitle className="text-lg">When to Use Static</CardTitle>
+                        </CardHeader>
+                        <CardContent className="text-sm space-y-1">
+                          <div>• Math operations</div>
+                          <div>• String utilities</div>
+                          <div>• Conversion helpers</div>
+                          <div>• Common calculations</div>
+                          <div>• No object data needed</div>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </div>
+
+                  <div className="text-center">
+                    <Button
+                      variant="fun"
+                      size="lg"
+                      onClick={() => {
+                        setLesson2ModuleProgress([100, 0, 0]);
+                        setCurrentModule(1);
+                      }}
+                    >
+                      <ArrowRight className="w-5 h-5" />
+                      Next: Working with Arrays & Strings
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          )}
+
+          {/* Module 7: Working with Arrays & Strings */}
+          {currentModule === 1 && (
+            <div className="space-y-6 animate-bounce-in">
+              <Card className="shadow-fun">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <List className="w-6 h-6 text-purple-500" />
+                    Module 7: Working with Arrays & Strings
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  <div className="bg-gradient-to-r from-purple-100 to-pink-100 p-4 rounded-lg">
+                    <p className="text-lg font-semibold">
+                      🎯 Master arrays, strings, and learn powerful string operations!
+                    </p>
+                  </div>
+
+                  {/* Part 1: Array Operations */}
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-bold flex items-center gap-2">
+                      <Sparkles className="w-5 h-5 text-yellow-500" />
+                      Part 1: Array Operations - Sort, Reverse, Find
+                    </h3>
+
+                    <div className="bg-muted p-4 rounded-lg">
+                      <p><strong>Arrays</strong> are fixed-size containers. Let's master the built-in methods to make them super useful!</p>
+                    </div>
+
+                    <CodeEditor
+                      title="Array Methods in C#"
+                      initialCode={`using System;
+using System.Linq;  // For Min/Max
+
+class ArrayMethods
+{
+    static void Main()
+    {
+        // Creating arrays
+        int[] scores = { 85, 92, 78, 95, 88, 72 };
+
+        Console.WriteLine("Original: " + string.Join(", ", scores));
+
+        // Array.Sort - sorts in ascending order
+        Array.Sort(scores);
+        Console.WriteLine("Sorted: " + string.Join(", ", scores));
+
+        // Array.Reverse - reverses the order
+        Array.Reverse(scores);
+        Console.WriteLine("Reversed: " + string.Join(", ", scores));
+
+        // Array.IndexOf - find position of element
+        int index = Array.IndexOf(scores, 88);
+        Console.WriteLine($"\\nIndex of 88: {index}");
+
+        // Array.Exists - check if element exists
+        bool has95 = Array.Exists(scores, x => x == 95);
+        Console.WriteLine($"Has 95? {has95}");
+
+        // Array.Copy - copy to another array
+        int[] copy = new int[scores.Length];
+        Array.Copy(scores, copy, scores.Length);
+        Console.WriteLine("\\nCopied: " + string.Join(", ", copy));
+
+        // Min and Max (using LINQ)
+        int max = scores.Max();
+        int min = scores.Min();
+        Console.WriteLine($"\\nMax: {max}, Min: {min}");
+
+        // Working with strings array
+        string[] names = { "Charlie", "Alice", "Bob", "Diana" };
+        Array.Sort(names);  // Alphabetical order
+        Console.WriteLine("\\nSorted names: " + string.Join(", ", names));
+
+        // Practical example: Top 3 scores
+        int[] allScores = { 45, 92, 78, 95, 88, 67, 85 };
+        Array.Sort(allScores);
+        Array.Reverse(allScores);  // Now highest first
+
+        Console.WriteLine("\\nTop 3 scores:");
+        for (int i = 0; i < 3; i++)
+        {
+            Console.WriteLine($"{i + 1}. {allScores[i]}");
+        }
+    }
+}`}
+                      language="csharp"
+                    />
+                  </div>
+
+                  {/* Part 2: String Manipulation */}
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-bold flex items-center gap-2">
+                      <BookOpen className="w-5 h-5 text-blue-500" />
+                      Part 2: String Manipulation - Power Tools
+                    </h3>
+
+                    <div className="bg-muted p-4 rounded-lg">
+                      <p><strong>Strings are like arrays of characters!</strong> Learn the essential methods for text processing.</p>
+                    </div>
+
+                    <CodeEditor
+                      title="String Methods in C#"
+                      initialCode={`using System;
+
+class StringPower
+{
+    static void Main()
+    {
+        string message = "  Hello World!  ";
+
+        // Case conversion
+        Console.WriteLine(message.ToUpper());    // "  HELLO WORLD!  "
+        Console.WriteLine(message.ToLower());    // "  hello world!  "
+
+        // Trim - remove whitespace
+        Console.WriteLine($"'{message.Trim()}'");  // "Hello World!"
+
+        // Length property
+        Console.WriteLine($"Length: {message.Length}");
+
+        // Access characters like an array
+        Console.WriteLine($"First char: {message[2]}");  // 'H' (index 2)
+
+        // Contains, StartsWith, EndsWith
+        string email = "student@school.com";
+        Console.WriteLine($"\\nHas @? {email.Contains("@")}");
+        Console.WriteLine($"Starts with 'student'? {email.StartsWith("student")}");
+        Console.WriteLine($"Ends with '.com'? {email.EndsWith(".com")}");
+
+        // Substring - extract part of string
+        string fullName = "Alice Johnson";
+        string firstName = fullName.Substring(0, 5);  // "Alice"
+        Console.WriteLine($"\\nFirst name: {firstName}");
+
+        // Replace - change text
+        string text = "I love cats! Cats are awesome!";
+        string newText = text.Replace("cats", "dogs");
+        Console.WriteLine($"\\n{newText}");
+
+        // Split - break into array
+        string sentence = "C# is really fun";
+        string[] words = sentence.Split(' ');
+        Console.WriteLine("\\nWords:");
+        foreach (string word in words)
+        {
+            Console.WriteLine($"  - {word}");
+        }
+
+        // Join - combine array into string
+        string[] items = { "Apple", "Banana", "Orange" };
+        string result = string.Join(", ", items);
+        Console.WriteLine($"\\nFruits: {result}");
+
+        // String interpolation (formatting)
+        string name = "Emma";
+        int age = 12;
+        double score = 95.7;
+        Console.WriteLine($"\\n{name} is {age} years old and scored {score:F1}");
+
+        // Practical: Email validator
+        string testEmail = "test@example.com";
+        bool isValid = testEmail.Contains("@") &&
+                       testEmail.Contains(".") &&
+                       testEmail.IndexOf("@") < testEmail.LastIndexOf(".");
+        Console.WriteLine($"\\n{testEmail} is valid? {isValid}");
+    }
+}`}
+                      language="csharp"
+                    />
+                  </div>
+
+                  {/* Part 3: StringBuilder */}
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-bold flex items-center gap-2">
+                      <Zap className="w-5 h-5 text-orange-500" />
+                      Part 3: StringBuilder - Efficient String Building
+                    </h3>
+
+                    <div className="bg-yellow-50 border-2 border-yellow-200 p-4 rounded-lg">
+                      <p className="font-bold">💡 Why StringBuilder?</p>
+                      <p>Strings are immutable (can't be changed). Each concatenation creates a NEW string! StringBuilder is much more efficient for building large strings.</p>
+                    </div>
+
+                    <CodeEditor
+                      title="StringBuilder in C#"
+                      initialCode={`using System;
+using System.Text;  // Need this for StringBuilder!
+
+class StringBuilderExample
+{
+    static void Main()
+    {
+        // OLD WAY - Slow for many operations
+        string result = "";
+        for (int i = 0; i < 5; i++)
+        {
+            result += i + " ";  // Creates new string each time!
+        }
+        Console.WriteLine($"String concat: {result}");
+
+        // BETTER WAY - StringBuilder
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < 5; i++)
+        {
+            sb.Append(i);
+            sb.Append(" ");
+        }
+        Console.WriteLine($"StringBuilder: {sb.ToString()}");
+
+        // StringBuilder methods
+        StringBuilder builder = new StringBuilder();
+
+        // Append - add to end
+        builder.Append("Hello");
+        builder.Append(" ");
+        builder.Append("World");
+
+        // AppendLine - add with newline
+        builder.AppendLine("!");
+        builder.AppendLine("How are you?");
+
+        // Insert - add at position
+        builder.Insert(0, ">>> ");  // Add at start
+
+        // Replace - change text
+        builder.Replace("World", "C#");
+
+        Console.WriteLine("\\nResult:");
+        Console.WriteLine(builder.ToString());
+
+        // Practical: Building HTML
+        StringBuilder html = new StringBuilder();
+        html.AppendLine("<html>");
+        html.AppendLine("  <body>");
+        html.AppendLine("    <h1>My Page</h1>");
+        html.AppendLine("    <p>Welcome to C#!</p>");
+        html.AppendLine("  </body>");
+        html.AppendLine("</html>");
+
+        Console.WriteLine("\\nGenerated HTML:");
+        Console.WriteLine(html.ToString());
+
+        // When to use StringBuilder vs String
+        Console.WriteLine("\\n📊 Use StringBuilder when:");
+        Console.WriteLine("  • Building strings in loops");
+        Console.WriteLine("  • Many string modifications");
+        Console.WriteLine("  • Performance matters");
+        Console.WriteLine("\\n📊 Use regular strings when:");
+        Console.WriteLine("  • Just a few concatenations");
+        Console.WriteLine("  • Simple operations");
+    }
+}`}
+                      language="csharp"
+                    />
+
+                    <div className="grid md:grid-cols-2 gap-4 mt-4">
+                      <Card className="border-blue-200 bg-blue-50">
+                        <CardHeader>
+                          <CardTitle className="text-lg">Common String Methods</CardTitle>
+                        </CardHeader>
+                        <CardContent className="text-sm space-y-1">
+                          <div>• ToUpper() / ToLower()</div>
+                          <div>• Trim() / TrimStart() / TrimEnd()</div>
+                          <div>• Contains() / StartsWith() / EndsWith()</div>
+                          <div>• Substring() / Replace()</div>
+                          <div>• Split() / Join()</div>
+                          <div>• IndexOf() / LastIndexOf()</div>
+                        </CardContent>
+                      </Card>
+
+                      <Card className="border-green-200 bg-green-50">
+                        <CardHeader>
+                          <CardTitle className="text-lg">StringBuilder Methods</CardTitle>
+                        </CardHeader>
+                        <CardContent className="text-sm space-y-1">
+                          <div>• Append() - add to end</div>
+                          <div>• AppendLine() - add with \\n</div>
+                          <div>• Insert() - add at position</div>
+                          <div>• Replace() - change text</div>
+                          <div>• Remove() - delete characters</div>
+                          <div>• ToString() - convert to string</div>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </div>
+
+                  <div className="text-center">
+                    <Button
+                      variant="fun"
+                      size="lg"
+                      onClick={() => {
+                        setLesson2ModuleProgress([100, 100, 0]);
+                        setCurrentModule(2);
+                      }}
+                    >
+                      <ArrowRight className="w-5 h-5" />
+                      Next: Introduction to Lists
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          )}
+
+          {/* Module 8: Introduction to Lists */}
+          {currentModule === 2 && (
+            <div className="space-y-6 animate-bounce-in">
+              <Card className="shadow-fun">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <Database className="w-6 h-6 text-green-500" />
+                    Module 8: Introduction to Lists
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  <div className="bg-gradient-to-r from-green-100 to-blue-100 p-4 rounded-lg">
+                    <p className="text-lg font-semibold">
+                      🎯 Discover Lists - dynamic arrays that grow and shrink!
+                    </p>
+                  </div>
+
+                  {/* Part 1: Why Lists? */}
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-bold flex items-center gap-2">
+                      <Sparkles className="w-5 h-5 text-yellow-500" />
+                      Part 1: Lists vs Arrays - Superpowers Unlocked!
+                    </h3>
+
+                    <div className="bg-muted p-4 rounded-lg">
+                      <p><strong>Lists</strong> are like arrays with superpowers - they can grow and shrink! No more fixed sizes holding you back.</p>
+                    </div>
+
+                    <CodeEditor
+                      title="Lists vs Arrays - The Big Difference"
+                      initialCode={`using System;
+using System.Collections.Generic;  // Need this for Lists!
+
+class ListsVsArrays
+{
+    static void Main()
+    {
+        // ARRAYS - Fixed size (the problem)
+        int[] arrayScores = new int[3];  // Can only hold 3
+        arrayScores[0] = 85;
+        arrayScores[1] = 92;
+        arrayScores[2] = 78;
+        // arrayScores[3] = 95;  // ERROR! Can't add more!
+
+        Console.WriteLine("Array (fixed):");
+        Console.WriteLine($"Length: {arrayScores.Length}");
+        Console.WriteLine(string.Join(", ", arrayScores));
+
+        // LISTS - Dynamic size (the solution!)
+        List<int> listScores = new List<int>();  // Starts empty!
+
+        // Add as many as you want!
+        listScores.Add(85);
+        listScores.Add(92);
+        listScores.Add(78);
+        listScores.Add(95);   // No problem!
+        listScores.Add(88);   // Keeps growing!
+
+        Console.WriteLine("\\nList (dynamic):");
+        Console.WriteLine($"Count: {listScores.Count}");  // Note: Count, not Length!
+        Console.WriteLine(string.Join(", ", listScores));
+
+        // Creating Lists with initial values
+        List<string> fruits = new List<string> { "Apple", "Banana", "Orange" };
+
+        Console.WriteLine("\\nFruits: " + string.Join(", ", fruits));
+
+        // Access like arrays
+        Console.WriteLine($"First fruit: {fruits[0]}");
+        Console.WriteLine($"Last fruit: {fruits[fruits.Count - 1]}");
+    }
+}`}
+                      language="csharp"
+                    />
+
+                    <div className="grid md:grid-cols-2 gap-4 mt-4">
+                      <Card className="border-blue-200 bg-blue-50">
+                        <CardHeader>
+                          <CardTitle className="text-lg">Arrays</CardTitle>
+                        </CardHeader>
+                        <CardContent className="text-sm space-y-1">
+                          <div>✅ Fixed size</div>
+                          <div>✅ Slightly faster</div>
+                          <div>✅ Use .Length</div>
+                          <div>❌ Can't grow/shrink</div>
+                          <div>❌ Less flexible</div>
+                        </CardContent>
+                      </Card>
+
+                      <Card className="border-green-200 bg-green-50">
+                        <CardHeader>
+                          <CardTitle className="text-lg">Lists</CardTitle>
+                        </CardHeader>
+                        <CardContent className="text-sm space-y-1">
+                          <div>✅ Dynamic size</div>
+                          <div>✅ Add/Remove anytime</div>
+                          <div>✅ Use .Count</div>
+                          <div>✅ More methods</div>
+                          <div>✅ More flexible!</div>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </div>
+
+                  {/* Part 2: List Methods */}
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-bold flex items-center gap-2">
+                      <Zap className="w-5 h-5 text-purple-500" />
+                      Part 2: Essential List Methods
+                    </h3>
+
+                    <div className="bg-muted p-4 rounded-lg">
+                      <p>Master the key List methods: <strong>Add, Remove, Insert, Contains, Clear</strong> and more!</p>
+                    </div>
+
+                    <CodeEditor
+                      title="List Methods in Action"
+                      initialCode={`using System;
+using System.Collections.Generic;
+using System.Linq;  // For Min/Max
+
+class ListMethods
+{
+    static void Main()
+    {
+        List<string> todoList = new List<string>();
+
+        // Add - adds to end
+        todoList.Add("Do homework");
+        todoList.Add("Practice C#");
+        todoList.Add("Read book");
+
+        Console.WriteLine("Todo list:");
+        foreach (string task in todoList)
+        {
+            Console.WriteLine($"  - {task}");
+        }
+
+        // Insert - add at specific position
+        todoList.Insert(1, "Take a break");  // Add at index 1
+
+        Console.WriteLine("\\nAfter insert:");
+        for (int i = 0; i < todoList.Count; i++)
+        {
+            Console.WriteLine($"  {i + 1}. {todoList[i]}");
+        }
+
+        // Remove - remove by value
+        todoList.Remove("Take a break");  // Removes first match
+
+        // RemoveAt - remove by index
+        todoList.RemoveAt(0);  // Remove first item
+
+        Console.WriteLine("\\nAfter removals:");
+        Console.WriteLine(string.Join(", ", todoList));
+
+        // Contains - check if exists
+        if (todoList.Contains("Practice C#"))
+        {
+            Console.WriteLine("\\n✓ Don't forget to practice C#!");
+        }
+
+        // IndexOf - find position
+        int index = todoList.IndexOf("Read book");
+        Console.WriteLine($"'Read book' is at index: {index}");
+
+        // Working with numbers
+        List<int> scores = new List<int> { 45, 92, 78, 95, 88 };
+
+        // Sort - arranges in order
+        scores.Sort();
+        Console.WriteLine("\\nSorted scores: " + string.Join(", ", scores));
+
+        // Reverse - flip order
+        scores.Reverse();
+        Console.WriteLine("Reversed: " + string.Join(", ", scores));
+
+        // Min, Max (using LINQ)
+        int highest = scores.Max();
+        int lowest = scores.Min();
+        Console.WriteLine($"\\nHighest: {highest}, Lowest: {lowest}");
+
+        // ToArray - convert to array
+        int[] scoreArray = scores.ToArray();
+        Console.WriteLine($"\\nConverted to array with {scoreArray.Length} elements");
+
+        // Clear - remove all items
+        todoList.Clear();
+        Console.WriteLine($"\\nTodo list after Clear: {todoList.Count} items");
+
+        // Practical: Shopping list
+        Console.WriteLine("\\n=== Shopping List Demo ===");
+        List<string> shopping = new List<string>();
+
+        shopping.Add("Milk");
+        shopping.Add("Bread");
+        shopping.Add("Eggs");
+        shopping.Add("Cheese");
+
+        Console.WriteLine($"Need to buy {shopping.Count} items:");
+        foreach (string item in shopping)
+        {
+            Console.WriteLine($"  [ ] {item}");
+        }
+
+        // Got cheese, remove it
+        shopping.Remove("Cheese");
+        Console.WriteLine($"\\nUpdated list ({shopping.Count} items):");
+        foreach (string item in shopping)
+        {
+            Console.WriteLine($"  [ ] {item}");
+        }
+    }
+}`}
+                      language="csharp"
+                    />
+
+                    <div className="grid md:grid-cols-2 gap-4 mt-4">
+                      <Card className="border-purple-200 bg-purple-50">
+                        <CardHeader>
+                          <CardTitle className="text-lg">Adding/Removing</CardTitle>
+                        </CardHeader>
+                        <CardContent className="text-sm space-y-1">
+                          <div>• Add(item) - add to end</div>
+                          <div>• Insert(index, item) - add at position</div>
+                          <div>• Remove(item) - remove by value</div>
+                          <div>• RemoveAt(index) - remove by position</div>
+                          <div>• Clear() - remove all</div>
+                        </CardContent>
+                      </Card>
+
+                      <Card className="border-orange-200 bg-orange-50">
+                        <CardHeader>
+                          <CardTitle className="text-lg">Searching/Sorting</CardTitle>
+                        </CardHeader>
+                        <CardContent className="text-sm space-y-1">
+                          <div>• Contains(item) - check if exists</div>
+                          <div>• IndexOf(item) - find position</div>
+                          <div>• Sort() - arrange in order</div>
+                          <div>• Reverse() - flip order</div>
+                          <div>• ToArray() - convert to array</div>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </div>
+
+                  {/* Summary Card */}
+                  <div className="bg-gradient-to-r from-yellow-100 to-green-100 p-6 rounded-lg">
+                    <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
+                      <Trophy className="w-8 h-8 text-yellow-500" />
+                      🎉 Week 2 Complete! What You Learned:
+                    </h3>
+
+                    <div className="grid md:grid-cols-3 gap-4 mb-4">
+                      <Card className="bg-blue-50 border-blue-200">
+                        <CardHeader>
+                          <CardTitle className="text-lg">Module 6: More Practice with Methods</CardTitle>
+                        </CardHeader>
+                        <CardContent className="text-sm space-y-1">
+                          <div>✅ Method overloading</div>
+                          <div>✅ Optional parameters</div>
+                          <div>✅ ref and out parameters</div>
+                          <div>✅ Static methods</div>
+                          <div>✅ Practical examples</div>
+                        </CardContent>
+                      </Card>
+
+                      <Card className="bg-purple-50 border-purple-200">
+                        <CardHeader>
+                          <CardTitle className="text-lg">Module 7: Arrays & Strings</CardTitle>
+                        </CardHeader>
+                        <CardContent className="text-sm space-y-1">
+                          <div>✅ Array methods (Sort, Reverse, IndexOf)</div>
+                          <div>✅ String manipulation</div>
+                          <div>✅ Split and Join</div>
+                          <div>✅ StringBuilder for efficiency</div>
+                          <div>✅ Text processing</div>
+                        </CardContent>
+                      </Card>
+
+                      <Card className="bg-green-50 border-green-200">
+                        <CardHeader>
+                          <CardTitle className="text-lg">Module 8: Introduction to Lists</CardTitle>
+                        </CardHeader>
+                        <CardContent className="text-sm space-y-1">
+                          <div>✅ Lists vs Arrays</div>
+                          <div>✅ Add, Remove, Insert methods</div>
+                          <div>✅ Contains and IndexOf</div>
+                          <div>✅ Sort and Reverse</div>
+                          <div>✅ Dynamic collections</div>
+                        </CardContent>
+                      </Card>
+                    </div>
+
+                    <div className="bg-white p-4 rounded-lg border-2 border-green-300">
+                      <h4 className="font-bold text-lg mb-2">💡 Key Takeaways:</h4>
+                      <ul className="space-y-2 text-sm">
+                        <li>🎯 <strong>Method Flexibility:</strong> Overload methods, use optional params, modify with ref/out</li>
+                        <li>🎯 <strong>Array Mastery:</strong> Sort, reverse, search arrays efficiently with built-in methods</li>
+                        <li>🎯 <strong>String Power:</strong> Master ToUpper, ToLower, Split, Join, and StringBuilder</li>
+                        <li>🎯 <strong>List Advantage:</strong> Lists grow dynamically - add and remove without size limits</li>
+                        <li>🎯 <strong>Choose Wisely:</strong> Use arrays for fixed data, Lists when size changes</li>
+                      </ul>
+                    </div>
+
+                    <div className="bg-gradient-to-r from-blue-500 to-purple-500 text-white p-4 rounded-lg mt-4">
+                      <h4 className="font-bold text-lg mb-2">📚 You Can Now Build:</h4>
+                      <ul className="text-sm space-y-1">
+                        <li>• Flexible calculators with overloaded methods</li>
+                        <li>• String manipulation tools (formatters, validators)</li>
+                        <li>• Dynamic todo lists that grow and shrink</li>
+                        <li>• Shopping list managers with add/remove features</li>
+                        <li>• Grade trackers using Lists</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <Card className="border-yellow-200 bg-yellow-50 mt-4">
+                    <CardHeader>
+                      <CardTitle className="text-xl flex items-center gap-2">
+                        <Trophy className="w-6 h-6 text-yellow-500" />
+                        🏆 Amazing Achievement!
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-4">
+                      <div className="text-center space-y-4">
+                        <p className="text-lg font-semibold">
+                          You've mastered intermediate C# programming!
+                        </p>
+
+                        <div className="bg-gradient-to-r from-blue-500 to-purple-500 text-white p-6 rounded-lg mt-4">
+                          <h3 className="text-2xl font-bold mb-3">📚 What You Can Build Now:</h3>
+                          <div className="grid md:grid-cols-2 gap-3 text-left">
+                            <div>
+                              <strong className="block mb-1">Python:</strong>
+                              <ul className="text-sm space-y-1">
+                                <li>• Grade tracking systems</li>
+                                <li>• File-based databases</li>
+                                <li>• Data analysis tools</li>
+                                <li>• Quote generators</li>
+                                <li>• Inventory managers</li>
+                              </ul>
+                            </div>
+                            <div>
+                              <strong className="block mb-1">C#:</strong>
+                              <ul className="text-sm space-y-1">
+                                <li>• Todo list apps</li>
+                                <li>• Student databases</li>
+                                <li>• Save/load game systems</li>
+                                <li>• Contact managers</li>
+                                <li>• Grade calculators</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="bg-white border-2 border-green-300 p-6 rounded-lg">
+                          <h3 className="font-bold text-xl text-green-700 mb-3">💡 Key Programming Concepts Mastered:</h3>
+                          <div className="grid md:grid-cols-3 gap-4 text-sm">
+                            <div>
+                              <strong className="text-blue-600">Data Persistence:</strong>
+                              <p>Saving data to files so it survives after your program closes</p>
+                            </div>
+                            <div>
+                              <strong className="text-purple-600">Error Handling:</strong>
+                              <p>Catching and managing errors gracefully without crashing</p>
+                            </div>
+                            <div>
+                              <strong className="text-green-600">Advanced Data:</strong>
+                              <p>Using the right data structure for each situation</p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="bg-gradient-to-r from-orange-100 to-red-100 p-6 rounded-lg">
+                          <h3 className="font-bold text-xl mb-3">🚀 Keep Practicing!</h3>
+                          <p className="mb-3">Challenge yourself with these ideas:</p>
+                          <ul className="text-left space-y-2 text-sm">
+                            <li>🎯 Build a personal diary app that saves entries to a file</li>
+                            <li>🎯 Create a student grade calculator with file storage</li>
+                            <li>🎯 Make a todo list that remembers tasks between sessions</li>
+                            <li>🎯 Design an inventory system for a game or store</li>
+                            <li>🎯 Build a quote of the day generator</li>
+                          </ul>
+                        </div>
+
+                        <div className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white p-6 rounded-lg">
+                          <Trophy className="w-16 h-16 mx-auto mb-3" />
+                          <h2 className="text-3xl font-bold mb-2">🏆 Amazing Work! 🏆</h2>
+                          <p className="text-lg">
+                            You're now an intermediate programmer in both Python and C#!
+                          </p>
+                          <p className="mt-2">
+                            You have the skills to build real, useful applications!
+                          </p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  <div className="text-center space-x-4">
+                    <Button
+                      variant="outline"
+                      onClick={() => {
+                        setLesson2ModuleProgress([100, 100, 100]);
+                        setCurrentModule(0);
+                        setCurrentLesson("lesson1");
+                      }}
+                    >
+                      Back to Lesson 1
+                    </Button>
+
+                    <Button
+                      variant="fun"
+                      size="lg"
+                      onClick={() => {
+                        setLesson2ModuleProgress([100, 100, 100]);
+                        setCurrentModule(0);
+                      }}
+                    >
+                      Review Week 2
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          )}
+        </TabsContent>
+      </Tabs>
 
       {/* Quiz Section */}
       {showQuiz && (
