@@ -2445,7 +2445,7 @@ def calculate_total(items, tax_rate=0.1):
 
 cart = [19.99, 5.50, 12.75]
 final_price = calculate_total(cart)
-print(f"\\nTotal price: ${final_price:.2f}")
+print(f"\\nTotal price: $\{final_price:.2f}")
 
 print("\\n✅ Use parameters and return values - avoid global variables!")`}
                       language="python"
@@ -2673,7 +2673,7 @@ print(f"Hi {name}, you scored {score}!")
 
 # Formatting numbers
 price = 19.5
-print(f"Cost: ${price:.2f}")  # $19.50 (2 decimal places)
+print(f"Cost: $\{price:.2f}")  # $19.50 (2 decimal places)
 
 pi = 3.14159
 print(f"Pi: {pi:.2f}")  # 3.14
@@ -2818,7 +2818,7 @@ print(f"Clean: {clean_names}")  # ['Alice', 'Bob', 'Charlie']
 
 # Filter and transform
 prices = [19.99, 5.50, 12.75, 8.00, 15.25]
-expensive = [f"${price:.2f}" for price in prices if price > 10]
+expensive = [f"$\{price:.2f}" for price in prices if price > 10]
 print(f"Expensive items: {expensive}")
 
 print("\\n✅ Comprehensions make Python code super clean!")`}
