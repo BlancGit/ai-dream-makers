@@ -2145,6 +2145,7 @@ class Greeter
     }
 }`}
                       language="csharp"
+                      expectedOutput="Using int version\nUsing 3-parameter version\nUsing double version\n\nResults: 8, 10, 8.7\nHello, Alex!\nHello, Alex! You're 12 years old.\nHello, Student Alex! You're 12 years old."
                     />
                   </div>
 
@@ -2230,6 +2231,7 @@ class ParameterExamples
     }
 }`}
                       language="csharp"
+                      expectedOutput=">>> Hello\n>>> Hello\n>>> Hello\n>>> Hello\n*** Hello\n*** Hello\n\nBefore: 10\nAfter: 20\n\nMin: 12, Max: 92\n\nBefore swap: x=5, y=10\nAfter swap: x=10, y=5"
                     />
                   </div>
 
@@ -2329,6 +2331,7 @@ class Program
     }
 }`}
                       language="csharp"
+                      expectedOutput="Square of 5: 25\nCube of 3: 27\nAverage: 20\n\nAdd ten to 5: 15\n\nReversed: olleH\nVowels in 'Programming': 3\n\nExamples you've seen:\n- Console.WriteLine() is static!\n- Array.Sort() is static!\n- int.Parse() is static!"
                     />
 
                     <div className="grid md:grid-cols-2 gap-4 mt-4">
@@ -2466,6 +2469,7 @@ class ArrayMethods
     }
 }`}
                       language="csharp"
+                      expectedOutput="Original: 85, 92, 78, 95, 88, 72\nSorted: 72, 78, 85, 88, 92, 95\nReversed: 95, 92, 88, 85, 78, 72\n\nIndex of 88: 2\nHas 95? True\n\nCopied: 95, 92, 88, 85, 78, 72\n\nMax: 95, Min: 72\n\nSorted names: Alice, Bob, Charlie, Diana\n\nTop 3 scores:\n1. 95\n2. 92\n3. 88"
                     />
                   </div>
 
@@ -2548,6 +2552,7 @@ class StringPower
     }
 }`}
                       language="csharp"
+                      expectedOutput="  HELLO WORLD!  \n  hello world!  \n'Hello World!'\nLength: 16\nFirst char: H\n\nHas @? True\nStarts with 'student'? True\nEnds with '.com'? True\n\nFirst name: Alice\n\nI love dogs! Cats are awesome!\n\nWords:\n  - C#\n  - is\n  - really\n  - fun\n\nFruits: Apple, Banana, Orange\n\nEmma is 12 years old and scored 95.7\n\ntest@example.com is valid? True"
                     />
                   </div>
 
@@ -2633,6 +2638,7 @@ class StringBuilderExample
     }
 }`}
                       language="csharp"
+                      expectedOutput="String concat: 0 1 2 3 4 \nStringBuilder: 0 1 2 3 4 \n\nResult:\n>>> Hello C#!\nHow are you?\n\n\nGenerated HTML:\n<html>\n  <body>\n    <h1>My Page</h1>\n    <p>Welcome to C#!</p>\n  </body>\n</html>\n\n\n📊 Use StringBuilder when:\n  • Building strings in loops\n  • Many string modifications\n  • Performance matters\n\n📊 Use regular strings when:\n  • Just a few concatenations\n  • Simple operations"
                     />
 
                     <div className="grid md:grid-cols-2 gap-4 mt-4">
@@ -2757,6 +2763,7 @@ class ListsVsArrays
     }
 }`}
                       language="csharp"
+                      expectedOutput="Array (fixed):\nLength: 3\n85, 92, 78\n\nList (dynamic):\nCount: 5\n85, 92, 78, 95, 88\n\nFruits: Apple, Banana, Orange\nFirst fruit: Apple\nLast fruit: Orange"
                     />
 
                     <div className="grid md:grid-cols-2 gap-4 mt-4">
@@ -2899,6 +2906,7 @@ class ListMethods
     }
 }`}
                       language="csharp"
+                      expectedOutput="Todo list:\n  - Do homework\n  - Practice C#\n  - Read book\n\nAfter insert:\n  1. Do homework\n  2. Take a break\n  3. Practice C#\n  4. Read book\n\nAfter removals:\nPractice C#, Read book\n\n✓ Don't forget to practice C#!\n'Read book' is at index: 1\n\nSorted scores: 45, 78, 88, 92, 95\nReversed: 95, 92, 88, 78, 45\n\nHighest: 95, Lowest: 45\n\nConverted to array with 5 elements\n\nTodo list after Clear: 0 items\n\n=== Shopping List Demo ===\nNeed to buy 4 items:\n  [ ] Milk\n  [ ] Bread\n  [ ] Eggs\n  [ ] Cheese\n\nUpdated list (3 items):\n  [ ] Milk\n  [ ] Bread\n  [ ] Eggs"
                     />
 
                     <div className="grid md:grid-cols-2 gap-4 mt-4">
