@@ -2229,6 +2229,7 @@ make_sandwich("sourdough", sauce="ranch", filling="chicken")  # Mixed!
 
 print("\\n✅ Understanding parameters helps you write flexible functions!")`}
                       language="python"
+                      expectedOutput="Hi Alex, you are 12 years old!\nHi 12, you are Alex years old!\nHi Alex, you are 12 years old!\nHi Sam, you are 10 years old!\nHi Emma, you are 11 years old!\nMaking white sandwich with turkey and mayo\nMaking wheat sandwich with ham and mustard\nMaking rye sandwich with cheese and mayo\nMaking sourdough sandwich with chicken and ranch\n\n✅ Understanding parameters helps you write flexible functions!"
                     />
 
                     <div className="grid md:grid-cols-2 gap-4">
@@ -2313,6 +2314,7 @@ print(f"Lowest: {lowest}, Highest: {highest}, Average: {avg:.2f}")
 
 print("\\n✅ Functions can be super flexible with defaults and multiple returns!")`}
                       language="python"
+                      expectedOutput="Hello Alex!\nHi Sam!\nHey Emma!!!\nHello Jordan.\n15\n50\n2.0\nMin: 1, Max: 9\nLowest: 78, Highest: 95, Average: 87.60\n\n✅ Functions can be super flexible with defaults and multiple returns!"
                     />
                   </div>
 
@@ -2380,6 +2382,7 @@ print("Doubled:", doubled)  # [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
 
 print("\\n✅ Lambda is perfect for simple, one-time operations!")`}
                       language="python"
+                      expectedOutput="10\n10\n16\n10\nHello Alex!\nBy name: [('Alice', 85), ('Bob', 92), ('Charlie', 78), ('Diana', 95)]\nBy grade: [('Charlie', 78), ('Alice', 85), ('Bob', 92), ('Diana', 95)]\nHighest grade first: [('Diana', 95), ('Bob', 92), ('Alice', 85), ('Charlie', 78)]\nEven numbers: [2, 4, 6, 8, 10]\nDoubled: [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]\n\n✅ Lambda is perfect for simple, one-time operations!"
                     />
 
                     <CodeEditor
@@ -2449,6 +2452,7 @@ print(f"\\nTotal price: $\{final_price:.2f}")
 
 print("\\n✅ Use parameters and return values - avoid global variables!")`}
                       language="python"
+                      expectedOutput="Score is: 100\nScore after increase: 110\nLevel: 2\nI only exist inside this function\nI'm in the outer function\nI'm in the inner function\n\nTotal price: $42.06\n\n✅ Use parameters and return values - avoid global variables!"
                     />
 
                     <div className="grid md:grid-cols-2 gap-4">
@@ -2551,6 +2555,7 @@ for rank, (name, score) in enumerate(students, 1):
 
 print("\\n✅ You've mastered functions!")`}
                       language="python"
+                      expectedOutput="Addition: 15\nMultiplication: 50\nDivision: 5.0\n\nStats: Min=78, Max=95, Avg=88.17, Total=6\n\nSquare of 5: 25\nCube of 3: 27\nIs 10 even? True\n\nTop students:\n  1. Diana: 95\n  2. Bob: 92\n  3. Alice: 85\n  4. Charlie: 78\n\n✅ You've mastered functions!"
                     />
                     <p className="mt-4 text-sm text-muted-foreground">
                       This project uses everything: parameters, defaults, multiple returns, lambda, and more!
@@ -2651,6 +2656,7 @@ print(code.isdigit())    # False
 
 print("\\n✅ String methods make text processing easy!")`}
                       language="python"
+                      expectedOutput="Hello World!\n  hello world!  \n  HELLO WORLD!  \nTrue\nTrue\nTrue\n0\n2\nI love dogs! Cats are awesome!\n['Python', 'is', 'really', 'fun']\nName: Alice, Grade: 85, Subject: Math\ncat, dog, bird, fish\nUsername: johndoe123\nTrue\nTrue\nFalse\n\n✅ String methods make text processing easy!"
                     />
                   </div>
 
@@ -2699,6 +2705,7 @@ print(f"Percent: {percent:.1%}")  # 85.6%
 
 print("\\n✅ F-strings make output professional!")`}
                       language="python"
+                      expectedOutput="Hi Emma, you scored 95.5!\nCost: $19.50\nPi: 3.14\nPi: 3.1416\nName       Score\nEmma        95.5\n\nGrade Report:\nStudent         Grade\n====================\nAlice              85\nBob                92\nCharlie            78\nBig: 1,000,000\nPercent: 85.6%\n\n✅ F-strings make output professional!"
                     />
 
                     <CodeEditor
@@ -2758,6 +2765,7 @@ print(f"Zeros: {zeros}")
 
 print("\\n✅ Slicing is incredibly powerful!")`}
                       language="python"
+                      expectedOutput="[2, 3, 4]\n[0, 1, 2]\n[7, 8, 9]\n[7, 8, 9]\n[0, 2, 4, 6, 8]\n[1, 3, 5, 7, 9]\n[0, 3, 6, 9]\n[9, 8, 7, 6, 5, 4, 3, 2, 1, 0]\nTop 3: ['Song1', 'Song2', 'Song3']\nLast 2: ['Song5', 'Song6']\nReversed: ['Song6', 'Song5', 'Song4', 'Song3', 'Song2', 'Song1']\nOriginal changed!: [1, 2, 3, 4]\nOriginal safe: [1, 2, 3]\nCopy changed: [1, 2, 3, 4]\nCombined: [1, 2, 3, 4, 5, 6]\nZeros: [0, 0, 0, 0, 0]\n\n✅ Slicing is incredibly powerful!"
                     />
                   </div>
 
@@ -2823,6 +2831,7 @@ print(f"Expensive items: {expensive}")
 
 print("\\n✅ Comprehensions make Python code super clean!")`}
                       language="python"
+                      expectedOutput="Squares (old way): [0, 1, 4, 9, 16]\nSquares (new way): [0, 1, 4, 9, 16]\nEvens: [0, 2, 4, 6, 8]\nUppercase: ['HELLO', 'WORLD', 'PYTHON']\nLengths: [5, 5, 6]\nF: [32.0, 50.0, 68.0, 86.0, 104.0]\nPassing: [78, 92, 88, 95]\nHigh scores: [92, 95]\nLabels: ['Odd', 'Even', 'Odd', 'Even', 'Odd']\nClean: ['Alice', 'Bob', 'Charlie']\nExpensive items: ['$19.99', '$12.75', '$15.25']\n\n✅ Comprehensions make Python code super clean!"
                     />
                   </div>
 
@@ -2899,6 +2908,7 @@ for rank, (name, grade) in enumerate(top_3, 1):
 
 print("\\n✅ You've mastered strings and lists!")`}
                       language="python"
+                      expectedOutput="Word count: 7\nLongest word: programming\nTop letters: [('n', 5), ('i', 4), ('r', 3)]\n\nFormatted names: ['Alice Smith', 'Bob Jones', 'Charlie Brown']\n\n=== GRADE REPORT ===\nStudent         Grade\n====================\nAlice              92\nBob                78\nCharlie            85\nDiana              95\nEve                88\n\nTop 3 Students:\n  1. Diana: 95\n  2. Alice: 92\n  3. Eve: 88\n\n✅ You've mastered strings and lists!"
                     />
                   </div>
 
@@ -2989,6 +2999,7 @@ save_high_score("Emma", 1100)
 
 print("\\n✅ Data is now saved permanently!")`}
                       language="python"
+                      expectedOutput="✅ File created!\n✅ File updated!\n✅ Multiple lines written!\n✅ Saved Alex's score: 1250\n✅ Saved Sam's score: 980\n✅ Saved Emma's score: 1100\n\n✅ Data is now saved permanently!"
                     />
 
                     <div className="grid md:grid-cols-3 gap-4 mt-4">
@@ -3084,6 +3095,7 @@ for rank, (name, score) in enumerate(all_scores, 1):
 
 print("\\n✅ Files let data persist between runs!")`}
                       language="python"
+                      expectedOutput="=== FILE CONTENTS ===\nHello from Python!\nThis is line 2!\nFiles are awesome!\nThis line was added later!\n\n=== LINE BY LINE ===\nLine 1: Hello from Python!\nLine 2: This is line 2!\nLine 3: Files are awesome!\nLine 4: This line was added later!\n\nTotal lines: 4\nFirst line: Hello from Python!\nLast line: This line was added later!\n\n=== HIGH SCORES ===\nPlayer: Alex, Score: 1250\nPlayer: Sam, Score: 980\nPlayer: Emma, Score: 1100\n\n=== TOP SCORES (Sorted) ===\n1. Alex: 1250\n2. Emma: 1100\n3. Sam: 980\n\n✅ Files let data persist between runs!"
                     />
                   </div>
 
@@ -3161,6 +3173,7 @@ print(f"\\nLoaded {len(scores)} high scores")
 
 print("\\n✅ Always use try/except when working with files!")`}
                       language="python"
+                      expectedOutput="❌ Oops! That file doesn't exist.\n✅ Creating it now...\n✅ File created successfully!\n\n=== SAFE FILE READING ===\nmy_notes.txt: Hello from Python!\nThis is line 2!\nFiles are awes...\nError: 'missing.txt' not found\n\nLoaded 3 high scores\n\n✅ Always use try/except when working with files!"
                     />
                   </div>
 
@@ -3229,6 +3242,7 @@ else:
 
 print("\\n✅ Your data is saved in journal.txt!")`}
                       language="python"
+                      expectedOutput="=== JOURNAL APP ===\n1. Add entry\n2. View all entries\n3. Count entries\nChoose (1-3): [variable]\n\n✅ Your data is saved in journal.txt!"
                     />
                   </div>
 
