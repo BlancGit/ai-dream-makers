@@ -514,7 +514,7 @@ export default function Lesson4() {
                   </AlertDescription>
                 </Alert>
 
-                <div className="bg-gradient-to-r from-green-50 to-blue-50 p-6 rounded-lg">
+                <div className="bg-accent p-6 rounded-2xl">
                   <h3 className="font-semibold mb-4">Steps to Plan a Game:</h3>
                   <ol className="space-y-3">
                     <li className="flex gap-3">
@@ -574,7 +574,7 @@ export default function Lesson4() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="bg-gradient-to-r from-orange-50 to-red-50 p-6 rounded-lg">
+                <div className="bg-accent p-6 rounded-2xl">
                   <h3 className="font-semibold mb-4">What is a Decision Tree?</h3>
                   <p className="text-sm mb-4">
                     A decision tree is a flowchart that shows all possible outcomes from different choices.

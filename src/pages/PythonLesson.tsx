@@ -2070,7 +2070,7 @@ if __name__ == "__main__":
                 readOnly={true}
               />
 
-              <div className="bg-gradient-to-r from-green-100 to-blue-100 p-6 rounded-lg">
+              <div className="bg-accent p-6 rounded-2xl">
                 <h4 className="font-bold text-xl mb-4">🎮 Game Features Explained</h4>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
@@ -2483,7 +2483,7 @@ print("\\n✅ Use parameters and return values - avoid global variables!")`}
                   </div>
 
                   {/* Mini Project */}
-                  <div className="bg-gradient-to-r from-green-100 to-blue-100 p-6 rounded-lg">
+                  <div className="bg-accent p-6 rounded-2xl">
                     <h4 className="font-bold text-xl mb-4">Practice Challenge: Smart Calculator</h4>
                     <CodeEditor
                       title="Build a Calculator with Advanced Functions"
@@ -2836,7 +2836,7 @@ print("\\n✅ Comprehensions make Python code super clean!")`}
                   </div>
 
                   {/* Practice Challenge */}
-                  <div className="bg-gradient-to-r from-green-100 to-blue-100 p-6 rounded-lg">
+                  <div className="bg-accent p-6 rounded-2xl">
                     <h4 className="font-bold text-xl mb-4">Practice Challenge: Text Analyzer</h4>
                     <CodeEditor
                       title="Build a Text Analyzer Tool"
@@ -2941,7 +2941,7 @@ print("\\n✅ You've mastered strings and lists!")`}
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-6">
-                  <div className="bg-gradient-to-r from-green-100 to-blue-100 p-4 rounded-lg">
+                  <div className="bg-accent p-4 rounded-2xl">
                     <p className="text-lg font-semibold">
                       Learn to save and load data from files! Make your programs remember things.
                     </p>
@@ -3178,7 +3178,7 @@ print("\\n✅ Always use try/except when working with files!")`}
                   </div>
 
                   {/* Practice Challenge */}
-                  <div className="bg-gradient-to-r from-green-100 to-blue-100 p-6 rounded-lg">
+                  <div className="bg-accent p-6 rounded-2xl">
                     <h4 className="font-bold text-xl mb-4">Final Project: Journal App</h4>
                     <CodeEditor
                       title="Build a Simple Journal with File I/O"

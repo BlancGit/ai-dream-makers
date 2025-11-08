@@ -390,7 +390,7 @@ export default function Lesson5() {
                   </AlertDescription>
                 </Alert>
 
-                <div className="bg-gradient-to-r from-orange-50 to-yellow-50 p-6 rounded-lg">
+                <div className="bg-accent p-6 rounded-2xl">
                   <h3 className="font-semibold mb-4">The PowerPoint Story</h3>
 
                   <div className="space-y-3">
@@ -505,7 +505,7 @@ export default function Lesson5() {
                   </AlertDescription>
                 </Alert>
 
-                <div className="bg-gradient-to-r from-green-50 to-blue-50 p-6 rounded-lg">
+                <div className="bg-accent p-6 rounded-2xl">
                   <h3 className="font-semibold mb-4">Step-by-Step Hyperlink Guide</h3>
 
                   <ol className="space-y-4">
@@ -657,7 +657,7 @@ export default function Lesson5() {
                   </AlertDescription>
                 </Alert>
 
-                <div className="bg-gradient-to-r from-green-50 to-blue-50 p-6 rounded-lg">
+                <div className="bg-accent p-6 rounded-2xl">
                   <h3 className="font-semibold mb-4">Testing Checklist</h3>
 
                   <div className="space-y-3">

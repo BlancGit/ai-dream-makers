@@ -1977,7 +1977,7 @@ class RPGGame
                   language="csharp"
                 />
 
-                <div className="bg-gradient-to-r from-green-100 to-blue-100 p-6 rounded-lg">
+                <div className="bg-accent p-6 rounded-2xl">
                   <h4 className="font-bold text-xl mb-4">🎮 Game Features Explained</h4>
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
@@ -2725,7 +2725,7 @@ class StringBuilderExample
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-6">
-                  <div className="bg-gradient-to-r from-green-100 to-blue-100 p-4 rounded-lg">
+                  <div className="bg-accent p-4 rounded-2xl">
                     <p className="text-lg font-semibold">
                       🎯 Discover Lists - dynamic arrays that grow and shrink!
                     </p>
@@ -3090,7 +3090,7 @@ class ListMethods
                           </div>
                         </div>
 
-                        <div className="bg-gradient-to-r from-orange-100 to-red-100 p-6 rounded-lg">
+                        <div className="bg-secondary p-6 rounded-2xl">
                           <h3 className="font-bold text-xl mb-3">🚀 Keep Practicing!</h3>
                           <p className="mb-3">Challenge yourself with these ideas:</p>
                           <ul className="text-left space-y-2 text-sm">
