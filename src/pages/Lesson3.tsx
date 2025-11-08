@@ -387,7 +387,7 @@ export default function Lesson3() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-lg">
+                <div className="bg-accent p-6 rounded-lg">
                   <h3 className="font-semibold mb-4">Kandinsky Interface Elements</h3>
 
                   <div className="space-y-4">
@@ -622,7 +622,7 @@ export default function Lesson3() {
 
           {lessonComplete && (
             <div className="text-center space-y-6 animate-bounce-in">
-              <Card className="shadow-glow bg-gradient-primary text-primary-foreground">
+              <Card className="rounded-2xl shadow-card bg-foreground text-background">
                 <CardContent className="py-12">
                   <CheckCircle className="w-20 h-20 mx-auto mb-6 animate-bounce" />
                   <h2 className="text-3xl font-bold mb-4">Congratulations! 🎉</h2>

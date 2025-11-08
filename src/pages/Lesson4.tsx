@@ -396,7 +396,7 @@ export default function Lesson4() {
                   </AlertDescription>
                 </Alert>
 
-                <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-lg">
+                <div className="bg-accent p-6 rounded-lg">
                   <h3 className="font-semibold mb-4">Why Use Flowcharts?</h3>
                   <div className="grid md:grid-cols-2 gap-4">
                     <Card className="border-blue-200">
@@ -648,7 +648,7 @@ export default function Lesson4() {
                       </AlertDescription>
                     </Alert>
 
-                    <div className="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-lg text-center">
+                    <div className="bg-accent p-6 rounded-lg text-center">
                       <h3 className="text-lg font-semibold mb-3">What should John do?</h3>
                       <p className="text-sm text-gray-600 mb-4">
                         Click below to see the decision tree!
@@ -795,7 +795,7 @@ export default function Lesson4() {
 
           {lessonComplete && (
             <div className="text-center space-y-6 animate-bounce-in">
-              <Card className="shadow-glow bg-gradient-primary text-primary-foreground">
+              <Card className="rounded-2xl shadow-card bg-foreground text-background">
                 <CardContent className="py-12">
                   <CheckCircle className="w-20 h-20 mx-auto mb-6 animate-bounce" />
                   <h2 className="text-3xl font-bold mb-4">Congratulations! 🎉</h2>

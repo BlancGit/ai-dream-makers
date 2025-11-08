@@ -1687,7 +1687,7 @@ public class Item
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
-              <div className="text-center bg-gradient-to-r from-purple-500 to-pink-500 text-white p-6 rounded-lg">
+              <div className="text-center bg-foreground text-background p-6 rounded-lg">
                 <h2 className="text-2xl font-bold mb-2">🎮 Build Your Own RPG Adventure! 🎮</h2>
                 <p>Time to use everything you've learned to create an epic game!</p>
               </div>
@@ -2022,7 +2022,7 @@ class RPGGame
                 </div>
 
                 <div className="text-center space-y-4">
-                  <div className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white p-6 rounded-lg">
+                  <div className="bg-secondary text-secondary-foreground p-6 rounded-lg">
                     <Trophy className="w-12 h-12 mx-auto mb-2" />
                     <h3 className="text-2xl font-bold mb-2">🎉 Congratulations! 🎉</h3>
                     <p className="text-lg">
@@ -2088,7 +2088,7 @@ class RPGGame
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-6">
-                  <div className="bg-gradient-to-r from-blue-100 to-purple-100 p-4 rounded-lg">
+                  <div className="bg-accent p-4 rounded-lg">
                     <p className="text-lg font-semibold">
                       🎯 Level up your methods skills - overloading, optional params, ref/out, and static methods!
                     </p>
@@ -2418,7 +2418,7 @@ class Program
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-6">
-                  <div className="bg-gradient-to-r from-purple-100 to-pink-100 p-4 rounded-lg">
+                  <div className="bg-accent p-4 rounded-lg">
                     <p className="text-lg font-semibold">
                       🎯 Master arrays, strings, and learn powerful string operations!
                     </p>
@@ -2963,7 +2963,7 @@ class ListMethods
                   </div>
 
                   {/* Summary Card */}
-                  <div className="bg-gradient-to-r from-yellow-100 to-green-100 p-6 rounded-lg">
+                  <div className="bg-accent p-6 rounded-lg">
                     <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
                       <Trophy className="w-8 h-8 text-yellow-500" />
                       🎉 Week 2 Complete! What You Learned:
@@ -3021,7 +3021,7 @@ class ListMethods
                       </ul>
                     </div>
 
-                    <div className="bg-gradient-to-r from-blue-500 to-purple-500 text-white p-4 rounded-lg mt-4">
+                    <div className="bg-foreground text-background p-4 rounded-lg mt-4">
                       <h4 className="font-bold text-lg mb-2">📚 You Can Now Build:</h4>
                       <ul className="text-sm space-y-1">
                         <li>• Flexible calculators with overloaded methods</li>
@@ -3046,7 +3046,7 @@ class ListMethods
                           You've mastered intermediate C# programming!
                         </p>
 
-                        <div className="bg-gradient-to-r from-blue-500 to-purple-500 text-white p-6 rounded-lg mt-4">
+                        <div className="bg-foreground text-background p-6 rounded-lg mt-4">
                           <h3 className="text-2xl font-bold mb-3">📚 What You Can Build Now:</h3>
                           <div className="grid md:grid-cols-2 gap-3 text-left">
                             <div>
@@ -3102,7 +3102,7 @@ class ListMethods
                           </ul>
                         </div>
 
-                        <div className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white p-6 rounded-lg">
+                        <div className="bg-secondary text-secondary-foreground p-6 rounded-lg">
                           <Trophy className="w-16 h-16 mx-auto mb-3" />
                           <h2 className="text-3xl font-bold mb-2">🏆 Amazing Work! 🏆</h2>
                           <p className="text-lg">

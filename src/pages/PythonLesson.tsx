@@ -1728,7 +1728,7 @@ wizard.gain_experience(25)              # Inherited method still works!
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
-              <div className="text-center bg-gradient-to-r from-purple-500 to-pink-500 text-white p-6 rounded-lg">
+              <div className="text-center bg-foreground text-background p-6 rounded-lg">
                 <h2 className="text-2xl font-bold mb-2">🎮 Build Your Python Adventure Game! 🎮</h2>
                 <p>Time to combine everything you've learned into an epic text adventure!</p>
               </div>
@@ -2119,7 +2119,7 @@ if __name__ == "__main__":
               </div>
 
               <div className="text-center space-y-4">
-                <div className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white p-6 rounded-lg">
+                <div className="bg-secondary text-secondary-foreground p-6 rounded-lg">
                   <Trophy className="w-12 h-12 mx-auto mb-2" />
                   <h3 className="text-2xl font-bold mb-2">🎉 Congratulations! 🎉</h3>
                   <p className="text-lg">
@@ -2184,7 +2184,7 @@ if __name__ == "__main__":
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-6">
-                  <div className="bg-gradient-to-r from-blue-100 to-purple-100 p-4 rounded-lg">
+                  <div className="bg-accent p-4 rounded-lg">
                     <p className="text-lg font-semibold">
                       Level up your function skills! Learn parameters, defaults, lambda functions, and scope.
                     </p>
@@ -2591,7 +2591,7 @@ print("\\n✅ You've mastered functions!")`}
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-6">
-                  <div className="bg-gradient-to-r from-purple-100 to-pink-100 p-4 rounded-lg">
+                  <div className="bg-accent p-4 rounded-lg">
                     <p className="text-lg font-semibold">
                       Master string methods, formatting, list slicing, and comprehensions!
                     </p>
@@ -3247,7 +3247,7 @@ print("\\n✅ Your data is saved in journal.txt!")`}
                   </div>
 
                   {/* Summary of Week 2 */}
-                  <div className="bg-gradient-to-r from-yellow-100 to-green-100 p-6 rounded-lg">
+                  <div className="bg-accent p-6 rounded-lg">
                     <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
                       <Trophy className="w-8 h-8 text-yellow-500" />
                       Week 2 Complete! What You Learned:
@@ -3305,7 +3305,7 @@ print("\\n✅ Your data is saved in journal.txt!")`}
                       </ul>
                     </div>
 
-                    <div className="bg-gradient-to-r from-blue-500 to-purple-500 text-white p-4 rounded-lg mt-4">
+                    <div className="bg-foreground text-background p-4 rounded-lg mt-4">
                       <h4 className="font-bold text-lg mb-2">You Can Now Build:</h4>
                       <ul className="text-sm space-y-1">
                         <li>• Journal apps that save entries to files</li>
