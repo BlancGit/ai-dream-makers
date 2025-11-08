@@ -744,8 +744,8 @@ const PythonLesson = () => {
 
       {/* Module 0: Environment Setup */}
       {currentModule === 0 && (
-        <div className="space-y-6 animate-bounce-in">
-          <Card className="shadow-fun">
+        <div className="space-y-6">
+          <Card className="rounded-2xl shadow-card hover:shadow-lifted transition-all">
             <CardHeader className="text-center">
               <CardTitle className="flex items-center justify-center gap-2 text-2xl">
                 <Youtube className="w-8 h-8 text-red-500" />
@@ -824,7 +824,7 @@ const PythonLesson = () => {
 
               <div className="text-center">
                 <Button
-                  variant="fun"
+                  className="rounded-full bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold"
                   size="lg"
                   onClick={() => {
                     updateModuleProgress(0, 100);
@@ -842,8 +842,8 @@ const PythonLesson = () => {
 
       {/* Module 1: Python Fundamentals */}
       {currentModule === 1 && (
-        <div className="space-y-6 animate-bounce-in">
-          <Card className="shadow-fun">
+        <div className="space-y-6">
+          <Card className="rounded-2xl shadow-card hover:shadow-lifted transition-all">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <BookOpen className="w-6 h-6 text-blue-500" />
@@ -996,7 +996,7 @@ print(f"Modern f-string: Hello, {name}!")  # Most popular!`}
 
               <div className="text-center space-y-4">
                 <Button
-                  variant="fun"
+                  className="rounded-full bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold"
                   size="lg"
                   onClick={() => {
                     updateModuleProgress(1, 100);
@@ -1014,8 +1014,8 @@ print(f"Modern f-string: Hello, {name}!")  # Most popular!`}
 
       {/* Module 2: Control Flow and Logic */}
       {currentModule === 2 && (
-        <div className="space-y-6 animate-bounce-in">
-          <Card className="shadow-fun">
+        <div className="space-y-6">
+          <Card className="rounded-2xl shadow-card hover:shadow-lifted transition-all">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Cpu className="w-6 h-6 text-purple-500" />
@@ -1244,7 +1244,7 @@ for i in range(10):
 
               <div className="text-center">
                 <Button
-                  variant="fun"
+                  className="rounded-full bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold"
                   size="lg"
                   onClick={() => {
                     updateModuleProgress(2, 100);
@@ -1262,8 +1262,8 @@ for i in range(10):
 
       {/* Module 3: Functions and Modules */}
       {currentModule === 3 && (
-        <div className="space-y-6 animate-bounce-in">
-          <Card className="shadow-fun">
+        <div className="space-y-6">
+          <Card className="rounded-2xl shadow-card hover:shadow-lifted transition-all">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Code2 className="w-6 h-6 text-green-500" />
@@ -1466,7 +1466,7 @@ print(f"5! = {factorial(5)}")           # 5! = 5 × 4 × 3 × 2 × 1 = 120
 
               <div className="text-center">
                 <Button
-                  variant="fun"
+                  className="rounded-full bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold"
                   size="lg"
                   onClick={() => {
                     updateModuleProgress(3, 100);
@@ -1484,8 +1484,8 @@ print(f"5! = {factorial(5)}")           # 5! = 5 × 4 × 3 × 2 × 1 = 120
 
       {/* Module 4: Data Structures and OOP */}
       {currentModule === 4 && (
-        <div className="space-y-6 animate-bounce-in">
-          <Card className="shadow-fun">
+        <div className="space-y-6">
+          <Card className="rounded-2xl shadow-card hover:shadow-lifted transition-all">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <List className="w-6 h-6 text-orange-500" />
@@ -1701,7 +1701,7 @@ wizard.gain_experience(25)              # Inherited method still works!
 
               <div className="text-center">
                 <Button
-                  variant="fun"
+                  className="rounded-full bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold"
                   size="lg"
                   onClick={() => {
                     updateModuleProgress(4, 100);
@@ -1719,8 +1719,8 @@ wizard.gain_experience(25)              # Inherited method still works!
 
       {/* Module 5: Final Project */}
       {currentModule === 5 && (
-        <div className="space-y-6 animate-bounce-in">
-          <Card className="shadow-fun">
+        <div className="space-y-6">
+          <Card className="rounded-2xl shadow-card hover:shadow-lifted transition-all">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Gamepad2 className="w-6 h-6 text-pink-500" />
@@ -2131,7 +2131,7 @@ if __name__ == "__main__":
                 </div>
 
                 <Button
-                  variant="fun"
+                  className="rounded-full bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold"
                   size="lg"
                   onClick={() => setShowQuiz(true)}
                 >
@@ -2175,8 +2175,8 @@ if __name__ == "__main__":
 
           {/* Module 6: More Practice with Functions */}
           {currentModule === 0 && (
-            <div className="space-y-6 animate-bounce-in">
-              <Card className="shadow-fun">
+            <div className="space-y-6">
+              <Card className="rounded-2xl shadow-card hover:shadow-lifted transition-all">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <Code2 className="w-6 h-6 text-blue-500" />
@@ -2564,7 +2564,7 @@ print("\\n✅ You've mastered functions!")`}
 
                   <div className="text-center">
                     <Button
-                      variant="fun"
+                      className="rounded-full bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold"
                       size="lg"
                       onClick={() => {
                         setLesson2ModuleProgress([100, 0, 0]);
@@ -2582,8 +2582,8 @@ print("\\n✅ You've mastered functions!")`}
 
           {/* Module 7: Working with Strings & Lists */}
           {currentModule === 1 && (
-            <div className="space-y-6 animate-bounce-in">
-              <Card className="shadow-fun">
+            <div className="space-y-6">
+              <Card className="rounded-2xl shadow-card hover:shadow-lifted transition-all">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <List className="w-6 h-6 text-purple-500" />
@@ -2914,7 +2914,7 @@ print("\\n✅ You've mastered strings and lists!")`}
 
                   <div className="text-center">
                     <Button
-                      variant="fun"
+                      className="rounded-full bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold"
                       size="lg"
                       onClick={() => {
                         setLesson2ModuleProgress([100, 100, 0]);
@@ -2932,8 +2932,8 @@ print("\\n✅ You've mastered strings and lists!")`}
 
           {/* Module 8: Introduction to File I/O */}
           {currentModule === 2 && (
-            <div className="space-y-6 animate-bounce-in">
-              <Card className="shadow-fun">
+            <div className="space-y-6">
+              <Card className="rounded-2xl shadow-card hover:shadow-lifted transition-all">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <FileText className="w-6 h-6 text-green-500" />
@@ -3330,7 +3330,7 @@ print("\\n✅ Your data is saved in journal.txt!")`}
                     </Button>
 
                     <Button
-                      variant="fun"
+                      className="rounded-full bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold"
                       size="lg"
                       onClick={() => {
                         setLesson2ModuleProgress([100, 100, 100]);
@@ -3362,7 +3362,7 @@ print("\\n✅ Your data is saved in journal.txt!")`}
 
       {/* Quiz Section */}
       {showQuiz && (
-        <div className="space-y-6 animate-bounce-in">
+        <div className="space-y-6">
           <div className="text-center space-y-4">
             <h2 className="text-3xl font-bold text-primary">
               🎯 {currentLesson === "lesson2" ? "Lesson 2 Quiz" : "Final Quiz"}: Test Your Python Knowledge!

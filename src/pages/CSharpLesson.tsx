@@ -713,8 +713,8 @@ const CSharpLesson = () => {
 
       {/* Module 0: Environment Setup */}
       {currentModule === 0 && (
-        <div className="space-y-6 animate-bounce-in">
-          <Card className="shadow-fun">
+        <div className="space-y-6">
+          <Card className="rounded-2xl shadow-card hover:shadow-lifted transition-all">
             <CardHeader className="text-center">
               <CardTitle className="flex items-center justify-center gap-2 text-2xl">
                 <Youtube className="w-8 h-8 text-red-500" />
@@ -780,7 +780,7 @@ const CSharpLesson = () => {
 
               <div className="text-center">
                 <Button
-                  variant="fun"
+                  className="rounded-full bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold"
                   size="lg"
                   onClick={() => {
                     updateModuleProgress(0, 100);
@@ -798,8 +798,8 @@ const CSharpLesson = () => {
 
       {/* Module 1: C# Fundamentals */}
       {currentModule === 1 && (
-        <div className="space-y-6 animate-bounce-in">
-          <Card className="shadow-fun">
+        <div className="space-y-6">
+          <Card className="rounded-2xl shadow-card hover:shadow-lifted transition-all">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <BookOpen className="w-6 h-6 text-blue-500" />
@@ -964,7 +964,7 @@ Console.WriteLine("10.0 / 3.0 = " + preciseDiv);`}
 
               <div className="text-center space-y-4">
                 <Button
-                  variant="fun"
+                  className="rounded-full bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold"
                   size="lg"
                   onClick={() => {
                     updateModuleProgress(1, 100);
@@ -982,8 +982,8 @@ Console.WriteLine("10.0 / 3.0 = " + preciseDiv);`}
 
       {/* Module 2: Control Flow */}
       {currentModule === 2 && (
-        <div className="space-y-6 animate-bounce-in">
-          <Card className="shadow-fun">
+        <div className="space-y-6">
+          <Card className="rounded-2xl shadow-card hover:shadow-lifted transition-all">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Cpu className="w-6 h-6 text-purple-500" />
@@ -1191,7 +1191,7 @@ while (playerHP > 0)  // Keep going while player is alive
 
               <div className="text-center">
                 <Button
-                  variant="fun"
+                  className="rounded-full bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold"
                   size="lg"
                   onClick={() => {
                     updateModuleProgress(2, 100);
@@ -1209,8 +1209,8 @@ while (playerHP > 0)  // Keep going while player is alive
 
       {/* Module 3: Methods */}
       {currentModule === 3 && (
-        <div className="space-y-6 animate-bounce-in">
-          <Card className="shadow-fun">
+        <div className="space-y-6">
+          <Card className="rounded-2xl shadow-card hover:shadow-lifted transition-all">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Code2 className="w-6 h-6 text-green-500" />
@@ -1400,7 +1400,7 @@ static void Main()
 
               <div className="text-center">
                 <Button
-                  variant="fun"
+                  className="rounded-full bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold"
                   size="lg"
                   onClick={() => {
                     updateModuleProgress(3, 100);
@@ -1418,8 +1418,8 @@ static void Main()
 
       {/* Module 4: Object-Oriented Programming */}
       {currentModule === 4 && (
-        <div className="space-y-6 animate-bounce-in">
-          <Card className="shadow-fun">
+        <div className="space-y-6">
+          <Card className="rounded-2xl shadow-card hover:shadow-lifted transition-all">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Terminal className="w-6 h-6 text-orange-500" />
@@ -1660,7 +1660,7 @@ public class Item
 
               <div className="text-center">
                 <Button
-                  variant="fun"
+                  className="rounded-full bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold"
                   size="lg"
                   onClick={() => {
                     updateModuleProgress(4, 100);
@@ -1678,8 +1678,8 @@ public class Item
 
       {/* Module 5: Final Project */}
       {currentModule === 5 && (
-        <div className="space-y-6 animate-bounce-in">
-          <Card className="shadow-fun">
+        <div className="space-y-6">
+          <Card className="rounded-2xl shadow-card hover:shadow-lifted transition-all">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Gamepad2 className="w-6 h-6 text-pink-500" />
@@ -2034,7 +2034,7 @@ class RPGGame
                   </div>
 
                   <Button
-                    variant="fun"
+                    className="rounded-full bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold"
                     size="lg"
                     onClick={() => setShowQuiz(true)}
                   >
@@ -2079,8 +2079,8 @@ class RPGGame
 
           {/* Module 6: More Practice with Methods */}
           {currentModule === 0 && (
-            <div className="space-y-6 animate-bounce-in">
-              <Card className="shadow-fun">
+            <div className="space-y-6">
+              <Card className="rounded-2xl shadow-card hover:shadow-lifted transition-all">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <Code2 className="w-6 h-6 text-blue-500" />
@@ -2391,7 +2391,7 @@ class Program
 
                   <div className="text-center">
                     <Button
-                      variant="fun"
+                      className="rounded-full bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold"
                       size="lg"
                       onClick={() => {
                         setLesson2ModuleProgress([100, 0, 0]);
@@ -2409,8 +2409,8 @@ class Program
 
           {/* Module 7: Working with Arrays & Strings */}
           {currentModule === 1 && (
-            <div className="space-y-6 animate-bounce-in">
-              <Card className="shadow-fun">
+            <div className="space-y-6">
+              <Card className="rounded-2xl shadow-card hover:shadow-lifted transition-all">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <List className="w-6 h-6 text-purple-500" />
@@ -2698,7 +2698,7 @@ class StringBuilderExample
 
                   <div className="text-center">
                     <Button
-                      variant="fun"
+                      className="rounded-full bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold"
                       size="lg"
                       onClick={() => {
                         setLesson2ModuleProgress([100, 100, 0]);
@@ -2716,8 +2716,8 @@ class StringBuilderExample
 
           {/* Module 8: Introduction to Lists */}
           {currentModule === 2 && (
-            <div className="space-y-6 animate-bounce-in">
-              <Card className="shadow-fun">
+            <div className="space-y-6">
+              <Card className="rounded-2xl shadow-card hover:shadow-lifted transition-all">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <Database className="w-6 h-6 text-green-500" />
@@ -3129,7 +3129,7 @@ class ListMethods
                     </Button>
 
                     <Button
-                      variant="fun"
+                      className="rounded-full bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold"
                       size="lg"
                       onClick={() => {
                         setShowLesson2Quiz(true);
@@ -3160,7 +3160,7 @@ class ListMethods
 
       {/* Quiz Section */}
       {showQuiz && (
-        <div className="space-y-6 animate-bounce-in">
+        <div className="space-y-6">
           <div className="text-center space-y-4">
             <h2 className="text-3xl font-bold text-primary">🎯 Final Quiz: Test Your C# Knowledge!</h2>
             <p className="text-muted-foreground">
@@ -3193,7 +3193,7 @@ class ListMethods
 
       {/* Lesson 2 Quiz Section */}
       {showLesson2Quiz && (
-        <div className="space-y-6 animate-bounce-in">
+        <div className="space-y-6">
           <div className="text-center space-y-4">
             <h2 className="text-3xl font-bold text-primary">🎯 Lesson 2 Quiz: Advanced C# Knowledge!</h2>
             <p className="text-muted-foreground">
