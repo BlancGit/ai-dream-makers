@@ -42,18 +42,20 @@ export const InteractiveTimeline = () => {
 
   return (
     <div className="w-full max-w-4xl mx-auto">
-      <h3 className="text-2xl font-bold text-center mb-8 bg-gradient-primary bg-clip-text text-transparent">
+      <h3 className="text-2xl md:text-3xl font-black uppercase text-center mb-8 text-foreground">
         History of Neural Networks
       </h3>
-      
+
       <div className="flex flex-wrap justify-center gap-4 mb-8">
         {timelineEvents.map((event, index) => (
           <Button
             key={index}
-            variant={selectedEvent === index ? "fun" : "outline"}
+            variant={selectedEvent === index ? "default" : "outline"}
             size="lg"
             className={`flex flex-col items-center gap-2 h-auto p-4 ${
-              selectedEvent === index ? "animate-bounce-in" : ""
+              selectedEvent === index
+                ? "rounded-full bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold"
+                : "rounded-full"
             }`}
             onClick={() => setSelectedEvent(index)}
           >
@@ -63,11 +65,11 @@ export const InteractiveTimeline = () => {
         ))}
       </div>
 
-      <Card className="shadow-fun hover:shadow-glow transition-all duration-300 animate-bounce-in">
+      <Card className="rounded-2xl shadow-card transition-all duration-300">
         <CardContent className="p-8 text-center">
           <div className="flex items-center justify-center gap-3 mb-4">
             {timelineEvents[selectedEvent].icon}
-            <h4 className="text-xl font-bold text-primary">
+            <h4 className="text-xl font-bold text-foreground">
               {timelineEvents[selectedEvent].title}
             </h4>
           </div>
