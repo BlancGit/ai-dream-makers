@@ -77,19 +77,19 @@ const Games = () => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto space-y-8">
+    <div className="max-w-7xl mx-auto px-6 lg:px-12 space-y-12">
       {/* Header */}
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
-          Real AI Class Activities!
+      <div className="text-center py-12 md:py-20">
+        <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tight mb-6">
+          Real AI Class Activities
         </h1>
-        <p className="text-xl text-muted-foreground mb-6">
+        <p className="text-xl md:text-2xl font-medium text-muted-foreground mb-8 max-w-3xl mx-auto">
           Practice with these amazing AI tools that were mentioned in your lessons!
         </p>
-        <div className="bg-warning/10 border border-warning/20 rounded-lg p-4 max-w-2xl mx-auto">
-          <h3 className="font-bold text-warning mb-2">👨‍👩‍👧‍👦 For Parents & Teachers</h3>
-          <p className="text-sm text-muted-foreground">
-            These are external websites. Please supervise children and review each site's terms of use. 
+        <div className="bg-accent border border-border rounded-2xl p-6 max-w-2xl mx-auto">
+          <h3 className="font-bold text-lg uppercase mb-2">For Parents & Teachers</h3>
+          <p className="text-sm font-medium text-muted-foreground">
+            These are external websites. Please supervise children and review each site's terms of use.
             Some tools may require account creation with parent permission.
           </p>
         </div>
@@ -98,41 +98,41 @@ const Games = () => {
       {/* AI Tools Grid */}
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {aiTools.map((tool, index) => (
-          <Card 
+          <Card
             key={tool.id}
-            className="shadow-card hover:shadow-fun transition-all duration-300 hover:scale-105 cursor-pointer"
+            className="rounded-2xl shadow-card hover:shadow-lifted transition-all cursor-pointer"
             onClick={() => handleToolClick(tool.url)}
           >
             <CardHeader className="text-center">
-              <div className={`w-16 h-16 mx-auto mb-4 rounded-full bg-muted flex items-center justify-center ${tool.color}`}>
+              <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-secondary flex items-center justify-center text-secondary-foreground">
                 {tool.icon}
               </div>
-              <CardTitle className="text-xl flex items-center justify-center gap-2">
+              <CardTitle className="text-xl font-bold flex items-center justify-center gap-2">
                 {tool.title}
                 <ExternalLink className="w-4 h-4 text-muted-foreground" />
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-4">
-              <p className="text-muted-foreground text-center">{tool.description}</p>
-              
-              <div className="space-y-2">
-                <h4 className="font-semibold text-sm">✨ What you can do:</h4>
-                <ul className="text-xs text-muted-foreground space-y-1">
+            <CardContent className="space-y-5">
+              <p className="text-muted-foreground font-medium text-center">{tool.description}</p>
+
+              <div className="space-y-3">
+                <h4 className="font-bold text-sm uppercase">What you can do:</h4>
+                <ul className="text-sm text-muted-foreground space-y-2">
                   {tool.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center gap-2">
-                      <div className="w-1 h-1 bg-primary rounded-full"></div>
-                      {feature}
+                    <li key={idx} className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 flex-shrink-0"></div>
+                      <span>{feature}</span>
                     </li>
                   ))}
                 </ul>
               </div>
-              
-              <Button variant="default" className="w-full" onClick={(e) => {
+
+              <Button className="w-full rounded-full bg-foreground hover:bg-foreground/90 text-background font-semibold" onClick={(e) => {
                 e.stopPropagation();
                 handleToolClick(tool.url);
               }}>
-                <ExternalLink className="w-4 h-4 mr-2" />
-                Practice Now!
+                Practice Now
+                <ExternalLink className="w-4 h-4 ml-2" />
               </Button>
             </CardContent>
           </Card>
@@ -140,137 +140,215 @@ const Games = () => {
       </div>
 
       {/* Step-by-Step Guide */}
-      <section className="bg-muted rounded-xl p-8">
-        <h2 className="text-3xl font-bold text-center mb-8 text-primary">
-          How to Get Started
-        </h2>
-        
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <Card className="shadow-card">
-            <CardHeader className="text-center">
-              <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-3">
-                <span className="text-primary-foreground font-bold">1</span>
-              </div>
-              <CardTitle className="text-lg">Choose Your Tool</CardTitle>
-            </CardHeader>
-            <CardContent className="text-center">
-              <p className="text-sm text-muted-foreground">
-                Pick one of the AI tools above that interests you most. Start with Animated Drawings if you love to draw!
-              </p>
-            </CardContent>
-          </Card>
+      <section className="bg-accent py-12 md:py-20 -mx-6 lg:-mx-12 px-6 lg:px-12">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-black uppercase text-center mb-12 tracking-tight">
+            How to Get Started
+          </h2>
 
-          <Card className="shadow-card">
-            <CardHeader className="text-center">
-              <div className="w-12 h-12 bg-gradient-learning rounded-full flex items-center justify-center mx-auto mb-3">
-                <span className="text-secondary-foreground font-bold">2</span>
-              </div>
-              <CardTitle className="text-lg">Read the Instructions</CardTitle>
-            </CardHeader>
-            <CardContent className="text-center">
-              <p className="text-sm text-muted-foreground">
-                Each website has helpful guides. Take a moment to read how to use the tool before starting your creation!
-              </p>
-            </CardContent>
-          </Card>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <Card className="rounded-2xl shadow-card">
+              <CardHeader className="text-center">
+                <div className="w-14 h-14 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-secondary-foreground font-black text-xl">1</span>
+                </div>
+                <CardTitle className="text-xl font-bold">Choose Your Tool</CardTitle>
+              </CardHeader>
+              <CardContent className="text-center">
+                <p className="text-sm font-medium text-muted-foreground">
+                  Pick one of the AI tools above that interests you most. Start with Animated Drawings if you love to draw!
+                </p>
+              </CardContent>
+            </Card>
 
-          <Card className="shadow-card">
-            <CardHeader className="text-center">
-              <div className="w-12 h-12 bg-gradient-fun rounded-full flex items-center justify-center mx-auto mb-3">
-                <span className="text-primary-foreground font-bold">3</span>
-              </div>
-              <CardTitle className="text-lg">Create & Share</CardTitle>
-            </CardHeader>
-            <CardContent className="text-center">
-              <p className="text-sm text-muted-foreground">
-                Use what you learned about prompts to create amazing things! Share your creations with friends and family.
-              </p>
-            </CardContent>
-          </Card>
+            <Card className="rounded-2xl shadow-card">
+              <CardHeader className="text-center">
+                <div className="w-14 h-14 bg-foreground rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-background font-black text-xl">2</span>
+                </div>
+                <CardTitle className="text-xl font-bold">Read the Instructions</CardTitle>
+              </CardHeader>
+              <CardContent className="text-center">
+                <p className="text-sm font-medium text-muted-foreground">
+                  Each website has helpful guides. Take a moment to read how to use the tool before starting your creation!
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="rounded-2xl shadow-card">
+              <CardHeader className="text-center">
+                <div className="w-14 h-14 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-secondary-foreground font-black text-xl">3</span>
+                </div>
+                <CardTitle className="text-xl font-bold">Create & Share</CardTitle>
+              </CardHeader>
+              <CardContent className="text-center">
+                <p className="text-sm font-medium text-muted-foreground">
+                  Use what you learned about prompts to create amazing things! Share your creations with friends and family.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 
       {/* Tips Section */}
-      <section className="bg-gradient-primary rounded-xl p-8 text-primary-foreground">
-        <h2 className="text-3xl font-bold text-center mb-6">💡 Pro Tips for Using AI Tools</h2>
-        
-        <div className="grid md:grid-cols-2 gap-6 text-sm">
-          <div className="space-y-3">
-            <h3 className="font-bold text-lg">🎨 For Animated Drawings:</h3>
-            <ul className="space-y-2 opacity-90">
-              <li>• Draw your character with clear arms, legs, and head</li>
-              <li>• Use simple shapes and bold lines</li>
-              <li>• Make sure your character looks like a person or animal</li>
-              <li>• Save your drawing as a PNG file</li>
-            </ul>
-          </div>
-          
-          <div className="space-y-3">
-            <h3 className="font-bold text-lg">🤖 For ELIZA:</h3>
-            <ul className="space-y-2 opacity-90">
-              <li>• Ask simple questions or share your thoughts</li>
-              <li>• Remember, ELIZA uses simple rules, not real AI</li>
-              <li>• Try different topics to see how it responds</li>
-              <li>• Notice the patterns in its answers</li>
-            </ul>
-          </div>
-          
-          <div className="space-y-3">
-            <h3 className="font-bold text-lg">🌟 For Image Generation:</h3>
-            <ul className="space-y-2 opacity-90">
-              <li>• Write detailed, specific prompts</li>
-              <li>• Include colors, styles, and moods you want</li>
-              <li>• Use descriptive words like "cute," "magical," or "bright"</li>
-              <li>• Be patient - AI takes time to create beautiful art!</li>
-            </ul>
-          </div>
-          
-          <div className="space-y-3">
-            <h3 className="font-bold text-lg">🤖 For Google AI Studio:</h3>
-            <ul className="space-y-2 opacity-90">
-              <li>• Try creative prompts like "Write a story about a robot learning to paint"</li>
-              <li>• Ask it to explain complex topics in simple terms</li>
-              <li>• Experiment with different conversation styles</li>
-              <li>• Challenge it with fun riddles and puzzles!</li>
-            </ul>
-          </div>
+      <section className="bg-foreground py-12 md:py-20 -mx-6 lg:-mx-12 px-6 lg:px-12">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-black uppercase text-center mb-12 text-background tracking-tight">
+            Pro Tips for Using AI Tools
+          </h2>
 
-          <div className="space-y-3">
-            <h3 className="font-bold text-lg">📊 For SmartDraw Flowcharts:</h3>
-            <ul className="space-y-2 opacity-90">
-              <li>• Start with the flowchart template</li>
-              <li>• Use ovals for start/end, rectangles for actions</li>
-              <li>• Use diamonds for decisions (yes/no questions)</li>
-              <li>• Connect shapes with arrows to show flow</li>
-            </ul>
-          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="space-y-4">
+              <h3 className="font-bold text-lg uppercase text-background">For Animated Drawings</h3>
+              <ul className="space-y-2 text-sm text-background/80 font-medium">
+                <li className="flex items-start gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 flex-shrink-0"></div>
+                  <span>Draw your character with clear arms, legs, and head</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 flex-shrink-0"></div>
+                  <span>Use simple shapes and bold lines</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 flex-shrink-0"></div>
+                  <span>Make sure your character looks like a person or animal</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 flex-shrink-0"></div>
+                  <span>Save your drawing as a PNG file</span>
+                </li>
+              </ul>
+            </div>
 
-          <div className="space-y-3">
-            <h3 className="font-bold text-lg">🛡️ Stay Safe Online:</h3>
-            <ul className="space-y-2 opacity-90">
-              <li>• Always ask a parent before creating accounts</li>
-              <li>• Don't share personal information</li>
-              <li>• If something doesn't work, ask for help</li>
-              <li>• Have fun and be creative!</li>
-            </ul>
+            <div className="space-y-4">
+              <h3 className="font-bold text-lg uppercase text-background">For ELIZA</h3>
+              <ul className="space-y-2 text-sm text-background/80 font-medium">
+                <li className="flex items-start gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 flex-shrink-0"></div>
+                  <span>Ask simple questions or share your thoughts</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 flex-shrink-0"></div>
+                  <span>Remember, ELIZA uses simple rules, not real AI</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 flex-shrink-0"></div>
+                  <span>Try different topics to see how it responds</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 flex-shrink-0"></div>
+                  <span>Notice the patterns in its answers</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="space-y-4">
+              <h3 className="font-bold text-lg uppercase text-background">For Image Generation</h3>
+              <ul className="space-y-2 text-sm text-background/80 font-medium">
+                <li className="flex items-start gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 flex-shrink-0"></div>
+                  <span>Write detailed, specific prompts</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 flex-shrink-0"></div>
+                  <span>Include colors, styles, and moods you want</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 flex-shrink-0"></div>
+                  <span>Use descriptive words like "cute," "magical," or "bright"</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 flex-shrink-0"></div>
+                  <span>Be patient - AI takes time to create beautiful art!</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="space-y-4">
+              <h3 className="font-bold text-lg uppercase text-background">For Google AI Studio</h3>
+              <ul className="space-y-2 text-sm text-background/80 font-medium">
+                <li className="flex items-start gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 flex-shrink-0"></div>
+                  <span>Try creative prompts like "Write a story about a robot learning to paint"</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 flex-shrink-0"></div>
+                  <span>Ask it to explain complex topics in simple terms</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 flex-shrink-0"></div>
+                  <span>Experiment with different conversation styles</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 flex-shrink-0"></div>
+                  <span>Challenge it with fun riddles and puzzles!</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="space-y-4">
+              <h3 className="font-bold text-lg uppercase text-background">For SmartDraw Flowcharts</h3>
+              <ul className="space-y-2 text-sm text-background/80 font-medium">
+                <li className="flex items-start gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 flex-shrink-0"></div>
+                  <span>Start with the flowchart template</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 flex-shrink-0"></div>
+                  <span>Use ovals for start/end, rectangles for actions</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 flex-shrink-0"></div>
+                  <span>Use diamonds for decisions (yes/no questions)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 flex-shrink-0"></div>
+                  <span>Connect shapes with arrows to show flow</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="space-y-4">
+              <h3 className="font-bold text-lg uppercase text-background">Stay Safe Online</h3>
+              <ul className="space-y-2 text-sm text-background/80 font-medium">
+                <li className="flex items-start gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 flex-shrink-0"></div>
+                  <span>Always ask a parent before creating accounts</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 flex-shrink-0"></div>
+                  <span>Don't share personal information</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 flex-shrink-0"></div>
+                  <span>If something doesn't work, ask for help</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 flex-shrink-0"></div>
+                  <span>Have fun and be creative!</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Back to Learning */}
-      <div className="text-center">
-        <Card className="shadow-fun bg-gradient-learning max-w-md mx-auto">
-          <CardContent className="py-8">
-            <Brain className="w-12 h-12 mx-auto mb-4 text-secondary-foreground" />
-            <h3 className="text-xl font-bold mb-3 text-secondary-foreground">Want to Learn More?</h3>
-            <p className="text-secondary-foreground mb-4">
+      <div className="text-center py-12 md:py-20">
+        <Card className="rounded-2xl shadow-lifted max-w-md mx-auto">
+          <CardContent className="py-12">
+            <Brain className="w-16 h-16 mx-auto mb-6 text-secondary" />
+            <h3 className="text-2xl font-black uppercase mb-4 tracking-tight">Want to Learn More?</h3>
+            <p className="text-muted-foreground font-medium mb-8">
               Go back to the lessons to learn more about how these amazing tools work!
             </p>
-            <div className="flex gap-2 justify-center">
-              <Button variant="secondary" asChild>
+            <div className="flex gap-3 justify-center flex-wrap">
+              <Button className="rounded-full bg-foreground hover:bg-foreground/90 text-background font-semibold" asChild>
                 <Link to="/lessons/1">Lesson 1</Link>
               </Button>
-              <Button variant="secondary" asChild>
+              <Button className="rounded-full bg-secondary hover:bg-secondary/90 font-semibold" asChild>
                 <Link to="/lessons/2">Lesson 2</Link>
               </Button>
             </div>

@@ -686,18 +686,18 @@ const PythonLesson = () => {
   const totalProgress = moduleProgress.reduce((a, b) => a + b, 0) / modules.length;
 
   return (
-    <div className="max-w-7xl mx-auto space-y-8">
+    <div className="max-w-7xl mx-auto px-6 lg:px-12 space-y-12">
       {/* Header */}
-      <div className="text-center space-y-4">
-        <h1 className="text-4xl md:text-5xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+      <div className="text-center space-y-6 py-12 md:py-20">
+        <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tight">
           Python Programming Adventure
         </h1>
-        <p className="text-xl text-muted-foreground">
+        <p className="text-xl font-medium text-muted-foreground">
           Learn Python - The friendly programming language that's perfect for beginners!
         </p>
 
-        <div className="flex items-center justify-center gap-4 mt-4">
-          <span className="text-sm font-medium">Overall Progress:</span>
+        <div className="flex items-center justify-center gap-4 mt-6">
+          <span className="text-sm font-medium uppercase">Overall Progress:</span>
           <Progress value={totalProgress} className="w-64" />
           <span className="text-sm font-bold">{Math.round(totalProgress)}%</span>
         </div>

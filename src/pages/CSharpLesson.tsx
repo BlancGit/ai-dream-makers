@@ -536,6 +536,7 @@ const CSharpLesson = () => {
   const [moduleProgress, setModuleProgress] = useState<number[]>([0, 0, 0, 0, 0, 0]);
   const [lesson2ModuleProgress, setLesson2ModuleProgress] = useState<number[]>([0, 0, 0]);
   const [showQuiz, setShowQuiz] = useState(false);
+  const [showLesson2Quiz, setShowLesson2Quiz] = useState(false);
   const [quizIndex, setQuizIndex] = useState(0);
   const [correctAnswers, setCorrectAnswers] = useState(0);
 
@@ -628,21 +629,44 @@ const CSharpLesson = () => {
     }
   };
 
+  const handleLesson2QuizComplete = (correct: boolean) => {
+    if (correct) {
+      setCorrectAnswers(prev => prev + 1);
+    }
+
+    if (quizIndex < csharpLesson2Quiz.length - 1) {
+      setQuizIndex(prev => prev + 1);
+    } else {
+      // Lesson 2 Quiz finished
+      const score = Math.round(((correctAnswers + (correct ? 1 : 0)) / csharpLesson2Quiz.length) * 100);
+      setShowLesson2Quiz(false);
+      setLesson2ModuleProgress([100, 100, 100]);
+
+      setTimeout(() => {
+        alert(`🎉 Lesson 2 Quiz Complete!\n\nYour Score: ${score}%\n${score >= 70 ? 'Excellent work! You\'ve mastered advanced C# programming!' : 'Good effort! Review the lessons and try again to improve your score.'}`);
+      }, 500);
+
+      // Reset for next time
+      setQuizIndex(0);
+      setCorrectAnswers(0);
+    }
+  };
+
   const totalProgress = moduleProgress.reduce((a, b) => a + b, 0) / modules.length;
 
   return (
-    <div className="max-w-7xl mx-auto space-y-8">
+    <div className="max-w-7xl mx-auto px-6 lg:px-12 space-y-12">
       {/* Header */}
-      <div className="text-center space-y-4">
-        <h1 className="text-4xl md:text-5xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+      <div className="text-center space-y-6 py-12 md:py-20">
+        <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tight">
           C# Programming Adventure
         </h1>
-        <p className="text-xl text-muted-foreground">
+        <p className="text-xl font-medium text-muted-foreground">
           Learn to code like a pro with C# - The language behind amazing games and apps!
         </p>
 
-        <div className="flex items-center justify-center gap-4 mt-4">
-          <span className="text-sm font-medium">Overall Progress:</span>
+        <div className="flex items-center justify-center gap-4 mt-6">
+          <span className="text-sm font-medium uppercase">Overall Progress:</span>
           <Progress value={totalProgress} className="w-64" />
           <span className="text-sm font-bold">{Math.round(totalProgress)}%</span>
         </div>
@@ -3108,6 +3132,18 @@ class ListMethods
                       variant="fun"
                       size="lg"
                       onClick={() => {
+                        setShowLesson2Quiz(true);
+                        setQuizIndex(0);
+                        setCorrectAnswers(0);
+                      }}
+                    >
+                      <Trophy className="w-5 h-5" />
+                      Take Lesson 2 Quiz!
+                    </Button>
+
+                    <Button
+                      variant="secondary"
+                      onClick={() => {
                         setLesson2ModuleProgress([100, 100, 100]);
                         setCurrentModule(0);
                       }}
@@ -3145,6 +3181,39 @@ class ListMethods
               variant="outline"
               onClick={() => {
                 setShowQuiz(false);
+                setQuizIndex(0);
+                setCorrectAnswers(0);
+              }}
+            >
+              Exit Quiz
+            </Button>
+          </div>
+        </div>
+      )}
+
+      {/* Lesson 2 Quiz Section */}
+      {showLesson2Quiz && (
+        <div className="space-y-6 animate-bounce-in">
+          <div className="text-center space-y-4">
+            <h2 className="text-3xl font-bold text-primary">🎯 Lesson 2 Quiz: Advanced C# Knowledge!</h2>
+            <p className="text-muted-foreground">
+              Question {quizIndex + 1} of {csharpLesson2Quiz.length}
+            </p>
+            <Progress value={((quizIndex + 1) / csharpLesson2Quiz.length) * 100} className="w-full max-w-md mx-auto" />
+          </div>
+
+          <QuizCard
+            quiz={csharpLesson2Quiz[quizIndex]}
+            onComplete={handleLesson2QuizComplete}
+            currentIndex={quizIndex}
+            totalQuestions={csharpLesson2Quiz.length}
+          />
+
+          <div className="text-center">
+            <Button
+              variant="outline"
+              onClick={() => {
+                setShowLesson2Quiz(false);
                 setQuizIndex(0);
                 setCorrectAnswers(0);
               }}

@@ -294,13 +294,13 @@ export default function Lesson3() {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8 max-w-6xl">
-      <div className="mb-8">
-        <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+    <div className="max-w-7xl mx-auto px-6 lg:px-12 py-12 md:py-20">
+      <div className="mb-12">
+        <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tight mb-6 text-center">
           Lesson 3: Advanced Prompt Engineering with Kandinsky
         </h1>
         <Progress value={progress} className="h-2" />
-        <p className="text-sm text-gray-600 mt-2">
+        <p className="text-sm font-medium text-muted-foreground mt-4 text-center">
           {completedSections.length} of {sections.length} sections completed
         </p>
       </div>

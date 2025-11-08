@@ -276,22 +276,22 @@ const Lesson2 = () => {
   const progress = ((currentSection + 1) / sections.length) * 100;
 
   return (
-    <div className="max-w-6xl mx-auto space-y-8">
+    <div className="max-w-7xl mx-auto px-6 lg:px-12 space-y-12">
       {/* Header */}
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
+      <div className="text-center py-12 md:py-20">
+        <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tight mb-6">
           Lesson 2: Types of Neural Networks
         </h1>
         <Progress value={progress} className="w-full max-w-md mx-auto" />
-        <p className="text-sm text-muted-foreground mt-2">
+        <p className="text-sm font-medium text-muted-foreground mt-4">
           Section {currentSection + 1} of {sections.length}: {sections[currentSection]}
         </p>
       </div>
 
       {/* Section 0: Building Neural Networks */}
       {currentSection === 0 && (
-        <div className="space-y-6 animate-bounce-in">
-          <Card className="shadow-fun">
+        <div className="space-y-8 py-12 md:py-20">
+          <Card className="rounded-2xl shadow-card hover:shadow-lifted transition-all">
             <CardHeader className="text-center">
               <CardTitle className="flex items-center justify-center gap-2 text-2xl">
                 <Brain className="w-8 h-8 text-primary" />
@@ -343,7 +343,7 @@ const Lesson2 = () => {
           </Card>
 
           <div className="text-center">
-            <Button variant="fun" size="lg" onClick={() => setCurrentSection(1)}>
+            <Button className="rounded-full bg-secondary hover:bg-secondary/90" size="lg" onClick={() => setCurrentSection(1)}>
               <ArrowRight className="w-5 h-5" />
               See How They Work!
             </Button>
@@ -353,10 +353,10 @@ const Lesson2 = () => {
 
       {/* Section 1: Visualization */}
       {currentSection === 1 && (
-        <div className="space-y-6 animate-bounce-in">
+        <div className="space-y-8 py-12 md:py-20">
           <NeuralNetworkVisualization />
           
-          <Card className="shadow-fun">
+          <Card className="rounded-2xl shadow-card hover:shadow-lifted transition-all">
             <CardContent className="p-6">
               <h3 className="text-xl font-bold text-center mb-4">🧠 Neural Network vs Human Brain</h3>
               <div className="grid md:grid-cols-2 gap-6">
@@ -375,7 +375,7 @@ const Lesson2 = () => {
           </Card>
 
           <div className="text-center">
-            <Button variant="fun" size="lg" onClick={() => setCurrentSection(2)}>
+            <Button className="rounded-full bg-secondary hover:bg-secondary/90" size="lg" onClick={() => setCurrentSection(2)}>
               <ArrowRight className="w-5 h-5" />
               Explore AI Applications!
             </Button>
@@ -385,8 +385,8 @@ const Lesson2 = () => {
 
       {/* Section 2: 7 Areas of AI */}
       {currentSection === 2 && (
-        <div className="space-y-6 animate-bounce-in">
-          <Card className="shadow-fun">
+        <div className="space-y-8 py-12 md:py-20">
+          <Card className="rounded-2xl shadow-card hover:shadow-lifted transition-all">
             <CardHeader className="text-center">
               <CardTitle className="flex items-center justify-center gap-2 text-2xl">
                 <Sparkles className="w-8 h-8 text-warning" />
@@ -430,7 +430,7 @@ const Lesson2 = () => {
           </div>
 
           <div className="text-center">
-            <Button variant="fun" size="lg" onClick={() => setCurrentSection(3)}>
+            <Button className="rounded-full bg-secondary hover:bg-secondary/90" size="lg" onClick={() => setCurrentSection(3)}>
               <ArrowRight className="w-5 h-5" />
               Try AI Tools!
             </Button>
@@ -440,8 +440,8 @@ const Lesson2 = () => {
 
       {/* Section 3: AI Tools Demo */}
       {currentSection === 3 && (
-        <div className="space-y-6 animate-bounce-in">
-          <Card className="shadow-fun">
+        <div className="space-y-8 py-12 md:py-20">
+          <Card className="rounded-2xl shadow-card hover:shadow-lifted transition-all">
             <CardHeader className="text-center">
               <CardTitle className="flex items-center justify-center gap-2 text-2xl">
                 <Zap className="w-8 h-8 text-accent" />
@@ -525,7 +525,7 @@ const Lesson2 = () => {
           </Card>
 
           <div className="text-center">
-            <Button variant="fun" size="lg" onClick={() => setCurrentSection(4)}>
+            <Button className="rounded-full bg-secondary hover:bg-secondary/90" size="lg" onClick={() => setCurrentSection(4)}>
               <ArrowRight className="w-5 h-5" />
               Test Your Knowledge!
             </Button>
@@ -535,7 +535,7 @@ const Lesson2 = () => {
 
       {/* Section 4: Quiz */}
       {currentSection === 4 && !lessonComplete && (
-        <div className="space-y-6 animate-bounce-in">
+        <div className="space-y-8 py-12 md:py-20">
           <div className="text-center">
             <h2 className="text-2xl font-bold mb-4">
               Quiz {quizIndex + 1} of {lesson2Quiz.length}
@@ -555,7 +555,7 @@ const Lesson2 = () => {
       {/* Lesson Complete */}
       {lessonComplete && (
         <div className="text-center space-y-6 animate-bounce-in">
-          <Card className="shadow-glow bg-gradient-primary text-primary-foreground">
+          <Card className="rounded-2xl shadow-lifted bg-primary/5">
             <CardContent className="py-12">
               <CheckCircle className="w-20 h-20 mx-auto mb-6 animate-bounce" />
               <h2 className="text-3xl font-bold mb-4">Amazing Work! 🎉</h2>

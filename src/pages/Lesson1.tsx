@@ -260,71 +260,71 @@ const Lesson1 = () => {
   const progress = ((currentSection + 1) / sections.length) * 100;
 
   return (
-    <div className="max-w-6xl mx-auto space-y-8">
+    <div className="max-w-7xl mx-auto px-6 lg:px-12 space-y-12">
       {/* Header */}
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
+      <div className="text-center py-12 md:py-20">
+        <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tight mb-6">
           Lesson 1: Introduction to Neural Networks
         </h1>
         <Progress value={progress} className="w-full max-w-md mx-auto" />
-        <p className="text-sm text-muted-foreground mt-2">
+        <p className="text-sm font-medium text-muted-foreground mt-4">
           Section {currentSection + 1} of {sections.length}: {sections[currentSection]}
         </p>
       </div>
 
       {/* Section 0: Introduction */}
       {currentSection === 0 && (
-        <div className="space-y-6 animate-bounce-in">
-          <Card className="shadow-fun">
+        <div className="space-y-8">
+          <Card className="rounded-2xl shadow-card hover:shadow-lifted transition-all">
             <CardHeader className="text-center">
-              <CardTitle className="flex items-center justify-center gap-2 text-2xl">
+              <CardTitle className="flex items-center justify-center gap-3 text-2xl md:text-3xl font-bold uppercase">
                 <Brain className="w-8 h-8 text-primary" />
                 What is a Neural Network?
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-4 text-lg leading-relaxed">
+            <CardContent className="space-y-6 text-base font-medium leading-relaxed text-muted-foreground">
               <p>
-                🧠 A neural network is like a computer brain that learns to solve problems by looking at lots of examples!
+                A neural network is like a computer brain that learns to solve problems by looking at lots of examples!
               </p>
               <p>
-                🕷️ Imagine a huge spider web made of many connected threads. A neural network is similar, but instead of threads, we have artificial neurons that work together like a team!
+                Imagine a huge spider web made of many connected threads. A neural network is similar, but instead of threads, we have artificial neurons that work together like a team!
               </p>
               <p>
-                🎯 Just like how you learn to recognize your friends' faces by seeing them many times, neural networks learn by practicing with lots of examples.
+                Just like how you learn to recognize your friends' faces by seeing them many times, neural networks learn by practicing with lots of examples.
               </p>
             </CardContent>
           </Card>
 
           <div className="grid md:grid-cols-2 gap-6">
-            <Card className="shadow-card hover:shadow-fun transition-all duration-300">
+            <Card className="rounded-2xl shadow-card hover:shadow-lifted transition-all">
               <CardHeader>
-                <CardTitle className="flex items-center gap-2">
+                <CardTitle className="flex items-center gap-2 text-xl font-bold uppercase">
                   <Computer className="w-6 h-6 text-primary" />
                   Regular Computer
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p>Follows exact instructions step by step, like a recipe!</p>
+                <p className="font-medium text-muted-foreground">Follows exact instructions step by step, like a recipe!</p>
               </CardContent>
             </Card>
 
-            <Card className="shadow-card hover:shadow-fun transition-all duration-300">
+            <Card className="rounded-2xl shadow-card hover:shadow-lifted transition-all">
               <CardHeader>
-                <CardTitle className="flex items-center gap-2">
+                <CardTitle className="flex items-center gap-2 text-xl font-bold uppercase">
                   <Brain className="w-6 h-6 text-primary" />
                   Neural Network
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p>Learns from examples and can solve new problems it has never seen before!</p>
+                <p className="font-medium text-muted-foreground">Learns from examples and can solve new problems it has never seen before!</p>
               </CardContent>
             </Card>
           </div>
 
           <div className="text-center">
-            <Button variant="fun" size="lg" onClick={() => setCurrentSection(1)}>
-              <ArrowRight className="w-5 h-5" />
-              Let's Explore the History!
+            <Button className="rounded-full bg-secondary hover:bg-secondary/90" size="lg" onClick={() => setCurrentSection(1)}>
+              Let's Explore the History
+              <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
           </div>
         </div>
@@ -332,13 +332,13 @@ const Lesson1 = () => {
 
       {/* Section 1: History Timeline */}
       {currentSection === 1 && (
-        <div className="space-y-6 animate-bounce-in">
+        <div className="space-y-8 py-12 md:py-20">
           <InteractiveTimeline />
-          
+
           <div className="text-center">
-            <Button variant="fun" size="lg" onClick={() => setCurrentSection(2)}>
-              <ArrowRight className="w-5 h-5" />
-              Learn How They Work!
+            <Button className="rounded-full bg-secondary hover:bg-secondary/90" size="lg" onClick={() => setCurrentSection(2)}>
+              Learn How They Work
+              <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
           </div>
         </div>
@@ -346,49 +346,49 @@ const Lesson1 = () => {
 
       {/* Section 2: How Neural Networks Work */}
       {currentSection === 2 && (
-        <div className="space-y-6 animate-bounce-in">
-          <Card className="shadow-fun">
+        <div className="space-y-8 bg-accent py-12 md:py-20 -mx-6 lg:-mx-12 px-6 lg:px-12">
+          <Card className="rounded-2xl shadow-card hover:shadow-lifted transition-all max-w-7xl mx-auto">
             <CardHeader className="text-center">
-              <CardTitle className="flex items-center justify-center gap-2 text-2xl">
+              <CardTitle className="flex items-center justify-center gap-3 text-2xl md:text-3xl font-bold uppercase">
                 <Lightbulb className="w-8 h-8 text-warning" />
                 How Neural Networks Learn
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-6">
-              <div className="grid md:grid-cols-3 gap-4">
-                <div className="text-center p-4 bg-muted rounded-lg">
-                  <div className="text-4xl mb-2">📸</div>
-                  <h4 className="font-bold mb-2">1. Show Examples</h4>
-                  <p className="text-sm">Show the neural network thousands of pictures with labels (like "cat" or "dog")</p>
+            <CardContent className="space-y-8">
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="text-center p-6 bg-muted rounded-2xl">
+                  <div className="text-4xl mb-3">📸</div>
+                  <h4 className="font-bold text-lg mb-3 uppercase">1. Show Examples</h4>
+                  <p className="text-sm font-medium text-muted-foreground">Show the neural network thousands of pictures with labels (like "cat" or "dog")</p>
                 </div>
-                
-                <div className="text-center p-4 bg-muted rounded-lg">
-                  <div className="text-4xl mb-2">🧠</div>
-                  <h4 className="font-bold mb-2">2. Find Patterns</h4>
-                  <p className="text-sm">The network learns to spot patterns (cats have whiskers, pointy ears, etc.)</p>
+
+                <div className="text-center p-6 bg-muted rounded-2xl">
+                  <div className="text-4xl mb-3">🧠</div>
+                  <h4 className="font-bold text-lg mb-3 uppercase">2. Find Patterns</h4>
+                  <p className="text-sm font-medium text-muted-foreground">The network learns to spot patterns (cats have whiskers, pointy ears, etc.)</p>
                 </div>
-                
-                <div className="text-center p-4 bg-muted rounded-lg">
-                  <div className="text-4xl mb-2">✅</div>
-                  <h4 className="font-bold mb-2">3. Make Predictions</h4>
-                  <p className="text-sm">Now it can look at new pictures and guess "This looks like a cat!"</p>
+
+                <div className="text-center p-6 bg-muted rounded-2xl">
+                  <div className="text-4xl mb-3">✅</div>
+                  <h4 className="font-bold text-lg mb-3 uppercase">3. Make Predictions</h4>
+                  <p className="text-sm font-medium text-muted-foreground">Now it can look at new pictures and guess "This looks like a cat!"</p>
                 </div>
               </div>
 
-              <div className="bg-gradient-learning p-6 rounded-lg text-center">
-                <h4 className="font-bold text-xl mb-2 text-secondary-foreground">Cool Fact!</h4>
-                <p className="text-secondary-foreground">
-                  Neural networks can learn from their mistakes, just like you do! 
-                  If they guess wrong, they adjust and get better next time! 🎯
+              <div className="bg-primary/10 p-8 rounded-2xl text-center">
+                <h4 className="font-bold text-xl mb-3 uppercase">Cool Fact!</h4>
+                <p className="font-medium text-muted-foreground">
+                  Neural networks can learn from their mistakes, just like you do!
+                  If they guess wrong, they adjust and get better next time!
                 </p>
               </div>
             </CardContent>
           </Card>
 
           <div className="text-center">
-            <Button variant="fun" size="lg" onClick={() => setCurrentSection(3)}>
-              <ArrowRight className="w-5 h-5" />
-              Learn About Prompts!
+            <Button className="rounded-full bg-secondary hover:bg-secondary/90" size="lg" onClick={() => setCurrentSection(3)}>
+              Learn About Prompts
+              <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
           </div>
         </div>
@@ -396,69 +396,69 @@ const Lesson1 = () => {
 
       {/* Section 3: Prompts */}
       {currentSection === 3 && (
-        <div className="space-y-6 animate-bounce-in">
-          <Card className="shadow-fun">
+        <div className="space-y-8 py-12 md:py-20">
+          <Card className="rounded-2xl shadow-card hover:shadow-lifted transition-all">
             <CardHeader className="text-center">
-              <CardTitle className="flex items-center justify-center gap-2 text-2xl">
+              <CardTitle className="flex items-center justify-center gap-3 text-2xl md:text-3xl font-bold uppercase">
                 <MessageCircle className="w-8 h-8 text-accent" />
                 What Are Prompts?
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-6">
-              <div className="text-lg text-center p-4 bg-muted rounded-lg">
-                <p className="mb-4">
-                  🗣️ A <strong>prompt</strong> is like giving instructions to your AI friend!
+            <CardContent className="space-y-8">
+              <div className="text-center p-6 bg-muted rounded-2xl">
+                <p className="mb-4 font-medium text-muted-foreground">
+                  A <strong>prompt</strong> is like giving instructions to your AI friend!
                 </p>
-                <p>
-                  Think of it as telling the neural network exactly what you want it to do, 
-                  just like asking a friend to help you with homework! 📝
+                <p className="font-medium text-muted-foreground">
+                  Think of it as telling the neural network exactly what you want it to do,
+                  just like asking a friend to help you with homework!
                 </p>
               </div>
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-4">
-                  <h4 className="font-bold text-center text-success">✅ Good Prompts</h4>
+                  <h4 className="font-bold text-center text-success uppercase">Good Prompts</h4>
                   <div className="space-y-3">
-                    <div className="p-3 bg-success/10 border border-success/20 rounded-lg">
+                    <div className="p-4 bg-success/10 border border-success/20 rounded-2xl">
                       <strong>"Draw a cute cat playing with a ball"</strong>
-                      <p className="text-sm text-muted-foreground">Specific and clear!</p>
+                      <p className="text-sm font-medium text-muted-foreground mt-2">Specific and clear!</p>
                     </div>
-                    <div className="p-3 bg-success/10 border border-success/20 rounded-lg">
+                    <div className="p-4 bg-success/10 border border-success/20 rounded-2xl">
                       <strong>"Write a short story about a robot"</strong>
-                      <p className="text-sm text-muted-foreground">Tells exactly what to do!</p>
+                      <p className="text-sm font-medium text-muted-foreground mt-2">Tells exactly what to do!</p>
                     </div>
                   </div>
                 </div>
 
                 <div className="space-y-4">
-                  <h4 className="font-bold text-center text-destructive">❌ Vague Prompts</h4>
+                  <h4 className="font-bold text-center text-destructive uppercase">Vague Prompts</h4>
                   <div className="space-y-3">
-                    <div className="p-3 bg-destructive/10 border border-destructive/20 rounded-lg">
+                    <div className="p-4 bg-destructive/10 border border-destructive/20 rounded-2xl">
                       <strong>"Draw something"</strong>
-                      <p className="text-sm text-muted-foreground">Too vague!</p>
+                      <p className="text-sm font-medium text-muted-foreground mt-2">Too vague!</p>
                     </div>
-                    <div className="p-3 bg-destructive/10 border border-destructive/20 rounded-lg">
+                    <div className="p-4 bg-destructive/10 border border-destructive/20 rounded-2xl">
                       <strong>"Make it good"</strong>
-                      <p className="text-sm text-muted-foreground">Not specific enough!</p>
+                      <p className="text-sm font-medium text-muted-foreground mt-2">Not specific enough!</p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-gradient-primary p-6 rounded-lg text-center text-primary-foreground">
-                <h4 className="font-bold text-xl mb-2">Pro Tip! 🌟</h4>
-                <p>
-                  The more specific and detailed your prompt is, the better results you'll get! 
-                  It's like giving your AI friend really clear directions! 🎯
+              <div className="bg-primary/10 p-8 rounded-2xl text-center">
+                <h4 className="font-bold text-xl mb-3 uppercase">Pro Tip!</h4>
+                <p className="font-medium text-muted-foreground">
+                  The more specific and detailed your prompt is, the better results you'll get!
+                  It's like giving your AI friend really clear directions!
                 </p>
               </div>
             </CardContent>
           </Card>
 
           <div className="text-center">
-            <Button variant="fun" size="lg" onClick={() => setCurrentSection(4)}>
-              <ArrowRight className="w-5 h-5" />
-              Meet ELIZA!
+            <Button className="rounded-full bg-secondary hover:bg-secondary/90" size="lg" onClick={() => setCurrentSection(4)}>
+              Meet ELIZA
+              <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
           </div>
         </div>
@@ -466,47 +466,47 @@ const Lesson1 = () => {
 
       {/* Section 4: ELIZA */}
       {currentSection === 4 && (
-        <div className="space-y-6 animate-bounce-in">
-          <Card className="shadow-fun">
+        <div className="space-y-8 bg-accent py-12 md:py-20 -mx-6 lg:-mx-12 px-6 lg:px-12">
+          <Card className="rounded-2xl shadow-card hover:shadow-lifted transition-all max-w-7xl mx-auto">
             <CardHeader className="text-center">
-              <CardTitle className="flex items-center justify-center gap-2 text-2xl">
+              <CardTitle className="flex items-center justify-center gap-3 text-2xl md:text-3xl font-bold uppercase">
                 <MessageCircle className="w-8 h-8 text-accent" />
-                Meet ELIZA - The First Chatbot!
+                Meet ELIZA - The First Chatbot
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-6">
-              <div className="text-center p-4 bg-muted rounded-lg">
+            <CardContent className="space-y-8">
+              <div className="text-center p-6 bg-muted rounded-2xl">
                 <div className="text-6xl mb-4">🤖</div>
-                <p className="text-lg">
+                <p className="text-lg font-medium text-muted-foreground">
                   ELIZA was created in 1966 and was one of the first programs that could have conversations with humans!
                 </p>
               </div>
 
-              <div className="bg-card border-2 border-accent rounded-lg p-4 max-w-md mx-auto">
-                <h4 className="font-bold text-center mb-4 text-accent">Chat with ELIZA (Simulation)</h4>
+              <div className="bg-card border-2 border-accent rounded-2xl p-6 max-w-md mx-auto">
+                <h4 className="font-bold text-center mb-4 text-accent uppercase">Chat with ELIZA (Simulation)</h4>
                 <div className="space-y-3 text-sm">
-                  <div className="bg-muted p-2 rounded">
+                  <div className="bg-muted p-3 rounded-xl">
                     <strong>You:</strong> I feel sad today
                   </div>
-                  <div className="bg-accent/20 p-2 rounded">
+                  <div className="bg-accent/20 p-3 rounded-xl">
                     <strong>ELIZA:</strong> Why do you feel sad today?
                   </div>
-                  <div className="bg-muted p-2 rounded">
+                  <div className="bg-muted p-3 rounded-xl">
                     <strong>You:</strong> Because it's raining
                   </div>
-                  <div className="bg-accent/20 p-2 rounded">
+                  <div className="bg-accent/20 p-3 rounded-xl">
                     <strong>ELIZA:</strong> Tell me more about the rain...
                   </div>
                 </div>
               </div>
 
               <div className="grid md:grid-cols-2 gap-6">
-                <Card className="shadow-card">
+                <Card className="rounded-2xl shadow-card">
                   <CardHeader>
-                    <CardTitle className="text-success">✅ What ELIZA Could Do</CardTitle>
+                    <CardTitle className="text-success uppercase">What ELIZA Could Do</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <ul className="space-y-2">
+                    <ul className="space-y-2 font-medium text-muted-foreground">
                       <li>• Have simple conversations</li>
                       <li>• Ask questions back</li>
                       <li>• Use keywords to respond</li>
@@ -515,12 +515,12 @@ const Lesson1 = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="shadow-card">
+                <Card className="rounded-2xl shadow-card">
                   <CardHeader>
-                    <CardTitle className="text-warning">⚠️ What ELIZA Couldn't Do</CardTitle>
+                    <CardTitle className="text-warning uppercase">What ELIZA Couldn't Do</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <ul className="space-y-2">
+                    <ul className="space-y-2 font-medium text-muted-foreground">
                       <li>• Truly understand meaning</li>
                       <li>• Remember past conversations</li>
                       <li>• Learn new things</li>
@@ -530,20 +530,20 @@ const Lesson1 = () => {
                 </Card>
               </div>
 
-              <div className="bg-gradient-fun p-6 rounded-lg text-center text-primary-foreground">
-                <h4 className="font-bold text-xl mb-2">Why ELIZA Was Important 🌟</h4>
-                <p>
-                  ELIZA showed that computers could pretend to understand humans! 
-                  It was the first step toward the amazing AI assistants we have today! 🚀
+              <div className="bg-primary/10 p-8 rounded-2xl text-center">
+                <h4 className="font-bold text-xl mb-3 uppercase">Why ELIZA Was Important</h4>
+                <p className="font-medium text-muted-foreground">
+                  ELIZA showed that computers could pretend to understand humans!
+                  It was the first step toward the amazing AI assistants we have today!
                 </p>
               </div>
             </CardContent>
           </Card>
 
           <div className="text-center">
-            <Button variant="fun" size="lg" onClick={() => setCurrentSection(5)}>
-              <ArrowRight className="w-5 h-5" />
-              Time for Quiz!
+            <Button className="rounded-full bg-secondary hover:bg-secondary/90" size="lg" onClick={() => setCurrentSection(5)}>
+              Time for Quiz
+              <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
           </div>
         </div>
@@ -551,14 +551,14 @@ const Lesson1 = () => {
 
       {/* Section 5: Quiz */}
       {currentSection === 5 && !lessonComplete && (
-        <div className="space-y-6 animate-bounce-in">
+        <div className="space-y-8 py-12 md:py-20">
           <div className="text-center">
-            <h2 className="text-2xl font-bold mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold uppercase mb-6">
               Quiz {quizIndex + 1} of {lesson1Quiz.length}
             </h2>
             <Progress value={((quizIndex + 1) / lesson1Quiz.length) * 100} className="w-full max-w-md mx-auto" />
           </div>
-          
+
           <QuizCard
             quiz={lesson1Quiz[quizIndex]}
             onComplete={handleQuizComplete}
@@ -570,68 +570,68 @@ const Lesson1 = () => {
 
       {/* Lesson Complete */}
       {lessonComplete && (
-        <div className="text-center space-y-6 animate-bounce-in">
-          <Card className="shadow-glow bg-gradient-primary text-primary-foreground">
-            <CardContent className="py-12">
-              <CheckCircle className="w-20 h-20 mx-auto mb-6 animate-bounce" />
-              <h2 className="text-3xl font-bold mb-4">Congratulations! 🎉</h2>
-              <p className="text-xl mb-6">
+        <div className="text-center space-y-8 py-12 md:py-20">
+          <Card className="rounded-2xl shadow-lifted bg-primary/5">
+            <CardContent className="py-12 md:py-20">
+              <CheckCircle className="w-20 h-20 mx-auto mb-6 text-primary" />
+              <h2 className="text-3xl md:text-5xl font-black uppercase mb-6">Congratulations!</h2>
+              <p className="text-xl font-medium text-muted-foreground mb-8">
                 You've completed Lesson 1 and learned about the history of neural networks!
               </p>
 
               {/* Score Display */}
-              <div className="bg-white/20 backdrop-blur rounded-lg p-6 max-w-md mx-auto mb-6">
-                <h3 className="text-2xl font-bold mb-3">Your Quiz Score</h3>
-                <div className="text-5xl font-bold mb-2">
+              <div className="bg-white rounded-2xl shadow-card p-8 max-w-md mx-auto mb-8">
+                <h3 className="text-2xl font-bold uppercase mb-4">Your Quiz Score</h3>
+                <div className="text-6xl font-black mb-2">
                   {completedQuizzes}/{lesson1Quiz.length}
                 </div>
-                <div className="text-3xl font-bold mb-3">
+                <div className="text-4xl font-bold mb-4 text-primary">
                   {Math.round((completedQuizzes / lesson1Quiz.length) * 100)}%
                 </div>
 
                 {/* Performance Badge */}
-                <div className="mt-4">
+                <div className="mt-6">
                   {completedQuizzes === lesson1Quiz.length && (
-                    <div className="text-2xl font-bold">
-                      🏆 Perfect Score! You're an AI Expert!
+                    <div className="text-2xl font-bold uppercase">
+                      Perfect Score! You're an AI Expert!
                     </div>
                   )}
                   {completedQuizzes >= lesson1Quiz.length * 0.8 && completedQuizzes < lesson1Quiz.length && (
-                    <div className="text-2xl font-bold">
-                      ⭐ Great Job! You're an AI Star!
+                    <div className="text-2xl font-bold uppercase">
+                      Great Job! You're an AI Star!
                     </div>
                   )}
                   {completedQuizzes >= lesson1Quiz.length * 0.6 && completedQuizzes < lesson1Quiz.length * 0.8 && (
-                    <div className="text-xl font-bold">
-                      👍 Good Work! Keep Learning!
+                    <div className="text-xl font-bold uppercase">
+                      Good Work! Keep Learning!
                     </div>
                   )}
                   {completedQuizzes < lesson1Quiz.length * 0.6 && (
-                    <div className="text-xl font-bold">
-                      💪 Nice Try! Practice Makes Perfect!
+                    <div className="text-xl font-bold uppercase">
+                      Nice Try! Practice Makes Perfect!
                     </div>
                   )}
                 </div>
               </div>
 
-              <p className="text-lg opacity-90">
+              <p className="text-lg font-medium text-muted-foreground">
                 You answered {completedQuizzes} out of {lesson1Quiz.length} questions correctly!
               </p>
             </CardContent>
           </Card>
 
           <div className="flex flex-wrap justify-center gap-4">
-            <Button variant="secondary" size="xl" asChild>
+            <Button className="rounded-full bg-secondary hover:bg-secondary/90" size="lg" asChild>
               <Link to="/lessons/2">
-                <ArrowRight className="w-5 h-5" />
                 Continue to Lesson 2
+                <ArrowRight className="w-5 h-5 ml-2" />
               </Link>
             </Button>
-            
-            <Button variant="outline" size="lg" asChild>
+
+            <Button variant="outline" className="rounded-full" size="lg" asChild>
               <Link to="/games">
-                <GamepadIcon className="w-5 h-5" />
                 Class Activities
+                <GamepadIcon className="w-5 h-5 ml-2" />
               </Link>
             </Button>
           </div>

@@ -13,6 +13,9 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        inter: ['Inter', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -22,7 +25,6 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
-          glow: "hsl(var(--primary-glow))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -39,14 +41,6 @@ export default {
         accent: {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
-        },
-        success: {
-          DEFAULT: "hsl(var(--success))",
-          foreground: "hsl(var(--success-foreground))",
-        },
-        warning: {
-          DEFAULT: "hsl(var(--warning))",
-          foreground: "hsl(var(--warning-foreground))",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
@@ -72,16 +66,10 @@ export default {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
-      backgroundImage: {
-        "gradient-primary": "var(--gradient-primary)",
-        "gradient-learning": "var(--gradient-learning)",
-        "gradient-fun": "var(--gradient-fun)",
-        "gradient-background": "var(--gradient-background)",
-      },
       boxShadow: {
-        "fun": "var(--shadow-fun)",
-        "glow": "var(--shadow-glow)",
-        "card": "var(--shadow-card)",
+        "soft": "0 2px 8px -2px rgba(0, 0, 0, 0.08)",
+        "card": "0 4px 16px -4px rgba(0, 0, 0, 0.1)",
+        "lifted": "0 8px 24px -6px rgba(0, 0, 0, 0.12)",
       },
       keyframes: {
         "accordion-down": {
