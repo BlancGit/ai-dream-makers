@@ -75,12 +75,12 @@ export const NeuralNetworkVisualization = () => {
             <div
               key={neuron.id}
               className={`w-12 h-12 rounded-full border-2 transition-all duration-500 flex items-center justify-center ${
-                neuron.active 
-                  ? "bg-primary border-primary shadow-glow animate-pulse-glow" 
+                neuron.active
+                  ? "bg-secondary border-secondary shadow-lifted animate-pulse"
                   : "bg-muted border-border"
               }`}
             >
-              {neuron.active && <Zap className="w-6 h-6 text-primary-foreground" />}
+              {neuron.active && <Zap className="w-6 h-6 text-secondary-foreground" />}
             </div>
           ))}
         </div>
@@ -89,7 +89,7 @@ export const NeuralNetworkVisualization = () => {
   };
 
   return (
-    <Card className="w-full max-w-4xl mx-auto shadow-card hover:shadow-fun transition-all duration-300">
+    <Card className="w-full max-w-4xl mx-auto rounded-2xl shadow-card hover:shadow-lifted transition-all duration-300">
       <CardHeader className="text-center">
         <CardTitle className="flex items-center justify-center gap-2">
           <Brain className="w-6 h-6 text-primary" />
@@ -101,13 +101,12 @@ export const NeuralNetworkVisualization = () => {
           <p className="text-muted-foreground mb-4">
             Watch how information flows through a neural network, just like signals in our brain!
           </p>
-          
-          <Button 
-            variant="fun" 
+
+          <Button
             size="lg"
             onClick={animateNetwork}
             disabled={isAnimating}
-            className="mb-6"
+            className="mb-6 rounded-full bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold"
           >
             {isAnimating ? "Learning..." : "Watch It Learn!"}
           </Button>
@@ -115,17 +114,17 @@ export const NeuralNetworkVisualization = () => {
 
         <div className="flex justify-around items-center">
           {renderLayer(0, "Input", <Eye className="w-4 h-4" />)}
-          
+
           <div className="flex-1 flex justify-center">
-            <div className="w-20 h-1 bg-gradient-primary rounded-full animate-pulse"></div>
+            <div className="w-20 h-1 bg-secondary rounded-full animate-pulse"></div>
           </div>
-          
+
           {renderLayer(1, "Hidden", <Brain className="w-4 h-4" />)}
-          
+
           <div className="flex-1 flex justify-center">
-            <div className="w-20 h-1 bg-gradient-primary rounded-full animate-pulse"></div>
+            <div className="w-20 h-1 bg-secondary rounded-full animate-pulse"></div>
           </div>
-          
+
           {renderLayer(2, "Output", <Zap className="w-4 h-4" />)}
         </div>
 

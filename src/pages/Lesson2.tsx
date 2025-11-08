@@ -308,9 +308,9 @@ const Lesson2 = () => {
 
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {buildingStages.map((stage, index) => (
-                  <Card key={index} className={`shadow-card hover:shadow-fun transition-all duration-300 animate-bounce-in`} style={{ animationDelay: `${index * 100}ms` }}>
+                  <Card key={index} className="shadow-card hover:shadow-lifted transition-all duration-300">
                     <CardHeader className="text-center pb-3">
-                      <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-2">
+                      <div className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mx-auto mb-2 text-secondary-foreground">
                         {stage.icon}
                       </div>
                       <CardTitle className="text-sm">{stage.title}</CardTitle>
@@ -322,11 +322,11 @@ const Lesson2 = () => {
                 ))}
               </div>
 
-              <div className="bg-gradient-learning p-6 rounded-lg">
+              <div className="bg-secondary p-6 rounded-2xl">
                 <h4 className="font-bold text-xl mb-3 text-secondary-foreground text-center">🎯 The Secret Ingredient</h4>
                 <p className="text-secondary-foreground text-center">
-                  The most important part is <strong>high-quality data</strong>! 
-                  Neural networks are like children - if you show them good examples, they learn good habits. 
+                  The most important part is <strong>high-quality data</strong>!
+                  Neural networks are like children - if you show them good examples, they learn good habits.
                   If you show them bad examples, they learn bad habits! 📚✨
                 </p>
               </div>
@@ -403,10 +403,9 @@ const Lesson2 = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {aiAreas.map((area, index) => (
-              <Card 
-                key={index} 
-                className="shadow-card hover:shadow-fun transition-all duration-300 hover:scale-105 cursor-pointer animate-bounce-in"
-                style={{ animationDelay: `${index * 100}ms` }}
+              <Card
+                key={index}
+                className="shadow-card hover:shadow-lifted transition-all duration-300 hover:scale-105 cursor-pointer"
               >
                 <CardHeader className="text-center">
                   <div className={`w-16 h-16 mx-auto mb-4 rounded-full bg-muted flex items-center justify-center ${area.color}`}>
@@ -421,10 +420,10 @@ const Lesson2 = () => {
             ))}
           </div>
 
-          <div className="bg-gradient-primary p-6 rounded-lg text-center text-primary-foreground">
+          <div className="bg-foreground p-6 rounded-2xl text-center text-background">
             <h4 className="font-bold text-xl mb-2">🚀 The Future is Here!</h4>
             <p className="text-lg">
-              All these AI tools exist TODAY and you can use them to create amazing things! 
+              All these AI tools exist TODAY and you can use them to create amazing things!
               The only limit is your imagination! ✨
             </p>
           </div>
@@ -493,22 +492,22 @@ const Lesson2 = () => {
                 </Card>
               </div>
 
-              <div className="bg-gradient-fun p-6 rounded-lg text-center text-primary-foreground">
-                <h4 className="font-bold text-xl mb-3">🎨 Your Creative Journey Starts Now!</h4>
-                <p className="mb-4">
-                  These tools let you create amazing things without being a programmer! 
+              <div className="bg-accent p-6 rounded-2xl text-center">
+                <h4 className="font-bold text-xl mb-3 text-foreground">🎨 Your Creative Journey Starts Now!</h4>
+                <p className="mb-4 text-foreground">
+                  These tools let you create amazing things without being a programmer!
                   You just need to:
                 </p>
                 <div className="grid md:grid-cols-3 gap-4 text-sm">
-                  <div className="bg-primary-foreground/20 p-3 rounded">
+                  <div className="bg-background p-3 rounded-2xl">
                     <strong>1. Imagine</strong><br/>
                     Think of what you want to create
                   </div>
-                  <div className="bg-primary-foreground/20 p-3 rounded">
+                  <div className="bg-background p-3 rounded-2xl">
                     <strong>2. Describe</strong><br/>
                     Write clear instructions (prompts)
                   </div>
-                  <div className="bg-primary-foreground/20 p-3 rounded">
+                  <div className="bg-background p-3 rounded-2xl">
                     <strong>3. Create</strong><br/>
                     Let AI help bring your ideas to life!
                   </div>
