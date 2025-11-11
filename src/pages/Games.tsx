@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import {
-  ExternalLink, Brain, Image, MessageCircle, Sparkles, Globe, Palette, Bot, GitBranch, Presentation
+  ExternalLink, Brain, Image, MessageCircle, Sparkles, Globe, Palette, Bot, GitBranch, Presentation, ClipboardCheck
 } from "lucide-react";
 
 const Games = () => {
@@ -69,6 +69,42 @@ const Games = () => {
       color: "text-cyan-500",
       url: "https://www.smartdraw.com/",
       features: ["Flowchart Creation", "Game Logic Design", "Decision Trees", "Professional Diagrams", "Easy Templates"]
+    },
+    {
+      id: "nn-juniors-quiz",
+      title: "Final Quiz Neural Network Juniors",
+      description: "Test your knowledge of neural networks with this junior-level quiz!",
+      icon: <ClipboardCheck className="w-8 h-8" />,
+      color: "text-emerald-500",
+      url: "https://forms.gle/1SHsGX2BwpWiUc3BA",
+      features: ["Test Neural Network Knowledge", "Junior Level Questions", "Track Your Progress", "Learn from Feedback"]
+    },
+    {
+      id: "nn-advanced-quiz",
+      title: "Final Quiz Neural Network Advanced/Intermediate",
+      description: "Challenge yourself with advanced neural network concepts and questions!",
+      icon: <ClipboardCheck className="w-8 h-8" />,
+      color: "text-violet-500",
+      url: "https://forms.gle/NCPeSmuC1k2GKheb8",
+      features: ["Advanced Concepts", "Intermediate to Advanced Level", "Comprehensive Assessment", "Detailed Results"]
+    },
+    {
+      id: "csharp-quiz",
+      title: "Basic C# Quiz",
+      description: "Test your C# programming fundamentals and coding skills!",
+      icon: <ClipboardCheck className="w-8 h-8" />,
+      color: "text-rose-500",
+      url: "https://forms.gle/KvgD4HiWwB62AT8k6",
+      features: ["C# Fundamentals", "Syntax Practice", "Problem Solving", "Instant Feedback"]
+    },
+    {
+      id: "python-quiz",
+      title: "Basic Python Quiz",
+      description: "Evaluate your Python programming knowledge with this beginner-friendly quiz!",
+      icon: <ClipboardCheck className="w-8 h-8" />,
+      color: "text-amber-500",
+      url: "https://forms.gle/DgSj9w5m7mjiz4y29",
+      features: ["Python Basics", "Beginner Friendly", "Quick Assessment", "Learn While Testing"]
     }
   ];
 
