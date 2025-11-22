@@ -3235,6 +3235,7 @@ class ListMethods
                   <div className="space-y-4">
                     <h3 className="text-xl font-bold text-blue-600">💡 Basic While Loop</h3>
                     <CodeEditor
+                      title="While Loop Example"
                       initialCode={`using System;
 
 class Program
@@ -3252,6 +3253,11 @@ class Program
     }
 }`}
                       language="csharp"
+                      expectedOutput={`1
+2
+3
+4
+5`}
                     />
                   </div>
 
@@ -3261,6 +3267,7 @@ class Program
                       While loops are great for validating user input:
                     </p>
                     <CodeEditor
+                      title="Password Validation Loop"
                       initialCode={`string password = "";
 
 while (password != "secret")
@@ -3271,12 +3278,17 @@ while (password != "secret")
 
 Console.WriteLine("Access granted!");`}
                       language="csharp"
+                      expectedOutput={`Enter password: [User enters wrong password]
+Enter password: [User enters wrong password]
+Enter password: [User enters "secret"]
+Access granted!`}
                     />
                   </div>
 
                   <div className="space-y-4">
                     <h3 className="text-xl font-bold text-blue-600">🔢 Countdown Example</h3>
                     <CodeEditor
+                      title="Countdown Timer"
                       initialCode={`int countdown = 10;
 
 while (countdown >= 1)
@@ -3287,6 +3299,17 @@ while (countdown >= 1)
 
 Console.WriteLine("Blastoff!");`}
                       language="csharp"
+                      expectedOutput={`10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+Blastoff!`}
                     />
                   </div>
 
@@ -3375,6 +3398,7 @@ while (guess != secretNumber)
                   <div className="space-y-4">
                     <h3 className="text-xl font-bold text-purple-600">💡 Basic For Loop</h3>
                     <CodeEditor
+                      title="For Loop Example"
                       initialCode={`for (int i = 1; i <= 5; i++)
 {
     Console.WriteLine(i);
@@ -3386,12 +3410,18 @@ while (guess != secretNumber)
 // i <= 5        - Continue while i is 5 or less
 // i++           - Add 1 after each loop`}
                       language="csharp"
+                      expectedOutput={`1
+2
+3
+4
+5`}
                     />
                   </div>
 
                   <div className="space-y-4">
                     <h3 className="text-xl font-bold text-purple-600">🔢 Multiplication Table</h3>
                     <CodeEditor
+                      title="Multiplication Table Generator"
                       initialCode={`int number = 7;
 
 for (int i = 1; i <= 10; i++)
@@ -3406,6 +3436,16 @@ for (int i = 1; i <= 10; i++)
 // ...
 // 7 × 10 = 70`}
                       language="csharp"
+                      expectedOutput={`7 × 1 = 7
+7 × 2 = 14
+7 × 3 = 21
+7 × 4 = 28
+7 × 5 = 35
+7 × 6 = 42
+7 × 7 = 49
+7 × 8 = 56
+7 × 9 = 63
+7 × 10 = 70`}
                     />
                   </div>
 
