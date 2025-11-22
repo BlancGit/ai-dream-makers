@@ -3876,7 +3876,12 @@ print("\\nThank you for using the converter!")`}
                       <Gamepad2 className="w-6 h-6" />
                       Complete Solution: Interactive Story Adventure
                     </h3>
+                    <p className="text-sm text-muted-foreground italic">
+                      💡 This is example code to study and copy. Use the "Copy" button to paste it into your Python editor to run it!
+                    </p>
                     <CodeEditor
+                      title="Story Adventure - Complete Code"
+                      readOnly={true}
                       initialCode={`print("=" * 50)
 print("THE ENCHANTED FOREST ADVENTURE")
 print("=" * 50)
@@ -4038,7 +4043,12 @@ print("Thank you for playing!")`}
                       <Sparkles className="w-6 h-6" />
                       Complete Solution: Personality Quiz
                     </h3>
+                    <p className="text-sm text-muted-foreground italic">
+                      💡 This is example code to study and copy. Use the "Copy" button to paste it into your Python editor to run it!
+                    </p>
                     <CodeEditor
+                      title="Personality Quiz - Complete Code"
+                      readOnly={true}
                       initialCode={`print("=" * 50)
 print("WHAT TYPE OF CODER ARE YOU?")
 print("=" * 50)
@@ -4187,7 +4197,12 @@ print("Thank you for taking the quiz!")`}
                       <Zap className="w-6 h-6" />
                       Complete Solution: Multi-Unit Converter
                     </h3>
+                    <p className="text-sm text-muted-foreground italic">
+                      💡 This is example code to study and copy. Use the "Copy" button to paste it into your Python editor to run it!
+                    </p>
                     <CodeEditor
+                      title="Unit Converter - Complete Code"
+                      readOnly={true}
                       initialCode={`print("=" * 50)
 print("UNIVERSAL UNIT CONVERTER")
 print("=" * 50)
