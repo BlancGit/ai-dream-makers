@@ -594,6 +594,8 @@ const PythonLesson = () => {
   const [showQuiz, setShowQuiz] = useState(false);
   const [quizIndex, setQuizIndex] = useState(0);
   const [correctAnswers, setCorrectAnswers] = useState(0);
+  const [solutionsPassword, setSolutionsPassword] = useState("");
+  const [solutionsUnlocked, setSolutionsUnlocked] = useState(false);
 
   const modules = [
     {
@@ -3448,7 +3450,7 @@ print("\\n✅ Your data is saved in journal.txt!")`}
                   <div className="space-y-4">
                     <h3 className="text-xl font-bold text-purple-600">💡 Starter Code</h3>
                     <CodeEditor
-                      code={`print("=" * 50)
+                      initialCode={`print("=" * 50)
 print("THE ENCHANTED FOREST ADVENTURE")
 print("=" * 50)
 print("\\nWelcome, brave adventurer!")
@@ -3587,7 +3589,7 @@ else:
                   <div className="space-y-4">
                     <h3 className="text-xl font-bold text-pink-600">💡 Starter Code</h3>
                     <CodeEditor
-                      code={`print("=" * 50)
+                      initialCode={`print("=" * 50)
 print("WHAT TYPE OF CODER ARE YOU?")
 print("=" * 50)
 print("\\nAnswer these questions to discover your coding personality!\\n")
@@ -3705,7 +3707,7 @@ elif logical_score >= creative_score and logical_score >= social_score:
                   <div className="space-y-4">
                     <h3 className="text-xl font-bold text-blue-600">💡 Starter Code</h3>
                     <CodeEditor
-                      code={`print("=" * 50)
+                      initialCode={`print("=" * 50)
 print("UNIVERSAL UNIT CONVERTER")
 print("=" * 50)
 print("\\nWelcome! This tool can convert between different units.\\n")
@@ -3814,6 +3816,469 @@ print("\\nThank you for using the converter!")`}
               </Card>
             </div>
           )}
+
+          {/* Solutions Section - Password Protected */}
+          <Card className="rounded-2xl shadow-card hover:shadow-lifted transition-all border-2 border-yellow-200 bg-yellow-50/50">
+            <CardHeader className="text-center">
+              <CardTitle className="flex items-center justify-center gap-2 text-2xl">
+                🔒 Complete Project Solutions
+              </CardTitle>
+              <p className="text-muted-foreground mt-2">
+                Try your best first! If you need help, unlock the solutions below.
+              </p>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              {!solutionsUnlocked ? (
+                <div className="space-y-4">
+                  <p className="text-center text-sm text-muted-foreground">
+                    Enter the password to reveal complete solutions for all 3 projects
+                  </p>
+                  <div className="flex gap-2 max-w-md mx-auto">
+                    <input
+                      type="password"
+                      value={solutionsPassword}
+                      onChange={(e) => setSolutionsPassword(e.target.value)}
+                      placeholder="Enter password"
+                      className="flex-1 px-4 py-2 border rounded-md"
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter') {
+                          if (solutionsPassword === 'qwerty1234') {
+                            setSolutionsUnlocked(true);
+                          } else {
+                            alert('Incorrect password!');
+                          }
+                        }
+                      }}
+                    />
+                    <Button
+                      onClick={() => {
+                        if (solutionsPassword === 'qwerty1234') {
+                          setSolutionsUnlocked(true);
+                        } else {
+                          alert('Incorrect password!');
+                        }
+                      }}
+                    >
+                      Unlock
+                    </Button>
+                  </div>
+                </div>
+              ) : (
+                <div className="space-y-8">
+                  <div className="text-center p-4 bg-green-100 rounded-lg border-2 border-green-300">
+                    <p className="text-green-800 font-semibold">✓ Solutions Unlocked!</p>
+                    <p className="text-sm text-green-700">Scroll down to see complete solutions for all projects</p>
+                  </div>
+
+                  {/* Solution 1: Story Adventure */}
+                  <div className="space-y-4">
+                    <h3 className="text-2xl font-bold text-purple-600 flex items-center gap-2">
+                      <Gamepad2 className="w-6 h-6" />
+                      Complete Solution: Interactive Story Adventure
+                    </h3>
+                    <CodeEditor
+                      initialCode={`print("=" * 50)
+print("THE ENCHANTED FOREST ADVENTURE")
+print("=" * 50)
+print("\\nWelcome, brave adventurer!")
+
+name = input("What is your name? ")
+print(f"\\nGreetings, {name}! Your adventure begins...\\n")
+
+print("You wake up at the edge of a mysterious forest.")
+print("Two paths lie before you:")
+print("1. A bright path with singing birds")
+print("2. A dark path with glowing mushrooms")
+
+choice1 = input("\\nWhich path do you take? (1 or 2): ")
+
+if choice1 == "1":
+    print("\\n" + "=" * 50)
+    print("You walk down the bright path.")
+    print("Sunlight filters through the leaves.")
+    print("You encounter a friendly fairy with sparkling wings!")
+    print("=" * 50)
+
+    fairy_choice = input("\\nDo you accept the fairy's gift? (yes/no): ")
+
+    if fairy_choice.lower() == "yes":
+        print("\\nThe fairy gives you magical wings!")
+        print("You feel lighter and more powerful.")
+        print("\\nAs you fly above the trees, you see two locations:")
+        print("1. A golden castle in the distance")
+        print("2. A mysterious cave below")
+
+        wing_choice = input("\\nWhere do you fly? (1 or 2): ")
+
+        if wing_choice == "1":
+            print("\\n" + "=" * 50)
+            print("You fly to the golden castle.")
+            print("The king greets you warmly!")
+            print(f"'Welcome, {name}! We've been expecting you.'")
+            print("You are crowned as the Royal Guardian of the Sky!")
+            print("\\n🌟 ENDING 1: ROYAL GUARDIAN - You achieved greatness!")
+            print("=" * 50)
+
+        elif wing_choice == "2":
+            print("\\n" + "=" * 50)
+            print("You fly down to the mysterious cave.")
+            print("Inside, you discover an ancient dragon!")
+            dragon_choice = input("\\nDo you try to befriend the dragon? (yes/no): ")
+
+            if dragon_choice.lower() == "yes":
+                print("\\nThe dragon is impressed by your bravery!")
+                print("It teaches you ancient magic and wisdom.")
+                print(f"\\n🐉 ENDING 2: DRAGON ALLY - You gained ultimate knowledge!")
+                print("=" * 50)
+            else:
+                print("\\nYou try to escape, but your wings fail!")
+                print("The dragon captures you for trespassing.")
+                print("\\n💀 ENDING 3: CAPTURED - Maybe befriending was better...")
+                print("=" * 50)
+        else:
+            print("\\nYou hesitate too long and your wings disappear!")
+            print("You fall safely but lose your magic.")
+            print("\\n😔 ENDING 4: LOST MAGIC - The adventure ends here.")
+            print("=" * 50)
+
+    else:
+        print("\\nYou politely decline the fairy's gift.")
+        print("The fairy respects your choice and points you forward.")
+        print("\\nYou continue walking and find a fork in the road:")
+        print("1. Follow the sound of rushing water")
+        print("2. Follow the sound of music")
+
+        sound_choice = input("\\nWhich sound do you follow? (1 or 2): ")
+
+        if sound_choice == "1":
+            print("\\n" + "=" * 50)
+            print("You discover a beautiful waterfall!")
+            print("Behind it is a hidden treasure chest!")
+            print("You open it and find 1000 gold coins!")
+            print(f"\\n💰 ENDING 5: TREASURE HUNTER - You're rich, {name}!")
+            print("=" * 50)
+
+        elif sound_choice == "2":
+            print("\\n" + "=" * 50)
+            print("You find a group of forest musicians!")
+            print("They invite you to join their band.")
+            print("You spend your days making beautiful music!")
+            print("\\n🎵 ENDING 6: FOREST MUSICIAN - A peaceful life!")
+            print("=" * 50)
+
+        else:
+            print("\\nYou stand still, unable to decide.")
+            print("Night falls and you fall asleep under the stars.")
+            print("\\n😴 ENDING 7: DREAMER - Sometimes rest is best.")
+            print("=" * 50)
+
+elif choice1 == "2":
+    print("\\n" + "=" * 50)
+    print("You venture down the dark path.")
+    print("Glowing mushrooms light your way.")
+    print("You find a mysterious glowing crystal on a pedestal!")
+    print("=" * 50)
+
+    crystal_choice = input("\\nDo you touch the crystal? (yes/no): ")
+
+    if crystal_choice.lower() == "yes":
+        print("\\nThe crystal glows brighter as you touch it!")
+        print("You gain the power to see in the dark!")
+        print("\\nYou notice two hidden passages:")
+        print("1. A passage going up")
+        print("2. A passage going down")
+
+        passage_choice = input("\\nWhich passage do you take? (1 or 2): ")
+
+        if passage_choice == "1":
+            print("\\n" + "=" * 50)
+            print("You climb up and emerge at a wizard's tower!")
+            print("The wizard is impressed by your crystal.")
+            print("He offers to teach you magic!")
+            print(f"\\n🔮 ENDING 8: WIZARD'S APPRENTICE - {name} the Mage!")
+            print("=" * 50)
+
+        elif passage_choice == "2":
+            print("\\n" + "=" * 50)
+            print("You descend deep underground.")
+            print("You discover an entire underground city!")
+            print("The crystal allows you to communicate with them.")
+            print("\\n🏛️ ENDING 9: UNDERGROUND EXPLORER - A new civilization!")
+            print("=" * 50)
+
+        else:
+            print("\\nYou drop the crystal and it shatters!")
+            print("The magic is released, turning you into a glowing spirit.")
+            print("\\n👻 ENDING 10: SPIRIT FORM - A strange transformation!")
+            print("=" * 50)
+
+    else:
+        print("\\nYou leave the crystal alone and continue walking.")
+        print("Smart choice! The crystal was cursed.")
+        print("You find an exit and return home safely.")
+        print(f"\\n🏡 ENDING 11: SAFE RETURN - Wisdom saved you, {name}!")
+        print("=" * 50)
+
+else:
+    print("\\n" + "=" * 50)
+    print("Invalid choice! You're too confused to continue.")
+    print("You wander in circles until a friendly owl guides you home.")
+    print("\\n🦉 ENDING 12: GUIDED HOME - Better luck next time!")
+    print("=" * 50)
+
+print("\\nTHE END")
+print("Thank you for playing!")`}
+                      language="python"
+                    />
+                  </div>
+
+                  {/* Solution 2: Personality Quiz */}
+                  <div className="space-y-4">
+                    <h3 className="text-2xl font-bold text-pink-600 flex items-center gap-2">
+                      <Sparkles className="w-6 h-6" />
+                      Complete Solution: Personality Quiz
+                    </h3>
+                    <CodeEditor
+                      initialCode={`print("=" * 50)
+print("WHAT TYPE OF CODER ARE YOU?")
+print("=" * 50)
+print("\\nAnswer these questions to discover your coding personality!\\n")
+
+# Score tracking variables
+creative_score = 0
+logical_score = 0
+social_score = 0
+practical_score = 0
+
+# Question 1
+print("Question 1: How do you approach a new problem?")
+print("A. Think creatively and try unique solutions")
+print("B. Break it down logically step by step")
+print("C. Ask others for their ideas first")
+print("D. Look for the most practical solution")
+
+answer1 = input("Your answer (A/B/C/D): ").upper()
+
+if answer1 == "A":
+    creative_score += 1
+elif answer1 == "B":
+    logical_score += 1
+elif answer1 == "C":
+    social_score += 1
+elif answer1 == "D":
+    practical_score += 1
+
+# Question 2
+print("\\nQuestion 2: What's your favorite part of coding?")
+print("A. Designing beautiful interfaces")
+print("B. Solving complex algorithms")
+print("C. Building tools that help people")
+print("D. Making things work efficiently")
+
+answer2 = input("Your answer (A/B/C/D): ").upper()
+
+if answer2 == "A":
+    creative_score += 1
+elif answer2 == "B":
+    logical_score += 1
+elif answer2 == "C":
+    social_score += 1
+elif answer2 == "D":
+    practical_score += 1
+
+# Question 3
+print("\\nQuestion 3: What's your ideal work environment?")
+print("A. A colorful, inspiring creative space")
+print("B. A quiet room with whiteboards for planning")
+print("C. A collaborative office with team areas")
+print("D. A simple, organized workspace")
+
+answer3 = input("Your answer (A/B/C/D): ").upper()
+
+if answer3 == "A":
+    creative_score += 1
+elif answer3 == "B":
+    logical_score += 1
+elif answer3 == "C":
+    social_score += 1
+elif answer3 == "D":
+    practical_score += 1
+
+# Question 4
+print("\\nQuestion 4: How do you learn best?")
+print("A. Experimenting and trying new things")
+print("B. Reading documentation and understanding theory")
+print("C. Discussing and learning from others")
+print("D. Following tutorials and practical examples")
+
+answer4 = input("Your answer (A/B/C/D): ").upper()
+
+if answer4 == "A":
+    creative_score += 1
+elif answer4 == "B":
+    logical_score += 1
+elif answer4 == "C":
+    social_score += 1
+elif answer4 == "D":
+    practical_score += 1
+
+# Question 5
+print("\\nQuestion 5: What motivates you most?")
+print("A. Creating something visually stunning")
+print("B. Solving a challenging puzzle")
+print("C. Making a positive impact on users")
+print("D. Building something reliable and useful")
+
+answer5 = input("Your answer (A/B/C/D): ").upper()
+
+if answer5 == "A":
+    creative_score += 1
+elif answer5 == "B":
+    logical_score += 1
+elif answer5 == "C":
+    social_score += 1
+elif answer5 == "D":
+    practical_score += 1
+
+# Calculate and display result
+print("\\n" + "=" * 50)
+print("YOUR RESULT:")
+print("=" * 50)
+print(f"\\nScores:")
+print(f"Creative: {creative_score}/5")
+print(f"Logical: {logical_score}/5")
+print(f"Social: {social_score}/5")
+print(f"Practical: {practical_score}/5")
+print()
+
+if creative_score >= logical_score and creative_score >= social_score and creative_score >= practical_score:
+    print("🎨 THE CREATIVE CODER")
+    print("=" * 50)
+    print("You love designing beautiful interfaces and thinking outside the box!")
+    print("Best suited for: Frontend development, game design, UI/UX")
+
+elif logical_score >= creative_score and logical_score >= social_score and logical_score >= practical_score:
+    print("🧠 THE LOGICAL THINKER")
+    print("=" * 50)
+    print("You excel at solving complex problems and algorithms!")
+    print("Best suited for: Backend development, data structures, AI/ML")
+
+elif social_score >= creative_score and social_score >= logical_score and social_score >= practical_score:
+    print("🤝 THE COLLABORATIVE BUILDER")
+    print("=" * 50)
+    print("You love working with others and building helpful tools!")
+    print("Best suited for: Full-stack development, team projects, open source")
+
+else:
+    print("⚙️ THE PRACTICAL ENGINEER")
+    print("=" * 50)
+    print("You focus on efficiency and making things work reliably!")
+    print("Best suited for: System design, DevOps, optimization")
+
+print("\\n" + "=" * 50)
+print("Thank you for taking the quiz!")`}
+                      language="python"
+                    />
+                  </div>
+
+                  {/* Solution 3: Unit Converter */}
+                  <div className="space-y-4">
+                    <h3 className="text-2xl font-bold text-blue-600 flex items-center gap-2">
+                      <Zap className="w-6 h-6" />
+                      Complete Solution: Multi-Unit Converter
+                    </h3>
+                    <CodeEditor
+                      initialCode={`print("=" * 50)
+print("UNIVERSAL UNIT CONVERTER")
+print("=" * 50)
+print("\\nWelcome! This tool can convert between different units.\\n")
+
+print("Available Conversions:")
+print("1. Temperature (Celsius/Fahrenheit)")
+print("2. Distance (Miles/Kilometers)")
+print("3. Weight (Pounds/Kilograms)")
+
+choice = input("\\nSelect a conversion type (1/2/3): ")
+
+if choice == "1":
+    # TEMPERATURE CONVERSION
+    print("\\n--- Temperature Conversion ---")
+    print("A. Celsius to Fahrenheit")
+    print("B. Fahrenheit to Celsius")
+
+    temp_choice = input("Choose conversion (A/B): ").upper()
+
+    if temp_choice == "A":
+        celsius = float(input("Enter temperature in Celsius: "))
+        fahrenheit = (celsius * 9/5) + 32
+        print(f"\\n{celsius}°C = {fahrenheit:.2f}°F")
+
+    elif temp_choice == "B":
+        fahrenheit = float(input("Enter temperature in Fahrenheit: "))
+        celsius = (fahrenheit - 32) * 5/9
+        print(f"\\n{fahrenheit}°F = {celsius:.2f}°C")
+
+    else:
+        print("Invalid choice!")
+
+elif choice == "2":
+    # DISTANCE CONVERSION
+    print("\\n--- Distance Conversion ---")
+    print("A. Miles to Kilometers")
+    print("B. Kilometers to Miles")
+
+    dist_choice = input("Choose conversion (A/B): ").upper()
+
+    if dist_choice == "A":
+        miles = float(input("Enter distance in miles: "))
+        kilometers = miles * 1.60934
+        print(f"\\n{miles} miles = {kilometers:.2f} kilometers")
+
+    elif dist_choice == "B":
+        kilometers = float(input("Enter distance in kilometers: "))
+        miles = kilometers / 1.60934
+        print(f"\\n{kilometers} km = {miles:.2f} miles")
+
+    else:
+        print("Invalid choice!")
+
+elif choice == "3":
+    # WEIGHT CONVERSION
+    print("\\n--- Weight Conversion ---")
+    print("A. Pounds to Kilograms")
+    print("B. Kilograms to Pounds")
+
+    weight_choice = input("Choose conversion (A/B): ").upper()
+
+    if weight_choice == "A":
+        pounds = float(input("Enter weight in pounds: "))
+        kilograms = pounds * 0.453592
+        print(f"\\n{pounds} lbs = {kilograms:.2f} kg")
+
+    elif weight_choice == "B":
+        kilograms = float(input("Enter weight in kilograms: "))
+        pounds = kilograms / 0.453592
+        print(f"\\n{kilograms} kg = {pounds:.2f} lbs")
+
+    else:
+        print("Invalid choice!")
+
+else:
+    print("\\nInvalid selection!")
+
+print("\\nThank you for using the converter!")`}
+                      language="python"
+                    />
+                  </div>
+
+                  <div className="text-center p-4 bg-blue-100 rounded-lg border-2 border-blue-300 mt-6">
+                    <p className="text-blue-800 font-semibold">💡 Learning Tip</p>
+                    <p className="text-sm text-blue-700">Study these solutions and try to understand how each part works. Then try building your own variations!</p>
+                  </div>
+                </div>
+              )}
+            </CardContent>
+          </Card>
         </TabsContent>
       </Tabs>
 

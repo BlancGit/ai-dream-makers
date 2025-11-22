@@ -3235,7 +3235,7 @@ class ListMethods
                   <div className="space-y-4">
                     <h3 className="text-xl font-bold text-blue-600">💡 Basic While Loop</h3>
                     <CodeEditor
-                      code={`using System;
+                      initialCode={`using System;
 
 class Program
 {
@@ -3261,7 +3261,7 @@ class Program
                       While loops are great for validating user input:
                     </p>
                     <CodeEditor
-                      code={`string password = "";
+                      initialCode={`string password = "";
 
 while (password != "secret")
 {
@@ -3277,7 +3277,7 @@ Console.WriteLine("Access granted!");`}
                   <div className="space-y-4">
                     <h3 className="text-xl font-bold text-blue-600">🔢 Countdown Example</h3>
                     <CodeEditor
-                      code={`int countdown = 10;
+                      initialCode={`int countdown = 10;
 
 while (countdown >= 1)
 {
@@ -3313,7 +3313,7 @@ Console.WriteLine("Blastoff!");`}
                     <details className="p-4 bg-muted rounded-lg">
                       <summary className="cursor-pointer font-semibold">💡 Click to see solution</summary>
                       <CodeEditor
-                        code={`int secretNumber = 7;
+                        initialCode={`int secretNumber = 7;
 int guess = 0;
 
 while (guess != secretNumber)
@@ -3375,7 +3375,7 @@ while (guess != secretNumber)
                   <div className="space-y-4">
                     <h3 className="text-xl font-bold text-purple-600">💡 Basic For Loop</h3>
                     <CodeEditor
-                      code={`for (int i = 1; i <= 5; i++)
+                      initialCode={`for (int i = 1; i <= 5; i++)
 {
     Console.WriteLine(i);
 }
@@ -3392,7 +3392,7 @@ while (guess != secretNumber)
                   <div className="space-y-4">
                     <h3 className="text-xl font-bold text-purple-600">🔢 Multiplication Table</h3>
                     <CodeEditor
-                      code={`int number = 7;
+                      initialCode={`int number = 7;
 
 for (int i = 1; i <= 10; i++)
 {
@@ -3429,7 +3429,7 @@ for (int i = 1; i <= 10; i++)
                       You can put loops inside other loops to create patterns:
                     </p>
                     <CodeEditor
-                      code={`// Create a rectangle pattern
+                      initialCode={`// Create a rectangle pattern
 for (int row = 1; row <= 3; row++)
 {
     for (int col = 1; col <= 5; col++)
@@ -3450,7 +3450,7 @@ for (int row = 1; row <= 3; row++)
                   <div className="space-y-4">
                     <h3 className="text-xl font-bold text-purple-600">📐 Triangle Pattern</h3>
                     <CodeEditor
-                      code={`for (int row = 1; row <= 5; row++)
+                      initialCode={`for (int row = 1; row <= 5; row++)
 {
     for (int col = 1; col <= row; col++)
     {
@@ -3472,7 +3472,7 @@ for (int row = 1; row <= 3; row++)
                   <div className="space-y-4">
                     <h3 className="text-xl font-bold text-purple-600">🎮 Multiplication Table Grid</h3>
                     <CodeEditor
-                      code={`for (int row = 1; row <= 5; row++)
+                      initialCode={`for (int row = 1; row <= 5; row++)
 {
     for (int col = 1; col <= 5; col++)
     {
@@ -3500,7 +3500,7 @@ for (int row = 1; row <= 3; row++)
                     <details className="p-4 bg-muted rounded-lg">
                       <summary className="cursor-pointer font-semibold">💡 Click to see solution</summary>
                       <CodeEditor
-                        code={`for (int row = 1; row <= 5; row++)
+                        initialCode={`for (int row = 1; row <= 5; row++)
 {
     for (int col = 1; col <= row; col++)
     {
@@ -3564,7 +3564,7 @@ for (int row = 1; row <= 3; row++)
                       Use <code className="bg-muted px-2 py-1 rounded">break</code> to exit a loop early:
                     </p>
                     <CodeEditor
-                      code={`for (int i = 1; i <= 10; i++)
+                      initialCode={`for (int i = 1; i <= 10; i++)
 {
     if (i == 5)
     {
@@ -3583,7 +3583,7 @@ for (int row = 1; row <= 3; row++)
                       Use <code className="bg-muted px-2 py-1 rounded">continue</code> to skip to the next iteration:
                     </p>
                     <CodeEditor
-                      code={`for (int i = 1; i <= 5; i++)
+                      initialCode={`for (int i = 1; i <= 5; i++)
 {
     if (i == 3)
     {
@@ -3599,7 +3599,7 @@ for (int row = 1; row <= 3; row++)
                   <div className="space-y-4">
                     <h3 className="text-xl font-bold text-green-600">🎯 Practical Example: Input Validation</h3>
                     <CodeEditor
-                      code={`while (true) // Infinite loop
+                      initialCode={`while (true) // Infinite loop
 {
     Console.Write("Enter a number (1-10): ");
     int number = Convert.ToInt32(Console.ReadLine());
@@ -3628,7 +3628,7 @@ for (int row = 1; row <= 3; row++)
                           Calculate the sum of numbers from 1 to N (user input).
                         </p>
                         <CodeEditor
-                          code={`Console.Write("Enter a number: ");
+                          initialCode={`Console.Write("Enter a number: ");
 int num = Convert.ToInt32(Console.ReadLine());
 
 int sum = 0;
@@ -3648,7 +3648,7 @@ Console.WriteLine($"Sum: {sum}");`}
                           Print numbers 1-30, but print "Fizz" for multiples of 3, "Buzz" for multiples of 5, and "FizzBuzz" for both!
                         </p>
                         <CodeEditor
-                          code={`for (int i = 1; i <= 30; i++)
+                          initialCode={`for (int i = 1; i <= 30; i++)
 {
     if (i % 3 == 0 && i % 5 == 0)
         Console.WriteLine("FizzBuzz");
@@ -3669,7 +3669,7 @@ Console.WriteLine($"Sum: {sum}");`}
                           Calculate n! (1 × 2 × 3 × ... × n)
                         </p>
                         <CodeEditor
-                          code={`Console.Write("Enter a number: ");
+                          initialCode={`Console.Write("Enter a number: ");
 int num = Convert.ToInt32(Console.ReadLine());
 
 int factorial = 1;
@@ -3689,7 +3689,7 @@ Console.WriteLine($"{num}! = {factorial}");`}
                           Create a centered pyramid of stars!
                         </p>
                         <CodeEditor
-                          code={`int height = 5;
+                          initialCode={`int height = 5;
 
 for (int row = 1; row <= height; row++)
 {
