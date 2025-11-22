@@ -1,0 +1,1086 @@
+PYTHON LESSON 3: Project Time - Choose Your Adventure!
+=====================================================
+
+LESSON DURATION: 60 minutes
+
+-----------------------------------------------------------
+PART 1: INTRODUCTION (5 minutes)
+-----------------------------------------------------------
+
+Welcome to Project Day!
+
+What You've Learned So Far:
+✓ Variables and data types (string, int, float, bool)
+✓ User input with input()
+✓ Output with print()
+✓ Math and string operations
+✓ Conditional statements (if/elif/else)
+✓ Comparison operators (==, !=, >, <, >=, <=)
+✓ Logical operators (and, or, not)
+
+Today's Goal:
+Build a complete project using everything you've learned! You'll choose ONE of three projects to work on.
+
+Project Options:
+1. Interactive Story Adventure - Create a branching story game
+2. Personality Quiz - Build a fun personality test
+3. Multi-Unit Converter - Make a versatile conversion calculator
+
+-----------------------------------------------------------
+PART 2: PROJECT SELECTION (5 minutes)
+-----------------------------------------------------------
+
+Take a moment to read through all three project descriptions below.
+Think about which one sounds most interesting to you!
+
+PROJECT 1: Interactive Story Adventure
+- Create a text-based adventure game with multiple paths
+- Players make choices that affect the story outcome
+- Multiple endings based on decisions
+- Great for creative storytellers!
+
+PROJECT 2: Personality Quiz
+- Build a quiz that determines personality type or result
+- Ask 5-7 questions with multiple choice answers
+- Calculate results based on responses
+- Great for those who like quizzes and categories!
+
+PROJECT 3: Multi-Unit Converter
+- Create a tool that converts between different units
+- Support multiple conversion types (temperature, distance, weight)
+- Handle user input and display formatted results
+- Great for math lovers and practical thinkers!
+
+Choose your project and let's get started!
+
+-----------------------------------------------------------
+PROJECT 1: INTERACTIVE STORY ADVENTURE
+-----------------------------------------------------------
+
+OVERVIEW:
+Create a branching story where player choices determine the outcome.
+Your story should have at least 5 decision points and 3 different endings.
+
+REQUIREMENTS:
+✓ Welcome message introducing the story
+✓ At least 5 choices for the player to make
+✓ Use if/elif/else to handle different paths
+✓ At least 3 unique endings
+✓ Creative story theme (fantasy, sci-fi, mystery, etc.)
+
+STARTER CODE:
+
+print("=" * 50)
+print("THE ENCHANTED FOREST ADVENTURE")
+print("=" * 50)
+print("\nWelcome, brave adventurer!")
+
+name = input("What is your name? ")
+print(f"\nGreetings, {name}! Your adventure begins...\n")
+
+print("You wake up at the edge of a mysterious forest.")
+print("Two paths lie before you:")
+print("1. A bright path with singing birds")
+print("2. A dark path with glowing mushrooms")
+
+choice1 = input("\nWhich path do you take? (1 or 2): ")
+
+if choice1 == "1":
+    print("\nYou walk down the bright path.")
+    print("You encounter a friendly fairy!")
+
+    fairy_choice = input("Do you accept the fairy's gift? (yes/no): ")
+
+    if fairy_choice.lower() == "yes":
+        print("\nThe fairy gives you magical wings!")
+        # Continue your story here...
+
+    else:
+        print("\nYou politely decline and continue walking.")
+        # Continue your story here...
+
+elif choice1 == "2":
+    print("\nYou venture down the dark path.")
+    print("You find a mysterious glowing crystal!")
+
+    crystal_choice = input("Do you touch the crystal? (yes/no): ")
+
+    # Continue your story here...
+
+else:
+    print("\nInvalid choice! You're lost in the forest forever.")
+    print("GAME OVER - Bad Ending")
+
+# Add more decision points and endings!
+
+TIPS FOR SUCCESS:
+- Plan your story on paper first (draw a flowchart!)
+- Make choices meaningful and interesting
+- Add descriptive text to make it immersive
+- Test all paths to make sure they work
+- Use .lower() to handle different text inputs
+
+CHALLENGE ADDITIONS:
+- Add a health or inventory system using variables
+- Include a scoring system for different choices
+- Create secret paths with specific keyword answers
+- Add ASCII art for dramatic moments
+
+-----------------------------------------------------------
+PROJECT 2: PERSONALITY QUIZ
+-----------------------------------------------------------
+
+OVERVIEW:
+Create a fun personality quiz that asks questions and determines a result.
+Your quiz should ask 5-7 questions and give one of 4 possible results.
+
+REQUIREMENTS:
+✓ Welcome message explaining the quiz theme
+✓ 5-7 multiple choice questions
+✓ Track answers with variables
+✓ Calculate a result based on answers
+✓ Display a personality type or result with description
+
+QUIZ THEMES (Choose one or create your own!):
+- What type of programmer are you?
+- Which animal are you?
+- What's your learning style?
+- Which season matches your personality?
+- What career suits you best?
+
+STARTER CODE:
+
+print("=" * 50)
+print("WHAT TYPE OF CODER ARE YOU?")
+print("=" * 50)
+print("\nAnswer these questions to discover your coding personality!\n")
+
+# Score tracking variables
+creative_score = 0
+logical_score = 0
+social_score = 0
+practical_score = 0
+
+# Question 1
+print("Question 1: How do you approach a new problem?")
+print("A. Think creatively and try unique solutions")
+print("B. Break it down logically step by step")
+print("C. Ask others for their ideas first")
+print("D. Look for the most practical solution")
+
+answer1 = input("Your answer (A/B/C/D): ").upper()
+
+if answer1 == "A":
+    creative_score += 1
+elif answer1 == "B":
+    logical_score += 1
+elif answer1 == "C":
+    social_score += 1
+elif answer1 == "D":
+    practical_score += 1
+
+# Question 2
+print("\nQuestion 2: What's your favorite part of coding?")
+print("A. Designing beautiful interfaces")
+print("B. Solving complex algorithms")
+print("C. Building tools that help people")
+print("D. Making things work efficiently")
+
+answer2 = input("Your answer (A/B/C/D): ").upper()
+
+if answer2 == "A":
+    creative_score += 1
+elif answer2 == "B":
+    logical_score += 1
+elif answer2 == "C":
+    social_score += 1
+elif answer2 == "D":
+    practical_score += 1
+
+# Add 3-5 more questions following the same pattern!
+
+# Calculate result
+print("\n" + "=" * 50)
+print("YOUR RESULT:")
+print("=" * 50)
+
+if creative_score >= logical_score and creative_score >= social_score and creative_score >= practical_score:
+    print("\n🎨 THE CREATIVE CODER")
+    print("You love designing beautiful interfaces and thinking outside the box!")
+    print("Best suited for: Frontend development, game design, UI/UX")
+
+elif logical_score >= creative_score and logical_score >= social_score and logical_score >= practical_score:
+    print("\n🧠 THE LOGICAL THINKER")
+    print("You excel at solving complex problems and algorithms!")
+    print("Best suited for: Backend development, data structures, AI/ML")
+
+elif social_score >= creative_score and social_score >= logical_score and social_score >= practical_score:
+    print("\n🤝 THE COLLABORATIVE BUILDER")
+    print("You love working with others and building helpful tools!")
+    print("Best suited for: Full-stack development, team projects, open source")
+
+else:
+    print("\n⚙️ THE PRACTICAL ENGINEER")
+    print("You focus on efficiency and making things work reliably!")
+    print("Best suited for: System design, DevOps, optimization")
+
+TIPS FOR SUCCESS:
+- Create 5-7 questions for better accuracy
+- Make questions fun and relatable
+- Balance your answer options across categories
+- Write engaging descriptions for each result
+- Use .upper() to handle lowercase answers
+
+CHALLENGE ADDITIONS:
+- Add more result categories (6-8 types)
+- Include percentage breakdowns for each trait
+- Add follow-up questions based on previous answers
+- Create a "perfect match" career suggestion
+
+-----------------------------------------------------------
+PROJECT 3: MULTI-UNIT CONVERTER
+-----------------------------------------------------------
+
+OVERVIEW:
+Create a conversion tool that handles multiple types of unit conversions.
+Your converter should support at least 3 conversion categories.
+
+REQUIREMENTS:
+✓ Welcome message and menu of conversion types
+✓ At least 3 conversion categories (temperature, distance, weight, etc.)
+✓ Handle user input for values and units
+✓ Perform accurate calculations
+✓ Display results in a clean format
+✓ Option to perform another conversion
+
+STARTER CODE:
+
+print("=" * 50)
+print("UNIVERSAL UNIT CONVERTER")
+print("=" * 50)
+print("\nWelcome! This tool can convert between different units.\n")
+
+print("Available Conversions:")
+print("1. Temperature (Celsius/Fahrenheit)")
+print("2. Distance (Miles/Kilometers)")
+print("3. Weight (Pounds/Kilograms)")
+
+choice = input("\nSelect a conversion type (1/2/3): ")
+
+if choice == "1":
+    # TEMPERATURE CONVERSION
+    print("\n--- Temperature Conversion ---")
+    print("A. Celsius to Fahrenheit")
+    print("B. Fahrenheit to Celsius")
+
+    temp_choice = input("Choose conversion (A/B): ").upper()
+
+    if temp_choice == "A":
+        celsius = float(input("Enter temperature in Celsius: "))
+        fahrenheit = (celsius * 9/5) + 32
+        print(f"\n{celsius}°C = {fahrenheit}°F")
+
+    elif temp_choice == "B":
+        fahrenheit = float(input("Enter temperature in Fahrenheit: "))
+        celsius = (fahrenheit - 32) * 5/9
+        print(f"\n{fahrenheit}°F = {celsius}°C")
+
+    else:
+        print("Invalid choice!")
+
+elif choice == "2":
+    # DISTANCE CONVERSION
+    print("\n--- Distance Conversion ---")
+    print("A. Miles to Kilometers")
+    print("B. Kilometers to Miles")
+
+    dist_choice = input("Choose conversion (A/B): ").upper()
+
+    if dist_choice == "A":
+        miles = float(input("Enter distance in miles: "))
+        kilometers = miles * 1.60934
+        print(f"\n{miles} miles = {kilometers:.2f} kilometers")
+
+    elif dist_choice == "B":
+        kilometers = float(input("Enter distance in kilometers: "))
+        miles = kilometers / 1.60934
+        print(f"\n{kilometers} km = {miles:.2f} miles")
+
+    else:
+        print("Invalid choice!")
+
+elif choice == "3":
+    # WEIGHT CONVERSION
+    print("\n--- Weight Conversion ---")
+    print("A. Pounds to Kilograms")
+    print("B. Kilograms to Pounds")
+
+    weight_choice = input("Choose conversion (A/B): ").upper()
+
+    if weight_choice == "A":
+        pounds = float(input("Enter weight in pounds: "))
+        kilograms = pounds * 0.453592
+        print(f"\n{pounds} lbs = {kilograms:.2f} kg")
+
+    elif weight_choice == "B":
+        kilograms = float(input("Enter weight in kilograms: "))
+        pounds = kilograms / 0.453592
+        print(f"\n{kilograms} kg = {pounds:.2f} lbs")
+
+    else:
+        print("Invalid choice!")
+
+else:
+    print("\nInvalid selection!")
+
+print("\nThank you for using the converter!")
+
+CONVERSION FORMULAS:
+Temperature:
+- Celsius to Fahrenheit: (C × 9/5) + 32
+- Fahrenheit to Celsius: (F - 32) × 5/9
+
+Distance:
+- Miles to Kilometers: miles × 1.60934
+- Kilometers to Miles: km ÷ 1.60934
+
+Weight:
+- Pounds to Kilograms: lbs × 0.453592
+- Kilograms to Pounds: kg ÷ 0.453592
+
+TIPS FOR SUCCESS:
+- Use float() for decimal inputs
+- Round results with :.2f for 2 decimal places
+- Test with known conversions to verify accuracy
+- Add input validation where possible
+- Make menus clear and easy to navigate
+
+CHALLENGE ADDITIONS:
+- Add more conversion types (time, volume, speed, currency)
+- Create a "reverse" option to go back to main menu
+- Add input validation (reject negative temps in Kelvin, etc.)
+- Include fun facts about units after conversion
+- Support multiple unit chains (feet -> inches -> centimeters)
+
+-----------------------------------------------------------
+PART 3: WORK TIME (40 minutes)
+-----------------------------------------------------------
+
+Now it's time to build your project!
+
+WORKFLOW:
+1. Choose your project (5 min)
+2. Plan your project on paper (5 min)
+   - What features will you include?
+   - What variables do you need?
+   - Draw a flowchart for complex logic
+3. Start with the starter code (5 min)
+4. Build your project step by step (20 min)
+   - Test frequently as you add features
+   - Fix errors as they come up
+5. Test all possibilities (5 min)
+   - Try different inputs
+   - Make sure all paths work
+   - Test edge cases
+
+DEBUGGING TIPS:
+- Run your code frequently to catch errors early
+- Print variable values to check what's happening
+- Read error messages carefully
+- Make sure indentation is consistent
+- Check for typos in variable names
+
+REMEMBER:
+- It's okay if your project isn't perfect!
+- Focus on getting it working first
+- You can always add more features later
+- Ask for help if you get stuck
+- Have fun and be creative!
+
+-----------------------------------------------------------
+PART 4: SHARING & WRAP UP (10 minutes)
+-----------------------------------------------------------
+
+DEMO TIME:
+- Run your completed project
+- Show at least 2 different paths/outcomes
+- Explain one challenge you overcame
+- Share what you're most proud of
+
+REFLECTION QUESTIONS:
+1. What was the hardest part of your project?
+2. What would you add if you had more time?
+3. What did you learn about planning vs. coding?
+4. How did you use conditionals in your project?
+
+KEY TAKEAWAYS:
+✓ Planning before coding makes development easier
+✓ Testing frequently helps catch bugs early
+✓ Breaking problems into smaller steps helps
+✓ Projects reinforce what you've learned in lessons
+✓ Creativity makes coding more fun!
+
+-----------------------------------------------------------
+HOMEWORK & EXTENSIONS
+-----------------------------------------------------------
+
+FINISH YOUR PROJECT:
+If you didn't complete your project in class, finish it at home!
+
+EXTEND YOUR PROJECT:
+Add at least 2 new features to make it even better:
+
+For Story Adventure:
+- Add an inventory system (track items collected)
+- Include a health/points system
+- Create more branching paths
+- Add color or ASCII art
+
+For Personality Quiz:
+- Add 3 more questions
+- Create 2 more result types
+- Include percentage scores for each category
+- Add a "share your result" message
+
+For Unit Converter:
+- Add 2 more conversion types
+- Create a "favorites" option for common conversions
+- Add input validation and error messages
+- Include conversion history tracker
+
+CHALLENGE PROJECTS:
+Try building one of the other two projects!
+Or combine elements from multiple projects.
+
+NEXT LESSON PREVIEW:
+We'll learn about loops (for and while) to make our code more powerful and efficient!
+
+-----------------------------------------------------------
+COMMON ERRORS & TROUBLESHOOTING
+-----------------------------------------------------------
+
+1. IndentationError: Make sure all code blocks are properly indented
+2. NameError: Check variable names for typos
+3. Invalid input: Use .lower() or .upper() to handle different cases
+4. Logic errors: Draw flowcharts to visualize your decision paths
+5. Missing else: Make sure you handle invalid inputs
+6. String vs Number: Remember to convert input() when doing math
+
+NEED HELP?
+- Review Lesson 1 for variables and operations
+- Review Lesson 2 for conditionals and logic
+- Test small pieces of code separately
+- Break complex problems into smaller parts
+
+===========================================================
+🔒 SOLUTION REVEAL (TEACHERS & STUDENTS WHO NEED HELP)
+===========================================================
+
+If you're stuck and need to see complete solutions, you can unlock them below.
+Try your best first! Learning happens when you struggle through problems.
+
+UNLOCK CODE TO REVEAL SOLUTIONS:
+
+password = input("Enter the password to reveal solutions: ")
+
+if password == "qwerty1234":
+    print("\n✓ ACCESS GRANTED - Solutions unlocked!\n")
+    print("Scroll down to see complete project solutions...")
+else:
+    print("\n✗ ACCESS DENIED - Keep working on your project!")
+
+-----------------------------------------------------------
+COMPLETE SOLUTION - PROJECT 1: INTERACTIVE STORY ADVENTURE
+-----------------------------------------------------------
+
+# THE ENCHANTED FOREST ADVENTURE - Complete Version
+
+print("=" * 50)
+print("THE ENCHANTED FOREST ADVENTURE")
+print("=" * 50)
+print("\nWelcome, brave adventurer!")
+
+name = input("What is your name? ")
+print(f"\nGreetings, {name}! Your adventure begins...\n")
+
+# Starting point
+print("You wake up at the edge of a mysterious forest.")
+print("Two paths lie before you:")
+print("1. A bright path with singing birds")
+print("2. A dark path with glowing mushrooms")
+
+choice1 = input("\nWhich path do you take? (1 or 2): ")
+
+if choice1 == "1":
+    # BRIGHT PATH
+    print("\n" + "=" * 50)
+    print("You walk down the bright path.")
+    print("Sunlight filters through the leaves.")
+    print("You encounter a friendly fairy with sparkling wings!")
+    print("=" * 50)
+
+    fairy_choice = input("\nDo you accept the fairy's gift? (yes/no): ")
+
+    if fairy_choice.lower() == "yes":
+        print("\nThe fairy gives you magical wings!")
+        print("You feel lighter and more powerful.")
+        print("\nAs you fly above the trees, you see two locations:")
+        print("1. A golden castle in the distance")
+        print("2. A mysterious cave below")
+
+        wing_choice = input("\nWhere do you fly? (1 or 2): ")
+
+        if wing_choice == "1":
+            print("\n" + "=" * 50)
+            print("You fly to the golden castle.")
+            print("The king greets you warmly!")
+            print(f"'Welcome, {name}! We've been expecting you.'")
+            print("You are crowned as the Royal Guardian of the Sky!")
+            print("\n🌟 ENDING 1: ROYAL GUARDIAN - You achieved greatness!")
+            print("=" * 50)
+
+        elif wing_choice == "2":
+            print("\n" + "=" * 50)
+            print("You fly down to the mysterious cave.")
+            print("Inside, you discover an ancient dragon!")
+
+            dragon_choice = input("\nDo you try to befriend the dragon? (yes/no): ")
+
+            if dragon_choice.lower() == "yes":
+                print("\nThe dragon is impressed by your bravery!")
+                print("It teaches you ancient magic and wisdom.")
+                print(f"\n🐉 ENDING 2: DRAGON ALLY - You gained ultimate knowledge!")
+                print("=" * 50)
+            else:
+                print("\nYou try to escape, but your wings fail!")
+                print("The dragon captures you for trespassing.")
+                print("\n💀 ENDING 3: CAPTURED - Maybe befriending was better...")
+                print("=" * 50)
+        else:
+            print("\nYou hesitate too long and your wings disappear!")
+            print("You fall safely but lose your magic.")
+            print("\n😔 ENDING 4: LOST MAGIC - The adventure ends here.")
+            print("=" * 50)
+
+    else:
+        print("\nYou politely decline the fairy's gift.")
+        print("The fairy respects your choice and points you forward.")
+        print("\nYou continue walking and find a fork in the road:")
+        print("1. Follow the sound of rushing water")
+        print("2. Follow the sound of music")
+
+        sound_choice = input("\nWhich sound do you follow? (1 or 2): ")
+
+        if sound_choice == "1":
+            print("\n" + "=" * 50)
+            print("You discover a beautiful waterfall!")
+            print("Behind it is a hidden treasure chest!")
+            print("You open it and find 1000 gold coins!")
+            print(f"\n💰 ENDING 5: TREASURE HUNTER - You're rich, {name}!")
+            print("=" * 50)
+
+        elif sound_choice == "2":
+            print("\n" + "=" * 50)
+            print("You find a group of forest musicians!")
+            print("They invite you to join their band.")
+            print("You spend your days making beautiful music!")
+            print("\n🎵 ENDING 6: FOREST MUSICIAN - A peaceful life!")
+            print("=" * 50)
+
+        else:
+            print("\nYou stand still, unable to decide.")
+            print("Night falls and you fall asleep under the stars.")
+            print("\n😴 ENDING 7: DREAMER - Sometimes rest is best.")
+            print("=" * 50)
+
+elif choice1 == "2":
+    # DARK PATH
+    print("\n" + "=" * 50)
+    print("You venture down the dark path.")
+    print("Glowing mushrooms light your way.")
+    print("You find a mysterious glowing crystal on a pedestal!")
+    print("=" * 50)
+
+    crystal_choice = input("\nDo you touch the crystal? (yes/no): ")
+
+    if crystal_choice.lower() == "yes":
+        print("\nThe crystal glows brighter as you touch it!")
+        print("You gain the power to see in the dark!")
+        print("\nYou notice two hidden passages:")
+        print("1. A passage going up")
+        print("2. A passage going down")
+
+        passage_choice = input("\nWhich passage do you take? (1 or 2): ")
+
+        if passage_choice == "1":
+            print("\n" + "=" * 50)
+            print("You climb up and emerge at a wizard's tower!")
+            print("The wizard is impressed by your crystal.")
+            print("He offers to teach you magic!")
+            print(f"\n🔮 ENDING 8: WIZARD'S APPRENTICE - {name} the Mage!")
+            print("=" * 50)
+
+        elif passage_choice == "2":
+            print("\n" + "=" * 50)
+            print("You descend deep underground.")
+            print("You discover an entire underground city!")
+            print("The crystal allows you to communicate with them.")
+            print("\n🏛️ ENDING 9: UNDERGROUND EXPLORER - A new civilization!")
+            print("=" * 50)
+
+        else:
+            print("\nYou drop the crystal and it shatters!")
+            print("The magic is released, turning you into a glowing spirit.")
+            print("\n👻 ENDING 10: SPIRIT FORM - A strange transformation!")
+            print("=" * 50)
+
+    else:
+        print("\nYou leave the crystal alone and continue walking.")
+        print("Smart choice! The crystal was cursed.")
+        print("You find an exit and return home safely.")
+        print(f"\n🏡 ENDING 11: SAFE RETURN - Wisdom saved you, {name}!")
+        print("=" * 50)
+
+else:
+    print("\n" + "=" * 50)
+    print("Invalid choice! You're too confused to continue.")
+    print("You wander in circles until a friendly owl guides you home.")
+    print("\n🦉 ENDING 12: GUIDED HOME - Better luck next time!")
+    print("=" * 50)
+
+print("\nTHE END")
+print("Thank you for playing!")
+
+-----------------------------------------------------------
+COMPLETE SOLUTION - PROJECT 2: PERSONALITY QUIZ
+-----------------------------------------------------------
+
+# WHAT TYPE OF CODER ARE YOU? - Complete Version
+
+print("=" * 50)
+print("WHAT TYPE OF CODER ARE YOU?")
+print("=" * 50)
+print("\nAnswer these questions to discover your coding personality!\n")
+
+# Score tracking variables
+creative_score = 0
+logical_score = 0
+social_score = 0
+practical_score = 0
+
+# Question 1
+print("Question 1: How do you approach a new problem?")
+print("A. Think creatively and try unique solutions")
+print("B. Break it down logically step by step")
+print("C. Ask others for their ideas first")
+print("D. Look for the most practical solution")
+
+answer1 = input("Your answer (A/B/C/D): ").upper()
+
+if answer1 == "A":
+    creative_score += 1
+elif answer1 == "B":
+    logical_score += 1
+elif answer1 == "C":
+    social_score += 1
+elif answer1 == "D":
+    practical_score += 1
+
+# Question 2
+print("\nQuestion 2: What's your favorite part of coding?")
+print("A. Designing beautiful interfaces")
+print("B. Solving complex algorithms")
+print("C. Building tools that help people")
+print("D. Making things work efficiently")
+
+answer2 = input("Your answer (A/B/C/D): ").upper()
+
+if answer2 == "A":
+    creative_score += 1
+elif answer2 == "B":
+    logical_score += 1
+elif answer2 == "C":
+    social_score += 1
+elif answer2 == "D":
+    practical_score += 1
+
+# Question 3
+print("\nQuestion 3: What's your ideal work environment?")
+print("A. A colorful, inspiring creative space")
+print("B. A quiet room with whiteboards for planning")
+print("C. A collaborative office with team areas")
+print("D. A simple, organized workspace")
+
+answer3 = input("Your answer (A/B/C/D): ").upper()
+
+if answer3 == "A":
+    creative_score += 1
+elif answer3 == "B":
+    logical_score += 1
+elif answer3 == "C":
+    social_score += 1
+elif answer3 == "D":
+    practical_score += 1
+
+# Question 4
+print("\nQuestion 4: How do you learn best?")
+print("A. Experimenting and trying new things")
+print("B. Reading documentation and understanding theory")
+print("C. Discussing and learning from others")
+print("D. Following tutorials and practical examples")
+
+answer4 = input("Your answer (A/B/C/D): ").upper()
+
+if answer4 == "A":
+    creative_score += 1
+elif answer4 == "B":
+    logical_score += 1
+elif answer4 == "C":
+    social_score += 1
+elif answer4 == "D":
+    practical_score += 1
+
+# Question 5
+print("\nQuestion 5: What motivates you most?")
+print("A. Creating something visually stunning")
+print("B. Solving a challenging puzzle")
+print("C. Making a positive impact on users")
+print("D. Building something reliable and useful")
+
+answer5 = input("Your answer (A/B/C/D): ").upper()
+
+if answer5 == "A":
+    creative_score += 1
+elif answer5 == "B":
+    logical_score += 1
+elif answer5 == "C":
+    social_score += 1
+elif answer5 == "D":
+    practical_score += 1
+
+# Question 6
+print("\nQuestion 6: When you get stuck on a bug, you:")
+print("A. Try creative workarounds")
+print("B. Systematically debug line by line")
+print("C. Ask for help or look at examples")
+print("D. Search for the most common solution")
+
+answer6 = input("Your answer (A/B/C/D): ").upper()
+
+if answer6 == "A":
+    creative_score += 1
+elif answer6 == "B":
+    logical_score += 1
+elif answer6 == "C":
+    social_score += 1
+elif answer6 == "D":
+    practical_score += 1
+
+# Question 7
+print("\nQuestion 7: Your dream project would be:")
+print("A. A beautiful website or game")
+print("B. An AI system or complex algorithm")
+print("C. An app that connects people")
+print("D. A tool that automates daily tasks")
+
+answer7 = input("Your answer (A/B/C/D): ").upper()
+
+if answer7 == "A":
+    creative_score += 1
+elif answer7 == "B":
+    logical_score += 1
+elif answer7 == "C":
+    social_score += 1
+elif answer7 == "D":
+    practical_score += 1
+
+# Calculate and display result
+print("\n" + "=" * 50)
+print("YOUR RESULT:")
+print("=" * 50)
+print(f"\nScores:")
+print(f"Creative: {creative_score}/7")
+print(f"Logical: {logical_score}/7")
+print(f"Social: {social_score}/7")
+print(f"Practical: {practical_score}/7")
+print()
+
+if creative_score >= logical_score and creative_score >= social_score and creative_score >= practical_score:
+    print("🎨 THE CREATIVE CODER")
+    print("=" * 50)
+    print("You love designing beautiful interfaces and thinking outside the box!")
+    print("You bring artistic vision to technical projects.")
+    print("\nStrengths:")
+    print("- Visual design and user experience")
+    print("- Innovation and unique solutions")
+    print("- Making technology beautiful")
+    print("\nBest suited for:")
+    print("- Frontend development")
+    print("- Game design")
+    print("- UI/UX development")
+    print("- Creative coding and animations")
+
+elif logical_score >= creative_score and logical_score >= social_score and logical_score >= practical_score:
+    print("🧠 THE LOGICAL THINKER")
+    print("=" * 50)
+    print("You excel at solving complex problems and algorithms!")
+    print("You love the mathematical beauty of code.")
+    print("\nStrengths:")
+    print("- Problem-solving and optimization")
+    print("- Understanding complex systems")
+    print("- Analytical thinking")
+    print("\nBest suited for:")
+    print("- Backend development")
+    print("- Data structures and algorithms")
+    print("- AI/ML development")
+    print("- System architecture")
+
+elif social_score >= creative_score and social_score >= logical_score and social_score >= practical_score:
+    print("🤝 THE COLLABORATIVE BUILDER")
+    print("=" * 50)
+    print("You love working with others and building helpful tools!")
+    print("You understand that great software serves people.")
+    print("\nStrengths:")
+    print("- Teamwork and communication")
+    print("- User-focused development")
+    print("- Community building")
+    print("\nBest suited for:")
+    print("- Full-stack development")
+    print("- Team-based projects")
+    print("- Open source contributions")
+    print("- Product development")
+
+else:
+    print("⚙️ THE PRACTICAL ENGINEER")
+    print("=" * 50)
+    print("You focus on efficiency and making things work reliably!")
+    print("You value code that's robust and maintainable.")
+    print("\nStrengths:")
+    print("- Reliability and stability")
+    print("- Efficient solutions")
+    print("- Real-world problem solving")
+    print("\nBest suited for:")
+    print("- System design")
+    print("- DevOps and automation")
+    print("- Performance optimization")
+    print("- Infrastructure development")
+
+print("\n" + "=" * 50)
+print("Thank you for taking the quiz!")
+
+-----------------------------------------------------------
+COMPLETE SOLUTION - PROJECT 3: MULTI-UNIT CONVERTER
+-----------------------------------------------------------
+
+# UNIVERSAL UNIT CONVERTER - Complete Version
+
+print("=" * 50)
+print("UNIVERSAL UNIT CONVERTER")
+print("=" * 50)
+print("\nWelcome! This tool can convert between different units.\n")
+
+# Main loop for multiple conversions
+continue_converting = "yes"
+
+while continue_converting.lower() == "yes":
+    print("\nAvailable Conversions:")
+    print("1. Temperature (Celsius/Fahrenheit/Kelvin)")
+    print("2. Distance (Miles/Kilometers/Meters)")
+    print("3. Weight (Pounds/Kilograms/Grams)")
+    print("4. Time (Hours/Minutes/Seconds)")
+    print("5. Volume (Gallons/Liters/Milliliters)")
+
+    choice = input("\nSelect a conversion type (1/2/3/4/5): ")
+
+    if choice == "1":
+        # TEMPERATURE CONVERSION
+        print("\n" + "=" * 50)
+        print("TEMPERATURE CONVERSION")
+        print("=" * 50)
+        print("A. Celsius to Fahrenheit")
+        print("B. Fahrenheit to Celsius")
+        print("C. Celsius to Kelvin")
+        print("D. Kelvin to Celsius")
+
+        temp_choice = input("\nChoose conversion (A/B/C/D): ").upper()
+
+        if temp_choice == "A":
+            celsius = float(input("Enter temperature in Celsius: "))
+            fahrenheit = (celsius * 9/5) + 32
+            print(f"\n{celsius}°C = {fahrenheit:.2f}°F")
+
+        elif temp_choice == "B":
+            fahrenheit = float(input("Enter temperature in Fahrenheit: "))
+            celsius = (fahrenheit - 32) * 5/9
+            print(f"\n{fahrenheit}°F = {celsius:.2f}°C")
+
+        elif temp_choice == "C":
+            celsius = float(input("Enter temperature in Celsius: "))
+            kelvin = celsius + 273.15
+            print(f"\n{celsius}°C = {kelvin:.2f}K")
+
+        elif temp_choice == "D":
+            kelvin = float(input("Enter temperature in Kelvin: "))
+            celsius = kelvin - 273.15
+            print(f"\n{kelvin}K = {celsius:.2f}°C")
+
+        else:
+            print("\nInvalid choice!")
+
+    elif choice == "2":
+        # DISTANCE CONVERSION
+        print("\n" + "=" * 50)
+        print("DISTANCE CONVERSION")
+        print("=" * 50)
+        print("A. Miles to Kilometers")
+        print("B. Kilometers to Miles")
+        print("C. Meters to Feet")
+        print("D. Feet to Meters")
+
+        dist_choice = input("\nChoose conversion (A/B/C/D): ").upper()
+
+        if dist_choice == "A":
+            miles = float(input("Enter distance in miles: "))
+            kilometers = miles * 1.60934
+            print(f"\n{miles} miles = {kilometers:.2f} kilometers")
+
+        elif dist_choice == "B":
+            kilometers = float(input("Enter distance in kilometers: "))
+            miles = kilometers / 1.60934
+            print(f"\n{kilometers} km = {miles:.2f} miles")
+
+        elif dist_choice == "C":
+            meters = float(input("Enter distance in meters: "))
+            feet = meters * 3.28084
+            print(f"\n{meters} meters = {feet:.2f} feet")
+
+        elif dist_choice == "D":
+            feet = float(input("Enter distance in feet: "))
+            meters = feet / 3.28084
+            print(f"\n{feet} feet = {meters:.2f} meters")
+
+        else:
+            print("\nInvalid choice!")
+
+    elif choice == "3":
+        # WEIGHT CONVERSION
+        print("\n" + "=" * 50)
+        print("WEIGHT CONVERSION")
+        print("=" * 50)
+        print("A. Pounds to Kilograms")
+        print("B. Kilograms to Pounds")
+        print("C. Kilograms to Grams")
+        print("D. Grams to Kilograms")
+
+        weight_choice = input("\nChoose conversion (A/B/C/D): ").upper()
+
+        if weight_choice == "A":
+            pounds = float(input("Enter weight in pounds: "))
+            kilograms = pounds * 0.453592
+            print(f"\n{pounds} lbs = {kilograms:.2f} kg")
+
+        elif weight_choice == "B":
+            kilograms = float(input("Enter weight in kilograms: "))
+            pounds = kilograms / 0.453592
+            print(f"\n{kilograms} kg = {pounds:.2f} lbs")
+
+        elif weight_choice == "C":
+            kilograms = float(input("Enter weight in kilograms: "))
+            grams = kilograms * 1000
+            print(f"\n{kilograms} kg = {grams:.2f} g")
+
+        elif weight_choice == "D":
+            grams = float(input("Enter weight in grams: "))
+            kilograms = grams / 1000
+            print(f"\n{grams} g = {kilograms:.2f} kg")
+
+        else:
+            print("\nInvalid choice!")
+
+    elif choice == "4":
+        # TIME CONVERSION
+        print("\n" + "=" * 50)
+        print("TIME CONVERSION")
+        print("=" * 50)
+        print("A. Hours to Minutes")
+        print("B. Minutes to Hours")
+        print("C. Minutes to Seconds")
+        print("D. Seconds to Minutes")
+
+        time_choice = input("\nChoose conversion (A/B/C/D): ").upper()
+
+        if time_choice == "A":
+            hours = float(input("Enter time in hours: "))
+            minutes = hours * 60
+            print(f"\n{hours} hours = {minutes:.2f} minutes")
+
+        elif time_choice == "B":
+            minutes = float(input("Enter time in minutes: "))
+            hours = minutes / 60
+            print(f"\n{minutes} minutes = {hours:.2f} hours")
+
+        elif time_choice == "C":
+            minutes = float(input("Enter time in minutes: "))
+            seconds = minutes * 60
+            print(f"\n{minutes} minutes = {seconds:.2f} seconds")
+
+        elif time_choice == "D":
+            seconds = float(input("Enter time in seconds: "))
+            minutes = seconds / 60
+            print(f"\n{seconds} seconds = {minutes:.2f} minutes")
+
+        else:
+            print("\nInvalid choice!")
+
+    elif choice == "5":
+        # VOLUME CONVERSION
+        print("\n" + "=" * 50)
+        print("VOLUME CONVERSION")
+        print("=" * 50)
+        print("A. Gallons to Liters")
+        print("B. Liters to Gallons")
+        print("C. Liters to Milliliters")
+        print("D. Milliliters to Liters")
+
+        volume_choice = input("\nChoose conversion (A/B/C/D): ").upper()
+
+        if volume_choice == "A":
+            gallons = float(input("Enter volume in gallons: "))
+            liters = gallons * 3.78541
+            print(f"\n{gallons} gallons = {liters:.2f} liters")
+
+        elif volume_choice == "B":
+            liters = float(input("Enter volume in liters: "))
+            gallons = liters / 3.78541
+            print(f"\n{liters} liters = {gallons:.2f} gallons")
+
+        elif volume_choice == "C":
+            liters = float(input("Enter volume in liters: "))
+            milliliters = liters * 1000
+            print(f"\n{liters} liters = {milliliters:.2f} milliliters")
+
+        elif volume_choice == "D":
+            milliliters = float(input("Enter volume in milliliters: "))
+            liters = milliliters / 1000
+            print(f"\n{milliliters} ml = {liters:.2f} liters")
+
+        else:
+            print("\nInvalid choice!")
+
+    else:
+        print("\nInvalid selection!")
+
+    print("\n" + "=" * 50)
+    continue_converting = input("\nWould you like to convert another value? (yes/no): ")
+
+print("\nThank you for using the Universal Unit Converter!")
+print("Goodbye!")
+
+# NOTE: This solution uses a while loop which students haven't learned yet.
+# For students: You can remove the while loop and just run the converter once,
+# or manually copy/paste the code to run it multiple times!
+# A simpler version without loops would just do one conversion and end.
+
+===========================================================
+END OF SOLUTIONS
+===========================================================

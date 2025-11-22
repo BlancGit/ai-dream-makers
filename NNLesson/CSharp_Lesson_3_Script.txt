@@ -1,0 +1,633 @@
+C# LESSON 3: Loops and Repetition
+==================================
+
+LESSON DURATION: 60 minutes
+
+-----------------------------------------------------------
+PART 1: REVIEW & INTRODUCTION (5 minutes)
+-----------------------------------------------------------
+
+Quick Review:
+- Variables have types (int, string, double, bool)
+- Console.ReadLine() gets input, Console.WriteLine() displays output
+- if/else if/else make decisions
+- Comparison operators: ==, !=, >, <, >=, <=
+- Logical operators: && (AND), || (OR), ! (NOT)
+
+Today's Focus:
+Repeating code with loops! Instead of writing the same code multiple times, we can use loops to repeat actions.
+
+Real-world examples:
+- Counting from 1 to 100
+- Processing each item in a shopping list
+- Asking for input until it's valid
+- Running a game until the player quits
+
+-----------------------------------------------------------
+PART 2: WHILE LOOPS (15 minutes)
+-----------------------------------------------------------
+
+A while loop repeats code as long as a condition is true.
+
+Basic syntax:
+
+while (condition)
+{
+    // code to repeat
+}
+
+Example 1: Count to 5
+
+int count = 1;
+
+while (count <= 5)
+{
+    Console.WriteLine(count);
+    count++;  // Increment by 1
+}
+
+Output:
+1
+2
+3
+4
+5
+
+Example 2: User validation
+
+string password = "";
+
+while (password != "secret")
+{
+    Console.Write("Enter password: ");
+    password = Console.ReadLine();
+}
+
+Console.WriteLine("Access granted!");
+
+Example 3: Sum numbers
+
+int sum = 0;
+int number = 1;
+
+while (number <= 10)
+{
+    sum += number;  // Same as: sum = sum + number
+    number++;
+}
+
+Console.WriteLine($"Sum of 1 to 10 is: {sum}");  // 55
+
+Important:
+- Make sure the condition eventually becomes false!
+- Otherwise you get an infinite loop (program never stops)
+- Always update the loop variable inside the loop
+
+ACTIVITY: Create a countdown from 10 to 1, then print "Blastoff!"
+
+Solution:
+
+int countdown = 10;
+
+while (countdown >= 1)
+{
+    Console.WriteLine(countdown);
+    countdown--;
+}
+
+Console.WriteLine("Blastoff!");
+
+-----------------------------------------------------------
+PART 3: FOR LOOPS (15 minutes)
+-----------------------------------------------------------
+
+For loops are perfect when you know how many times to repeat.
+
+Basic syntax:
+
+for (initialization; condition; update)
+{
+    // code to repeat
+}
+
+Example 1: Count to 5 (same as while example)
+
+for (int i = 1; i <= 5; i++)
+{
+    Console.WriteLine(i);
+}
+
+Breaking it down:
+- int i = 1         - Start at 1
+- i <= 5            - Continue while i is 5 or less
+- i++               - Add 1 after each loop
+
+Example 2: Multiplication table
+
+int number = 7;
+
+for (int i = 1; i <= 10; i++)
+{
+    int result = number * i;
+    Console.WriteLine($"{number} × {i} = {result}");
+}
+
+Output:
+7 × 1 = 7
+7 × 2 = 14
+7 × 3 = 21
+...
+7 × 10 = 70
+
+Example 3: Even numbers
+
+for (int i = 2; i <= 20; i += 2)  // i += 2 means add 2 each time
+{
+    Console.WriteLine(i);
+}
+
+Output: 2, 4, 6, 8, 10, 12, 14, 16, 18, 20
+
+Example 4: Backwards counting
+
+for (int i = 10; i >= 1; i--)
+{
+    Console.WriteLine(i);
+}
+
+ACTIVITY: Print all odd numbers from 1 to 15
+
+Solution:
+
+for (int i = 1; i <= 15; i += 2)
+{
+    Console.WriteLine(i);
+}
+
+// Or:
+
+for (int i = 1; i <= 15; i++)
+{
+    if (i % 2 != 0)
+    {
+        Console.WriteLine(i);
+    }
+}
+
+-----------------------------------------------------------
+PART 4: WHILE vs FOR (5 minutes)
+-----------------------------------------------------------
+
+When to use WHILE:
+- You don't know how many times to loop
+- Loop until user enters correct input
+- Loop until a condition changes
+- Game loops (until player wins/loses)
+
+When to use FOR:
+- You know exactly how many times to loop
+- Counting through a range of numbers
+- Repeating an action a specific number of times
+
+Example - WHILE is better:
+
+string answer = "";
+
+while (answer != "quit")
+{
+    Console.Write("Enter command (or 'quit' to exit): ");
+    answer = Console.ReadLine();
+    Console.WriteLine($"You entered: {answer}");
+}
+
+Example - FOR is better:
+
+Console.Write("How many times should I greet you? ");
+int times = Convert.ToInt32(Console.ReadLine());
+
+for (int i = 0; i < times; i++)
+{
+    Console.WriteLine("Hello!");
+}
+
+-----------------------------------------------------------
+PART 5: NESTED LOOPS (10 minutes)
+-----------------------------------------------------------
+
+You can put loops inside other loops!
+
+Example 1: Rectangle pattern
+
+for (int row = 1; row <= 3; row++)
+{
+    for (int col = 1; col <= 5; col++)
+    {
+        Console.Write("* ");
+    }
+    Console.WriteLine();  // New line after each row
+}
+
+Output:
+* * * * *
+* * * * *
+* * * * *
+
+Example 2: Multiplication table grid
+
+for (int row = 1; row <= 5; row++)
+{
+    for (int col = 1; col <= 5; col++)
+    {
+        int product = row * col;
+        Console.Write($"{product}\t");  // \t is a tab
+    }
+    Console.WriteLine();
+}
+
+Output:
+1    2    3    4    5
+2    4    6    8    10
+3    6    9    12   15
+4    8    12   16   20
+5    10   15   20   25
+
+Example 3: Triangle pattern
+
+for (int row = 1; row <= 5; row++)
+{
+    for (int col = 1; col <= row; col++)
+    {
+        Console.Write("*");
+    }
+    Console.WriteLine();
+}
+
+Output:
+*
+**
+***
+****
+*****
+
+ACTIVITY: Create a number triangle
+
+for (int row = 1; row <= 5; row++)
+{
+    for (int col = 1; col <= row; col++)
+    {
+        Console.Write(col);
+    }
+    Console.WriteLine();
+}
+
+Output:
+1
+12
+123
+1234
+12345
+
+-----------------------------------------------------------
+PART 6: LOOP CONTROL STATEMENTS (10 minutes)
+-----------------------------------------------------------
+
+BREAK - Exit the loop immediately
+
+for (int i = 1; i <= 10; i++)
+{
+    if (i == 5)
+    {
+        break;  // Stop the loop when i equals 5
+    }
+    Console.WriteLine(i);
+}
+
+Output: 1, 2, 3, 4
+
+CONTINUE - Skip to the next iteration
+
+for (int i = 1; i <= 5; i++)
+{
+    if (i == 3)
+    {
+        continue;  // Skip 3
+    }
+    Console.WriteLine(i);
+}
+
+Output: 1, 2, 4, 5
+
+Practical example: Input validation with break
+
+while (true)  // Infinite loop
+{
+    Console.Write("Enter a number between 1 and 10: ");
+    int number = Convert.ToInt32(Console.ReadLine());
+
+    if (number >= 1 && number <= 10)
+    {
+        Console.WriteLine("Valid number!");
+        break;  // Exit the loop
+    }
+    else
+    {
+        Console.WriteLine("Invalid! Try again.");
+    }
+}
+
+Practical example: Skip even numbers with continue
+
+for (int i = 1; i <= 10; i++)
+{
+    if (i % 2 == 0)
+    {
+        continue;  // Skip even numbers
+    }
+    Console.WriteLine(i);  // Only prints odd numbers
+}
+
+-----------------------------------------------------------
+PART 7: PRACTICE EXERCISES (15 minutes)
+-----------------------------------------------------------
+
+EXERCISE 1: Sum Calculator
+Write a program that asks the user for a number, then calculates the sum of all numbers from 1 to that number.
+
+Example:
+Input: 5
+Output: 1 + 2 + 3 + 4 + 5 = 15
+
+EXERCISE 2: Factorial Calculator
+Calculate the factorial of a number (n! = 1 × 2 × 3 × ... × n)
+
+Example:
+Input: 5
+Output: 5! = 1 × 2 × 3 × 4 × 5 = 120
+
+EXERCISE 3: Guess the Number
+Create a game where the computer has a secret number (1-100) and the user keeps guessing until they get it right. Give hints (too high/too low).
+
+EXERCISE 4: FizzBuzz
+Print numbers from 1 to 30, but:
+- If divisible by 3, print "Fizz"
+- If divisible by 5, print "Buzz"
+- If divisible by both, print "FizzBuzz"
+- Otherwise, print the number
+
+EXERCISE 5: Pattern Maker
+Ask the user for a number and create a pyramid pattern.
+
+Example (input: 5):
+    *
+   ***
+  *****
+ *******
+*********
+
+-----------------------------------------------------------
+PRACTICE EXERCISE SOLUTIONS
+-----------------------------------------------------------
+
+SOLUTION 1: Sum Calculator
+
+Console.Write("Enter a number: ");
+int num = Convert.ToInt32(Console.ReadLine());
+
+int sum = 0;
+
+for (int i = 1; i <= num; i++)
+{
+    sum += i;
+}
+
+Console.WriteLine($"Sum of 1 to {num} is: {sum}");
+
+// Alternative with formula: sum = num * (num + 1) / 2
+
+-----------------------------------------------------------
+
+SOLUTION 2: Factorial Calculator
+
+Console.Write("Enter a number: ");
+int num = Convert.ToInt32(Console.ReadLine());
+
+int factorial = 1;
+
+for (int i = 1; i <= num; i++)
+{
+    factorial *= i;  // Same as: factorial = factorial * i
+}
+
+Console.WriteLine($"{num}! = {factorial}");
+
+-----------------------------------------------------------
+
+SOLUTION 3: Guess the Number
+
+int secretNumber = 42;  // In real game, use Random
+int guess = 0;
+int attempts = 0;
+
+Console.WriteLine("I'm thinking of a number between 1 and 100!");
+
+while (guess != secretNumber)
+{
+    Console.Write("Enter your guess: ");
+    guess = Convert.ToInt32(Console.ReadLine());
+    attempts++;
+
+    if (guess < secretNumber)
+    {
+        Console.WriteLine("Too low! Try again.");
+    }
+    else if (guess > secretNumber)
+    {
+        Console.WriteLine("Too high! Try again.");
+    }
+    else
+    {
+        Console.WriteLine($"Correct! You got it in {attempts} attempts!");
+    }
+}
+
+// Advanced version with Random:
+// Random random = new Random();
+// int secretNumber = random.Next(1, 101);
+
+-----------------------------------------------------------
+
+SOLUTION 4: FizzBuzz
+
+for (int i = 1; i <= 30; i++)
+{
+    if (i % 3 == 0 && i % 5 == 0)
+    {
+        Console.WriteLine("FizzBuzz");
+    }
+    else if (i % 3 == 0)
+    {
+        Console.WriteLine("Fizz");
+    }
+    else if (i % 5 == 0)
+    {
+        Console.WriteLine("Buzz");
+    }
+    else
+    {
+        Console.WriteLine(i);
+    }
+}
+
+-----------------------------------------------------------
+
+SOLUTION 5: Pattern Maker (Pyramid)
+
+Console.Write("Enter pyramid height: ");
+int height = Convert.ToInt32(Console.ReadLine());
+
+for (int row = 1; row <= height; row++)
+{
+    // Print spaces
+    for (int space = 1; space <= height - row; space++)
+    {
+        Console.Write(" ");
+    }
+
+    // Print stars
+    for (int star = 1; star <= (2 * row - 1); star++)
+    {
+        Console.Write("*");
+    }
+
+    Console.WriteLine();
+}
+
+-----------------------------------------------------------
+PART 8: MINI PROJECT - MENU SYSTEM (5 minutes)
+-----------------------------------------------------------
+
+Combine everything you've learned to create a calculator with a menu!
+
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        string choice = "";
+
+        while (choice != "5")
+        {
+            Console.WriteLine("\n===== CALCULATOR MENU =====");
+            Console.WriteLine("1. Add two numbers");
+            Console.WriteLine("2. Multiply two numbers");
+            Console.WriteLine("3. Count to a number");
+            Console.WriteLine("4. Multiplication table");
+            Console.WriteLine("5. Exit");
+            Console.Write("Choose an option (1-5): ");
+
+            choice = Console.ReadLine();
+
+            if (choice == "1")
+            {
+                Console.Write("Enter first number: ");
+                double num1 = Convert.ToDouble(Console.ReadLine());
+                Console.Write("Enter second number: ");
+                double num2 = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine($"Result: {num1 + num2}");
+            }
+            else if (choice == "2")
+            {
+                Console.Write("Enter first number: ");
+                double num1 = Convert.ToDouble(Console.ReadLine());
+                Console.Write("Enter second number: ");
+                double num2 = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine($"Result: {num1 * num2}");
+            }
+            else if (choice == "3")
+            {
+                Console.Write("Count to: ");
+                int max = Convert.ToInt32(Console.ReadLine());
+
+                for (int i = 1; i <= max; i++)
+                {
+                    Console.Write(i + " ");
+                }
+                Console.WriteLine();
+            }
+            else if (choice == "4")
+            {
+                Console.Write("Which multiplication table? ");
+                int num = Convert.ToInt32(Console.ReadLine());
+
+                for (int i = 1; i <= 10; i++)
+                {
+                    Console.WriteLine($"{num} × {i} = {num * i}");
+                }
+            }
+            else if (choice == "5")
+            {
+                Console.WriteLine("Goodbye!");
+            }
+            else
+            {
+                Console.WriteLine("Invalid choice! Please try again.");
+            }
+        }
+    }
+}
+
+-----------------------------------------------------------
+WRAP UP & HOMEWORK (5 minutes)
+-----------------------------------------------------------
+
+Key Takeaways:
+✓ while loops repeat while a condition is true
+✓ for loops repeat a specific number of times
+✓ Nested loops put loops inside loops
+✓ break exits a loop early
+✓ continue skips to the next iteration
+✓ Always make sure loops can end (avoid infinite loops!)
+
+Homework:
+1. Create a program that prints all even numbers from 2 to 50
+2. Write a program that calculates the average of 5 numbers entered by user
+3. Build a simple times table quiz (ask user 5 multiplication questions)
+4. Create a program that reverses a number (input: 1234, output: 4321)
+5. Make a star pattern of your choice using nested loops
+
+Challenge Homework:
+- Create a number guessing game with limited attempts (5 tries)
+- Build a simple text-based RPG battle system with health points
+- Make a program that checks if a number is prime
+
+Next Lesson Preview:
+We'll learn about arrays to store multiple values in one variable!
+
+-----------------------------------------------------------
+COMMON ERRORS & TROUBLESHOOTING
+-----------------------------------------------------------
+
+1. Infinite loops: Make sure loop condition eventually becomes false
+   - Check that you're updating the loop variable (i++, count--, etc.)
+
+2. Off-by-one errors: Loop runs one too many or too few times
+   - Check <= vs < in your condition
+   - Make sure starting value is correct
+
+3. Forgetting i++ in for loop: Loop variable never changes
+
+4. Using = instead of == in condition: Assignment vs comparison
+
+5. Nested loop confusion: Make sure inner and outer loop variables are different (i, j, k)
+
+6. Break/continue in wrong place: Make sure they're inside the loop you want to affect
+
+DEBUGGING TIP:
+Add Console.WriteLine() inside loops to see what's happening:
+
+for (int i = 1; i <= 5; i++)
+{
+    Console.WriteLine($"Loop iteration: {i}");  // Debugging line
+    // Your code here
+}
