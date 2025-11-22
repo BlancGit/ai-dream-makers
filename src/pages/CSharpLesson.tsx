@@ -3234,8 +3234,12 @@ class ListMethods
 
                   <div className="space-y-4">
                     <h3 className="text-xl font-bold text-blue-600">💡 Basic While Loop</h3>
+                    <p className="text-sm text-muted-foreground italic">
+                      💡 Study this code example. Copy it to your C# editor to run it!
+                    </p>
                     <CodeEditor
                       title="While Loop Example"
+                      readOnly={true}
                       initialCode={`using System;
 
 class Program
@@ -3249,16 +3253,18 @@ class Program
             Console.WriteLine(count);
             count++; // Increment by 1
         }
-        // Output: 1, 2, 3, 4, 5
     }
 }`}
                       language="csharp"
-                      expectedOutput={`1
+                    />
+                    <div className="p-4 bg-slate-900 text-white rounded-lg font-mono text-sm mt-2">
+                      <div className="text-gray-400 mb-2">Expected Output:</div>
+                      <pre className="text-green-400">1
 2
 3
 4
-5`}
-                    />
+5</pre>
+                    </div>
                   </div>
 
                   <div className="space-y-4">
@@ -3266,8 +3272,12 @@ class Program
                     <p className="text-muted-foreground">
                       While loops are great for validating user input:
                     </p>
+                    <p className="text-sm text-muted-foreground italic">
+                      💡 Study this code example. Copy it to your C# editor to run it!
+                    </p>
                     <CodeEditor
                       title="Password Validation Loop"
+                      readOnly={true}
                       initialCode={`string password = "";
 
 while (password != "secret")
@@ -3278,17 +3288,24 @@ while (password != "secret")
 
 Console.WriteLine("Access granted!");`}
                       language="csharp"
-                      expectedOutput={`Enter password: [User enters wrong password]
-Enter password: [User enters wrong password]
-Enter password: [User enters "secret"]
-Access granted!`}
                     />
+                    <div className="p-4 bg-slate-900 text-white rounded-lg font-mono text-sm mt-2">
+                      <div className="text-gray-400 mb-2">Expected Output:</div>
+                      <pre className="text-green-400">Enter password: <span className="text-gray-500">[User enters wrong password]</span>
+Enter password: <span className="text-gray-500">[User enters wrong password]</span>
+Enter password: <span className="text-gray-500">[User enters "secret"]</span>
+Access granted!</pre>
+                    </div>
                   </div>
 
                   <div className="space-y-4">
                     <h3 className="text-xl font-bold text-blue-600">🔢 Countdown Example</h3>
+                    <p className="text-sm text-muted-foreground italic">
+                      💡 Study this code example. Copy it to your C# editor to run it!
+                    </p>
                     <CodeEditor
                       title="Countdown Timer"
+                      readOnly={true}
                       initialCode={`int countdown = 10;
 
 while (countdown >= 1)
@@ -3299,7 +3316,10 @@ while (countdown >= 1)
 
 Console.WriteLine("Blastoff!");`}
                       language="csharp"
-                      expectedOutput={`10
+                    />
+                    <div className="p-4 bg-slate-900 text-white rounded-lg font-mono text-sm mt-2">
+                      <div className="text-gray-400 mb-2">Expected Output:</div>
+                      <pre className="text-green-400">10
 9
 8
 7
@@ -3309,8 +3329,8 @@ Console.WriteLine("Blastoff!");`}
 3
 2
 1
-Blastoff!`}
-                    />
+Blastoff!</pre>
+                    </div>
                   </div>
 
                   <div className="space-y-4">
@@ -3397,46 +3417,61 @@ while (guess != secretNumber)
 
                   <div className="space-y-4">
                     <h3 className="text-xl font-bold text-purple-600">💡 Basic For Loop</h3>
+                    <p className="text-sm text-muted-foreground italic">
+                      💡 Study this code example. Copy it to your C# editor to run it!
+                    </p>
                     <CodeEditor
                       title="For Loop Example"
+                      readOnly={true}
                       initialCode={`for (int i = 1; i <= 5; i++)
 {
     Console.WriteLine(i);
 }
-// Output: 1, 2, 3, 4, 5
 
 // Breaking it down:
 // int i = 1     - Start at 1
 // i <= 5        - Continue while i is 5 or less
 // i++           - Add 1 after each loop`}
                       language="csharp"
-                      expectedOutput={`1
+                    />
+                    <div className="p-4 bg-slate-900 text-white rounded-lg font-mono text-sm mt-2">
+                      <div className="text-gray-400 mb-2">Expected Output:</div>
+                      <pre className="text-green-400">1
 2
 3
 4
-5`}
-                    />
+5</pre>
+                    </div>
                   </div>
 
                   <div className="space-y-4">
                     <h3 className="text-xl font-bold text-purple-600">🔢 Multiplication Table</h3>
+                    <p className="text-sm text-muted-foreground italic">
+                      💡 Study this code example. Copy it to your C# editor to run it!
+                    </p>
                     <CodeEditor
                       title="Multiplication Table Generator"
-                      initialCode={`int number = 7;
+                      readOnly={true}
+                      initialCode={`using System;
 
-for (int i = 1; i <= 10; i++)
+class Program
 {
-    int result = number * i;
-    Console.WriteLine($"{number} × {i} = {result}");
-}
+    static void Main()
+    {
+        int number = 7;
 
-// Output:
-// 7 × 1 = 7
-// 7 × 2 = 14
-// ...
-// 7 × 10 = 70`}
+        for (int i = 1; i <= 10; i++)
+        {
+            int result = number * i;
+            Console.WriteLine($"{number} × {i} = {result}");
+        }
+    }
+}`}
                       language="csharp"
-                      expectedOutput={`7 × 1 = 7
+                    />
+                    <div className="p-4 bg-slate-900 text-white rounded-lg font-mono text-sm mt-2">
+                      <div className="text-gray-400 mb-2">Expected Output:</div>
+                      <pre className="text-green-400">7 × 1 = 7
 7 × 2 = 14
 7 × 3 = 21
 7 × 4 = 28
@@ -3445,8 +3480,8 @@ for (int i = 1; i <= 10; i++)
 7 × 7 = 49
 7 × 8 = 56
 7 × 9 = 63
-7 × 10 = 70`}
-                    />
+7 × 10 = 70</pre>
+                    </div>
                   </div>
 
                   <div className="space-y-4">
@@ -3468,68 +3503,110 @@ for (int i = 1; i <= 10; i++)
                     <p className="text-muted-foreground">
                       You can put loops inside other loops to create patterns:
                     </p>
+                    <p className="text-sm text-muted-foreground italic">
+                      💡 Study this code example. Copy it to your C# editor to run it!
+                    </p>
                     <CodeEditor
-                      initialCode={`// Create a rectangle pattern
-for (int row = 1; row <= 3; row++)
-{
-    for (int col = 1; col <= 5; col++)
-    {
-        Console.Write("* ");
-    }
-    Console.WriteLine(); // New line after each row
-}
+                      title="Rectangle Pattern"
+                      readOnly={true}
+                      initialCode={`using System;
 
-// Output:
-// * * * * *
-// * * * * *
-// * * * * *`}
+class Program
+{
+    static void Main()
+    {
+        // Create a rectangle pattern
+        for (int row = 1; row <= 3; row++)
+        {
+            for (int col = 1; col <= 5; col++)
+            {
+                Console.Write("* ");
+            }
+            Console.WriteLine(); // New line after each row
+        }
+    }
+}`}
                       language="csharp"
                     />
+                    <div className="p-4 bg-slate-900 text-white rounded-lg font-mono text-sm mt-2">
+                      <div className="text-gray-400 mb-2">Expected Output:</div>
+                      <pre className="text-green-400">* * * * *
+* * * * *
+* * * * * </pre>
+                    </div>
                   </div>
 
                   <div className="space-y-4">
                     <h3 className="text-xl font-bold text-purple-600">📐 Triangle Pattern</h3>
+                    <p className="text-sm text-muted-foreground italic">
+                      💡 Study this code example. Copy it to your C# editor to run it!
+                    </p>
                     <CodeEditor
-                      initialCode={`for (int row = 1; row <= 5; row++)
-{
-    for (int col = 1; col <= row; col++)
-    {
-        Console.Write("*");
-    }
-    Console.WriteLine();
-}
+                      title="Triangle Pattern"
+                      readOnly={true}
+                      initialCode={`using System;
 
-// Output:
-// *
-// **
-// ***
-// ****
-// *****`}
+class Program
+{
+    static void Main()
+    {
+        for (int row = 1; row <= 5; row++)
+        {
+            for (int col = 1; col <= row; col++)
+            {
+                Console.Write("*");
+            }
+            Console.WriteLine();
+        }
+    }
+}`}
                       language="csharp"
                     />
+                    <div className="p-4 bg-slate-900 text-white rounded-lg font-mono text-sm mt-2">
+                      <div className="text-gray-400 mb-2">Expected Output:</div>
+                      <pre className="text-green-400">*
+**
+***
+****
+*****</pre>
+                    </div>
                   </div>
 
                   <div className="space-y-4">
                     <h3 className="text-xl font-bold text-purple-600">🎮 Multiplication Table Grid</h3>
+                    <p className="text-sm text-muted-foreground italic">
+                      💡 Study this code example. Copy it to your C# editor to run it!
+                    </p>
                     <CodeEditor
-                      initialCode={`for (int row = 1; row <= 5; row++)
-{
-    for (int col = 1; col <= 5; col++)
-    {
-        int product = row * col;
-        Console.Write($"{product}\\t"); // \\t is a tab
-    }
-    Console.WriteLine();
-}
+                      title="Multiplication Table Grid"
+                      readOnly={true}
+                      initialCode={`using System;
 
-// Output:
-// 1    2    3    4    5
-// 2    4    6    8    10
-// 3    6    9    12   15
-// 4    8    12   16   20
-// 5    10   15   20   25`}
+class Program
+{
+    static void Main()
+    {
+        for (int row = 1; row <= 5; row++)
+        {
+            for (int col = 1; col <= 5; col++)
+            {
+                int product = row * col;
+                Console.Write($"{product}\\t"); // \\t is a tab
+            }
+            Console.WriteLine();
+        }
+    }
+}`}
                       language="csharp"
                     />
+                    <div className="p-4 bg-slate-900 text-white rounded-lg font-mono text-sm mt-2">
+                      <div className="text-gray-400 mb-2">Expected Output:</div>
+                      <pre className="text-green-400">1    2    3    4    5
+2    4    6    8    10
+3    6    9    12   15
+4    8    12   16   20
+5    10   15   20   25</pre>
+                    </div>
                   </div>
 
                   <div className="space-y-4">
@@ -3539,24 +3616,38 @@ for (int row = 1; row <= 3; row++)
                     </p>
                     <details className="p-4 bg-muted rounded-lg">
                       <summary className="cursor-pointer font-semibold">💡 Click to see solution</summary>
+                      <p className="text-sm text-muted-foreground italic mt-4">
+                        💡 Study this code example. Copy it to your C# editor to run it!
+                      </p>
                       <CodeEditor
-                        initialCode={`for (int row = 1; row <= 5; row++)
-{
-    for (int col = 1; col <= row; col++)
-    {
-        Console.Write(col);
-    }
-    Console.WriteLine();
-}
+                        title="Number Triangle Solution"
+                        readOnly={true}
+                        initialCode={`using System;
 
-// Output:
-// 1
-// 12
-// 123
-// 1234
-// 12345`}
+class Program
+{
+    static void Main()
+    {
+        for (int row = 1; row <= 5; row++)
+        {
+            for (int col = 1; col <= row; col++)
+            {
+                Console.Write(col);
+            }
+            Console.WriteLine();
+        }
+    }
+}`}
                         language="csharp"
                       />
+                      <div className="p-4 bg-slate-900 text-white rounded-lg font-mono text-sm mt-2">
+                        <div className="text-gray-400 mb-2">Expected Output:</div>
+                        <pre className="text-green-400">1
+12
+123
+1234
+12345</pre>
+                      </div>
                     </details>
                   </div>
 
@@ -3603,18 +3694,37 @@ for (int row = 1; row <= 3; row++)
                     <p className="text-muted-foreground">
                       Use <code className="bg-muted px-2 py-1 rounded">break</code> to exit a loop early:
                     </p>
+                    <p className="text-sm text-muted-foreground italic">
+                      💡 Study this code example. Copy it to your C# editor to run it!
+                    </p>
                     <CodeEditor
-                      initialCode={`for (int i = 1; i <= 10; i++)
+                      title="Break Statement Example"
+                      readOnly={true}
+                      initialCode={`using System;
+
+class Program
 {
-    if (i == 5)
+    static void Main()
     {
-        break; // Stop when i equals 5
+        for (int i = 1; i <= 10; i++)
+        {
+            if (i == 5)
+            {
+                break; // Stop when i equals 5
+            }
+            Console.WriteLine(i);
+        }
     }
-    Console.WriteLine(i);
-}
-// Output: 1, 2, 3, 4`}
+}`}
                       language="csharp"
                     />
+                    <div className="p-4 bg-slate-900 text-white rounded-lg font-mono text-sm mt-2">
+                      <div className="text-gray-400 mb-2">Expected Output:</div>
+                      <pre className="text-green-400">1
+2
+3
+4</pre>
+                    </div>
                   </div>
 
                   <div className="space-y-4">
@@ -3622,40 +3732,79 @@ for (int row = 1; row <= 3; row++)
                     <p className="text-muted-foreground">
                       Use <code className="bg-muted px-2 py-1 rounded">continue</code> to skip to the next iteration:
                     </p>
+                    <p className="text-sm text-muted-foreground italic">
+                      💡 Study this code example. Copy it to your C# editor to run it!
+                    </p>
                     <CodeEditor
-                      initialCode={`for (int i = 1; i <= 5; i++)
-{
-    if (i == 3)
-    {
-        continue; // Skip 3
-    }
-    Console.WriteLine(i);
-}
-// Output: 1, 2, 4, 5`}
-                      language="csharp"
-                    />
-                  </div>
+                      title="Continue Statement Example"
+                      readOnly={true}
+                      initialCode={`using System;
 
-                  <div className="space-y-4">
-                    <h3 className="text-xl font-bold text-green-600">🎯 Practical Example: Input Validation</h3>
-                    <CodeEditor
-                      initialCode={`while (true) // Infinite loop
+class Program
 {
-    Console.Write("Enter a number (1-10): ");
-    int number = Convert.ToInt32(Console.ReadLine());
-
-    if (number >= 1 && number <= 10)
+    static void Main()
     {
-        Console.WriteLine("Valid number!");
-        break; // Exit the loop
-    }
-    else
-    {
-        Console.WriteLine("Invalid! Try again.");
+        for (int i = 1; i <= 5; i++)
+        {
+            if (i == 3)
+            {
+                continue; // Skip 3
+            }
+            Console.WriteLine(i);
+        }
     }
 }`}
                       language="csharp"
                     />
+                    <div className="p-4 bg-slate-900 text-white rounded-lg font-mono text-sm mt-2">
+                      <div className="text-gray-400 mb-2">Expected Output:</div>
+                      <pre className="text-green-400">1
+2
+4
+5</pre>
+                    </div>
+                  </div>
+
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-bold text-green-600">🎯 Practical Example: Input Validation</h3>
+                    <p className="text-sm text-muted-foreground italic">
+                      💡 Study this code example. This shows how break works in a real program!
+                    </p>
+                    <CodeEditor
+                      title="Input Validation with Break"
+                      readOnly={true}
+                      initialCode={`using System;
+
+class Program
+{
+    static void Main()
+    {
+        while (true) // Infinite loop
+        {
+            Console.Write("Enter a number (1-10): ");
+            int number = Convert.ToInt32(Console.ReadLine());
+
+            if (number >= 1 && number <= 10)
+            {
+                Console.WriteLine("Valid number!");
+                break; // Exit the loop
+            }
+            else
+            {
+                Console.WriteLine("Invalid! Try again.");
+            }
+        }
+    }
+}`}
+                      language="csharp"
+                    />
+                    <div className="p-4 bg-slate-900 text-white rounded-lg font-mono text-sm mt-2">
+                      <div className="text-gray-400 mb-2">Example Output (if user enters 15, then 7):</div>
+                      <pre className="text-green-400">Enter a number (1-10): 15
+Invalid! Try again.
+Enter a number (1-10): 7
+Valid number!</pre>
+                    </div>
                   </div>
 
                   <div className="space-y-4">
@@ -3667,19 +3816,37 @@ for (int row = 1; row <= 3; row++)
                         <p className="text-sm text-muted-foreground mt-2 mb-3">
                           Calculate the sum of numbers from 1 to N (user input).
                         </p>
+                        <p className="text-sm text-muted-foreground italic mt-4">
+                          💡 Study this code example. Copy it to your C# editor to run it!
+                        </p>
                         <CodeEditor
-                          initialCode={`Console.Write("Enter a number: ");
-int num = Convert.ToInt32(Console.ReadLine());
+                          title="Sum Calculator Solution"
+                          readOnly={true}
+                          initialCode={`using System;
 
-int sum = 0;
-for (int i = 1; i <= num; i++)
+class Program
 {
-    sum += i;
-}
+    static void Main()
+    {
+        Console.Write("Enter a number: ");
+        int num = Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine($"Sum: {sum}");`}
+        int sum = 0;
+        for (int i = 1; i <= num; i++)
+        {
+            sum += i;
+        }
+
+        Console.WriteLine($"Sum: {sum}");
+    }
+}`}
                           language="csharp"
                         />
+                        <div className="p-4 bg-slate-900 text-white rounded-lg font-mono text-sm mt-2">
+                          <div className="text-gray-400 mb-2">Example Output (if user enters 5):</div>
+                          <pre className="text-green-400">Enter a number: 5
+Sum: 15</pre>
+                        </div>
                       </details>
 
                       <details className="p-4 bg-purple-50 rounded-lg border-2 border-purple-200">
@@ -3687,20 +3854,56 @@ Console.WriteLine($"Sum: {sum}");`}
                         <p className="text-sm text-muted-foreground mt-2 mb-3">
                           Print numbers 1-30, but print "Fizz" for multiples of 3, "Buzz" for multiples of 5, and "FizzBuzz" for both!
                         </p>
+                        <p className="text-sm text-muted-foreground italic mt-4">
+                          💡 Study this code example. Copy it to your C# editor to run it!
+                        </p>
                         <CodeEditor
-                          initialCode={`for (int i = 1; i <= 30; i++)
+                          title="FizzBuzz Solution"
+                          readOnly={true}
+                          initialCode={`using System;
+
+class Program
 {
-    if (i % 3 == 0 && i % 5 == 0)
-        Console.WriteLine("FizzBuzz");
-    else if (i % 3 == 0)
-        Console.WriteLine("Fizz");
-    else if (i % 5 == 0)
-        Console.WriteLine("Buzz");
-    else
-        Console.WriteLine(i);
+    static void Main()
+    {
+        for (int i = 1; i <= 30; i++)
+        {
+            if (i % 3 == 0 && i % 5 == 0)
+                Console.WriteLine("FizzBuzz");
+            else if (i % 3 == 0)
+                Console.WriteLine("Fizz");
+            else if (i % 5 == 0)
+                Console.WriteLine("Buzz");
+            else
+                Console.WriteLine(i);
+        }
+    }
 }`}
                           language="csharp"
                         />
+                        <div className="p-4 bg-slate-900 text-white rounded-lg font-mono text-sm mt-2">
+                          <div className="text-gray-400 mb-2">Expected Output (first 20 lines):</div>
+                          <pre className="text-green-400">1
+2
+Fizz
+4
+Buzz
+Fizz
+7
+8
+Fizz
+Buzz
+11
+Fizz
+13
+14
+FizzBuzz
+16
+17
+Fizz
+19
+Buzz</pre>
+                        </div>
                       </details>
 
                       <details className="p-4 bg-green-50 rounded-lg border-2 border-green-200">
@@ -3708,19 +3911,37 @@ Console.WriteLine($"Sum: {sum}");`}
                         <p className="text-sm text-muted-foreground mt-2 mb-3">
                           Calculate n! (1 × 2 × 3 × ... × n)
                         </p>
+                        <p className="text-sm text-muted-foreground italic mt-4">
+                          💡 Study this code example. Copy it to your C# editor to run it!
+                        </p>
                         <CodeEditor
-                          initialCode={`Console.Write("Enter a number: ");
-int num = Convert.ToInt32(Console.ReadLine());
+                          title="Factorial Calculator Solution"
+                          readOnly={true}
+                          initialCode={`using System;
 
-int factorial = 1;
-for (int i = 1; i <= num; i++)
+class Program
 {
-    factorial *= i;
-}
+    static void Main()
+    {
+        Console.Write("Enter a number: ");
+        int num = Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine($"{num}! = {factorial}");`}
+        int factorial = 1;
+        for (int i = 1; i <= num; i++)
+        {
+            factorial *= i;
+        }
+
+        Console.WriteLine($"{num}! = {factorial}");
+    }
+}`}
                           language="csharp"
                         />
+                        <div className="p-4 bg-slate-900 text-white rounded-lg font-mono text-sm mt-2">
+                          <div className="text-gray-400 mb-2">Example Output (if user enters 5):</div>
+                          <pre className="text-green-400">Enter a number: 5
+5! = 120</pre>
+                        </div>
                       </details>
 
                       <details className="p-4 bg-pink-50 rounded-lg border-2 border-pink-200">
@@ -3728,34 +3949,48 @@ Console.WriteLine($"{num}! = {factorial}");`}
                         <p className="text-sm text-muted-foreground mt-2 mb-3">
                           Create a centered pyramid of stars!
                         </p>
+                        <p className="text-sm text-muted-foreground italic mt-4">
+                          💡 Study this code example. Copy it to your C# editor to run it!
+                        </p>
                         <CodeEditor
-                          initialCode={`int height = 5;
+                          title="Pyramid Pattern Solution"
+                          readOnly={true}
+                          initialCode={`using System;
 
-for (int row = 1; row <= height; row++)
+class Program
 {
-    // Print spaces
-    for (int space = 1; space <= height - row; space++)
+    static void Main()
     {
-        Console.Write(" ");
+        int height = 5;
+
+        for (int row = 1; row <= height; row++)
+        {
+            // Print spaces
+            for (int space = 1; space <= height - row; space++)
+            {
+                Console.Write(" ");
+            }
+
+            // Print stars
+            for (int star = 1; star <= (2 * row - 1); star++)
+            {
+                Console.Write("*");
+            }
+
+            Console.WriteLine();
+        }
     }
-
-    // Print stars
-    for (int star = 1; star <= (2 * row - 1); star++)
-    {
-        Console.Write("*");
-    }
-
-    Console.WriteLine();
-}
-
-// Output:
-//     *
-//    ***
-//   *****
-//  *******
-// *********`}
+}`}
                           language="csharp"
                         />
+                        <div className="p-4 bg-slate-900 text-white rounded-lg font-mono text-sm mt-2">
+                          <div className="text-gray-400 mb-2">Expected Output:</div>
+                          <pre className="text-green-400">    *
+   ***
+  *****
+ *******
+*********</pre>
+                        </div>
                       </details>
                     </div>
                   </div>
