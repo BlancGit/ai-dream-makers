@@ -3184,6 +3184,24 @@ class ListMethods
 
         {/* Lesson 3 Content - Loops */}
         <TabsContent value="lesson3" className="space-y-8">
+          {/* Compiler Warning */}
+          <div className="bg-yellow-50 border-2 border-yellow-400 rounded-lg p-4 mb-6">
+            <div className="flex items-start gap-3">
+              <div className="text-yellow-600 text-2xl">⚠️</div>
+              <div>
+                <h4 className="font-bold text-yellow-900 mb-1">Note About Code Examples</h4>
+                <p className="text-sm text-yellow-800">
+                  The built-in code runner may not accurately execute all loop examples. For best results,
+                  copy the code and paste it into an <strong>online C# compiler</strong> (like{" "}
+                  <a href="https://dotnetfiddle.net/" target="_blank" rel="noopener noreferrer" className="underline hover:text-yellow-900">
+                    dotnetfiddle.net
+                  </a>
+                  ) or your <strong>local IDE</strong> (Visual Studio, VS Code, etc.) to see the correct output.
+                </p>
+              </div>
+            </div>
+          </div>
+
           {/* Module Navigation */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {lesson3Modules.map((module, index) => {
