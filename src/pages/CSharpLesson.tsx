@@ -535,6 +535,7 @@ const CSharpLesson = () => {
   const [currentModule, setCurrentModule] = useState(0);
   const [moduleProgress, setModuleProgress] = useState<number[]>([0, 0, 0, 0, 0, 0]);
   const [lesson2ModuleProgress, setLesson2ModuleProgress] = useState<number[]>([0, 0, 0]);
+  const [lesson3ModuleProgress, setLesson3ModuleProgress] = useState<number[]>([0, 0, 0]);
   const [showQuiz, setShowQuiz] = useState(false);
   const [showLesson2Quiz, setShowLesson2Quiz] = useState(false);
   const [quizIndex, setQuizIndex] = useState(0);
@@ -596,6 +597,27 @@ const CSharpLesson = () => {
       title: "Module 8: Introduction to Lists",
       icon: Database,
       duration: "30 mins",
+      color: "text-green-500"
+    }
+  ];
+
+  const lesson3Modules = [
+    {
+      title: "Module 9: While Loops",
+      icon: Zap,
+      duration: "20 mins",
+      color: "text-blue-500"
+    },
+    {
+      title: "Module 10: For Loops & Nested Loops",
+      icon: Code2,
+      duration: "25 mins",
+      color: "text-purple-500"
+    },
+    {
+      title: "Module 11: Loop Control & Practice",
+      icon: Trophy,
+      duration: "25 mins",
       color: "text-green-500"
     }
   ];
@@ -674,12 +696,15 @@ const CSharpLesson = () => {
 
       {/* Lesson Tabs */}
       <Tabs value={currentLesson} onValueChange={setCurrentLesson} className="w-full">
-        <TabsList className="grid w-full max-w-md mx-auto grid-cols-2">
+        <TabsList className="grid w-full max-w-2xl mx-auto grid-cols-3">
           <TabsTrigger value="lesson1" className="text-lg">
             📚 Lesson 1: Fundamentals
           </TabsTrigger>
           <TabsTrigger value="lesson2" className="text-lg">
             🚀 Lesson 2: Advanced
+          </TabsTrigger>
+          <TabsTrigger value="lesson3" className="text-lg">
+            🔄 Lesson 3: Loops
           </TabsTrigger>
         </TabsList>
 
@@ -3149,6 +3174,581 @@ class ListMethods
                       }}
                     >
                       Review Week 2
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          )}
+        </TabsContent>
+
+        {/* Lesson 3 Content - Loops */}
+        <TabsContent value="lesson3" className="space-y-8">
+          {/* Module Navigation */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {lesson3Modules.map((module, index) => {
+              const Icon = module.icon;
+              const isActive = currentModule === index;
+              const isCompleted = lesson3ModuleProgress[index] === 100;
+
+              return (
+                <Button
+                  key={index}
+                  variant={isActive ? "default" : isCompleted ? "secondary" : "outline"}
+                  className="h-auto py-6 px-4 flex flex-col gap-3 relative"
+                  onClick={() => setCurrentModule(index)}
+                >
+                  {isCompleted && (
+                    <CheckCircle className="absolute top-2 right-2 w-5 h-5 text-green-500" />
+                  )}
+                  <Icon className={`w-10 h-10 ${module.color}`} />
+                  <span className="text-sm font-medium text-center">{module.title}</span>
+                  <span className="text-xs text-muted-foreground">{module.duration}</span>
+                  <Progress value={lesson3ModuleProgress[index]} className="w-full h-1.5" />
+                </Button>
+              );
+            })}
+          </div>
+
+          {/* Module 9: While Loops */}
+          {currentModule === 0 && (
+            <div className="space-y-6">
+              <Card className="rounded-2xl shadow-card hover:shadow-lifted transition-all">
+                <CardHeader className="text-center">
+                  <CardTitle className="flex items-center justify-center gap-2 text-3xl">
+                    <Zap className="w-8 h-8 text-blue-500" />
+                    Module 9: While Loops
+                  </CardTitle>
+                  <p className="text-muted-foreground mt-2">
+                    Learn to repeat code with while loops!
+                  </p>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-bold text-blue-600">📝 What is a While Loop?</h3>
+                    <p className="text-muted-foreground">
+                      A while loop repeats code as long as a condition is true. Perfect for when you don't know
+                      exactly how many times to repeat!
+                    </p>
+                  </div>
+
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-bold text-blue-600">💡 Basic While Loop</h3>
+                    <CodeEditor
+                      code={`using System;
+
+class Program
+{
+    static void Main()
+    {
+        int count = 1;
+
+        while (count <= 5)
+        {
+            Console.WriteLine(count);
+            count++; // Increment by 1
+        }
+        // Output: 1, 2, 3, 4, 5
+    }
+}`}
+                      language="csharp"
+                    />
+                  </div>
+
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-bold text-blue-600">🎯 User Input Validation</h3>
+                    <p className="text-muted-foreground">
+                      While loops are great for validating user input:
+                    </p>
+                    <CodeEditor
+                      code={`string password = "";
+
+while (password != "secret")
+{
+    Console.Write("Enter password: ");
+    password = Console.ReadLine();
+}
+
+Console.WriteLine("Access granted!");`}
+                      language="csharp"
+                    />
+                  </div>
+
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-bold text-blue-600">🔢 Countdown Example</h3>
+                    <CodeEditor
+                      code={`int countdown = 10;
+
+while (countdown >= 1)
+{
+    Console.WriteLine(countdown);
+    countdown--;
+}
+
+Console.WriteLine("Blastoff!");`}
+                      language="csharp"
+                    />
+                  </div>
+
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-bold text-blue-600">⚠️ Important: Avoid Infinite Loops!</h3>
+                    <p className="text-muted-foreground">
+                      Always make sure your loop condition eventually becomes false. Otherwise, your program will run forever!
+                    </p>
+                    <div className="p-4 bg-red-50 rounded-lg border-2 border-red-200">
+                      <p className="text-sm font-semibold text-red-800 mb-2">❌ Bad (Infinite Loop):</p>
+                      <code className="text-sm text-red-700">int count = 1;<br/>while (count &lt;= 5) {'{'}  // count never changes!<br/>{'    '}Console.WriteLine(count);<br/>{'}'}</code>
+                    </div>
+                    <div className="p-4 bg-green-50 rounded-lg border-2 border-green-200">
+                      <p className="text-sm font-semibold text-green-800 mb-2">✅ Good:</p>
+                      <code className="text-sm text-green-700">int count = 1;<br/>while (count &lt;= 5) {'{'}<br/>{'    '}Console.WriteLine(count);<br/>{'    '}count++; // Updates the variable!<br/>{'}'}</code>
+                    </div>
+                  </div>
+
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-bold text-blue-600">✏️ Practice Exercise</h3>
+                    <p className="text-muted-foreground">
+                      Create a program that asks the user to guess a number between 1-10. Keep asking until they guess correctly!
+                    </p>
+                    <details className="p-4 bg-muted rounded-lg">
+                      <summary className="cursor-pointer font-semibold">💡 Click to see solution</summary>
+                      <CodeEditor
+                        code={`int secretNumber = 7;
+int guess = 0;
+
+while (guess != secretNumber)
+{
+    Console.Write("Guess the number (1-10): ");
+    guess = Convert.ToInt32(Console.ReadLine());
+
+    if (guess < secretNumber)
+        Console.WriteLine("Too low!");
+    else if (guess > secretNumber)
+        Console.WriteLine("Too high!");
+    else
+        Console.WriteLine("Correct!");
+}`}
+                        language="csharp"
+                      />
+                    </details>
+                  </div>
+
+                  <div className="flex justify-end pt-6">
+                    <Button
+                      onClick={() => {
+                        setCurrentModule(1);
+                        const newProgress = [...lesson3ModuleProgress];
+                        newProgress[0] = 100;
+                        setLesson3ModuleProgress(newProgress);
+                      }}
+                      className="gap-2"
+                    >
+                      Next Module <ArrowRight className="w-4 h-4" />
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          )}
+
+          {/* Module 10: For Loops & Nested Loops */}
+          {currentModule === 1 && (
+            <div className="space-y-6">
+              <Card className="rounded-2xl shadow-card hover:shadow-lifted transition-all">
+                <CardHeader className="text-center">
+                  <CardTitle className="flex items-center justify-center gap-2 text-3xl">
+                    <Code2 className="w-8 h-8 text-purple-500" />
+                    Module 10: For Loops & Nested Loops
+                  </CardTitle>
+                  <p className="text-muted-foreground mt-2">
+                    Master for loops and create patterns with nested loops!
+                  </p>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-bold text-purple-600">📝 What is a For Loop?</h3>
+                    <p className="text-muted-foreground">
+                      For loops are perfect when you know exactly how many times to repeat. They're more compact than while loops!
+                    </p>
+                  </div>
+
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-bold text-purple-600">💡 Basic For Loop</h3>
+                    <CodeEditor
+                      code={`for (int i = 1; i <= 5; i++)
+{
+    Console.WriteLine(i);
+}
+// Output: 1, 2, 3, 4, 5
+
+// Breaking it down:
+// int i = 1     - Start at 1
+// i <= 5        - Continue while i is 5 or less
+// i++           - Add 1 after each loop`}
+                      language="csharp"
+                    />
+                  </div>
+
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-bold text-purple-600">🔢 Multiplication Table</h3>
+                    <CodeEditor
+                      code={`int number = 7;
+
+for (int i = 1; i <= 10; i++)
+{
+    int result = number * i;
+    Console.WriteLine($"{number} × {i} = {result}");
+}
+
+// Output:
+// 7 × 1 = 7
+// 7 × 2 = 14
+// ...
+// 7 × 10 = 70`}
+                      language="csharp"
+                    />
+                  </div>
+
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-bold text-purple-600">⬆️ Counting Up and Down</h3>
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div className="p-4 bg-muted rounded-lg">
+                        <p className="font-semibold mb-2">Even numbers:</p>
+                        <code className="text-sm">for (int i = 2; i &lt;= 10; i += 2)</code>
+                      </div>
+                      <div className="p-4 bg-muted rounded-lg">
+                        <p className="font-semibold mb-2">Countdown:</p>
+                        <code className="text-sm">for (int i = 10; i &gt;= 1; i--)</code>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-bold text-purple-600">🔁 Nested Loops (Loops Inside Loops!)</h3>
+                    <p className="text-muted-foreground">
+                      You can put loops inside other loops to create patterns:
+                    </p>
+                    <CodeEditor
+                      code={`// Create a rectangle pattern
+for (int row = 1; row <= 3; row++)
+{
+    for (int col = 1; col <= 5; col++)
+    {
+        Console.Write("* ");
+    }
+    Console.WriteLine(); // New line after each row
+}
+
+// Output:
+// * * * * *
+// * * * * *
+// * * * * *`}
+                      language="csharp"
+                    />
+                  </div>
+
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-bold text-purple-600">📐 Triangle Pattern</h3>
+                    <CodeEditor
+                      code={`for (int row = 1; row <= 5; row++)
+{
+    for (int col = 1; col <= row; col++)
+    {
+        Console.Write("*");
+    }
+    Console.WriteLine();
+}
+
+// Output:
+// *
+// **
+// ***
+// ****
+// *****`}
+                      language="csharp"
+                    />
+                  </div>
+
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-bold text-purple-600">🎮 Multiplication Table Grid</h3>
+                    <CodeEditor
+                      code={`for (int row = 1; row <= 5; row++)
+{
+    for (int col = 1; col <= 5; col++)
+    {
+        int product = row * col;
+        Console.Write($"{product}\\t"); // \\t is a tab
+    }
+    Console.WriteLine();
+}
+
+// Output:
+// 1    2    3    4    5
+// 2    4    6    8    10
+// 3    6    9    12   15
+// 4    8    12   16   20
+// 5    10   15   20   25`}
+                      language="csharp"
+                    />
+                  </div>
+
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-bold text-purple-600">✏️ Practice Challenge</h3>
+                    <p className="text-muted-foreground">
+                      Create a number triangle where each row shows numbers from 1 to the row number!
+                    </p>
+                    <details className="p-4 bg-muted rounded-lg">
+                      <summary className="cursor-pointer font-semibold">💡 Click to see solution</summary>
+                      <CodeEditor
+                        code={`for (int row = 1; row <= 5; row++)
+{
+    for (int col = 1; col <= row; col++)
+    {
+        Console.Write(col);
+    }
+    Console.WriteLine();
+}
+
+// Output:
+// 1
+// 12
+// 123
+// 1234
+// 12345`}
+                        language="csharp"
+                      />
+                    </details>
+                  </div>
+
+                  <div className="flex justify-between pt-6">
+                    <Button
+                      variant="outline"
+                      onClick={() => setCurrentModule(0)}
+                    >
+                      Previous Module
+                    </Button>
+                    <Button
+                      onClick={() => {
+                        setCurrentModule(2);
+                        const newProgress = [...lesson3ModuleProgress];
+                        newProgress[1] = 100;
+                        setLesson3ModuleProgress(newProgress);
+                      }}
+                      className="gap-2"
+                    >
+                      Next Module <ArrowRight className="w-4 h-4" />
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          )}
+
+          {/* Module 11: Loop Control & Practice */}
+          {currentModule === 2 && (
+            <div className="space-y-6">
+              <Card className="rounded-2xl shadow-card hover:shadow-lifted transition-all">
+                <CardHeader className="text-center">
+                  <CardTitle className="flex items-center justify-center gap-2 text-3xl">
+                    <Trophy className="w-8 h-8 text-green-500" />
+                    Module 11: Loop Control & Practice
+                  </CardTitle>
+                  <p className="text-muted-foreground mt-2">
+                    Master break, continue, and practice with real exercises!
+                  </p>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-bold text-green-600">🛑 Break Statement</h3>
+                    <p className="text-muted-foreground">
+                      Use <code className="bg-muted px-2 py-1 rounded">break</code> to exit a loop early:
+                    </p>
+                    <CodeEditor
+                      code={`for (int i = 1; i <= 10; i++)
+{
+    if (i == 5)
+    {
+        break; // Stop when i equals 5
+    }
+    Console.WriteLine(i);
+}
+// Output: 1, 2, 3, 4`}
+                      language="csharp"
+                    />
+                  </div>
+
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-bold text-green-600">⏭️ Continue Statement</h3>
+                    <p className="text-muted-foreground">
+                      Use <code className="bg-muted px-2 py-1 rounded">continue</code> to skip to the next iteration:
+                    </p>
+                    <CodeEditor
+                      code={`for (int i = 1; i <= 5; i++)
+{
+    if (i == 3)
+    {
+        continue; // Skip 3
+    }
+    Console.WriteLine(i);
+}
+// Output: 1, 2, 4, 5`}
+                      language="csharp"
+                    />
+                  </div>
+
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-bold text-green-600">🎯 Practical Example: Input Validation</h3>
+                    <CodeEditor
+                      code={`while (true) // Infinite loop
+{
+    Console.Write("Enter a number (1-10): ");
+    int number = Convert.ToInt32(Console.ReadLine());
+
+    if (number >= 1 && number <= 10)
+    {
+        Console.WriteLine("Valid number!");
+        break; // Exit the loop
+    }
+    else
+    {
+        Console.WriteLine("Invalid! Try again.");
+    }
+}`}
+                      language="csharp"
+                    />
+                  </div>
+
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-bold text-green-600">🔥 Practice Exercises</h3>
+
+                    <div className="space-y-4">
+                      <details className="p-4 bg-blue-50 rounded-lg border-2 border-blue-200">
+                        <summary className="cursor-pointer font-semibold text-blue-900">Exercise 1: Sum Calculator</summary>
+                        <p className="text-sm text-muted-foreground mt-2 mb-3">
+                          Calculate the sum of numbers from 1 to N (user input).
+                        </p>
+                        <CodeEditor
+                          code={`Console.Write("Enter a number: ");
+int num = Convert.ToInt32(Console.ReadLine());
+
+int sum = 0;
+for (int i = 1; i <= num; i++)
+{
+    sum += i;
+}
+
+Console.WriteLine($"Sum: {sum}");`}
+                          language="csharp"
+                        />
+                      </details>
+
+                      <details className="p-4 bg-purple-50 rounded-lg border-2 border-purple-200">
+                        <summary className="cursor-pointer font-semibold text-purple-900">Exercise 2: FizzBuzz</summary>
+                        <p className="text-sm text-muted-foreground mt-2 mb-3">
+                          Print numbers 1-30, but print "Fizz" for multiples of 3, "Buzz" for multiples of 5, and "FizzBuzz" for both!
+                        </p>
+                        <CodeEditor
+                          code={`for (int i = 1; i <= 30; i++)
+{
+    if (i % 3 == 0 && i % 5 == 0)
+        Console.WriteLine("FizzBuzz");
+    else if (i % 3 == 0)
+        Console.WriteLine("Fizz");
+    else if (i % 5 == 0)
+        Console.WriteLine("Buzz");
+    else
+        Console.WriteLine(i);
+}`}
+                          language="csharp"
+                        />
+                      </details>
+
+                      <details className="p-4 bg-green-50 rounded-lg border-2 border-green-200">
+                        <summary className="cursor-pointer font-semibold text-green-900">Exercise 3: Factorial Calculator</summary>
+                        <p className="text-sm text-muted-foreground mt-2 mb-3">
+                          Calculate n! (1 × 2 × 3 × ... × n)
+                        </p>
+                        <CodeEditor
+                          code={`Console.Write("Enter a number: ");
+int num = Convert.ToInt32(Console.ReadLine());
+
+int factorial = 1;
+for (int i = 1; i <= num; i++)
+{
+    factorial *= i;
+}
+
+Console.WriteLine($"{num}! = {factorial}");`}
+                          language="csharp"
+                        />
+                      </details>
+
+                      <details className="p-4 bg-pink-50 rounded-lg border-2 border-pink-200">
+                        <summary className="cursor-pointer font-semibold text-pink-900">Exercise 4: Pyramid Pattern</summary>
+                        <p className="text-sm text-muted-foreground mt-2 mb-3">
+                          Create a centered pyramid of stars!
+                        </p>
+                        <CodeEditor
+                          code={`int height = 5;
+
+for (int row = 1; row <= height; row++)
+{
+    // Print spaces
+    for (int space = 1; space <= height - row; space++)
+    {
+        Console.Write(" ");
+    }
+
+    // Print stars
+    for (int star = 1; star <= (2 * row - 1); star++)
+    {
+        Console.Write("*");
+    }
+
+    Console.WriteLine();
+}
+
+// Output:
+//     *
+//    ***
+//   *****
+//  *******
+// *********`}
+                          language="csharp"
+                        />
+                      </details>
+                    </div>
+                  </div>
+
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-bold text-green-600">🎓 Key Takeaways</h3>
+                    <ul className="space-y-2 text-muted-foreground">
+                      <li>✓ <strong>while</strong> loops repeat while a condition is true</li>
+                      <li>✓ <strong>for</strong> loops repeat a specific number of times</li>
+                      <li>✓ <strong>break</strong> exits a loop early</li>
+                      <li>✓ <strong>continue</strong> skips to the next iteration</li>
+                      <li>✓ Nested loops create patterns and grids</li>
+                      <li>✓ Always make sure loops can end (avoid infinite loops!)</li>
+                    </ul>
+                  </div>
+
+                  <div className="flex justify-between pt-6">
+                    <Button
+                      variant="outline"
+                      onClick={() => setCurrentModule(1)}
+                    >
+                      Previous Module
+                    </Button>
+                    <Button
+                      onClick={() => {
+                        const newProgress = [...lesson3ModuleProgress];
+                        newProgress[2] = 100;
+                        setLesson3ModuleProgress(newProgress);
+                        setShowQuiz(false);
+                      }}
+                      className="gap-2"
+                    >
+                      <Trophy className="w-4 h-4" /> Complete Lesson 3
                     </Button>
                   </div>
                 </CardContent>
