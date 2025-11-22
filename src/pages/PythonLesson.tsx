@@ -590,6 +590,7 @@ const PythonLesson = () => {
   const [currentModule, setCurrentModule] = useState(0);
   const [moduleProgress, setModuleProgress] = useState<number[]>([0, 0, 0, 0, 0, 0]);
   const [lesson2ModuleProgress, setLesson2ModuleProgress] = useState<number[]>([0, 0, 0]);
+  const [lesson3ModuleProgress, setLesson3ModuleProgress] = useState<number[]>([0, 0, 0]);
   const [showQuiz, setShowQuiz] = useState(false);
   const [quizIndex, setQuizIndex] = useState(0);
   const [correctAnswers, setCorrectAnswers] = useState(0);
@@ -654,6 +655,27 @@ const PythonLesson = () => {
     }
   ];
 
+  const lesson3Modules = [
+    {
+      title: "Project 1: Story Adventure",
+      icon: Gamepad2,
+      duration: "60 mins",
+      color: "text-purple-500"
+    },
+    {
+      title: "Project 2: Personality Quiz",
+      icon: Sparkles,
+      duration: "60 mins",
+      color: "text-pink-500"
+    },
+    {
+      title: "Project 3: Unit Converter",
+      icon: Zap,
+      duration: "60 mins",
+      color: "text-blue-500"
+    }
+  ];
+
   const updateModuleProgress = (module: number, progress: number) => {
     const newProgress = [...moduleProgress];
     newProgress[module] = Math.min(100, progress);
@@ -705,12 +727,15 @@ const PythonLesson = () => {
 
       {/* Lesson Tabs */}
       <Tabs value={currentLesson} onValueChange={setCurrentLesson} className="w-full">
-        <TabsList className="grid w-full max-w-md mx-auto grid-cols-2">
+        <TabsList className="grid w-full max-w-2xl mx-auto grid-cols-3">
           <TabsTrigger value="lesson1" className="text-lg">
             📚 Lesson 1: Fundamentals
           </TabsTrigger>
           <TabsTrigger value="lesson2" className="text-lg">
             🚀 Lesson 2: Advanced
+          </TabsTrigger>
+          <TabsTrigger value="lesson3" className="text-lg">
+            🎨 Lesson 3: Projects
           </TabsTrigger>
         </TabsList>
 
@@ -3351,6 +3376,438 @@ print("\\n✅ Your data is saved in journal.txt!")`}
                       }}
                     >
                       Review Lesson 2
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          )}
+        </TabsContent>
+
+        {/* Lesson 3 Content - Projects */}
+        <TabsContent value="lesson3" className="space-y-8">
+          {/* Module Navigation */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {lesson3Modules.map((module, index) => {
+              const Icon = module.icon;
+              const isActive = currentModule === index;
+              const isCompleted = lesson3ModuleProgress[index] === 100;
+
+              return (
+                <Button
+                  key={index}
+                  variant={isActive ? "default" : isCompleted ? "secondary" : "outline"}
+                  className="h-auto py-6 px-4 flex flex-col gap-3 relative"
+                  onClick={() => setCurrentModule(index)}
+                >
+                  {isCompleted && (
+                    <CheckCircle className="absolute top-2 right-2 w-5 h-5 text-green-500" />
+                  )}
+                  <Icon className={`w-10 h-10 ${module.color}`} />
+                  <span className="text-sm font-medium text-center">{module.title}</span>
+                  <span className="text-xs text-muted-foreground">{module.duration}</span>
+                  <Progress value={lesson3ModuleProgress[index]} className="w-full h-1.5" />
+                </Button>
+              );
+            })}
+          </div>
+
+          {/* Project 1: Interactive Story Adventure */}
+          {currentModule === 0 && (
+            <div className="space-y-6">
+              <Card className="rounded-2xl shadow-card hover:shadow-lifted transition-all">
+                <CardHeader className="text-center">
+                  <CardTitle className="flex items-center justify-center gap-2 text-3xl">
+                    <Gamepad2 className="w-8 h-8 text-purple-500" />
+                    Project 1: Interactive Story Adventure
+                  </CardTitle>
+                  <p className="text-muted-foreground mt-2">
+                    Create a branching story game with multiple paths and endings!
+                  </p>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-bold text-purple-600">📝 Project Overview</h3>
+                    <p className="text-muted-foreground">
+                      Build a text-based adventure game where player choices determine the story outcome.
+                      Your game should have at least 5 decision points and 3 different endings!
+                    </p>
+                  </div>
+
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-bold text-purple-600">✅ Requirements</h3>
+                    <ul className="space-y-2 text-muted-foreground">
+                      <li>✓ Welcome message introducing the story</li>
+                      <li>✓ At least 5 choices for the player to make</li>
+                      <li>✓ Use if/elif/else to handle different paths</li>
+                      <li>✓ At least 3 unique endings</li>
+                      <li>✓ Creative story theme (fantasy, sci-fi, mystery, etc.)</li>
+                    </ul>
+                  </div>
+
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-bold text-purple-600">💡 Starter Code</h3>
+                    <CodeEditor
+                      code={`print("=" * 50)
+print("THE ENCHANTED FOREST ADVENTURE")
+print("=" * 50)
+print("\\nWelcome, brave adventurer!")
+
+name = input("What is your name? ")
+print(f"\\nGreetings, {name}! Your adventure begins...\\n")
+
+print("You wake up at the edge of a mysterious forest.")
+print("Two paths lie before you:")
+print("1. A bright path with singing birds")
+print("2. A dark path with glowing mushrooms")
+
+choice1 = input("\\nWhich path do you take? (1 or 2): ")
+
+if choice1 == "1":
+    print("\\nYou walk down the bright path.")
+    print("You encounter a friendly fairy!")
+
+    fairy_choice = input("Do you accept the fairy's gift? (yes/no): ")
+
+    if fairy_choice.lower() == "yes":
+        print("\\nThe fairy gives you magical wings!")
+        # Continue your story here...
+    else:
+        print("\\nYou politely decline and continue walking.")
+        # Continue your story here...
+
+elif choice1 == "2":
+    print("\\nYou venture down the dark path.")
+    print("You find a mysterious glowing crystal!")
+
+    # Continue your story here...
+
+else:
+    print("\\nInvalid choice! You're lost in the forest forever.")
+    print("GAME OVER - Bad Ending")
+
+# Add more decision points and endings!`}
+                      language="python"
+                    />
+                  </div>
+
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-bold text-purple-600">💪 Tips for Success</h3>
+                    <ul className="space-y-2 text-muted-foreground">
+                      <li>• Plan your story on paper first (draw a flowchart!)</li>
+                      <li>• Make choices meaningful and interesting</li>
+                      <li>• Add descriptive text to make it immersive</li>
+                      <li>• Test all paths to make sure they work</li>
+                      <li>• Use .lower() to handle different text inputs</li>
+                    </ul>
+                  </div>
+
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-bold text-purple-600">🌟 Challenge Additions</h3>
+                    <ul className="space-y-2 text-muted-foreground">
+                      <li>• Add a health or inventory system using variables</li>
+                      <li>• Include a scoring system for different choices</li>
+                      <li>• Create secret paths with specific keyword answers</li>
+                      <li>• Add ASCII art for dramatic moments</li>
+                    </ul>
+                  </div>
+
+                  <div className="flex justify-between items-center pt-6">
+                    <Button
+                      variant="outline"
+                      onClick={() => {
+                        const newProgress = [...lesson3ModuleProgress];
+                        newProgress[0] = 100;
+                        setLesson3ModuleProgress(newProgress);
+                      }}
+                    >
+                      Mark as Complete
+                    </Button>
+                    <Button
+                      onClick={() => {
+                        setCurrentModule(1);
+                        const newProgress = [...lesson3ModuleProgress];
+                        newProgress[0] = 100;
+                        setLesson3ModuleProgress(newProgress);
+                      }}
+                      className="gap-2"
+                    >
+                      Next Project <ArrowRight className="w-4 h-4" />
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          )}
+
+          {/* Project 2: Personality Quiz */}
+          {currentModule === 1 && (
+            <div className="space-y-6">
+              <Card className="rounded-2xl shadow-card hover:shadow-lifted transition-all">
+                <CardHeader className="text-center">
+                  <CardTitle className="flex items-center justify-center gap-2 text-3xl">
+                    <Sparkles className="w-8 h-8 text-pink-500" />
+                    Project 2: Personality Quiz
+                  </CardTitle>
+                  <p className="text-muted-foreground mt-2">
+                    Build a fun personality test that determines user type!
+                  </p>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-bold text-pink-600">📝 Project Overview</h3>
+                    <p className="text-muted-foreground">
+                      Create a fun personality quiz that asks questions and determines a result.
+                      Your quiz should ask 5-7 questions and give one of 4 possible results!
+                    </p>
+                  </div>
+
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-bold text-pink-600">✅ Requirements</h3>
+                    <ul className="space-y-2 text-muted-foreground">
+                      <li>✓ Welcome message explaining the quiz theme</li>
+                      <li>✓ 5-7 multiple choice questions</li>
+                      <li>✓ Track answers with variables (score tracking)</li>
+                      <li>✓ Calculate a result based on answers</li>
+                      <li>✓ Display a personality type with description</li>
+                    </ul>
+                  </div>
+
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-bold text-pink-600">🎨 Quiz Theme Ideas</h3>
+                    <ul className="space-y-2 text-muted-foreground">
+                      <li>• What type of programmer are you?</li>
+                      <li>• Which animal are you?</li>
+                      <li>• What's your learning style?</li>
+                      <li>• Which season matches your personality?</li>
+                      <li>• What career suits you best?</li>
+                    </ul>
+                  </div>
+
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-bold text-pink-600">💡 Starter Code</h3>
+                    <CodeEditor
+                      code={`print("=" * 50)
+print("WHAT TYPE OF CODER ARE YOU?")
+print("=" * 50)
+print("\\nAnswer these questions to discover your coding personality!\\n")
+
+# Score tracking variables
+creative_score = 0
+logical_score = 0
+social_score = 0
+practical_score = 0
+
+# Question 1
+print("Question 1: How do you approach a new problem?")
+print("A. Think creatively and try unique solutions")
+print("B. Break it down logically step by step")
+print("C. Ask others for their ideas first")
+print("D. Look for the most practical solution")
+
+answer1 = input("Your answer (A/B/C/D): ").upper()
+
+if answer1 == "A":
+    creative_score += 1
+elif answer1 == "B":
+    logical_score += 1
+elif answer1 == "C":
+    social_score += 1
+elif answer1 == "D":
+    practical_score += 1
+
+# Add 4-6 more questions following the same pattern!
+
+# Calculate result
+print("\\n" + "=" * 50)
+print("YOUR RESULT:")
+print("=" * 50)
+
+if creative_score >= logical_score and creative_score >= social_score:
+    print("\\n🎨 THE CREATIVE CODER")
+    print("You love designing beautiful interfaces!")
+elif logical_score >= creative_score and logical_score >= social_score:
+    print("\\n🧠 THE LOGICAL THINKER")
+    print("You excel at solving complex problems!")
+# Add more result types...`}
+                      language="python"
+                    />
+                  </div>
+
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-bold text-pink-600">💪 Tips for Success</h3>
+                    <ul className="space-y-2 text-muted-foreground">
+                      <li>• Create 5-7 questions for better accuracy</li>
+                      <li>• Make questions fun and relatable</li>
+                      <li>• Balance your answer options across categories</li>
+                      <li>• Write engaging descriptions for each result</li>
+                      <li>• Use .upper() to handle lowercase answers</li>
+                    </ul>
+                  </div>
+
+                  <div className="flex justify-between items-center pt-6">
+                    <Button
+                      variant="outline"
+                      onClick={() => setCurrentModule(0)}
+                    >
+                      Previous Project
+                    </Button>
+                    <Button
+                      onClick={() => {
+                        setCurrentModule(2);
+                        const newProgress = [...lesson3ModuleProgress];
+                        newProgress[1] = 100;
+                        setLesson3ModuleProgress(newProgress);
+                      }}
+                      className="gap-2"
+                    >
+                      Next Project <ArrowRight className="w-4 h-4" />
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          )}
+
+          {/* Project 3: Multi-Unit Converter */}
+          {currentModule === 2 && (
+            <div className="space-y-6">
+              <Card className="rounded-2xl shadow-card hover:shadow-lifted transition-all">
+                <CardHeader className="text-center">
+                  <CardTitle className="flex items-center justify-center gap-2 text-3xl">
+                    <Zap className="w-8 h-8 text-blue-500" />
+                    Project 3: Multi-Unit Converter
+                  </CardTitle>
+                  <p className="text-muted-foreground mt-2">
+                    Build a versatile conversion calculator for different units!
+                  </p>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-bold text-blue-600">📝 Project Overview</h3>
+                    <p className="text-muted-foreground">
+                      Create a conversion tool that handles multiple types of unit conversions.
+                      Your converter should support at least 3 conversion categories!
+                    </p>
+                  </div>
+
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-bold text-blue-600">✅ Requirements</h3>
+                    <ul className="space-y-2 text-muted-foreground">
+                      <li>✓ Welcome message and menu of conversion types</li>
+                      <li>✓ At least 3 conversion categories (temperature, distance, weight)</li>
+                      <li>✓ Handle user input for values and units</li>
+                      <li>✓ Perform accurate calculations</li>
+                      <li>✓ Display results in a clean format</li>
+                    </ul>
+                  </div>
+
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-bold text-blue-600">💡 Starter Code</h3>
+                    <CodeEditor
+                      code={`print("=" * 50)
+print("UNIVERSAL UNIT CONVERTER")
+print("=" * 50)
+print("\\nWelcome! This tool can convert between different units.\\n")
+
+print("Available Conversions:")
+print("1. Temperature (Celsius/Fahrenheit)")
+print("2. Distance (Miles/Kilometers)")
+print("3. Weight (Pounds/Kilograms)")
+
+choice = input("\\nSelect a conversion type (1/2/3): ")
+
+if choice == "1":
+    # TEMPERATURE CONVERSION
+    print("\\n--- Temperature Conversion ---")
+    print("A. Celsius to Fahrenheit")
+    print("B. Fahrenheit to Celsius")
+
+    temp_choice = input("Choose conversion (A/B): ").upper()
+
+    if temp_choice == "A":
+        celsius = float(input("Enter temperature in Celsius: "))
+        fahrenheit = (celsius * 9/5) + 32
+        print(f"\\n{celsius}°C = {fahrenheit}°F")
+
+    elif temp_choice == "B":
+        fahrenheit = float(input("Enter temperature in Fahrenheit: "))
+        celsius = (fahrenheit - 32) * 5/9
+        print(f"\\n{fahrenheit}°F = {celsius}°C")
+
+elif choice == "2":
+    # Add distance conversion here
+    pass
+
+elif choice == "3":
+    # Add weight conversion here
+    pass
+
+else:
+    print("\\nInvalid selection!")
+
+print("\\nThank you for using the converter!")`}
+                      language="python"
+                    />
+                  </div>
+
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-bold text-blue-600">📐 Conversion Formulas</h3>
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div className="p-4 bg-muted rounded-lg">
+                        <h4 className="font-semibold mb-2">Temperature:</h4>
+                        <p className="text-sm text-muted-foreground">C to F: (C × 9/5) + 32</p>
+                        <p className="text-sm text-muted-foreground">F to C: (F - 32) × 5/9</p>
+                      </div>
+                      <div className="p-4 bg-muted rounded-lg">
+                        <h4 className="font-semibold mb-2">Distance:</h4>
+                        <p className="text-sm text-muted-foreground">Miles to KM: × 1.60934</p>
+                        <p className="text-sm text-muted-foreground">KM to Miles: ÷ 1.60934</p>
+                      </div>
+                      <div className="p-4 bg-muted rounded-lg">
+                        <h4 className="font-semibold mb-2">Weight:</h4>
+                        <p className="text-sm text-muted-foreground">Lbs to KG: × 0.453592</p>
+                        <p className="text-sm text-muted-foreground">KG to Lbs: ÷ 0.453592</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-bold text-blue-600">💪 Tips for Success</h3>
+                    <ul className="space-y-2 text-muted-foreground">
+                      <li>• Use float() for decimal inputs</li>
+                      <li>• Round results with :.2f for 2 decimal places</li>
+                      <li>• Test with known conversions to verify accuracy</li>
+                      <li>• Make menus clear and easy to navigate</li>
+                    </ul>
+                  </div>
+
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-bold text-blue-600">🌟 Challenge Additions</h3>
+                    <ul className="space-y-2 text-muted-foreground">
+                      <li>• Add more conversion types (time, volume, speed)</li>
+                      <li>• Support multiple unit chains</li>
+                      <li>• Include fun facts about units after conversion</li>
+                    </ul>
+                  </div>
+
+                  <div className="flex justify-between items-center pt-6">
+                    <Button
+                      variant="outline"
+                      onClick={() => setCurrentModule(1)}
+                    >
+                      Previous Project
+                    </Button>
+                    <Button
+                      onClick={() => {
+                        const newProgress = [...lesson3ModuleProgress];
+                        newProgress[2] = 100;
+                        setLesson3ModuleProgress(newProgress);
+                        setShowQuiz(false);
+                      }}
+                      className="gap-2"
+                    >
+                      <Trophy className="w-4 h-4" /> Complete Lesson 3
                     </Button>
                   </div>
                 </CardContent>
