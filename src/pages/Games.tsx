@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import {
-  ExternalLink, Brain, Image, MessageCircle, Sparkles, Globe, Palette, Bot, GitBranch, Presentation, ClipboardCheck
+  ExternalLink, Brain, Image, MessageCircle, Sparkles, Globe, Palette, Bot, GitBranch, Presentation, ClipboardCheck, Code2
 } from "lucide-react";
 
 const Games = () => {
@@ -105,10 +105,23 @@ const Games = () => {
       color: "text-amber-500",
       url: "https://forms.gle/DgSj9w5m7mjiz4y29",
       features: ["Python Basics", "Beginner Friendly", "Quick Assessment", "Learn While Testing"]
+    },
+    {
+      id: "csharp-rpg-snippet",
+      title: "C# RPG Game Code Snippet",
+      description: "Get a complete starter template to build your own text-based RPG game in C#!",
+      icon: <Code2 className="w-8 h-8" />,
+      color: "text-teal-500",
+      url: "/csharp-rpg-snippet",
+      features: ["Complete Game Template", "Object-Oriented Design", "Combat System", "Player Progression", "Learn by Doing"],
+      isInternal: true
     }
   ];
 
-  const handleToolClick = (url: string) => {
+  const handleToolClick = (url: string, isInternal?: boolean) => {
+    if (isInternal) {
+      return; // Let the Link component handle internal navigation
+    }
     window.open(url, '_blank', 'noopener,noreferrer');
   };
 
@@ -133,46 +146,61 @@ const Games = () => {
 
       {/* AI Tools Grid */}
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {aiTools.map((tool, index) => (
-          <Card
-            key={tool.id}
-            className="rounded-2xl shadow-card hover:shadow-lifted transition-all cursor-pointer"
-            onClick={() => handleToolClick(tool.url)}
-          >
-            <CardHeader className="text-center">
-              <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-secondary flex items-center justify-center text-secondary-foreground">
-                {tool.icon}
-              </div>
-              <CardTitle className="text-xl font-bold flex items-center justify-center gap-2">
-                {tool.title}
-                <ExternalLink className="w-4 h-4 text-muted-foreground" />
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-5">
-              <p className="text-muted-foreground font-medium text-center">{tool.description}</p>
+        {aiTools.map((tool, index) => {
+          const CardWrapper = tool.isInternal ? Link : 'div';
+          const cardProps = tool.isInternal
+            ? { to: tool.url }
+            : { onClick: () => handleToolClick(tool.url) };
 
-              <div className="space-y-3">
-                <h4 className="font-bold text-sm uppercase">What you can do:</h4>
-                <ul className="text-sm text-muted-foreground space-y-2">
-                  {tool.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 flex-shrink-0"></div>
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+          return (
+            <CardWrapper
+              key={tool.id}
+              {...cardProps}
+              className={tool.isInternal ? "no-underline" : ""}
+            >
+              <Card className="rounded-2xl shadow-card hover:shadow-lifted transition-all cursor-pointer h-full">
+                <CardHeader className="text-center">
+                  <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-secondary flex items-center justify-center text-secondary-foreground">
+                    {tool.icon}
+                  </div>
+                  <CardTitle className="text-xl font-bold flex items-center justify-center gap-2">
+                    {tool.title}
+                    {!tool.isInternal && <ExternalLink className="w-4 h-4 text-muted-foreground" />}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-5">
+                  <p className="text-muted-foreground font-medium text-center">{tool.description}</p>
 
-              <Button className="w-full rounded-full bg-foreground hover:bg-foreground/90 text-background font-semibold" onClick={(e) => {
-                e.stopPropagation();
-                handleToolClick(tool.url);
-              }}>
-                Practice Now
-                <ExternalLink className="w-4 h-4 ml-2" />
-              </Button>
-            </CardContent>
-          </Card>
-        ))}
+                  <div className="space-y-3">
+                    <h4 className="font-bold text-sm uppercase">What you can do:</h4>
+                    <ul className="text-sm text-muted-foreground space-y-2">
+                      {tool.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-start gap-2">
+                          <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 flex-shrink-0"></div>
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {tool.isInternal ? (
+                    <Button className="w-full rounded-full bg-foreground hover:bg-foreground/90 text-background font-semibold" asChild>
+                      <span>View Code Snippet</span>
+                    </Button>
+                  ) : (
+                    <Button className="w-full rounded-full bg-foreground hover:bg-foreground/90 text-background font-semibold" onClick={(e) => {
+                      e.stopPropagation();
+                      handleToolClick(tool.url);
+                    }}>
+                      Practice Now
+                      <ExternalLink className="w-4 h-4 ml-2" />
+                    </Button>
+                  )}
+                </CardContent>
+              </Card>
+            </CardWrapper>
+          );
+        })}
       </div>
 
       {/* Step-by-Step Guide */}

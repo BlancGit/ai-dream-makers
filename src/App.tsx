@@ -15,6 +15,7 @@ import PythonLesson from "./pages/PythonLesson";
 import Games from "./pages/Games";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
+import CSharpRPGSnippet from "./pages/CSharpRPGSnippet";
 
 const queryClient = new QueryClient();
 
@@ -35,6 +36,7 @@ const App = () => (
             <Route path="/lessons/csharp" element={<CSharpLesson />} />
             <Route path="/lessons/python" element={<PythonLesson />} />
             <Route path="/games" element={<Games />} />
+            <Route path="/csharp-rpg-snippet" element={<CSharpRPGSnippet />} />
             <Route path="/about" element={<About />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
