@@ -1,4 +1,4 @@
-# AI Dream Makers
+# AI Dream Makers (basically a quick vibe coded class material to make my student's learning experience about AI more interactive)
 
 ## Project Overview
 
