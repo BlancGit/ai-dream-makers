@@ -4,6 +4,8 @@
 
 AI Dream Makers is a modern web application built with React and TypeScript.
 
+##you can see the site deployed at https://ai-dream-makers.vercel.app
+
 ## Getting Started
 
 ### Prerequisites
